@@ -90,7 +90,7 @@ Monta a estrutura lógica do estudo.
 ## Questionário
 
 - A __elaboração__ e o __teste__ do \structure{instrumento de coleta} de dados, acompanhado do levantamento de \structure{recursos necessários} à realização do estudo, podem ocorrer durante a construção do plano inicial.
-    + \structure{recursos necessários:} contratação da equipe de campo; supervisores; treinamento (a entrevista será presencial ou por telefone?); passagens e diárias serão necessária?
+    + \structure{recursos necessários:} contratação da equipe de campo; supervisores; treinamento (a entrevista será presencial ou por telefone?); passagens e diárias serão necessárias?
 - O \structure{tempo} necessário para coleta e processamento de dados e o \structure{quadro de pessoal} disponível influenciam o tipo de amostragem adotado.
 
 ## Plano de amostragem
@@ -110,7 +110,7 @@ Monta a estrutura lógica do estudo.
 
 - Nessa etapa, a população de estudo é delimitada em termos \structure{espaciais} e \structure{temporais}, o que viabiliza a identificação, mesmo que indireta, do total de elementos que a compõem.
 - A listagem desses elementos forma o \structure{sistema} ou \structure{cadastros}\footnote{Veja os principais cadastros utilizados em diversas pesquisas: https://amostragemcomr.github.io/livro/conceitos.html\#cadastros}, do qual a amostra é sorteada.
-- O tamanho da resulta da conciliação do atendimento do plano de análise proposto com as limitações dos recursos disponíveis.
+- O tamanho da amostra resulta da conciliação do atendimento do plano de análise proposto com as limitações dos recursos disponíveis.
     
 ## Estudo-piloto
 
