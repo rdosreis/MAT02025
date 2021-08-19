@@ -71,7 +71,7 @@ $$
 ## O uso da distribuição normal
 
 - Os limites, 382 dias e 406 dias, são chamados de limites de confiança inferior e superior.
-- Com \structure{uma estimativa única de um único levantamento}}, a afirmação __"$\mu$ está entre 382 e 406 dias"__ \structure{não é certa como correta}.
+- Com \structure{uma estimativa única de um único levantamento}, a afirmação __"$\mu$ está entre 382 e 406 dias"__ \structure{não é, necessariamente, correta}.
 - O número de __"99% de confiança"__ implica que \structure{se o mesmo plano de amostragem fosse usado muitas vezes em uma população}, e \structure{uma declaração de confiança sendo feita para cada amostra}, \structure{cerca de 99\% dessas declarações estariam corretas} e __1% erradas__.
 
 ## O uso da distribuição normal
@@ -216,6 +216,35 @@ knitr::kable(x = df,
 
 ```
 
+\framebreak
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(x = df$B.sigma,
+     y = df$pt,
+     type = "b",
+     lwd = 2,
+     col = "red",
+     ylim = c(0, 0.35),
+     xlab = expression(B/sigma),
+     ylab = expression(paste("Probabilidade de erro ", (hat(mu) - mu) )),
+     main = expression(paste("Efeito do viés sobre a probabilidade de um erro maior que 1,96", sigma) ) )
+lines(x = df$B.sigma,
+       y = df$pl,
+       type = "b",
+       lwd = 2,
+       col = "darkorange")
+lines(x = df$B.sigma,
+      y = df$pu,
+      type = "b",
+      lwd = 2,
+      col = "pink2")
+abline(h = 0.05, lty = 2, lwd = 2, col = "darkgrey")
+legend("topleft",
+       legend = c(expression("< - 1.96"*sigma), expression("> 1.96"*sigma), "Total"),
+       lwd = 2, col = c("darkorange", "pink2", "red"), bty = "n")
+```
+
 ## Comentários {.allowframebreaks}
 
 - Para a probabilidade total de um erro maior que $1,96\sigma$, o viés tem pouca influência, desde que seu valor seja inferior a $1/10$ do desvio padrão.
@@ -232,7 +261,7 @@ knitr::kable(x = df,
 \framebreak
 
 - Como regra de trabalho, o efeito do viés sobre a precisão de uma estimativa é insignificante se o viés for menor que um décimo do desvio padrão da estimativa.
-- Se tivermos um processo de estimativa enviesado, no qual $B/\sigma <$ 0,1, em que $B$ é o valor absoluto do viés, pode-se afirmar que o vié não é uma desvantagem sensível do processo.
+- Se tivermos um processo de estimativa enviesado, no qual $B/\sigma <$ 0,1, em que $B$ é o valor absoluto do viés, pode-se afirmar que o viés não é uma desvantagem considerável do processo.
 - Mesmo com $B/\sigma =$ 0,2, a perturbação na probabilidade do erro total é modesta.
 
 \framebreak

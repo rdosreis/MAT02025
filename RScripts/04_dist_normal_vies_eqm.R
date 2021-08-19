@@ -1,4 +1,4 @@
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'--------
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'-------
 
 set.seed(100)
 
@@ -40,7 +40,7 @@ knitr::include_graphics(here::here('images', 'efeito_vies.png'))
 
 
 
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE----------------------------------------------
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE---------------------------------------------
 
 f <- function(t){ 1 / sqrt(2*pi) * exp( - t^ 2/ 2) }
 low <- function(b){integrate(f, lower = -Inf, upper = -1.96 - b)$value}
@@ -65,6 +65,33 @@ knitr::kable(x = df,
                            "Total"),
              caption = "Efeito do viés sobre a probabilidade de um erro maior que $1,96\\sigma$")
 
+
+
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'-------
+
+plot(x = df$B.sigma,
+     y = df$pt,
+     type = "b",
+     lwd = 2,
+     col = "red",
+     ylim = c(0, 0.35),
+     xlab = expression(B/sigma),
+     ylab = expression(paste("Probabilidade de erro ", (hat(mu) - mu) )),
+     main = expression(paste("Efeito do viés sobre a probabilidade de um erro maior que 1,96", sigma) ) )
+lines(x = df$B.sigma,
+       y = df$pl,
+       type = "b",
+       lwd = 2,
+       col = "darkorange")
+lines(x = df$B.sigma,
+      y = df$pu,
+      type = "b",
+      lwd = 2,
+      col = "pink2")
+abline(h = 0.05, lty = 2, lwd = 2, col = "darkgrey")
+legend("topleft",
+       legend = c(expression("< - 1.96"*sigma), expression("> 1.96"*sigma), "Total"),
+       lwd = 2, col = c("darkorange", "pink2", "red"), bty = "n")
 
 
 ## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE----
