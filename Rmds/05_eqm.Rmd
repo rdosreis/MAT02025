@@ -45,18 +45,19 @@ $$
 
 - O uso do EQM como critério de precisão de um estimador equivale a considerar equivalentes duas estimativas que têm o mesmo erro quadrático médio.
 - Isso não é inteiramente verdadeiro, porque a distribuição de frequência de erros $(\hat{\mu} - \mu)$ não será a mesma para dois estimadores, caso eles apresentem viéses de valores diferentes.
-- Entretanto, \structure{Hansen, Hurwitz e Madow (1953)}\footnote{Hansen, M. H., Hurwitz, W. N. e Madow, W. G. (1953) {\bf Sample Survey methods and theory}, John Wiley \& Sons, Nova York, Vol. I, pg. 58.} que se $B/\sigma$ for menor que cerca que $0,5$, as duas distribuições de frequência são quase idênticas em relação aos erros __absolutos__ $|\hat{\mu} - \mu|$ de tamanhos diferentes.
+- Entretanto, \structure{Hansen, Hurwitz e Madow (1953)}\footnote{Hansen, M. H., Hurwitz, W. N. e Madow, W. G. (1953) {\bf Sample Survey methods and theory}, John Wiley \& Sons, Nova York, Vol. I, pg. 58.} mostraram que se $B/\sigma$ for menor que cerca de $0,5$, as duas distribuições de frequência são quase idênticas em relação aos erros __absolutos__ $|\hat{\mu} - \mu|$ de tamanhos diferentes.
 
 ## O erro quadrático médio {.allowframebreaks}
 
-- Mais uma vez suponha que $\hat{\mu}$ tem uma distribuição aproximadamente normal com média $m = \E(\hat{\mu})$ e desvio padrão $\sigma = \sigma_{\hat{\mu}}$. Ainda, denote $EQM = EQM(\hat{\mu}) = \sigma^2 + B^2$
+- Mais uma vez suponha que $\hat{\mu}$ tem uma distribuição aproximadamente normal com média $m = \E(\hat{\mu})$ e desvio padrão $\sigma = \sigma_{\hat{\mu}}$. Ainda, denote $EQM = EQM(\hat{\mu}) = \sigma^2 + B^2$.
 - Então
 
-$$
-\Pr\left(|\hat{\mu} - \mu| \geq  k\sqrt{EQM}\right) = \frac{1}{\sigma\sqrt{2\pi}}\int_{\mu + k\sqrt{EQM}}^{\infty}{e^{-(\hat{\mu} - m)^2/2\sigma^2}d\hat{\mu}}.
-$$
+\begin{eqnarray*}
+\Pr\left(|\hat{\mu} - \mu| \geq  k\sqrt{EQM}\right) &=& \frac{1}{\sigma\sqrt{2\pi}}\int_{\mu + k\sqrt{EQM}}^{\infty}{e^{-(\hat{\mu} - m)^2/2\sigma^2}d\hat{\mu}} \\
+&& +\ \frac{1}{\sigma\sqrt{2\pi}}\int^{\mu - k\sqrt{EQM}}_{- \infty}{e^{-(\hat{\mu} - m)^2/2\sigma^2}d\hat{\mu}}.
+\end{eqnarray*}
 
-\framebreak
+## O erro quadrático médio {.allowframebreaks}
 
 ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 
