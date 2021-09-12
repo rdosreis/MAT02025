@@ -68,10 +68,10 @@ __Demonstração.__ Por definição,
 
 \begin{align} 
 \label{vies1}
-\E(\overline{y}) &= \sum_{j=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times\pi_i\right]} \nonumber\\
- &= \sum_{j=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times \frac{1}{\Comb{N}{n}}\right]}\ \textcolor{red}{(\pi_i = 1/{\Comb{N}{n}})} \nonumber\\
- &= \frac{1}{N!/[n!(N - n)!]}\sum_{j=1}^{\Comb{N}{n}}{\left[\frac{1}{n}\sum_{j = 1}^n{Y_j(i)}\right]} \nonumber\\
- &= \frac{1}{n[N!/n!(N - n)!]}\textcolor{red}{\sum_{j=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}}.
+\E(\overline{y}) &= \sum_{i=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times\pi_i\right]} \nonumber\\
+ &= \sum_{i=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times \frac{1}{\Comb{N}{n}}\right]}\ \textcolor{red}{(\pi_i = 1/{\Comb{N}{n}})} \nonumber\\
+ &= \frac{1}{N!/[n!(N - n)!]}\sum_{i=1}^{\Comb{N}{n}}{\left[\frac{1}{n}\sum_{j = 1}^n{Y_j(i)}\right]} \nonumber\\
+ &= \frac{1}{n[N!/n!(N - n)!]}\textcolor{red}{\sum_{i=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}}.
 \end{align} 
 
 \framebreak
@@ -93,10 +93,10 @@ $$
 
 \begin{align} 
 \label{vies2}
-\textcolor{red}{\sum_{j=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}} &= \Comb{N-1}{n-1}\times Y_1 + \Comb{N-1}{n-1}\times Y_2 + \ldots \Comb{N-1}{n-1}\times Y_N \nonumber\\
+\textcolor{red}{\sum_{i=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}} &= \Comb{N-1}{n-1}\times Y_1 + \Comb{N-1}{n-1}\times Y_2 + \ldots \Comb{N-1}{n-1}\times Y_N \nonumber\\
 &= \Comb{N-1}{n-1}\times (Y_1 + Y_2 + \ldots + Y_N) \nonumber\\
 &= \Comb{N-1}{n-1}\times \sum_{j=1}^N{Y_j} \nonumber\\
-&= \frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}.
+&= \textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}}.
 \end{align} 
 
 \framebreak
@@ -107,9 +107,9 @@ $$
 
 \begin{align} 
 \label{vies3}
-\textcolor{red}{\E(\overline{y})} &= \frac{n!(N - n)!}{nN!}\times\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j} \nonumber\\
+\textcolor{darkpastelpurple}{\E(\overline{y})} &= \frac{n!(N - n)!}{nN!}\times\textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}} \nonumber\\
 &= \frac{n(n-1)!(N - n)!}{nN(N-1)!}\times\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j} \nonumber\\
-&= \frac{1}{N}\sum_{j=1}^N{Y_j} = \textcolor{red}{\overline{Y}}.
+&= \frac{1}{N}\sum_{j=1}^N{Y_j} = \textcolor{darkpastelpurple}{\overline{Y}}.
 \end{align} 
 
 \framebreak
@@ -166,7 +166,7 @@ em que o somatório abrange todas as $N$ unidades da população.
 - Note que
 
 \begin{align*}
-\Pr(a_i = 1) &= \frac{\# \mbox{amostras que incluem o i-ésimo elemento}}{\# \mbox{amostras que que podem ser sorteadas}}\\
+\Pr(a_i = 1) &= \frac{\# \mbox{amostras que incluem o i-ésimo elemento}}{\# \mbox{amostras que podem ser sorteadas}}\\
 &= \frac{\Comb{N-1}{n-1}}{\Comb{N}{n}} \\
 &= \frac{(N-1)!}{(n-1)!(N-n)!}\times\frac{n!(N-n)!}{N!} = \frac{n}{N}.
 \end{align*}

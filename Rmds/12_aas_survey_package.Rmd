@@ -1,0 +1,324 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: o pacote `survey`"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Exemplo
+
+## Exemplo {.allowframebreaks}
+
+```{r, message=FALSE, echo=FALSE, out.width="10%", purl=FALSE, fig.align='right'}
+
+knitr::include_graphics(here::here('images', 'abaixo-assinado.png'))
+
+```
+
+\small
+
+- As assinaturas de uma petição foram coletadas em 676 folhas.
+- Cada folha tinha espaço suficiente para 42 assinaturas, mas em muitas folhas um número menor de assinaturas foi coletado.
+- O número de assinaturas por folha foi contado em uma amostra aleatória de 50 folhas (cerca de 7% da amostra), com os resultados apresentados na tabela a seguir.
+
+\footnotesize
+
+\begin{table}[]
+\begin{tabular}{cc|cc}
+$Y_i$ & $n_i$ & $Y_i$ & $n_i$ \\ \hline
+42    & 23    & 14    & 1     \\
+41    & 4     & 11    & 1     \\
+36    & 1     & 10    & 1     \\
+32    & 1     & 9     & 1     \\
+29    & 1     & 7     & 1     \\
+27    & 2     & 6     & 3     \\
+23    & 1     & 5     & 2     \\
+19    & 1     & 4     & 1     \\
+16    & 2     & 3     & 1     \\
+15    & 2     & -     & -    
+\end{tabular}
+\end{table}
+
+\normalsize
+
+\framebreak
+
+- O objetivo do levantamento amostral é estimar o \structure{número total de assinaturas} para a petição e os limites de confiança de 80%.
+
+- A __unidade de amostragem é a folha__ e as __observações__ $Y_i$ __são os números de assinaturas por folha__.
+- Observe que a distribuição original parece estar longe da normal, a maior frequência estando na extremidade superior.
+- No entanto, há razões para acreditar, por experiência, que as médias das amostras de 50 unidades são aproximadamente normalmente distribuídas.
+
+\framebreak
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+N <- 676
+n <- 50
+id <- 1:n
+yi <- c(3, 4, 5, 6, 7, 9, 10, 11, 14, 15,
+        16, 19, 23, 27, 29, 32, 36, 41, 42)
+ni <- c(1, 1, 2, 3, 1, 1, 1, 1, 1, 2, 2,
+        1, 1, 2, 1, 1, 1, 4, 23)
+y <- rep(x = yi, times = ni)
+df.assinatura <- data.frame(id, y, cpf = N)
+head(df.assinatura)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativa da média
+(Y.barra <- mean(df.assinatura$y))
+
+# Estimativa do total
+(YT.chapeu <- N * Y.barra)
+
+# Estimativa da variância de Y
+(s2 <- var(x = df.assinatura$y)) # ?var
+
+# Estimativa do desvio padrão de Y
+(s <- sd(x = df.assinatura$y)) # ?sd
+# s <- sqrt(s2)
+
+(f <- n/N) # fração de amostragem
+
+# Estimativa do erro padrão do total
+(s.YT.chapeu <- ((N * s)/sqrt(n)) * sqrt(1 - f)) 
+
+# IC 80% para o total de assinaturas
+# (utilizando a distribuição normal)
+YT.chapeu + c(-1, 1) * qnorm(p = 0.9) *  s.YT.chapeu
+round(YT.chapeu + c(-1, 1) * qnorm(p = 0.9) *  s.YT.chapeu)
+
+# IC 80% para o total de assinaturas
+# (utilizando a distribuição t)
+round(YT.chapeu + c(-1, 1) * qt(p = 0.9, df = 49) *  s.YT.chapeu)
+
+```
+\normalsize
+
+# Levantamentos amostrais complexos no `R`
+
+## {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-01.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'thomas_lumley.jpg'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-02.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-03.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-04.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-05.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-06.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-07.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'thomas-08.png'))
+
+```
+
+## Retornando ao exemplo das assinaturas {.allowframebreaks}
+
+- Embora amostras aleatórias simples não exijam _software_ especializado para análise, elas fornecem um exemplo simples para a introdução do pacote `survey`.
+- A __primeira etapa__ na análise de dados é descrever o delineamento (desenho, _design_) para o `R`.
+- A função `svydesign` pega essa descrição e a adiciona ao conjunto de dados para produzir um \structure{objeto de delineamento} do levantamento por amostragem.
+- O objeto de delineamento do levantamento é então usado em __todas as análises__.
+- O envelopamento das informações do delineamento e dos dados em um único objeto garante que as informações do delineamento não possam ser inadvertidamente separadas ou usadas com o conjunto de dados incorreto.
+
+\framebreak
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages("survey")
+library(survey)
+
+# O objeto design
+(ass.des <- svydesign(ids = ~1,
+                     fpc = ~cpf,
+                     data = df.assinatura))
+
+summary(ass.des)
+
+# Estimativa da média
+svymean(x = ~y, design = ass.des)
+
+# Estimativa do total
+svytotal(x = ~y, design = ass.des)
+
+# IC 80% para o total de assinaturas
+# (utilizando a distribuição normal)
+confint(svytotal(x = ~y, design = ass.des),
+        level = 0.8)
+
+# IC 80% para o total de assinaturas
+# (utilizando a distribuição tl)
+confint(svytotal(x = ~y, design = ass.des),
+        level = 0.8, df = survey::degf(ass.des))
+
+# IC 95% para o total de assinaturas
+confint(svytotal(x = ~y, design = ass.des),
+        level = 0.95)
+
+```
+\normalsize
+
+# Um novo exemplo
+
+## Índice de Desempenho Acadêmico {.allowframebreaks}
+
+- O \structure{Índice de Desempenho Acadêmico da Califórnia} (_Academic Performance Index_, API) é calculado a partir de testes padronizados administrados a alunos em escolas da Califórnia.
+- Além dos dados de desempenho acadêmico das escolas, há uma ampla gama de variáveis socioeconômicas disponíveis.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+data(api)
+
+# View(apisrs)
+# ?apisrs
+
+# O objeto design
+api.des <- svydesign(id = ~1,
+                     fpc = ~fpc,
+                     data = apisrs)
+
+# Estimativa do total de alunos
+# matriculados
+svytotal(x = ~enroll, design = api.des)
+
+# Estimativa da média de alunos
+# matriculados por escola
+svymean(x = ~enroll, design = api.des)
+
+```
+
+\framebreak
+
+\normalsize
+
+- A população total estimada é de 3,6 milhões de alunos matriculados, com erro padrão de 169.000; o tamanho médio estimado da escola é cerca de 585, com um erro padrão de 27.
+- Os \structure{valores verdadeiros} __(na população)__ são 3,8 milhões e 619, respectivamente, portanto, os erros padrões fornecem uma representação precisa da incerteza nas estimativas.
+- A correção da população finita tem muito pouco impacto sobre essas estimativas e podemos seguramente tê-la ignorado.
+
+\framebreak
+
+- Se o tamanho da população não for especificado, é necessário especificar as \structure{probabilidades de amostragem} ou \structure{pesos de amostragem}.
+- A variável `pw` no conjunto de dados contém o peso de amostragem, 6194/200 = 30,97.
+- A seguir, é mostrado o impacto da omissão do tamanho da população.
+- Quando o objeto de _design_ é impresso, a falta de informações sobre o tamanho da população é indicada por __"com reposição"__ na saída.
+- A média e o total estimados são iguais, mas os erros padrões são ligeiramente maiores.
+
+\framebreak
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# O objeto design
+api.des2 <- svydesign(id = ~1,
+                     weights = ~pw,
+                     data = apisrs)
+
+# Estimativa do total de alunos
+# matriculados
+svytotal(x = ~enroll, design = api.des2)
+
+# Estimativa da média de alunos
+# matriculados por escola
+svymean(x = ~enroll, design = api.des2)
+
+```
+
+## Para casa
+
+- Utilize os dados do objeto `api` e, utilizando um esquema de amostragem simples sem reposição, construa intervalos de confiança de 90%, 95% e 99% para o número total e médio de alunos matriculados.
+    + Interprete os seus resultados.
+
+## Próxima aula
+
+- Amostragem aleatória simples com reposição.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-RUOK.jpg'))
+
+```
+
