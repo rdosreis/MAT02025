@@ -31,13 +31,13 @@ As fórmulas que nos dão os \structure{erros padrões} das estimativas da \stru
 - Na prática, isso não será conhecido, mas pode ser estimado a partir dos dados da amostra.
     + Se vamos estimar $S^2$, não deveríamos fazer a mesma avaliação\footnote{Ou seja, avaliar a imparcialidade deste estimador.} que fizemos para $\overline{y}$ e $\hat{Y}_T$? _(Sim ou sim?)_
     
-\framebreak
+## Estimativa do erro padrão {.allowframebreaks}
 
 ::: {.block}
 
 ### Teorema
 
-Em uma amostra aleatórica simples,
+Em uma amostra aleatória simples,
 
 $$
 s^2 = \frac{\displaystyle\sum_{i=1}^n{(Y_i - \overline{y})^2}}{n - 1}
@@ -116,7 +116,7 @@ $$
 
 ## Intervalos de confiança {.allowframebreaks}
 
-- É geralmente assumido que as estimativas $\overline{y}$ e $\hat{Y}_T$ são normalmente distribuídas em torno dos correspondentes valores populacionais.
+- É geralmente assumido que as estimativas \structure{$\overline{y}$} e \structure{$\hat{Y}_T$} \structure{são normalmente distribuídas} em torno dos correspondentes valores populacionais.
 - As razões para esta suposição e suas limitações são consideradas em aulas futuras.
 
 \framebreak

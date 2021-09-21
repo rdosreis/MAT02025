@@ -1,0 +1,162 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: amostragem aleatória simples com reposição"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# Relembrando
+
+## {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-01.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-05.png'))
+
+```
+
+# Amostragem Aleatória Simples com reposição
+
+## AAS com reposição {.allowframebreaks}
+
+- Uma \structure{amostra aleatória simples com reposição (AASc)} é sorteada unidade por unidade.
+- As unidades da população são numeradas de \structure{$1$ a $N$}.
+- Uma série de números aleatórios entre $1$ e $N$ é então sorteada, por meio de uma tabela de números aleatórios ou por meio de um \structure{programa de computador} que produz tal tabela.
+- Em qualquer sorteio, o processo usado deve dar uma chance igual de seleção a qualquer número na população.
+    + Uma vez sorteada a unidade, ela é reposta na população e sorteia-se um elemento seguinte.
+- Repete-se o procedimento até que \structure{$n$} unidades tenha sido sorteadas.
+    + Estas unidades \structure{constituem a amostra (selecionada)}.
+
+\framebreak
+
+- Portanto, a probabilidade de que todas as \structure{$n$} unidades especificadas sejam selecionadas em \structure{$n$} sorteios é
+
+$$
+\frac{1}{N}\cdot \frac{1}{N}\cdot \frac{1}{N} \ldots  \frac{1}{N} = \left(\frac{1}{N}\right)^n = \frac{1}{N^n}.
+$$
+
+## Seleção de uma AAS com reposição
+
+### Exemplo no R
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+sample(x = 1:528, size = 10, replace = TRUE)
+
+sample(x = 1:128, size = 10, replace = TRUE)
+
+```
+
+## Propriedades dos estimadores na AASc {.allowframebreaks}
+
+- Os estimadores \structure{$\overline{y}$} e \structure{$\widehat{Y}_T = N\overline{y}$} são estimativas sem tendência para \structure{$\overline{Y}$} e \structure{$Y_T$}, respectivamente.
+- As expressões das variâncias podem ser obtidas utilizando a mesma ideia das __variáveis indicadoras__.
+
+\framebreak
+
+- No caso da __AAS com reposição__, a unidade \structure{$i$} pode aparecer \structure{$0, 1, 2, \ldots, n$} vezes na amostra.
+- Seja \structure{$t_i$} o número de vezes que a unidade \structure{$i$} aparece na amostra. Então, temos
+
+$$
+\overline{y} = \frac{1}{n}\sum_{i=1}^N{t_iY_i}.
+$$
+
+\framebreak
+
+- Dessa forma, \structure{$t_i$} se distribui como uma \structure{variável binomial}, em \structure{$n$ tentativas}, com \structure{$P = 1/N$}. Portanto,
+
+$$
+\E(t_i) = nP = \frac{n}{N},\quad \Var(t_i) = nP(1-P)= n\left(\frac{1}{N}\right)\left(1 - \frac{1}{N}\right).
+$$
+
+- Em conjunto, as variáveis \structure{$t_i$} apresentam uma \structure{distribuição multinomial}. Por isso,
+
+$$
+\Cov(t_i, t_j) = -\frac{n}{N^2}.
+$$
+
+\framebreak
+
+- Combinando as expressões anteriores, temos, para a \structure{amostragem aleatória simples com reposição}:
+
+\begin{align*}
+\textcolor{red}{\Var(\overline{y})} &= \frac{1}{n^2}\left[\sum_{i=1}^N{Y_i^2}\frac{n(N-1)}{N^2} - 2\sum_{i<j}{Y_iY_j} \frac{n}{N^2}\right]\\
+&= \frac{1}{nN}\sum_{i=1}^N{(Y_i- \overline{Y})^2} = \frac{\sigma^2}{n} = \textcolor{red}{\frac{N-1}{N}\frac{S^2}{n}}.
+\end{align*}
+
+\framebreak
+
+- A variância para \structure{$\widehat{Y}_T = N\overline{y}$} é dada por \structure{$\Var(\widehat{Y}_T) = N(N-1)\frac{S^2}{n}$}.
+- Erros padrões são obtidos tomando-se a raiz quadrada destas expressões para as variâncias.
+- Estimativas para os erros padrões podem ser obtidas utilizando a variância amostral, $s^2$, para estimar $S^2$.
+- Supondo normalidade para as estimativas $\overline{y}$ e $\widehat{Y}_T$, intervalos de confiança podem ser construídos de forma semelhante que os intervalos construídos para AAS sem reposição.
+
+# Comparação entre planos amostrais
+
+## Comparação entre AASc e AASs {.allowframebreaks}
+
+- Quando há dois planos amostrais, é importante saber qual deles é "melhor".
+    + Surge a necessidade de fixar o critério pelo qual o plano será julgado.
+- Como já foi discutido anteriormente, o critério mais adotado em amostragem é o \structure{Erro Quadrático Médio}.
+    + Lembre que quando o estimador é não enviesado, note que $EQM(\widehat{\theta}) = \Var(\widehat{\theta})$.
+- Devido a isso, existe um conceito bastante importante, que é o chamado \structure{efeito do planejamento (EPA, do inglês \emph{design effect}, ``deff'')}, que compara a variância de um plano qualquer com relação a um plano que é considerado padrão.
+
+\framebreak
+
+- A estatística $\overline{y}$ é, em ambos os planos, um estimador não enviesado de $\overline{Y}$. Assim,
+
+$$
+EPA = \frac{\Var_{AASs}(\overline{y})}{\Var_{AASc}(\overline{y})} = \frac{[(N-n)/N]S^2/n}{[(N-1)/N]S^2/n} = \frac{N-n}{N-1}.
+$$
+
+- Quando $EPA > 1$, tem-se que \structure{o plano do numerador é menos eficiente que o padrão}.
+- Quando $EPA < 1$, tem-se que \structure{o plano do numerador é mais eficiente que o padrão}.
+
+\framebreak
+
+- Da expressão acima vê-se que 
+
+$$
+\frac{N-n}{N-1}\leq 1,
+$$
+ou seja, o plano AASs é sempre "melhor" do que o plano AASc.
+
+- Só para amostras de tamanho 1 é que os dois se equivalem.
+- Note que este resultado confirma a intuição popular de que amostras sem reposição são "melhores" do que aquelas com elementos repetidos.
+
+## Para casa
+
+- Resolver os exercícios 3.1, 3.2, 3.4a, 3.4b, 3.5, 3.6, 3.7 do Capítulo 3 do livro __Elementos de Amostagem__\footnote{Bolfarine, H. e Bussab, W. O. {\bf Elementos de Amostagem}, Blucher, 2005, p. 83-85.} (disponível no Sabi+).
+
+## Próxima aula
+
+- Estimativa de um índice.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-barras05.jpg'))
+
+```
+
