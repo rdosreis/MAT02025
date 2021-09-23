@@ -1,0 +1,222 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: estimativa de um índice"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# Estimativa de um índice
+
+## Relembrando
+
+No sentido mais simples do termo, podemos dizer que um __número índice__ é um quociente que expressa uma dada quantidade em comparação a uma __quantidade base__. Em outras palavras, são __valores relativos__.
+
+## Estimativa de um índice {.allowframebreaks}
+
+- Frequentemente, a quantidade que deve ser estimada a partir de uma amostra aleatória simples é a \structure{razão de duas variáveis}, ambas as quais variam de unidade para unidade.
+- Em um levantamento por amostragem domiciliar, os exemplos são:
+    + o __número de aparelhos de celular por residente__;
+    + a __despesa com aplicativos de transporte por residente adulto__;
+    + o __número médio de horas por semana gastas assistindo programas no serviço de _streaming_ por criança de 10 a 15 anos__.
+
+\framebreak
+
+- A fim de estimar a primeira dessas quantidades, registraríamos para o \structure{$i$}-ésimo domicílio \structure{$(i = 1, 2, \ldots, n)$} o número de residentes \structure{$X_i$} que ali vivem e o número total de aparelhos de celular \structure{$Y_i$} que eles possuem.
+- O \structure{parâmetro da população} a ser estimado é a \structure{razão (ou índice)}
+
+$$
+R = \frac{\mbox{número total de aparelhos de celular}}{\mbox{número total de residentes}} = \frac{\sum_{i=1}^N{Y_i}}{\sum_{i=1}^N{X_i}}.
+$$
+
+\framebreak
+
+- A estimativa amostral correspondente é
+
+$$
+\widehat{R} = \frac{\sum_{i=1}^n{Y_i}}{\sum_{i=1}^n{X_i}} = \frac{\overline{y}}{\overline{x}}.
+$$
+
+\framebreak
+
+- Exemplos dessa natureza ocorrem, frequentemente, quando a unidade de amostragem __(no caso o domicílio)__ compreende um grupo ou um conjunto de elementos __(residentes)__ e nosso interesse está no valor médio da população \structure{por elemento}.
+- Os índices também aparecem em muitas outras aplicações, como, por exemplo
+    + o __índice de empréstimos para construções imobiliárias no total de empréstimos de um banco__;
+    + ou __índice de acres plantados com trigo, no total de acres cultivados de uma fazenda__;
+    + ou __índice de casos de diabetes não diagnosticado, no total de casos de diabetes__.
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'dm-01.png'))
+
+```
+
+\framebreak
+
+- A \structure{distribuição amostral} de \structure{$\widehat{R}$} é mais complicada que a de \structure{$\overline{y}$}, porque tanto o numerador \structure{$\overline{y}$}, quanto o denominador, \structure{$\overline{x}$}, variam de amostra para amostra.
+- Em __pequenas amostras__, a distribuição de \structure{$\widehat{R}$} é __assimétrica__, e \structure{$\widehat{R}$} é, geralmente, uma estimativa ligeiramente __enviesada__ de \structure{$R$}.
+- Em __grandes amostras__, a distribuição de \structure{$\widehat{R}$} tende à __normalidade__ e o __viés__ torna-se __insignificante__.
+
+\framebreak
+
+- O seguinte __resultado aproximado__ servirá para a maioria dos propósitos\footnote{A distribuição de $\widehat{R}$ é estudada com mais detalhes no Capítulo 6 de Cochran (1965) e no Capítulo 5 de Bolfarine e Bussab (2005).}.
+
+::: {.block}
+
+### Teorema
+
+Se as variáveis $Y_i$ e $X_i$ são medidas em cada unidade de uma amostra aleatória simples de tamanho $n$, que se presume grande, a variância de $\widehat{R} = {\overline{y}}/{\overline{x}}$ é, aproximadamente,
+
+$$
+\Var(\widehat{R}) \stackrel{\cdot}{=} \frac{1-f}{n\overline{X}^2}\frac{\sum_{i=1}^N{(Y_i - RX_i)^2}}{N-1},
+$$
+em que \structure{$R = \overline{Y}/\overline{X}$} é o __índice dos valores médios da população__, e \structure{$f = n/N$} é a __fração de amostragem__.
+:::
+
+## Estimativa de um índice {.allowframebreaks}
+
+\textcolor{red}{{\bf Demonstração.}} Note que
+
+$$
+\widehat{R} - R = \frac{\overline{y}}{\overline{x}} - R = \frac{\overline{y} - R\overline{x}}{\overline{x}}.
+$$
+
+- Se \structure{$n$} é grande, \structure{$\overline{x}$} não deve ser muito diferente de \structure{$\overline{X}$}.
+- Para evitar ter que calcular a distribuição da razão de duas variáveis aleatórias \structure{$\overline{y} - R\overline{x}$} e \structure{$\overline{x}$}, substituímos \structure{$\overline{x}$} por \structure{$\overline{X}$} no denominador da expressão acima como uma aproximação. Isso dá
+
+$$
+\widehat{R} - R \stackrel{\cdot}{=} \frac{\overline{y} - R\overline{x}}{\overline{X}}.
+$$
+\framebreak
+
+- Agora calcule a média de todas as amostras aleatórias simples de tamanho \structure{$n$}:
+
+$$
+\E(\widehat{R} - R) \stackrel{\cdot}{=} \frac{\E(\overline{y} - R\overline{x})}{\overline{X}} = \frac{\overline{Y} - R\overline{X}}{\overline{X}},
+$$
+uma vez que $R = \overline{Y}/\overline{X}$.
+
+- Isso mostra que, para a ordem de aproximação usada aqui, \structure{$\widehat{R}$} é uma estimativa não enviesada de \structure{$R$}.
+
+\framebreak
+
+- Da expressão aproximada, também obtemos
+
+$$
+\Var(\widehat{R}) = \E(\widehat{R} - R)^2 \stackrel{\cdot}{=} \frac{1}{\overline{X}^2}\E(\overline{y} - R\overline{x})^2.
+$$
+
+- A quantidade \structure{$\overline{y} - R\overline{x}$} é a média amostral da variável \structure{$D_i = Y_i - RX_i$}, cuja média populacional, \structure{$\overline{D} = \overline{Y} - R\overline{X}$}, é igual a \structure{$0$}.
+
+- Portanto, podemos encontrar \structure{$\Var(\widehat{R})$} aplicando o teorema para a variância da média de uma amostra aleatória simples à variável \structure{$D_i$} e dividindo por \structure{$\overline{X}^2$}.
+
+\framebreak
+
+- Isso dá
+
+\begin{align*}
+\Var(\widehat{R}) &\stackrel{\cdot}{=}\frac{1}{\overline{X}^2}\E(\overline{y} - R\overline{x})^2 = \frac{1}{\overline{X}^2}\frac{S_D^2}{n}(1 - f)\\
+&= \frac{1 - f}{n\overline{X}^2} \frac{\sum_{i=1}^N{(D_i - \overline{D})^2}}{N - 1} = \frac{1 - f}{n\overline{X}^2} \frac{\sum_{i=1}^N{(Y_i - RX_i)^2}}{N - 1},
+\end{align*}
+o que \textcolor{red}{completa a demonstração}.
+
+\framebreak
+
+- Como estimativa amostral de 
+
+$$
+\frac{\sum_{i=1}^N{(Y_i - RX_i)^2}}{N - 1}
+$$
+é comum tomarmos
+
+$$
+\frac{\sum_{i=1}^n{(Y_i - \widehat{R}X_i)^2}}{n - 1}.
+$$
+
+- Pode-se demonstrar que essa estimativa tem um \structure{viés de ordem $1/n$}.\footnote{Ou seja, conforme $n\rightarrow\infty$ o viés decresce a zero mais rapidamente que a sequência $1/n$ ($\mbox{Viés}_n = o(n^{-1})$).}
+
+## Estimativa de um índice {.allowframebreaks}
+
+- Para o \structure{erro padrão estimado} de \structure{$\widehat{R}$}, temos
+
+$$
+s_{\widehat{R}} = \frac{\sqrt{1 - f}}{\sqrt{n}\overline{X}}\sqrt{\frac{\sum_{i=1}^n{(Y_i - \widehat{R}X_i)^2}}{n - 1}}.
+$$
+
+- Se \structure{$\overline{X}$} não é conhecido, a estimativa amostral \structure{$\overline{x}$} o substitui no denominador da fórmula.
+
+- Uma fórmula prática para calcular \structure{$s_{\widehat{R}}$} é dada por
+
+$$
+s_{\widehat{R}} = \frac{\sqrt{1 - f}}{\sqrt{n}\overline{X}}\sqrt{\frac{\sum_{i=1}^n{Y_i^2} - 2\widehat{R}\sum_{i=1}^n{Y_iX_i} + \widehat{R}^2\sum_{i=1}^n{X_i^2}}{n - 1}}.
+$$
+
+# Para casa {.allowframebreaks}
+
+- A tabela a seguir mostra o número de pessoas ($X_1$), a renda familiar semanal ($X_2$) e os gastos semanais com alimentação ($Y$) em uma amostra aleatória simples de 33 famílias de baixa renda.
+- Como a amostra é pequena, os dados se destinam apenas a ilustrar os cálculos.
+\framebreak
+
+\scriptsize
+
+\begin{table}[]
+\caption{Renda semanal e custo dos alimentos de 33 famílias}
+\begin{tabular}{cccccccc}
+\hline
+\specialcell{Número\\ da família} & \specialcell{Tamanho\\ ($x_1$)} & \specialcell{Renda\\ ($x_2$)} & \specialcell{Custo dos\\ alimentos ($y$)} & \specialcell{Número\\ da família} & \specialcell{Tamanho\\ ($x_1$)} & \specialcell{Renda\\ ($x_2$)} & \specialcell{Custo dos\\ alimentos ($y$)} \\ \hline
+1                                                               & 2                                                         & 62                                                      & 14,3                                                                  & 18                                                            & 4                                                         & 83                                                      & 36,0                                                                  \\
+2                                                               & 3                                                         & 62                                                      & 20,8                                                                  & 19                                                            & 2                                                         & 85                                                      & 20,6                                                                  \\
+3                                                               & 3                                                         & 87                                                      & 22,7                                                                  & 20                                                            & 4                                                         & 73                                                      & 27,7                                                                  \\
+4                                                               & 5                                                         & 65                                                      & 30,5                                                                  & 21                                                            & 2                                                         & 66                                                      & 25,9                                                                  \\
+5                                                               & 4                                                         & 58                                                      & 41,2                                                                  & 22                                                            & 5                                                         & 58                                                      & 23,3                                                                  \\
+6                                                               & 7                                                         & 92                                                      & 28,2                                                                  & 23                                                            & 3                                                         & 77                                                      & 39,8                                                                  \\
+7                                                               & 2                                                         & 88                                                      & 24,2                                                                  & 24                                                            & 4                                                         & 69                                                      & 16,8                                                                  \\
+8                                                               & 4                                                         & 79                                                      & 30,0                                                                  & 25                                                            & 7                                                         & 65                                                      & 37,8                                                                  \\
+9                                                               & 2                                                         & 83                                                      & 24,2                                                                  & 26                                                            & 3                                                         & 77                                                      & 34,8                                                                  \\
+10                                                              & 5                                                         & 62                                                      & 44,4                                                                  & 27                                                            & 3                                                         & 69                                                      & 28,7                                                                  \\
+11                                                              & 3                                                         & 63                                                      & 13,4                                                                  & 28                                                            & 6                                                         & 95                                                      & 63,0                                                                  \\
+12                                                              & 6                                                         & 62                                                      & 19,8                                                                  & 29                                                            & 2                                                         & 77                                                      & 19,5                                                                  \\
+13                                                              & 4                                                         & 60                                                      & 29,4                                                                  & 30                                                            & 2                                                         & 69                                                      & 21,6                                                                  \\
+14                                                              & 4                                                         & 75                                                      & 27,1                                                                  & 31                                                            & 6                                                         & 69                                                      & 18,2                                                                  \\
+15                                                              & 2                                                         & 90                                                      & 22,2                                                                  & 32                                                            & 4                                                         & 67                                                      & 20,1                                                                  \\
+16                                                              & 5                                                         & 15                                                      & 37,7                                                                  & 33                                                            & 2                                                         & 63                                                      & 20,7                                                                  \\
+17                                                              & 3                                                         & 69                                                      & 22,6                                                                  &                                                               &                                                           &                                                         &                                                                       \\ \hline
+\end{tabular}
+\end{table}
+
+\framebreak
+
+\normalsize
+
+1. Estime a partir da amostra 
+    a. o gasto semanal médio com comida por família;
+    b. o gasto semanal médio com comida por pessoa;
+    c. a porcentagem da renda que é gasta com comida.
+2. Calcule os erros padrões dessas estimativas (pode ignorar as \structure{cpf}).
+3. Compartilhe os seus resultados no Fórum Geral do Moodle.
+
+## Próxima aula
+
+- Estimativa da média e do total em subpopulações.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-barras04.jpg'))
+
+```
+
