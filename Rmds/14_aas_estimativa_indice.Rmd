@@ -101,7 +101,7 @@ $$
 - Agora calcule a média de todas as amostras aleatórias simples de tamanho \structure{$n$}:
 
 $$
-\E(\widehat{R} - R) \stackrel{\cdot}{=} \frac{\E(\overline{y} - R\overline{x})}{\overline{X}} = \frac{\overline{Y} - R\overline{X}}{\overline{X}},
+\E(\widehat{R} - R) \stackrel{\cdot}{=} \frac{\E(\overline{y} - R\overline{x})}{\overline{X}} = \frac{\overline{Y} - R\overline{X}}{\overline{X}} = 0,
 $$
 uma vez que $R = \overline{Y}/\overline{X}$.
 
