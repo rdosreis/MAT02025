@@ -1,0 +1,265 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "A estimativa do tamanho da amostra: formulações"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# A fórmula para $n$ na amostragem para proporções
+
+## $n$ na amostragem para proporções {.allowframebreaks}
+
+- As unidades são classificadas em duas classes, \structure{$C$} e \structure{$C'$}.
+- Admitiu-se uma certa \alert{margem de erro $d$} na proporção estimada \structure{$p$} de unidades na classe \structure{$C$}, e há um pequeno risco \alert{$\alpha$} de que estejamos dispostos a incorrer de que o erro real seja maior do que \structure{$d$}; ou seja, nós queremos
+
+$$
+\Pr(|p - P|\geq d) = \alpha.
+$$
+
+\framebreak
+
+- A amostragem aleatória simples é assumida e $p$ é considerado como normalmente distribuído. Da expressão (2) da aula 17,
+
+$$
+\sigma_p = \sqrt{\frac{N - n}{N - 1}}\sqrt{\frac{PQ}{n}}.
+$$
+
+- Portanto, a fórmula que conecta \alert{$n$} com o grau de precisão desejado é
+
+$$
+d = z_{\alpha}\sqrt{\frac{N - n}{N - 1}}\sqrt{\frac{PQ}{n}},
+$$
+em que $z_{\alpha}$ é a abscissa da curva normal que define uma área $\alpha$ nas caudas.
+
+\framebreak
+
+- Resolvendo para \alert{$n$}, encontramos
+
+\begin{equation}
+\label{n.prop}
+n = \frac{\frac{z^2_{\alpha}PQ}{d^2}}{1 + \frac{1}{N}\left(\frac{z^2_{\alpha}PQ}{d^2} - 1\right)}.
+\end{equation}
+
+- Para uso prático, uma \structure{estimativa antecipada} $p$ de $P$ é substituída nesta fórmula.
+- Se $N$ for grande, uma primeira aproximação é
+
+\begin{equation}
+\label{n0.prop}
+n_0 = \frac{z^2_{\alpha}pq}{d^2} = \frac{pq}{V},
+\end{equation}
+em que $V = (d^2/z^2_{\alpha}) = pq/n_0 =$ variância desejada da prporção amostral.
+
+\framebreak
+
+- Na prática, primeiro calculamos \alert{$n_0$}.
+    - Se \alert{$n_0/N$} for desprezível, \alert{$n_0$} é uma aproximação satisfatória para \alert{$n$} de \eqref{n.prop}.
+    - Se não, é aparente na comparação de \eqref{n.prop} e \eqref{n0.prop} que $n$ é obtido como
+
+\begin{equation}
+\label{n.prop.final}
+n = \frac{n_0}{1 + (n_0 - 1)/N} \approx  \frac{n_0}{1 + (n_0/N)}.
+\end{equation}
+
+## Exemplo {.allowframebreaks}
+
+- No __exemplo hipotético de grupos sanguíneos__, tivemos
+
+$$
+d = 0,05,\quad p = 0,5,\quad \alpha = 0,05,\quad z_{\alpha} \approx 2.
+$$
+
+Consequentemente,
+
+$$
+n_0 = \frac{(4)(0,5)(0,5)}{0,0025} = 400.
+$$
+
+\framebreak
+
+- Suponhamos que haja apenas 3.200 pessoas na ilha. A cpf é necessária e encontramos
+
+$$
+n = \frac{n_0}{1 + (n_0 - 1)/N} = \frac{400}{1 + 399/3200} = 356.
+$$
+
+
+\framebreak
+
+### Pacote PracTools
+
+- No `R`, o pacote `PracTools` possui funções para a estimativa do tamanho de amostra sob AAS.
+    + A função `nProp` calcula o tamanho de amostra para a proporção conforme as expressões \eqref{n0.prop} e \eqref{n.prop.final}.
+    
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages("PracTools")
+library(PracTools)
+
+nProp(V0 = (0.05/2)^2, N = 3200, pU = 0.5)
+
+# diferença ao usar z 'arrendondado'
+nProp(V0 = (0.05/1.96)^2, N = 3200, pU = 0.5)
+
+```
+
+## Comentários {.allowframebreaks}
+
+- A fórmula para $n_0$ também é válida se $d$, $p$ e $q$ forem expressos como __porcentagens__ em vez de proporções.
+- Como o produto $pq$ aumenta à medida que $p$ se move em direção a $1/2$, ou 50%, uma estimativa conservadora de $n$ é obtida escolhendo para $p$ o valor mais próximo de $1/2$ no intervalo em que se pensa que $p$ provavelmente estará.
+- Se $p$ parece estar entre 5 e 9%, por exemplo, assumimos 9% para a estimativa de $n$.
+
+\framebreak
+
+- Às vezes, particularmente ao estimar o número total $NP$ de unidades na classe $C$, desejamos controlar o __erro relativo__ $r$ em vez do erro absoluto em $Np$.
+    + Por exemplo, podemos desejar estimar $NP$ com um erro não superior a 10%. Ou seja, nós queremos
+
+$$
+\Pr\left(\frac{|Np - NP|}{NP}\geq r \right) = \Pr(|p - P|\geq rP) = \alpha.
+$$
+
+- Para esta especificação, substituímos $rP$ ou $rp$ para $d$ nas fórmulas \eqref{n.prop} e \eqref{n0.prop}. De \eqref{n0.prop} obtemos
+
+$$
+n_0 = \frac{z^2_{\alpha}pq}{r^2p^2} = \frac{z^2_{\alpha}}{r^2}\frac{q}{p}.
+$$
+
+- A fórmula \eqref{n.prop.final} permanece inalterada.
+
+# A fórmula para $n$ com dados contínuos
+
+## $n$ com dados contínuos {.allowframebreaks}
+
+- Mais comumente, desejamos controlar o __erro relativo__ $r$ na estimativa total ou média da população.
+- Com uma amostra aleatória simples tendo média $\overline{y}$, queremos
+
+$$
+\Pr\left(\left|\frac{\overline{y} - \overline{Y}}{\overline{Y}}\right|\geq r \right) = \Pr\left(\left|\frac{N\overline{y} - N\overline{Y}}{N\overline{Y}}\right|\geq r \right) = \Pr(|\overline{y} - \overline{Y}|\geq r\overline{Y}) = \alpha,
+$$
+em que $\alpha$ é uma pequena probabilidade.
+
+- Assumimos que $\overline{y}$ é normalmente distribuído: do corolário 1 da aula 10, seu erro padrão é
+
+$$
+\sigma_{\overline{y}} = \sqrt{\frac{N - n}{N}}\frac{S}{\sqrt{n}}.
+$$
+
+\framebreak
+
+Portanto,
+
+$$
+r\overline{Y} = z_{\alpha}\sigma_{\overline{y}} = z_{\alpha}\sqrt{\frac{N - n}{N}}\frac{S}{\sqrt{n}}
+$$
+
+- Resolvendo para \alert{$n$}, encontramos
+
+$$
+n = \left(\frac{z_{\alpha}S}{r\overline{Y}}\right)^2\Big/\left[1 + \frac{1}{N}\left(\frac{z_{\alpha}S}{r\overline{Y}}\right)^2\right].
+$$
+
+- Observe que a característica da população da qual $n$ depende é seu coeficiente de variação $S/\overline{Y}$.
+- Isso geralmente é mais estável e fácil de "estimar" antecipadamente que a própria $S$.
+
+\framebreak
+
+- Como uma primeira aproximação, tomamos
+
+\begin{equation}
+\label{n0.media}
+n_0 = \left(\frac{z_{\alpha}S}{r\overline{Y}}\right)^2 = \frac{1}{C}\left(\frac{S}{\overline{Y}}\right)^2
+\end{equation}
+substituindo uma estimativa antecipada de $(S/\overline{Y})$. A quantidade $C$ é o $(cv)^2$ desejado da estimativa amostral.
+
+\framebreak
+
+- Se $n_0/N$ é não desprezível, calculamos $n$ como em \eqref{n.prop.final}
+
+$$
+n = \frac{n_0}{1 + (n_0/N)}.
+$$
+
+- Se em vez do __erro relativo__ $r$ quisermos controlar o __erro absoluto__ $d$ em $\overline{y}$, tomamos $n_0 = z^2_{\alpha}S^2/d^2 = S^2/V$, em que $V$ é a variância desejada de $\overline{y}$.
+
+## Exemplo {.allowframebreaks}
+
+- Em viveiros que produzem árvores jovens para venda, é aconselhável estimar, no final do inverno ou início da primavera, quantas árvores jovens saudáveis podem estar disponíveis, uma vez que isso determina a política de solicitação e aceitação de pedidos.
+- Um estudo de métodos de amostragem para a estimativa do número total de mudas foi realizado.
+- Os dados a seguir foram obtidos de uma camada de mudas de bordo prateado com 1 pé de largura e 430 pés de comprimento.
+- A unidade de amostragem foi de 1 pé do comprimento do leito, de modo que $N = 430$.
+- Pela enumeração completa do leito se descobriu que $\overline{Y} = 19$, $S^2 = 85,6$, sendo esses os valores reais da população.
+
+\framebreak
+
+- Com a amostragem aleatória simples, quantas unidades devem ser tomadas para estimar $\overline{Y}$ em 10%, além de uma chance de 1 em 20? De \eqref{n0.media} obtemos
+
+$$
+n_0 = \frac{z^2_{\alpha}S^2}{r^2\overline{Y}^2} = \frac{(4)(85,6)}{(1,9)^2} = 95 
+$$
+
+- Uma vez que $n_0/N$ não é desprezível, tomamos
+
+$$
+n = \frac{95}{1 + \frac{95}{430}} = 78.
+$$
+
+- Quase 20% do leito deve ser contado para se atingir a precisão desejada.
+
+\framebreak
+
+### Pacote PracTools
+
++ A função `nCont` calcula o tamanho de amostra com dados contínuos visto anteriormente.
+    
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages("PracTools")
+library(PracTools)
+
+nCont(S2 = 85.6, ybarU = 19, N = 430, CV0 = (0.10/2))
+
+# diferença ao usar z 'arrendondado'
+nCont(S2 = 85.6, ybarU = 19, N = 430, CV0 = (0.10/1.96))
+
+```
+
+## Comentários
+
+- As fórmulas para $n$ fornecidas aqui se aplicam apenas à amostragem aleatória simples em que a média da amostra é usada como a estimativa de $\overline{Y}$.
+- As fórmulas apropriadas para outros métodos de amostragem e estimativa são apresentadas com a discussão dessas técnicas __(Amostragem 2)__.
+
+## Para casa
+
+- Revisar os tópicos discutidos nesta aula.
+- Demonstrar \eqref{n.prop}.
+- Consultar e estudar a página:
+
+\footnotesize
+
+https://sites.google.com/hcpa.edu.br/bioestatistica/softwares-e-aplicativos/pss-health?authuser=0
+
+\normalsize
+
+## Próxima aula
+
+- Tamanho de amostra considerando a abordagem do poder (de um teste de hipóteses).
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-final06.jpg'))
+
+```
+

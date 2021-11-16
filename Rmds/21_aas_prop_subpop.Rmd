@@ -1,0 +1,216 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: proporções das subpopulações"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# Estimação de proporções dentro de setores {.allowframebreaks}
+
+- Em algumas situações práticas, o parâmetro de interesse é a proporção de unidades no __domínio__ (setor, subgrupo ou subpopulação) \structure{$j$} que possuem um atributo ou característica \structure{$C$}.
+    - Por exemplo, quando se deseja estimar a proporção de mulheres de 15 anos ou mais que já tiveram pelo menos um filho;
+    - Ou quando se procura estimar a proporção de homens de 18 anos ou mais que prestaram o serviço militar.
+- Em casos como os acima citados, o problema é estimar proporções nos domínios da população: mulheres de 15 anos ou mais e homens de 18 anos ou mais.
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'subpop-exemplo-01.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'subpop-exemplo-02.png'))
+
+```
+
+\framebreak
+
+- Nesses casos, a variável de pesquisa \structure{$Y$} seria dada por:
+
+$$
+Y_i = I(i \in C) = \left\{\begin{array}{ll} 1, & \mbox{se}\ i\ \mbox{ possui o atributo C,}\\
+0, & \mbox{caso contrário.}\end{array}\right.
+$$
+
+- Na população como um todo, a proporção de unidades com atributo \structure{$C$} é definida como $P = A/N$ e a estimação desta proporção foi discutida nas aulas 17, 18 e 19.
+
+\framebreak
+
+- Considere a notação a seguir.
+- O número de unidades no domínio \structure{$j$} que também possuem o atributo \structure{$C$} é definido como: 
+
+$$
+A_{j} = \sum_{k=1}^{n_j}{Y_{ik}}.
+$$
+
+- E a proporção de unidades no domínio \structure{$j$} que também possuem o atributo \structure{$C$} é definida como:
+
+$$
+P_{j} = \frac{A_j}{N_j}.
+$$
+
+\framebreak
+
+- Sob amostragem aleatória simples, o estimador para \structure{$P_{j}$} pode ser obtido a partir do estimador: 
+
+$$
+\widehat{P}_{j} = p_j = \frac{1}{n_j}\sum_{k=1}^{n_j}{Y_{ik}} = \frac{a_j}{n_j}
+$$
+em que \structure{$a_{j}$} denota o número de unidades na amostra no domínio \structure{$j$} que também possuem o atributo \structure{$C$}. 
+
+\framebreak
+
+<!-- - Considerando fixado o tamanho da amostra no domínio \structure{$j$}, a variância condicional do estimador $p_{j}$ é dada por: -->
+
+<!-- $$ -->
+<!-- V_{AAS}(\widehat p_{cA}\;|\;n_c \text{ fixo)} = \left( \frac 1 {n_c} - \frac{1}{N_c} \right) \frac {N_c} {N_c -1} p_{cA} (1- p_{cA}) (\#eq:eqdom27)  -->
+<!-- $$ -->
+
+<!-- Um estimador da variância de $\widehat p_{cA}$ sob AAS resulta em: -->
+
+<!-- $$ -->
+<!-- \widehat V_{AAS} (\widehat p_{cA}\;|\;n_c \text{ fixo)}) = \left( \frac 1 {n_c} - \frac{1}{N_c} \right) {\widehat p_{cA} (1 - \widehat p_{cA}) } \,\, (\#eq:eqdom28)  -->
+<!-- $$ -->
+<!-- Nas Expressões \@ref(eq:eqdom27) e \@ref(eq:eqdom28), $n_c$, $N_c$ e $p_{cA}$ são, respectivamente, o número de unidades da amostra que pertencem ao domínio, o número total de unidades no domínio e a proporção de unidades no domìnio que possuem o atributo \structure{$C$}. -->
+
+- Caso \structure{$N_j$} não seja conhecido, a fração de amostragem no domínio, \structure{$n_j/N_j$}, pode ser aproximada por \structure{$n/N$} na expressão anterior, levando ao estimador:
+
+$$
+\widehat{\Var}(p_j) = \left( 1 - \frac{n}{N} \right) \frac {p_jq_j} {n_j - 1}.
+$$
+
+\framebreak
+
+- Para completar a inferência sobre uma proporção de unidades portadoras do atributo \structure{$C$} no domínio \structure{$j$}, admite-se a validade da aproximação normal para a distribuição de \structure{$p_j$} e agrega-se uma *correção de continuidade*.
+- Assim a expressão do intervalo de confiança para a proporção populacional \structure{$p_j$} é dada por:
+
+$$
+IC(P_j \, ; \, 1 - \alpha) = \left[ p_j \pm \left( z_{\alpha / 2} \sqrt{ \widehat{\Var}(p_j) } + \frac{1}{2n_j} \right) \right],
+$$
+em que \structure{$1/2n_j$} é a correção de continuidade.
+
+- Essa correção é, praticamente, nula quando $n_j$ cresce.
+
+# Exemplo {.allowframebreaks}
+
+- Vamos estimar, a partir de uma amostra aleatória simples sem reposição com \alert{$n = 300$}, a proporção de municípios com população menor que 10.000 habitantes para cada macro-região do Brasil.
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'regioes-estados-brasil.jpg'))
+
+```
+
+\framebreak
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Dados dos municípios (população)
+mun <- readRDS(file = here::here("dados",
+                                 "MunicBR_dat.rds"))
+
+# Criando a variável Região
+mun$Regiao <- NA
+
+mun$Regiao[mun$SiglaUF %in% c("RS", "SC", "PR")] <- "Sul"
+mun$Regiao[mun$SiglaUF %in% c("SP", "MG", "RJ", "ES")] <- "Sudeste"
+mun$Regiao[mun$SiglaUF %in% c("MS", "MT", "GO", "DF")] <- "Centro-Oeste"
+mun$Regiao[mun$SiglaUF %in% c("RO", "AC", "AM", "PA", "TO", "RR", "AP")] <- "Norte"
+mun$Regiao[mun$SiglaUF %in% c("BA", "SE", "AL", "PE", "PB", "PI", "MA", "CE", "RN")] <- "Nordeste"
+
+mun$Regiao <- factor(mun$Regiao)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Sorteio da amostra
+set.seed(2810)
+
+cod_amostra <- sample(x = mun$CodMunic,
+                      size = 300,
+                      replace = F)
+
+mun_amostra <- mun[which(mun$CodMunic %in% cod_amostra),]
+
+# Criando a variável Pop < 10 mil hab.
+mun_amostra$Pop_menor_10 <- ifelse(mun_amostra$Pop < 10000, 1, 0)
+
+# cpf
+mun_amostra$cpf <- length(mun$CodMunic)
+
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+mean(mun_amostra$Pop_menor_10)
+by(data = mun_amostra$Pop_menor_10,
+   INDICES = mun_amostra$Regiao,
+   FUN = mean)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+library(survey)
+
+mun_des <- svydesign(ids = ~1,
+                     fpc = ~cpf,
+                     data = mun_amostra)
+
+
+svyby(formula = ~Pop_menor_10,
+      by = ~Regiao,
+      design = mun_des,
+      FUN = svyciprop)
+
+```
+
+\normalsize
+
+## Para casa
+
+- Revisar os tópicos discutidos nesta aula.
+- Estime a proporção (percentual) de municípios com população menor que 20.000 habitantes, com os seus respectivos erros padrões e intervalos de confiança de 95%.
+    - A partir das estimativas pontuais, construa um mapa das regiões do Brasil para apresentar os resultados.
+    - Pense em um estimador para o __total__ de municípios com menos que 20.000 habitantes.
+- Compartilhe os seus achados no Fórum Geral do Moodle.
+
+## Próxima aula
+
+- Área 3: dimensionamento de amostra.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-final04.jpg'))
+
+```
+
