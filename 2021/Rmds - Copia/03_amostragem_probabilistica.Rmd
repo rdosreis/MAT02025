@@ -1,0 +1,256 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "Amostragem probabilística"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Teoria da amostragem
+
+## O papel da teoria da amostragem {.allowframebreaks}
+
+- O objetivo da teoria da amostragem é __aperfeiçoar processos de seleção de amostras e de avaliação__ que proporcionem, aos menores custos possíveis, estimativas suficientemente precisas para os propósitos em vista.
+- Para aplicar este princípio, devemos ser capazes de prever, para qualquer procedimento de amostragem que esteja sendo considerado, a __precisão__ e o __custo esperados__.
+
+\framebreak
+
+- No que diz respeito à precisão, não podemos predizer exatamente o quão grande um erro estará presente em uma estimativa em qualquer situação específica, __pois isso exigiria um conhecimento do verdadeiro valor para a população__.
+- Em vez disso, a precisão de um procedimento de amostragem é avaliada examinando a \structure{distribuição de frequência gerada para a estimativa}\footnote{Também chamada de {\bf distribuição amostral}, ou ainda, {\bf distribuição de aleatorização}.} se o \structure{procedimento for aplicado repetidamente}\footnote{Paradigma clássico: princípio da repetitibilidade.} à mesma população.
+- Esta é a técnica padrão pela qual a precisão é avaliada na teoria estatística.
+
+## O papel da teoria da amostragem {.allowframebreaks}
+
+- Uma simplificação adicional é introduzida: com amostras de tamanhos comuns na prática, muitas vezes há boas razões para supor que as estimativas da amostra são aproximadamente distribuídas de acordo com o modelo normal.
+
+- Por exemplo, seja $\hat{\theta}$ um estimador para um parâmetro $\theta$, então, sob certas condições, é razoável supor que $\hat{\theta} \dot\sim N\left(\textcolor{red}{\mu_{\hat{\theta}}}, \textcolor{red}{\sigma^2_{\hat{\theta}}}\right)$, ou seja, 
+
+$$
+f_{\hat{\theta}}(\hat{\theta}) = \frac{1}{\sqrt{2\pi\sigma^2_{\hat{\theta}}}}\exp\left\{\frac{1}{2\sigma^2_{\hat{\theta}}}\left(\hat{\theta} - \mu_{\hat{\theta}}\right)^2\right\}.
+$$
+
+\framebreak
+
+- Com uma estimativa normalmente distribuída, toda a forma da distribuição de frequência é conhecida se conhecermos a média e o desvio padrão (ou a variância).
+- Uma parte considerável da teoria do levantamento por amostragem está preocupada em encontrar fórmulas para essas médias e variâncias.
+
+\framebreak
+
+- Existem duas diferenças entre a teoria padrão de levantamentos por amostragem e a teoria clássica de amostragem conforme ensinada em livros sobre estatística.
+- Na __teoria clássica__, as medições que são feitas nas unidades de amostragem na população são geralmente assumidas seguir uma distribuição de frequência, por exemplo, a distribuição normal, de forma matemática conhecida, à parte de certos parâmetros populacionais, como a média e a variância cujos valores têm a ser estimado a partir dos dados da amostra\footnote{Inferência baseada no modelo.}.
+
+### Exemplo
+A altura da população segue uma distribuição normal com média $\mu$ e variância $\sigma^2$ desconhecidas.
+
+## O papel da teoria da amostragem {.allowframebreaks}
+
+- Na teoria e levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
+- Em particular, sua forma matemática não é considerada conhecida, de modo que a abordagem pode ser descrita como livre de modelo ou livre de distribuição\footnote{Inferência baseada no delineamento.}.
+
+## O papel da teoria da amostragem {.allowframebreaks}
+
+- Uma segunda diferença é que __as populações__ no trabalho de levantamento __contêm um número finito de unidades__.
+- Os resultados são um pouco mais complicados quando a amostragem é de uma população finita em vez de infinita.
+- Para fins práticos, essas diferenças nos resultados para populações finitas e infinitas podem frequentemente ser ignoradas.
+- Casos em que não seja assim serão apontados.
+
+# Amostragem probabilística
+
+## Amostragem probabilística {.allowframebreaks}
+
+- Dentre os vários processos existentes para a obtenção de amostras, a amostragem probabilística caracteriza-se por garantir, _a priori_, que todo elemento pertencente à população de estudo possua probabilidade, __conhecida e diferente de zero__, de pertencer à amostra sorteada.
+- A identificação, direta ou indireta, dos elementos e o sorteio deles fundamentam as propriedades matemáticas desse tipo de processo.
+
+## Amostragem probabilística: propriedades {.allowframebreaks}
+
+1. Podemos definir o conjunto de amostras distintas, $S_1, S_2, \ldots, S_v$, que o procedimento é capaz de selecionar se aplicado a uma população específica.
+    - Isso significa que podemos dizer exatamente quais unidades de amostragem pertencem a $S_1$, a $S_2$, e assim por diante.
+    - Por exemplo, suponha que a população contenha seis unidades, numeradas de 1 a 6. Um procedimento comum para escolher uma amostra de tamanho 2 fornece três candidatos possíveis: $S_1 = (1, 4); S_2 = (2, 5); S_3 = (3, 6)$. Observe que nem todas as amostras possíveis de tamanho 2 precisam ser incluídas.
+
+\framebreak
+
+2. A cada amostra possível, $S_j$, é atribuído uma probabilidade conhecida de seleção, $\pi_j$.
+3. Selecionamos uma das $S_j$ por um processo aleatório em que cada $S_j$ recebe sua adequada probabilidade $\pi_j$ de ser selecionada.
+    - No exemplo, podemos atribuir __probabilidades iguais__ às três amostras. Em seguida, o sorteio em si pode ser feito escolhendo um __número aleatório__\footnote{Veja o material suplementar sobre números aleatórios no Moodle.} entre 1 e 3. Se este número for $\ell$, $S_{\ell}$ é a amostra retirada.
+
+## Amostragem probabilística: propriedades {.allowframebreaks}
+
+4. O método para calcular a estimativa da amostra deve ser conhecido e deve levar a uma estimativa única para qualquer amostra específica.
+    - Podemos declarar, por exemplo, que a estimativa deve ser a média das medidas nas unidades individuais da amostra.
+
+\framebreak
+
+- Para qualquer procedimento de amostragem que satisfaça essas propriedades, podemos calcular a distribuição de frequência das estimativas que ele gera, __se aplicado repetidamente à mesma população__.
+- Sabemos com que frequência qualquer amostra particular $S_j$ será selecionada, e sabemos como calcular a estimativa a partir dos dados em $S_j$.
+- Portanto, é evidente que uma teoria de amostragem pode ser desenvolvida para qualquer procedimento desse tipo, embora os detalhes do desenvolvimento possam ser complexos.
+- O termo \structure{amostragem probabilística} se refere a um método desse tipo.
+
+\framebreak
+
+- Na prática, raramente extraímos uma amostra probabilística escrevendo $S_j$ e $\pi_j$ conforme descrito acima.
+- Isso é insuportavelmente trabalhoso com uma grande população, onde um procedimento de amostragem pode produzir bilhões de amostras possíveis.
+- O sorteio é mais comumente feito especificando-se as __probabilidades de inclusão para as unidades individuais__, e sorteando as unidades, uma por uma ou em grupos, até que o tamanho e tipo de amostra desejados sejam construídos.
+- Para os propósitos de uma teoria, é suficiente saber que podemos escrever o $S_j$ e $\pi_j$ se quiséssemos e tivéssemos tempo ilimitado.
+
+# Exercício
+
+## Exercício {.allowframebreaks}
+
+Considere, a título de ilustração, uma população composta dos elementos $(A, B, C, D, E, F)$ \structure{(Ana, Bruno, Carlos, Dorcina, Emília, Fernando)}, nos quais se observou a característica $X$ \structure{(idade)}. Então, $N = 6$ e $X$ é uma variável discreta (idade em anos). Logo, $i = 1, 2, 3, 4, 5, 6$. Os valores podem ser vistos na tabela a seguir
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+
+df <- data.frame(elementos = LETTERS[1:6], ind = 1:6, idade = c(2,4,6,8,10,12))
+
+knitr::kable(x = df,
+             format = "markdown",
+             col.names = c("Elementos", "$i$", "$X_i$"),
+             align = "ccc")
+
+```
+
+\framebreak
+
+Utilizando um sorteio __com reposição__ de uma amostra de __dois elementos__ dessa população, responda:
+
+1. Liste as possíveis amostras. Qual o nome é dado a esta lista?
+2. Qual a probabilidade de cada amostra ser selecionada? É preciso realizar alguma suposição para atribuição destas probabilidades?
+3. Calcule a média amostral de $X$ $(\bar{x}_j = \frac{1}{2}\sum_{i\in S_j}X_i)$ para cada amostra.
+4. Faça o gráfico da distribuição de frequências da média amostral.
+
+\framebreak
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+
+df2 <- data.frame(numero = c(1:5, "$\\vdots$"),
+                  amostra = c(rep("",6)),
+                  p = c(rep("",6)),
+                  x = c(rep("",6)),
+                  xbarra = c(rep("",6)))
+
+knitr::kable(x = df2,
+             format = "markdown",
+             col.names = c("$S_j$",
+                           "Amostras",
+                           "$\\pi_j$",
+                           "$(x_1, x_2)$",
+                           "$\\bar{x}_j$"),
+             align = "ccccc")
+
+```
+
+<!-- \framebreak -->
+
+<!-- \footnotesize -->
+
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
+
+<!-- x <- expand.grid(rep(list(LETTERS[1:6]), 2)) -->
+
+<!-- idade <- c(2,4,6,8,10,12) -->
+<!-- idade.pares <- expand.grid(rep(list(idade), 2)) -->
+<!-- idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean) -->
+
+<!-- df3 <- data.frame(numero = 1:36, -->
+<!--                   amostra = paste("(", x$Var1, ", ", x$Var2, ")", sep = ""), -->
+<!--                   p = rep(as.character(MASS::fractions(1/36)), 36), -->
+<!--                   xs = paste("(", idade.pares$Var1, ", ", idade.pares$Var2, ")", sep = ""), -->
+<!--                   xbarra = idade.media) -->
+
+<!-- knitr::kable(x = df3, -->
+<!--              format = "markdown", -->
+<!--              col.names = c("$S_j$", -->
+<!--                            "Amostras", -->
+<!--                            "$\\pi_j$", -->
+<!--                            "$(x_1, x_2)$", -->
+<!--                            "$\\bar{x}_j$"), -->
+<!--              align = "ccccc") -->
+
+<!-- ``` -->
+
+<!-- \framebreak -->
+
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
+
+<!-- barplot(table(df3$xbarra), -->
+<!--      col = "steelblue", -->
+<!--      border = "white", -->
+<!--      ylab = "Frequência", -->
+<!--      xlab = expression(bar(x))) -->
+
+<!-- ``` -->
+
+<!-- ## Exercício {.allowframebreaks} -->
+
+<!-- Extras: -->
+
+<!-- 5. Onde você já viu este esquema de sorteio? -->
+<!-- 6. Discuta de onde vem a distribuição de $\bar{x}$. -->
+
+<!-- 7. Imagine $N = 26$ e amostras de tamanho $4$. -->
+
+<!-- \framebreak -->
+
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
+
+<!-- x <- expand.grid(rep(list(LETTERS), 4)) -->
+
+<!-- idade <- 1:26 * 2 -->
+<!-- idade.pares <- expand.grid(rep(list(idade), 4)) -->
+<!-- idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean) -->
+
+<!-- hist(idade.media, -->
+<!--      prob = T, -->
+<!--      main = "", -->
+<!--      col = "steelblue", -->
+<!--      border = "white", -->
+<!--      ylab = "Densidade", -->
+<!--      xlab = expression(bar(x))) -->
+
+<!-- curve(expr = dnorm(x, mean = mean(idade.media), sd = sd(idade.media)), -->
+<!--       lty = 2, lwd = 2, -->
+<!--       col = "red", -->
+<!--       add = T) -->
+
+<!-- ``` -->
+
+# Amostragem não-probabilística
+
+## Alternativas à amostragem probabilística {.allowframebreaks}
+
+Alguns tipos comuns de amostragem não-probabilística:
+
+1. \structure{Amostragem convencional:} a amostra é restrita a uma parte da população que é facilmente acessível. Ex: uma amostra de carvão de um vagão aberto pode ser retirada da parte superior de 6 a 9 polegadas.
+2. \structure{Amostragem acidental ou a esmo:} a amostra é selecionada __ao acaso__. Ex: ao escolher 10 coelhos de uma grande gaiola em um laboratório, o investigador pode pegar aqueles em que suas mãos repousam, sem um planejamento consciente.
+3. \structure{Amostragem por cotas:} no caso de uma população pequena, mas heterogênea, o amostrador inspeciona o conjunto da população e escolhe uma pequena amostra de unidades "típicas" - isto é, unidades que estão próximas de sua impressão da média da população.
+4. \structure{Amostragem de voluntários:} a amostra é constituída essencialmente por voluntários, em estudos em que o processo de medição é desagradável ou incômodo para a pessoa que está sendo medida.
+
+## Para casa
+
+- Repita o exercício da aula, mas agora utilizando um sorteio __sem reposição__ de uma amostra de __dois elementos__ daquela população.
+
+## Próxima aula
+
+- Distribuição normal, viés e EQM.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-bolha.jpg'))
+
+```
+

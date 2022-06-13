@@ -1,0 +1,181 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "Experimentos, estudos observacionais e levantamentos"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Delineamento de pesquisa
+
+## Introdução {.allowframebreaks}
+
+- A realização de pesquisas empíricas levanta questões relativas ao \structure{plano de observação da realidade} e à \structure{escolha de métodos} para processamento e análise de dados.
+- Estudar essas questões significa buscar opções lógicas e operacionais para a \structure{composição de delineamentos} que assegurem o valor científico das informações obtidas e das conclusões alcançadas.
+
+\framebreak
+
+- Entende-se por __delineamento__ o \structure{plano estratégico de observação da realidade} que orienta o detalhamento posterior dos métodos e técnicas necessários à execução da pesquisa.
+- De acordo com a natureza lógica e estrutural desse plano, as pesquisas podem ser reconhecidas como \structure{experimentos}, \structure{quase experimentos} ou  \structure{estudos observacionais}.
+
+## Experimentos {.allowframebreaks}
+
+- \structure{Experimento} é o tipo de pesquisa em que o investigador controla a ocorrência das variáveis independentes (causa-fator-tratamento) com a finalidade de observar seus efeitos sobre as variáveis consideradas dependentes (efeito-resposta-doença).
+- A validade dos efeitos detectados é assegurada por meio da \structure{alocação aleatória} das unidades experimentais aos níveis definidos para as variáveis independentes.
+- O \structure{princípio da aleatorização} (também chamado de __princípio da randomização__) representou uma significativa contribuição da estatística às ciências empíricas, indicando caminhos para o desenvolvimento de planos de observação resistentes às diferentes fontes de erro, que podem comprometer a validade dos resultados.
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.height='80%', out.width='55%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'dor-de-cabeca-1.jpg'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.height='80%', out.width='55%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'dor-de-cabeca-2.jpg'))
+
+```
+
+### Exemplo
+
+- 12 pessoas sofrendo de dor cabeça.
+- Algumas tomam aspirina; outras não.
+- Uma hora depois, perguntamos para cada uma delas se a dor de cabeça sumiu.
+- Entre as pessoas que tomaram aspirina, a proporção de "dor de cabeça sumiu" foi 4/12; entre as que não tomaram aspirina, esta proporção foi 4/12.
+- Qual conclusão podemos obter sobre a aspirina?
+    + Aqui os grupos foram alocados de forma aleatória (cada indivíduo possuía probabilidade 1/2 de ser alocado ao grupo "tomar aspirina").
+
+## Estudos observacionais {.allowframebreaks}
+
+- Nas pesquisas em que a unidade de estudo é o ser humano (ou seres vivos), os investigadores, por questões éticas e práticas, não podem controlar a ocorrência da variável independentes ou tratamento nem proceder à alocação aleatória das unidades observadas aos grupos de comparação, optando, assim, por delineamentos considerados \structure{não experimentais (estudos observacionais)}.
+    + Estudos de coorte;
+    + Estudos do tipo caso-controle;
+    + Estudos de cortes transversais ou levantamentos.
+    
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'estudos-observacionais.jpg'))
+
+```
+
+### Exemplo
+
+- 12 pessoas sofrendo de dor cabeça.
+- Algumas tomam aspirina; outras não.
+- Uma hora depois, perguntamos para cada uma delas se a dor de cabeça sumiu.
+- Entre as pessoas que tomaram aspirina, a proporção de "dor de cabeça sumiu" foi 1/12; entre as que não tomaram aspirina, esta proporção foi 4/12.
+- Qual conclusão podemos obter sobre a aspirina?
+    + Aqui os indivíduos com dor de cabeça mais grave eram mais propensos a tomar aspirina.
+
+# Levantamentos por amostragem
+
+## Levantamentos por amostragem
+
+- \structure{``Levantamento por amostragem''} é a tradução ao português da expressão em língua inglesa _survey sampling_ ou _sample surveys_.
+- Com a finalidade de produzir instantâneos das realidades estudadas, os levantamentos por amostragem reúnem as seguintes características:
+    1. Aplicam-se a conjuntos reais e finitos (na maioria dos casos), compostos de elementos, denominados \structure{população de estudo}.
+    2. Os elementos podem ser seres humanos, animais, árvores, fichas, prontuários, domicílios, áreas ou objetos.
+    3. As características ou atributos são observados em cada elemento e, posteriormente, agregados por meio de medidas estatísticas chamadas \structure{parâmetros} ou \structure{valores populacionais}.
+    4. Os dados são coletados em amostras das populações de estudo, e as medidas calculadas (estimativas) passam a ser a informação disponível para os valores populacionais desconhecidos.
+
+## Levantamentos por amostragem
+
+```{r echo=FALSE, fig.align='right', message=FALSE, warning=FALSE, out.width='25%', paged.print=FALSE}
+knitr::include_graphics(here('images','pesquisa_convid.jpg'))
+```
+
+### Exemplo (ConVid)
+
+\footnotesize
+
+A chegada da pandemia provocada pelo novo coronavírus no Brasil levou a uma série de iniciativas e de recomendações para a proteção das pessoas, que incluiu o isolamento social/quarentena. A presente pesquisa da Fundação Oswaldo Cruz, realizada em parceria com a Universidade Federal de Minas Gerais, e a Universidade Estadual de Campinas tem a finalidade de verificar como a pandemia afetou ou mudou a sua vida.
+
+\
+Os resultados da ConVid Pesquisa de Comportamentos poderão contribuir para uma melhor compreensão do impacto da quarentena sobre a saúde dos brasileiros para orientar as ações de saúde dirigidas a minimizar os efeitos adversos trazidos pelo isolamento social prolongado.
+
+\
+Leia mais em https://convid.fiocruz.br/
+
+## Levantamentos por amostragem
+
+### Exercício (ConVid)
+
+No exemplo da \structure{pesquisa ConVid}, responda:
+
+- Quem é a população de estudo?
+- Os elementos são ... 
+- Quais características ou atributos são observados em cada elemento?
+- Quais as possíveis quantidades populacionais podem ser estimadas a partir da pesquisa?
+
+## Levantamentos por amostragem
+
+- Os levantamentos podem ter a finalidade __descritiva__, limitando-se a estimar frequências de elementos com determinada propriedade ou médias e variâncias de características quantitativas.
+    + __Ex:__ prevalência de diabetes na população brasileira de adultos \structure{(proporção, frequência, erro padrão, intervalo de confiança)}.
+- Outros levantamentos , denominados __analíticos__ (ou investigações), definem grupos de comparação e, além de estimar, procuram detectar relações entre as características, buscando aumentar as explicações para o objeto pesquisado.
+    + __Ex:__ associação entre índice de massa corporal (IMC) e prevalência de diabetes \structure{(razão de prevalências [RP] entre grupos de IMC, intervalo de confiança para RP)}.
+- Na prática, a maioria dos levantamentos cumpre as duas finalidades por meio de métodos de estimação e de técnicas de análise estatística multivariada.    
+
+# Vantagens do método das amostragens
+
+## Uma pequena digressão {.allowframebreaks}
+
+### Como obter uma boa amostragem e como tirar conclusões adequadas dos resultados?
+
+Isso não importa, desde que o material do qual retiramos as amostras seja __homogêneo__, pois qualquer tipo de amostragem dá quase o mesmo resultado. Os diagnósticos de laboratório sobre nosso estado de saúde são feitos com apenas algumas gotas de sangue. Esse processo fundamenta-se na presunção de que o sangue em circulação está sempre bem misturado e que uma gota conta a mesma história que qualquer outra. Entretanto, quando o material está longe de ser homogêneo, __como acontece frequentemente__, o processo pelo qual se obtém a amostra se torna crítico e o estudo das técnicas que assegurem amostras dignas de confiança é importante.
+
+## Custo reduzido
+
+- Como os dados são obtidos apenas de uma pequena fração do agregado, as despesas são menores que se for empreendido um censo integral.
+    + A Pesquisa Nacional de Saúde (PNS) foi uma pesquisa domiciliar nacional realizada pelo Instituto Brasileiro de Geografia e Estatística (IBGE) em parceria com o Ministério da Saúde.A PNS-2013 visitou 81.167 domicílios, e entrevistou 60.202 indivíduos com relação a percepção de saúde, violência e acidentes, estilos de vida e doenças crônicas. Peso, altura e pressão arterial foram medidos. \structure{(Compare o tamanho da amostra de indivíduos em relação ao tamanho da população brasileira de adultos)}
+    
+## Maior rapidez
+
+- Pelo mesmo motivo, os dados podem ser coletados e sintetizados mais rapidamente com uma amostragem, que com uma contagem completa. Isso é um fator primordial, quando se necessita urgentemente das informações.
+
+## Maior amplitude
+
+- Em certos tipos de investigação, tem-se que utilizar pessoal perfeitamente treinado e equipamento altamente especializado\footnote{Veja o Manual de padronização e treinamento de Antropometria da PNS-2013: https://www.pns.icict.fiocruz.br/wp-content/uploads/2021/02/Manual-de-Antropometria-e-de-Medida-de-Pressao-Arterial-PNS-2013.pdf}, cuja disponibilidade é limitada, para a obtenção dos dados.
+    + O censo completo torna-se \structure{impraticável}.
+- Levantamentos por amostragem têm maior amplitude e flexibilidade.
+
+## Maior exatidão
+
+- Em virtude de se poder empregar pessoal instensivamente treinado, e por se tornar exequível a supervisão mais cuidadosa do campo de trabalho e do processamento dos dados, dada a redução do volume de trabalho, uma amostragem pode, na realidade, proporcionar \structure{resultados mais exatos} que a espécie de contagem integral que se consegue realizar.
+    + \structure{Paradoxo? (``Fazer mais com menos''??)}
+    
+## Para casa
+
+1. Faça uma pequena busca sobre levantamentos amostrais realizados no Brasil (podem ser um levantamentos realizados apenas na sua cidade, estado, ou ainda, de abrangência nacional). Escolha um levantamento do seu interesse.
+2. Descreva o levantamento escolhido e apresente no Fórum Geral do Moodle.
+
+## Próxima aula
+
+- Principais fases de um levantamento por amostragem.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-ff.jpg'))
+
+```
+

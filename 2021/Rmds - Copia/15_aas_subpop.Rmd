@@ -1,0 +1,296 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: estimativa de valores médios e totais das subpopulações"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# Estimativa do valor médio das subpopulações {.allowframebreaks}
+
+- Em muitoss levantamentos, as estimativas são feitas para cada uma das várias \structure{classes} (setores ou domínios) nas quais a população está subdividida.
+- Em um levantamento domiciliar, estimativas separadas podem ser necessárias para \structure{famílias de $0, 1, 2, \ldots$ filhos}, para \structure{proprietários} e \structure{locatários}, ou para famílias em diferentes \structure{grupos de ocupação}.
+
+\framebreak
+
+- Na situação mais simples, cada unidade da população cai em um dos domínios.
+- Assuma que o \structure{$j$}-ésimo domínio conter \structure{$N_j$} unidades e seja \structure{$n_j$} o número de unidades em uma amostra aleatória simples de tamanho \structure{$n$} que por acaso cai neste domínio.
+- Se \structure{$Y_{jk} (k = 1, 2, \ldots, n_j)$} são as medidas nessas unidades, a média da população \structure{$\overline{Y}_j$} para o \structure{$j$}-ésimo domínio é estimada por
+
+$$
+\overline{y}_j = \frac{1}{n_j}\sum_{k=1}^{n_j}{Y_{jk}}.
+$$
+
+\framebreak
+
+- À primeira vista, \structure{$\overline{y}_j$} parece ser uma estimativa de razão (como na última aula).
+- Embora \structure{$n$} seja fixo, \structure{$n_j$} variará de uma amostra de tamanho \structure{$n$} para outra.
+- A complicação de uma estimativa de razão pode ser evitada considerando a distribuição de \structure{$\overline{y}_j$} sobre as amostras nas quais \structure{$n$} e \structure{$n_j$} são fixos.
+    + Assumimos \structure{$n_j > 0$}.
+
+\framebreak
+
+- Na totalidade das amostras, com \structure{$n$} e \structure{$n_j$} determinados, a probabilidade de que qualquer conjunto específico de \structure{$n_j$} unidades das \structure{$N_j$} unidades no domínio \structure{$j$} sejam sorteadas é
+
+$$
+ \frac{_{N - N_j}C_{n - n_j}}{_{N-N_j}C_{n-n_j}\cdot _{N_j}C_{n_j}} = \frac{1}{_{N_j}C_{n_j}}.
+$$
+
+- Uma vez que cada conjunto específico de \structure{$n_j$} unidades do domínio \structure{$j$} pode aparecer em todas as seleções de \structure{$(n - n_j)$} unidades, dentre as \structure{$(N - N_j)$} que não estão no domínio \structure{$j$}, o numerador acima é o número de amostras contendo um conjunto especificado de \structure{$n_j$} e o denominador é o número total de amostras.
+
+\framebreak
+
+- Segue-se que os \structure{teoremas das aulas 9, 10 e 11} se aplicam ao \structure{$Y_{jk}$} se colocarmos \structure{$n_j$} para \structure{$n$} e \structure{$N_j$} para \structure{$N$}.
+
+::: {.block}
+###
+Do teorema da aula 9, \structure{$\overline{y}_j$} é um estimador não enviesado para \structure{$\overline{Y}_j$}.
+:::
+
+::: {.block}
+###
+Do teorema da aula 10, o erro padrão de \structure{$\overline{y}_j$} é  \structure{$\frac{S_j}{\sqrt{n_j}}\sqrt{1 - (n_j/N_j)}$}, em que
+
+$$
+S_j^2 = \frac{1}{N_j - 1}\sum_{k=1}^{N_j}{(Y_{jk} - \overline{Y}_j)^2}.
+$$
+:::
+
+\framebreak
+
+::: {.block}
+###
+De acordo com o teorema da aula 11, uma estimativa do erro padrão de \structure{$\overline{y}_j$} é  
+$$
+\frac{s_j}{\sqrt{n_j}}\sqrt{1 - (n_j/N_j)},
+$$
+em que
+
+$$
+s_j^2 = \frac{1}{n_j - 1}\sum_{k=1}^{n_j}{(Y_{jk} - \overline{y}_j)^2}.
+$$
+:::
+
+- Se o valor de \structure{$N_j$} __não for conhecido__, a quantidade \structure{$n/N$} pode ser utilizada em lugar de \structure{$n_j/N_j$}, no cálculo das \structure{cpf}.
+    + Na amostragem aleatória simples, \structure{$n_j/N_j$} é uma estimativa não enviesada de \structure{$n/N$}.
+
+# Estimativa dos valores totais das subpopulações {.allowframebreaks}
+
+- Na relação de contas a receber de uma empresa, na qual algumas contas foram pagas e outras não, podemos desejar estimar por uma amostra o valor total (em reais) das contas não pagas.
+- Se \structure{$N_j$} (o número de contas não pagas na população) é conhecido, não há problema.
+    + A estimativa da amostra é \structure{$N_j\overline{y}_j$} e seu erro padrão condicional é \structure{$N_j$} vezes \structure{$\frac{S_j}{\sqrt{n_j}}\sqrt{1 - (n_j/N_j)}$}.
+
+\framebreak
+
+- Alternativamente, se o valor total a receber, de acordo com a relação das contas, for conhecido, uma estimativa de razão pode ser usada.
+- A amostra fornece uma estimativa da razão (montante total de faturas não pagas) / (montante total de todas as faturas).
+- Isso é multiplicado pelo valor total a receber conhecido na relação das contas.
+
+\framebreak
+
+- Se nem \structure{$N_j$} nem o total a receber é conhecido, essas estimativas não podem ser feitas.
+- Em vez disso, multiplicamos o valor amostral total das unidades \structure{$Y$} contidas no \structure{$j$}-ésimo domínio pelo \structure{fator de expansão $N/n$}.
+- Isso dá a estimativa
+
+$$
+\hat{Y}_{T_j} = \frac{N}{n}\sum_{k=1}^{n_j}{Y_{jk}}.
+$$
+
+- Mostraremos que \structure{$\hat{Y}_{T_j}$ é imparcial} e obteremos seu erro padrão sobre amostras repetidas de tamanho \structure{$n$}.
+    + O artifício de manter \structure{$n_j$} constante, bem como \structure{$n$} não ajuda neste caso.
+
+\framebreak
+
+- Ao fazermos a demonstração, voltamos à notação original, na qual \structure{$Y_i$} é a medida da \structure{$i$}-ésima unidade da população.
+- Defina para cada unidade na população uma nova variável \structure{$Y_i'$}, em que
+
+$$
+Y_i' = \left\{\begin{array}{l}
+Y_i,\quad \mbox{se a unidade pertencer ao domínio } j,\\
+0,\quad \mbox{caso contrário}.
+\end{array}\right.
+$$
+
+- O valor total populacional da variável \structure{$Y_i'$} é
+
+$$
+\sum_{i=1}^N{Y_i'} = \sum_{\mbox{setor } j}{Y_i} = Y_{T_j}.
+$$
+
+\framebreak
+
+- Em uma amostra aleatória simples de tamanho \structure{$n$}, \structure{$Y_i'= Y_i$} para todas as  \structure{$n_j$} unidades que se encontram no \structure{$j$}-ésimo domínio; \structure{$Y_i'= 0$} para todas as restantes \structure{$n - n_j$} unidades.
+- Se \structure{$\overline{y}'$} é a média amostral de \structure{$Y_i'$}, então temos
+
+$$
+N\overline{y}' = \frac{N}{n}\sum_{i=1}^n{Y_i'} = \frac{N}{n}\sum_{k=1}^{n_j}{Y_{jk}} = \hat{Y}_{T_j}
+$$
+
+- Este resultado mostra que a estimativa \structure{$\hat{Y}_{T_j}$} é \structure{$N$} vezes a média amostral de \structure{$Y_i'$}.
+
+\framebreak
+
+- Em repetidas amostras de tamanho \structure{$n$}, podemos aplicar os teoremas das aulas 9, 10 e 11 às variáveis \structure{$Y_i'$}.
+- Estes mostram que \structure{$\hat{Y}_{T_j}$} é uma estimativa imparcial de \structure{$Y_{T_j}$} com erro padrão
+
+$$
+\sigma(\hat{Y}_{T_j}) = \frac{NS'}{\sqrt{n}}\sqrt{1 - (n/N)},
+$$
+em que \structure{$S'$} é desvio padrão populacional de \structure{$Y_i'$}.
+
+\framebreak
+
+- Para calcular \structure{$S'$} , consideramos a população como consistindo de \structure{$N_j$} valores \structure{$Y_i$} que estão no \structure{$j$}-ésimo domínio e de \structure{$N - N_j$} valores zero. Assim
+
+$$
+S'^2 = \frac{1}{N - 1}\left(\sum_{\mbox{setor } j}{Y_i^2} - \frac{Y_{T_j}^2}{N}\right).
+$$
+
+\framebreak
+
+- Pelo teorema da aula 11, uma estimativa amostral do erro padrão de \structure{$\hat{Y}_{T_j}$} será
+
+$$
+s(\hat{Y}_{T_j}) = \frac{Ns'}{\sqrt{n}}\sqrt{1 - (n/N)}.
+$$
+
+- No cálculo de \structure{$s'$}, qualquer unidade que não esteja no \structure{$j$}-ésimo domínio recebe um valor zero.
+
+## Comparação da eficiência dos estimadores de total no domínio {.allowframebreaks}
+
+- Às vezes é possível, com algum esforço, identificar e contar as unidades que não contribuem com nada, de modo que em nossa notação \structure{$(N- N_j)$}, e portanto \structure{$N_j$}, seja conhecido.
+- Consequentemente, vale a pena examinar o quanto \structure{$\Var(\hat{Y}_{T_j})$} é reduzido quando \structure{$N_j$} é conhecido.
+- Se \structure{$N_j$} não for conhecido, temos
+
+$$
+\Var(\hat{Y}_{T_j}) = \frac{N^2S'^2}{n}\left(1 - \frac{n}{N}\right).
+$$
+
+\framebreak
+
+- Se \structure{$\overline{Y}_j$} e \structure{$S_j$} são a média e o desvio padrão no domínio de interesse (ou seja, entre as unidades diferentes de zero), é possível verificar que
+
+$$
+(N - 1)S'^2 = (N_j - 1)S_j^2 + N_j\overline{Y}_j^2\left(1 - \frac{N_j}{N}\right).
+$$
+
+- Uma vez que os termos em \structure{$1/N_j$} e \structure{$1/N$} são quase sempre insignificantes, temos
+
+$$
+S'^2 \stackrel{\cdot}{=} P_jS_j^2 + P_jQ_j\overline{Y}_j^2,
+$$
+em que \structure{$P_j = N_j/N$} e \structure{$Q_j = 1 - P_j$}.
+
+\framebreak
+
+- Desta forma,
+
+\begin{equation}
+\label{var_total_desconhecido}
+\Var(\hat{Y}_{T_j}) \stackrel{\cdot}{=} \frac{N^2}{n}(P_jS_j^2 + P_jQ_j\overline{Y}_j^2)\left(1 - \frac{n}{N}\right).
+\end{equation}
+
+- Se as unidades diferentes de zero forem identificadas, retiramos delas uma amostra de tamanho \structure{$n_j$}. A estimativa do total do domínio é \structure{$N_j\overline{y}_j$} com variância
+
+\begin{equation}
+\label{var_total_conhecido}
+\Var(N_j\overline{y}_j) = \frac{N_j^2}{n_j}S_j^2\left(1 - \frac{n_j}{N_j}\right) = \frac{N^2}{n_j}P_j^2S_j^2\left(1 - \frac{n_j}{N_j}\right).
+\end{equation}
+
+\framebreak
+
+- As variância dadas pelas expressões \eqref{var_total_desconhecido} e \eqref{var_total_conhecido} são comparáveis.
+- Em \eqref{var_total_desconhecido}, o número médio de unidades diferentes de zero na amostra de tamanho \structure{$n$} é \structure{$nP_j$}.
+- Se tomarmos \structure{$n_j = nP_j$} em \eqref{var_total_conhecido}, de modo que o número de valores diferentes de zero a serem medidos seja aproximadamente o mesmo com ambos os métodos, \eqref{var_total_conhecido} torna-se
+
+\begin{equation}
+\label{var_total_conhecido_nova}
+\Var(N_j\overline{y}_j) = \frac{N^2}{n}P_j^2S_j^2\left(1 - \frac{n}{N}\right).
+\end{equation}
+
+\framebreak
+
+- A razão entre as variâncias \eqref{var_total_conhecido_nova} e \eqref{var_total_desconhecido} é
+
+$$
+\frac{\Var(N_j\ \mbox{conhecido})}{\Var(N_j\ \mbox{desconhecido})} = \frac{S_j^2}{S_j^2 + Q_j\overline{Y}_j^2} = \frac{C_j^2}{C_j^2 + Q_j},
+$$
+em que \structure{$C_j = S_j/\overline{Y}_j$ é o coeficiente de variação} entre as unidades de valor diferente de zero.
+
+\framebreak
+
+### Observação
+
+- Como era de se esperar, a redução da variância, decorrente do conhecimento de \structure{$N_j$}, é maior quando a proporção de unidades de valor nulo é grande e quando \structure{$Y_j$} varia relativamente pouco entre as unidades de valor diferente de zero.
+
+# Exemplo
+
+## Índice de Desempenho Acadêmico {.allowframebreaks}
+
+- O \structure{Índice de Desempenho Acadêmico da Califórnia} (_Academic Performance Index_, API) é calculado a partir de testes padronizados administrados a alunos em escolas da Califórnia.
+- Além dos dados de desempenho acadêmico das escolas, há uma ampla gama de variáveis socioeconômicas disponíveis.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+library(survey)
+data(api)
+
+# View(apisrs)
+# ?apisrs
+
+# O objeto design
+api.des <- svydesign(id = ~1,
+                     fpc = ~fpc,
+                     data = apisrs)
+
+# Estimativa do total de alunos
+# matriculados
+svytotal(x = ~enroll, design = api.des)
+
+# Estimativa da média de alunos
+# matriculados por escola
+svymean(x = ~enroll, design = api.des)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativa do total de alunos
+# matriculados por tipo de escola
+svyby(formula = ~enroll, by = ~stype, design = api.des, FUN = svytotal)
+
+# Estimativa da média de alunos
+# matriculados por tipo de escola
+svyby(formula = ~enroll, by = ~stype, design = api.des, FUN = svymean)
+
+```
+
+\normalsize
+
+## Próxima aula
+
+- Validade da aproximação normal.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-barras03.jpg'))
+
+```
+

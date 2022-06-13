@@ -1,0 +1,266 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: estimativa do erro padrão e intervalos de confiança"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Estimativa do erro padrão de uma amostra
+
+## Estimativa do erro padrão {.allowframebreaks}
+
+As fórmulas que nos dão os \structure{erros padrões} das estimativas da \structure{média ($\overline{y} = (1/n)\sum_{i=1}^n{Y_i}$)} e \structure{total ($\hat{Y}_T = N\overline{y}$)} populacionais são usadas principalmente para três finalidades:
+
+1. comparar a precisão obtida por amostragem aleatória simples com a dada por outros métodos de amostragem;
+2. para estimar o tamanho da amostra necessária em um levantamento que está sendo planejado;
+3. para estimar a precisão realmente alcançada em um levantamento que foi concluído.
+
+\framebreak
+
+- As fórmulas envolvem $S^2$, a \structure{variância da população}.
+- Na prática, isso não será conhecido, mas pode ser estimado a partir dos dados da amostra.
+    + Se vamos estimar $S^2$, não deveríamos fazer a mesma avaliação\footnote{Ou seja, avaliar a imparcialidade deste estimador.} que fizemos para $\overline{y}$ e $\hat{Y}_T$? _(Sim ou sim?)_
+    
+## Estimativa do erro padrão {.allowframebreaks}
+
+::: {.block}
+
+### Teorema
+
+Em uma amostra aleatória simples,
+
+$$
+s^2 = \frac{\displaystyle\sum_{i=1}^n{(Y_i - \overline{y})^2}}{n - 1}
+$$
+é uma estimativa (estimador) \structure{não enviesada} de 
+
+$$
+S^2 = \frac{\displaystyle\sum_{i=1}^N{(Y_i - \overline{Y})^2}}{N - 1}.
+$$
+
+:::
+
+\framebreak
+
+__Demonstração.__ Podemos escrever:
+
+\begin{align*}
+s^2 &= \frac{1}{n - 1}\sum_{i=1}^n{[(Y_i - \textcolor{red}{\overline{Y}}) - (\overline{y} - \textcolor{red}{\overline{Y}})]^2}\\
+&= \frac{1}{n - 1}\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2} - n(\overline{y} - \overline{Y})^2\right].
+\end{align*}
+
+```{r, message=FALSE, echo=FALSE, out.width="50%", purl=FALSE, fig.align='right'}
+
+knitr::include_graphics(here::here('images', 'quadro_verde.jpg'))
+
+```
+
+\framebreak
+
+Agora, calculamos a média de todas as amostras aleatórias simples de tamanho $n$:
+
+\footnotesize
+
+\begin{align*}
+\textcolor{red}{\E(s^2)} &= \E\left\{\frac{1}{n - 1}\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2} - n(\overline{y} - \overline{Y})^2\right]\right\}\\
+&= \frac{1}{n - 1}\left\{\textcolor{darkpastelblue}{\E\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2}\right]} - n\textcolor{darkpastelgreen}{\E\left[(\overline{y} - \overline{Y})^2\right]}\right\}\\
+&= \frac{1}{n - 1}\left[\textcolor{darkpastelblue}{\frac{n}{N}\sum_{i=1}^N{(Y_i - \overline{Y})^2}} - n\textcolor{darkpastelgreen}{\Var(\overline{y})}\right]\\
+&= \frac{1}{n - 1}\left[\frac{n(N-1)}{\textcolor{darkpastelpurple}{N}}\textcolor{darkpastelpurple}{S^2} - \textcolor{darkpastelred}{n}\frac{\textcolor{darkpastelpurple}{S^2}}{\textcolor{darkpastelred}{n}}\frac{(N-n)}{\textcolor{darkpastelpurple}{N}}\right]\\
+&= \frac{\textcolor{darkpastelpurple}{S^2}}{(n - 1)\textcolor{darkpastelpurple}{N}}[n(N - 1) - (N - n)] = \textcolor{red}{S^2}.
+\end{align*}
+
+\normalsize
+
+\framebreak
+
+::: {.block}
+
+### Corolário
+
+As estimativas (estimadores) imparciais das variâncias de $\overline{y}$ e $\hat{Y}_T = N\overline{y}$ são:
+
+\begin{align*}
+\widehat{\Var}(\overline{y}) = s_{\overline{y}}^2 = \frac{s^2}{n}\left(\frac{N-n}{N}\right) = \frac{s^2}{n}(1 - f),\\
+\widehat{\Var}(\hat{Y}_T) = s_{\hat{Y}_T}^2 = \frac{N^2s^2}{n}\left(\frac{N-n}{N}\right) = \frac{N^2s^2}{n}(1 - f).
+\end{align*}
+
+Para os erros padrões, teremos
+
+$$
+s_{\overline{y}} = \frac{s}{\sqrt{n}}\sqrt{1 - f},\quad s_{\hat{Y}_T} = \frac{Ns}{\sqrt{n}}\sqrt{1 - f}
+$$
+
+- Essas estimativas apresentam um pequeno viés, mas, para a maioria das aplicações, o viés é desprezível.
+
+:::
+
+\framebreak
+
+### Observação
+
+- É preciso observar os símbolos empregados para a variância real e estimada dos estimadores. Assim, para $\overline{y}$, podemos escrever:
+    + Variância real: $\Var(\overline{y}) = \sigma_{\overline{y}}^2$
+    + Variância estimada: $\widehat{\Var}(\overline{y}) = s_{\overline{y}}^2$
+
+# Intervalos de confiança
+
+## Intervalos de confiança {.allowframebreaks}
+
+- É geralmente assumido que as estimativas \structure{$\overline{y}$} e \structure{$\hat{Y}_T$} \structure{são normalmente distribuídas} em torno dos correspondentes valores populacionais.
+- As razões para esta suposição e suas limitações são consideradas em aulas futuras.
+
+\framebreak
+
+- Se a suposição for válida, os \structure{limites de confiança inferior} e \structure{superior} para a média e o total da população são os seguintes:
+
+::: {.block}
+
+### Para o valor médio
+
+$$
+\widehat{\overline{Y}}_I = \overline{y} - \frac{zs}{\sqrt{n}}\sqrt{1-f},\quad \widehat{\overline{Y}}_S = \overline{y} + \frac{zs}{\sqrt{n}}\sqrt{1-f};
+$$
+
+:::
+
+::: {.block}
+
+### Para o valor total
+
+$$
+\hat{Y}_{T_I} = N\overline{y} - \frac{zNs}{\sqrt{n}}\sqrt{1-f},\quad \hat{Y}_{T_S} = N\overline{y} + \frac{zNs}{\sqrt{n}}\sqrt{1-f};
+$$
+
+:::
+
+\framebreak
+
+- O símbolo \structure{$z$} é o valor do desvio normal, correspondente à desejada probabilidade de confiança. Seus valores mais comuns são:
+
+\begin{table}[]
+\begin{tabular}{lccccc}
+\hline
+Probabilidade de confiança (\%) & 50   & 80   & 90   & 95   & 99   \\ \hline
+Valor de $z$                    & 0,67 & 1,28 & 1,64 & 1,96 & 2,58 \\ \hline
+\end{tabular}
+\end{table}
+
+\framebreak
+
+### Observação
+
+- Se o tamanho da amostra é inferior a 60, os valores percentuais podem ser obtidos da \structure{tabela $t$ de Student} com \structure{$(n-1)$ graus de liberdade}, sendo estes os graus de liberdade na variância estimada, \structure{$s^2$}.
+    + A distribuição $t$ só se verifica, exatamente, quando as observações $Y_i$ são elas próprias normalmente distribuídas e $N$ é infinito.
+    + Os desvios moderados da normalidade não a afetam grandemente.
+- Para pequenas amostras, com distribuições muito assimétricas, são necessários processos especiais.
+
+# Exemplo
+
+## Exemplo {.allowframebreaks}
+
+```{r, message=FALSE, echo=FALSE, out.width="10%", purl=FALSE, fig.align='right'}
+
+knitr::include_graphics(here::here('images', 'abaixo-assinado.png'))
+
+```
+
+\small
+
+- As assinaturas de uma petição foram coletadas em 676 folhas.
+- Cada folha tinha espaço suficiente para 42 assinaturas, mas em muitas folhas um número menor de assinaturas foi coletado.
+- O número de assinaturas por folha foi contado em uma amostra aleatória de 50 folhas (cerca de 7% da amostra), com os resultados apresentados na tabela a seguir.
+
+\footnotesize
+
+\begin{table}[]
+\begin{tabular}{cc|cc}
+$Y_i$ & $n_i$ & $Y_i$ & $n_i$ \\ \hline
+42    & 23    & 14    & 1     \\
+41    & 4     & 11    & 1     \\
+36    & 1     & 10    & 1     \\
+32    & 1     & 9     & 1     \\
+29    & 1     & 7     & 1     \\
+27    & 2     & 6     & 3     \\
+23    & 1     & 5     & 2     \\
+19    & 1     & 4     & 1     \\
+16    & 2     & 3     & 1     \\
+15    & 2     & -     & -    
+\end{tabular}
+\end{table}
+
+\normalsize
+
+\framebreak
+
+- O objetivo do levantamento amostral é estimar o \structure{número total de assinaturas} para a petição e os limites de confiança de 80%.
+
+- A __unidade de amostragem é a folha__ e as __observações__ $Y_i$ __são os números de assinaturas por folha__.
+- Observe que a distribuição original parece estar longe da normal, a maior frequência estando na extremidade superior.
+- No entanto, há razões para acreditar, por experiência, que as médias das amostras de 50 unidades são aproximadamente normalmente distribuídas.
+
+\framebreak
+
+- Assim, temos
+
+$$
+n = \sum{n_i} = 50,\quad \sum{n_iY_i} = 1471, \quad \sum{n_iY_i^2} = 54497.
+$$
+Portanto, o total estimado do número de assinaturas é
+
+$$
+\hat{Y}_T = N\overline{y} = \frac{(676)(1471)}{50} = 19887,92\approx 19888.
+$$
+Para a variância da amostra, $s^2$, temos
+
+\begin{align*}
+s^2 &= \frac{1}{n-1}\left[\sum{n_i(Y_i - \overline{y})^2}\right] = \frac{1}{n-1}\left[\sum{n_iY_i^2} - \frac{(\sum{n_iY_i})^2}{\sum{n_i}}\right]\\
+&= \frac{1}{49}\left[54497 - \frac{(1471)^2}{50}\right] = 228,9833 \approx 229.
+\end{align*}
+
+\framebreak
+
+Os limites de confiança de 80% são
+
+$$
+19888 \pm \frac{zNs}{\sqrt{n}}\sqrt{1-f} = 19888 \pm \frac{(1,28)(676)(15,13)}{\sqrt{50}}\sqrt{1-0,0740}.
+$$
+
+Isso fornece 18107 e 21669 para os limites de confiança de 80%\footnote{Uma estimativa mais precisa (sem considerar arrendondamentos ao longo dos cálculos) é dada por 18104 e 21672.}. 
+
+- Uma contagem completa mostrou, neste caso, que havia 21045 assinaturas.
+
+## Para casa
+
+- Refaça as demonstrações da aula de hoje.
+- Utilize o __Teorema__ apresentado na aula para demonstrar o __Corolário__.
+- Com os dados do exemplo da aula:
+    + construa um intervalo de 95% de confiança para o número total de assinaturas do requerimento;
+    + construa um intervalo de 90% de confiança para o número médio de assinaturas por folha do requerimento;
+    + interprete os seus resultados.
+
+## Próxima aula
+
+- O pacote `survey`.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-girafa.jpg'))
+
+```
+

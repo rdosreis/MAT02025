@@ -1,0 +1,213 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: propriedades dos estimadores"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Relembrando
+
+## {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-01.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-02.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-03.png'))
+
+```
+
+# Propriedades dos estimadores
+
+## Propriedades dos estimadores {.allowframebreaks}
+
+- Como vimos, um método de estimativa é \structure{imparcial (não viciado, não enviesado, não tendencioso)}  se o valor médio da estimativa, __tomado em todas as amostras possíveis de dado tamanho__ \structure{$n$}, for exatamente igual ao valor verdadeiro da população. 
+- Se o método tiver que ser imparcial, irrestritamente, este resultado deve ser válido para qualquer população de valores finitos, $Y_i$, e para qualquer que seja $n$.
+- Para investigar se \structure{$\overline{y}$} é imparcial com a amostragem aleatória simples, calculamos o valor de \structure{$\overline{y}$} para todas as amostras \structure{$_NC_n$} e encontramos a média das estimativas.
+- O símbolo $\textcolor{blue}{\E}$ denota essa média sobre todas as amostras possíveis.
+
+\framebreak
+
+::: {.block}
+
+### Teorema
+
+O valor média da amostra $\overline{y}$ é uma estimativa sem tendência para $\overline{Y}$.
+
+:::
+
+\framebreak
+
+__Demonstração.__ Por definição,
+
+\footnotesize
+
+\begin{align} 
+\label{vies1}
+\E(\overline{y}) &= \sum_{i=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times\pi_i\right]} \nonumber\\
+ &= \sum_{i=1}^{\Comb{N}{n}}{\left[\overline{y}_i\times \frac{1}{\Comb{N}{n}}\right]}\ \textcolor{red}{(\pi_i = 1/{\Comb{N}{n}})} \nonumber\\
+ &= \frac{1}{N!/[n!(N - n)!]}\sum_{i=1}^{\Comb{N}{n}}{\left[\frac{1}{n}\sum_{j = 1}^n{Y_j(i)}\right]} \nonumber\\
+ &= \frac{1}{n[N!/n!(N - n)!]}\textcolor{red}{\sum_{i=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}}.
+\end{align} 
+
+\framebreak
+
+\normalsize
+
+- Para avaliar essa soma, encontramos em quantas amostras qualquer valor específico $Y_j$ aparece.
+- Uma vez que existem \structure{$(N -1)$} outras unidades disponíveis para o resto da amostra e \structure{$(n -1)$} outros locais para preencher a amostra, o número de amostras contendo $Y_j$ é
+
+$$
+\Comb{N-1}{n-1} = \frac{(N-1)!}{(n-1)!(N-n)!}.
+$$
+
+\framebreak
+
+- Portanto,
+
+\footnotesize
+
+\begin{align} 
+\label{vies2}
+\textcolor{red}{\sum_{i=1}^{\Comb{N}{n}}{[Y_1(i) + Y_2(i) + \ldots + Y_n(i)]}} &= \Comb{N-1}{n-1}\times Y_1 + \Comb{N-1}{n-1}\times Y_2 + \ldots \Comb{N-1}{n-1}\times Y_N \nonumber\\
+&= \Comb{N-1}{n-1}\times (Y_1 + Y_2 + \ldots + Y_N) \nonumber\\
+&= \Comb{N-1}{n-1}\times \sum_{j=1}^N{Y_j} \nonumber\\
+&= \textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}}.
+\end{align} 
+
+\framebreak
+
+\normalsize
+
+- Combinando \eqref{vies2} com \eqref{vies1}, temos
+
+\begin{align} 
+\label{vies3}
+\textcolor{darkpastelpurple}{\E(\overline{y})} &= \frac{n!(N - n)!}{nN!}\times\textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}} \nonumber\\
+&= \frac{n(n-1)!(N - n)!}{nN(N-1)!}\times\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j} \nonumber\\
+&= \frac{1}{N}\sum_{j=1}^N{Y_j} = \textcolor{darkpastelpurple}{\overline{Y}}.
+\end{align} 
+
+\framebreak
+
+::: {.block}
+
+### Corolário
+
+$\hat{Y}_T = N\overline{y}$ é um estimador imparcial do valor total populacional $Y_T$.
+
+:::
+
+- __Para casa:__ utilize o __Teorema__ apresentado na aula para demonstrar o __Corolário__.
+
+# Um outro método de demonstração
+
+## Outro método de demonstração {.allowframebreaks}
+
+- __Cornfield (1944)__\footnote{Cornfield, J. (1944). \emph{On Samples from Finite Populations}. Journal of the American Statistical Association, 39(226), 236.} sugeriu um método para verificar os principais resultados das amostras aleatórias simples, sem reposição, que nos permite utilizar os resultados padronizados da teoria das populações infinitas.
+- Seja \structure{$a_i$} uma variável aleatória, e que assume o valor $1$ se a $i$-ésima unidade for selecionada para a amostra, e assume valor $0$ em caso contrário\footnote{Alguns autores utilizam a notação $Y_i = a_iY_i^{obs} + (1 - a_i)Y_i^{aus}$, em que $obs$ e $aus$ represetam {\bf observado} e {\bf ausente}, respectivamente.}.
+
+## Outro método de demonstração {.allowframebreaks}
+
+### Exemplo
+
+Considere mais uma vez a população de tamanho $N = 6$, e $Y_1 = 2,\ Y_2 = 4,\ Y_3 = 6,\ Y_4 = 8,\ Y_5 = 10,\ Y_6 = 12$, e uma amostra aleatória simples, sem reposição, de tamanho $n = 2$. Então,
+
+\begin{table}[]
+\begin{tabular}{ccccccccc}
+\hline
+         &               &           & \multicolumn{6}{c}{Indicadores de seleção}                      \\ \cline{4-9} 
+Sorteio  & Probabilidade & Amostra   & $a_1$    & $a_2$    & $a_3$    & $a_4$    & $a_5$    & $a_6$    \\
+1        & $1/15$        & $(2,4)$   & 1        & 1        & 0        & 0        & 0        & 0        \\
+2        & $1/15$        & $(2,6)$   & 1        & 0        & 1        & 0        & 0        & 0        \\
+$\vdots$ & $\vdots$      & $\vdots$  & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+15       & $1/15$        & $(10,12)$ & 0        & 0        & 0        & 0        & 1        & 1        \\ \hline
+\end{tabular}
+\end{table}
+
+## Outro método de demonstração {.allowframebreaks}
+
+- A \structure{média amostral} pode ser expressa por
+
+$$
+\overline{y} = \frac{1}{n}\sum_{i=1}^{N}{a_iY_i},
+$$
+
+em que o somatório abrange todas as $N$ unidades da população.
+
+\framebreak
+
+- Nessa expressão, os \structure{$a_i$ são variáveis aleatórias}, e os $Y_i$ constituem __um conjuntos de números fixos__.
+
+- Note que
+
+\begin{align*}
+\Pr(a_i = 1) &= \frac{\# \mbox{amostras que incluem o i-ésimo elemento}}{\# \mbox{amostras que podem ser sorteadas}}\\
+&= \frac{\Comb{N-1}{n-1}}{\Comb{N}{n}} \\
+&= \frac{(N-1)!}{(n-1)!(N-n)!}\times\frac{n!(N-n)!}{N!} = \frac{n}{N}.
+\end{align*}
+
+- E consequentemente, $\Pr(a_i = 0) = 1 - \frac{n}{N}$.
+
+\framebreak
+
+- Dessa forma, $a_i$ se distribui como uma variável binomial, em uma única tentativa\footnote{Ou seja, uma variável com distribuição Bernoulli.}, com \structure{$P = n/N$}. Portanto,
+
+$$
+\E(a_i) = P = \frac{n}{N},\quad \Var(a_i) = \frac{n}{N}\left(1 - \frac{n}{N}\right).
+$$
+
+## Outro método de demonstração {.allowframebreaks}
+
+- Assim,
+
+\footnotesize
+
+$$
+\E(\overline{y}) = \E\left[\frac{1}{n}\sum_{i=1}^{N}{a_iY_i}\right] = \frac{1}{n}\sum_{i=1}^{N}{\E\left[a_i\right]Y_i} = \frac{1}{n}\sum_{i=1}^{N}{PY_i}  = \overline{Y}.
+$$
+
+## Para casa
+
+- Refaça as demonstrações da aula de hoje.
+
+## Próxima aula
+
+- Variâncias dos estimadores.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-mickey.jpg'))
+
+```
+

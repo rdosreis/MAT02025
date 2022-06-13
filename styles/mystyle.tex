@@ -1,17 +1,13 @@
+\usepackage{longtable}
 \usepackage{multirow}
 \usepackage{xcolor}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
+\usepackage{mathtools}
+\usepackage{tikz}
 \usepackage{amsmath}
 
+\setbeamercolor{math text}{fg=black!15!blue}
+
+\newcommand\beamermathcolor[1]{\color{#1}\setbeamercolor{math text}{fg=#1}}
 
 \newcount\tmpnum
 \def\tallymarks#1{\leavevmode \lower1bp\vbox to9bp{}%
@@ -35,18 +31,18 @@
 \setbeamertemplate{enumerate items}[default]
 \setbeamertemplate{footline}{}
 \setbeamercolor{alerted text}{fg=purple}
-\titlegraphic{\hfill\includegraphics[height=1cm]{logos/Logo-40-anos-estatistica.png}}
+\titlegraphic{\hfill\includegraphics[height=1cm]{logos/ime.png}}
 
 \def\Corr{\mbox{Corr}\,}
 \def\Cov{\mbox{Cov}\,}
 \def\Var{\mbox{Var}\,}
 \def\E{\mbox{E}\,}
-\newcommand*{\Comb}[2]{{}_{#1}C_{#2}}%
-
+\def\logit{\mbox{logit}\,}
 \definecolor{darkpastelblue}{rgb}{0.47, 0.62, 0.8}
 \definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
 \definecolor{darkpastelpurple}{rgb}{0.59, 0.44, 0.84}
 \definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
-
-\newcommand{\specialcell}[2][c]{%
-  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\definecolor{darkviolet}{rgb}{0.59, 0, 0.84}
+\definecolor{darkgreen}{rgb}{0, 0.512, 0}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}

@@ -1,0 +1,294 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "Uso da distribuição normal, viés e seus efeitos"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# O uso da distribuição normal
+
+## O uso da distribuição normal
+
+- Um estimador $\hat{\theta}$ de $\theta$ dado por um plano de amostragem é denominado \structure{imparcial}\footnote{Ou {\bf não-tendencioso}, ou {\bf não-enviesado}. {\bf Exercício:} no exercício da aula passada, mostre que a média amostral é um estimador não enviesado para a média populacional.} se o valor médio de $\hat{\theta}$, tomado em todas as amostras possíveis fornecidas pelo plano, for igual a $\theta$.
+- Na notação da aula anterior, esta condição pode ser escrita como:
+
+$$
+\E(\hat{\theta}) = \sum_{j = 1}^v{\pi_j\hat{\theta}_j} = \theta,
+$$
+em que $\hat{\theta}_j$ é a estimativa dada pela $j$-ésima amostra.
+
+## O uso da distribuição normal
+
+- As amostras nos levantamentos são frequentemente grandes o suficiente para que as estimativas feitas a partir delas tenham \structure{distribuição aproximadamente normal}.
+- Além disso, com a amostragem probabilística, __temos fórmulas__ que fornecem a __média__ e a __variância das estimativas__.
+
+## O uso da distribuição normal
+
+- Suponha que tenhamos obtido __uma amostra__ por um procedimento conhecido por fornecer um estimador imparcial e calculado __a estimativa da amostra__ $\hat{\theta}$ e seu desvio padrão\footnote{Frequentemente chamado de {\bf erro padrão}.} $\sigma_{\hat{\theta}}$.
+    + \structure{Qual a qualidade da estimativa?}
+- Não podemos saber o valor exato do erro \structure{dessa estimativa} \alert{($\hat{\theta} - \theta$)}, mas, ...
+
+## O uso da distribuição normal
+
+... a partir das \structure{propriedades da curva normal}, as chances são
+
+\begin{columns}[c]
+\column{2.6in}
+\begin{itemize}\setlength{\itemsep}{+2mm}
+\item \alert{0,32} (cerca de 1 em 3) que o erro absoluto \alert{$|\hat{\theta} - \theta|$} excede \alert{$\sigma_{\hat{\theta}}$}.
+\item \alert{0,05} (1 em 20) que o erro absoluto \alert{$|\hat{\theta} - \theta|$} excede \alert{1,96$\sigma_{\hat{\theta}}\approx 2\sigma_{\hat{\theta}}$}.
+\item \alert{0,01} (1 em 100) que o erro absoluto \alert{$|\hat{\theta} - \theta|$} excede  \alert{2,58$\sigma_{\hat{\theta}}$}.
+\end{itemize}
+\column{2in}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{images/propriedade-normal.png}
+\end{center}
+\end{figure}
+\end{columns}
+
+
+## O uso da distribuição normal
+
+- Por exemplo, se uma amostra probabilística dos registros de baterias em uso rotineiro em uma grande fábrica mostrar uma vida média \structure{$\hat{\mu} = 394$} dias, com um erro padrão \structure{$\sigma_{\hat{\mu}} = 4,6$} dias, as chances são de 99 em 100 de que a vida média da população de baterias esteja entre
+
+\footnotesize
+
+$$
+\hat{\mu}_I = 394 - (2,58)(4,6) = 382\ \mbox{dias e } \hat{\mu}_S = 394 + (2,58)(4,6) = 406\ \mbox{dias}.
+$$
+
+## O uso da distribuição normal
+
+- Os limites, 382 dias e 406 dias, são chamados de limites de confiança inferior e superior.
+- Com \structure{uma estimativa única de um único levantamento}, a afirmação __"$\mu$ está entre 382 e 406 dias"__ \structure{não é, necessariamente, correta}.
+- O número de __"99% de confiança"__ implica que \structure{se o mesmo plano de amostragem fosse usado muitas vezes em uma população}, e \structure{uma declaração de confiança sendo feita para cada amostra}, \structure{cerca de 99\% dessas declarações estariam corretas} e __1% erradas__.
+
+## O uso da distribuição normal
+
+###
+
+A verificação prática de que aproximadamente a proporção declarada de afirmações está correta contribui muito para educar e tranquilizar os pesquisadores (administradores e/ou tomadores de decisão) sobre a natureza da amostragem.
+
+## O uso da distribuição normal
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+set.seed(100)
+
+x <- expand.grid(rep(list(LETTERS), 4))
+
+idade <- 1:26 * 2
+mu.idade <- mean(idade)
+sd.muchap <- 7.5
+
+idade.pares <- expand.grid(rep(list(idade), 4))
+
+ind <- sample(x = 1:dim(idade.pares)[1], size = 100, replace = FALSE)
+idade.amostras <- idade.pares[ind, ]
+
+idade.media <- apply(X = idade.amostras, MARGIN = 1, FUN = mean)
+intervalo.inf <- idade.media - 1.96*sd.muchap
+intervalo.sup <- idade.media + 1.96*sd.muchap
+vermelho <- mu.idade < intervalo.inf |  mu.idade > intervalo.sup
+
+plot(idade.media,
+     pch = 16,
+     col = "lightsalmon",
+     ylim = c(min(intervalo.inf), max(intervalo.sup)),
+     xlab = "Amostra", ylab = "Idade média",
+     main = 'IC 95% "normais" para a média de 100 amostras')
+segments(x0 = 1:100, y0 = intervalo.inf,
+         x1 = 1:100, y1 = intervalo.sup)
+abline(h = mu.idade, lty = 2, lwd = 2, col = "steelblue")
+segments(x0 = which(vermelho), y0 = intervalo.inf[which(vermelho)],
+         x1 = which(vermelho), y1 = intervalo.sup[which(vermelho)], col = "red")
+points(x = which(vermelho), y = idade.media[which(vermelho)], pch = 16)
+legend("topright", legend = "Média populacional", lty = 2, lwd = 2, col = "steelblue", bty = "n")
+
+```
+
+## O uso da distribuição normal
+
+- O exemplo anterior assume que \structure{$\sigma_{\hat{\mu}}$} (ou mais genericamente, $\sigma_{\hat{\theta}}$) é conhecido.
+- Na verdade, \structure{$\sigma_{\hat{\mu}}$}, como \structure{$\hat{\mu}$}, está sujeito a um erro de amostragem.
+- Com uma __variável normalmente distribuída__, as tabelas da distribuição $t$ de Student são usadas em vez das tabelas normais para calcular os limites de confiança para $\mu$ quando a amostra é pequena.
+- A substituição da tabela normal pela tabela $t$ faz quase nenhuma diferença se o número de graus de liberdade em \structure{$\sigma_{\hat{\mu}}$} exceder 50.
+
+# Viéses e seus efeitos
+
+## Viéses e seus efeitos
+
+Na teoria dos levantamentos por amostragem, é necessário considerar \structure{estimadores enviesados} por duas razões.
+
+1. Em alguns dos problemas mais comuns, particularmente na estimativa de razões (índices), estimadores convenientes e adequados são considerados tendenciosos.
+2. Mesmo com estimadores que são imparciais na amostragem probabilística, os __erros de medição__ e __não resposta__ podem produzir vieses nos resultados calculados nos dados.
+    + Isso acontece, por exemplo, se as pessoas que se recusam a ser entrevistadas quase todas se opõem a algum gasto de fundos públicos, ao passo que as que são entrevistadas se dividem igualmente a favor e contra.
+
+## Viéses e seus efeitos
+
+- Suponha que a estimativa $\hat{\mu}$ seja __normalmente distribuída__ em torno de uma média $m$ que é uma distância $B$ do valor real da população $\mu$, como mostrado na figura\footnote{Ou seja, o estimador é enviesado, mas normalmente distribuído.}.
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%', out.height='70%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'efeito_vies.png'))
+
+```
+
+## Viéses e seus efeitos
+
+- A quantidade de viés\footnote{De maneira mais geral, $B(\hat{\theta}) = \E(\hat{\theta} - \theta) = \E(\hat{\theta}) - \theta$ é o definido como o viés (vício) do estimador $\hat{\theta}$. Se $B(\hat{\theta}) = 0$, então $\hat{\theta}$ é não enviesado.} é $B = m - \mu$.
+- Suponha que não saibamos que existe qualquer viés.
+    + Calculamos o desvio padrão, $\sigma$ (estamos usando $\sigma$ no lugar de $\sigma_{\hat{\mu}}$), da distribuição de frequência da estimativa, que será, naturalmente,o desvio padrão sobre a média da distribuição, $m$, não sobre a verdadeira média $\mu$.
+- Como uma afirmação sobre a precisão da estimativa, declaramos que \structure{a probabilidade é de 0,05} de que a estimativa $\hat{\mu}$ contenha um erro de mais de 1,96$\sigma$, ou seja,
+
+$$
+\Pr(|\hat{\mu} - \mu| >  1,96\sigma) \approx 0,05.
+$$
+
+## Viéses e seus efeitos {.allowframebreaks}
+
+- Examinaremos como a presença de viés distorce essa probabilidade. Note que
+
+$$
+\Pr(\hat{\mu} - \mu\ \textcolor{red}{ > 1,96\sigma}) = \frac{1}{\sigma\sqrt{2\pi}}\int_{\mu + 1,96\sigma}^{\infty}{e^{-(\hat{\mu} - m)^2/2\sigma^2}d\hat{\mu}}.
+$$
+
+- Fazendo $t = (\hat{\mu} - m)/\sigma$, então o limite inferior do intervalo de integração de $t$ é
+
+$$
+\frac{\mu - m}{\sigma} + 1,96 = 1,96 - \textcolor{darkpastelgreen}{\frac{B}{\sigma}}.
+$$
+
+\framebreak
+
+Assim,
+
+$$
+\Pr(\hat{\mu} - \mu\ \textcolor{red}{ > 1,96\sigma}) = \frac{1}{\sqrt{2\pi}}\int_{ 1,96 - (\textcolor{darkpastelgreen}{B/\sigma})}^{\infty}{e^{-t^2/2}dt}.
+$$
+
+E semelhantemente, temos
+
+$$
+\Pr(\hat{\mu} - \mu\ \textcolor{blue}{ < - 1,96\sigma}) = \frac{1}{\sqrt{2\pi}}\int^{-1,96 - (\textcolor{darkpastelgreen}{B/\sigma})}_{-\infty}{e^{-t^2/2}dt}.
+$$
+\framebreak
+
+- A quantidade de perturbação depende, unicamente, da razão entre o viés e o desvio padrão.
+
+\footnotesize
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+
+f <- function(t){ 1 / sqrt(2*pi) * exp( - t^ 2/ 2) }
+low <- function(b){integrate(f, lower = -Inf, upper = -1.96 - b)$value}
+upp <- function(b){integrate(f, lower = 1.96 - b, upper = Inf)$value}
+low.v <- Vectorize(low)
+upp.v <- Vectorize(upp)
+
+B.sigma <- c(seq(0.02,0.1, by = 0.02),
+             seq(0.2, 1, by = 0.2), 1.5)
+pl <- low.v(B.sigma)
+pu <- upp.v(B.sigma)
+pt <- low.v(B.sigma) + upp.v(B.sigma)
+
+df <- data.frame(B.sigma, pl, pu, pt)
+knitr::kable(x = df,
+             format = "markdown",
+             digits = c(2, 4, 4, 4),
+             align = "cccc",
+             col.names = c("$B/\\sigma$",
+                           "$< -1,96\\sigma$",
+                           "$> 1,96\\sigma$",
+                           "Total"),
+             caption = "Efeito do viés sobre a probabilidade de um erro maior que $1,96\\sigma$")
+
+```
+
+\framebreak
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(x = df$B.sigma,
+     y = df$pt,
+     type = "b",
+     lwd = 2,
+     col = "red",
+     ylim = c(0, 0.35),
+     xlab = expression(B/sigma),
+     ylab = expression(paste("Probabilidade de erro ", (hat(mu) - mu) )),
+     main = expression(paste("Efeito do viés sobre a probabilidade de um erro maior que 1,96", sigma) ) )
+lines(x = df$B.sigma,
+       y = df$pl,
+       type = "b",
+       lwd = 2,
+       col = "darkorange")
+lines(x = df$B.sigma,
+      y = df$pu,
+      type = "b",
+      lwd = 2,
+      col = "pink2")
+abline(h = 0.05, lty = 2, lwd = 2, col = "darkgrey")
+legend("topleft",
+       legend = c(expression("< - 1.96"*sigma), expression("> 1.96"*sigma), "Total"),
+       lwd = 2, col = c("darkorange", "pink2", "red"), bty = "n")
+```
+
+## Comentários {.allowframebreaks}
+
+- Para a probabilidade total de um erro maior que $1,96\sigma$, o viés tem pouca influência, desde que seu valor seja inferior a $1/10$ do desvio padrão.
+    + $B = \sigma/10$, a probabilidade total é 0,0511, em vez de 0,05.
+- A medida que o viés aumenta, a perturbação se torna mais grave.
+    + $B = \sigma$, a probabilidade total de erro será 0,1701 $> 3 \times$ 0,05.
+
+\framebreak
+
+- As duas caudas são afetadas de forma diferente.
+- Com um viés positivo, como neste exemplo, a probabilidade de uma subestimativa em mais de 1,96$\sigma$ diminui rapidamente do presumido 0,025, para se tornar insignificante quando $B = \sigma$.
+- A probabilidade da superestimação correspondente aumenta continuamente.
+
+\framebreak
+
+- Como regra de trabalho, o efeito do viés sobre a precisão de uma estimativa é insignificante se o viés for menor que um décimo do desvio padrão da estimativa.
+- Se tivermos um processo de estimativa enviesado, no qual $B/\sigma <$ 0,1, em que $B$ é o valor absoluto do viés, pode-se afirmar que o viés não é uma desvantagem considerável do processo.
+- Mesmo com $B/\sigma =$ 0,2, a perturbação na probabilidade do erro total é modesta.
+
+\framebreak
+
+- Ao usar esses resultados, uma distinção deve ser feita entre as duas fontes de viés mencionadas no início desta seção.
+- Com vieses do tipo que surgem na estimativa de razões, um limite superior para a razão $B/\sigma$ pode ser encontrado matematicamente.
+    + Se a amostra for grande o suficiente, podemos ter certeza de que $B/\sigma$ não excederá 0,1.
+- Com vieses causados por erros de medição ou não resposta, geralmente é impossível encontrar um limite superior garantido para $B/\sigma$ que seja pequeno. 
+
+## Para casa
+
+- Estude a função `integrate` do `R` (material suplementar no Moodle), e avalie o efeito do viés quando $B$ é negativo (e mesmas condições do exemplo).
+
+## Próxima aula
+
+- Erro quadrático médio;
+- Exercícios.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-forecast.jpg'))
+
+```
+

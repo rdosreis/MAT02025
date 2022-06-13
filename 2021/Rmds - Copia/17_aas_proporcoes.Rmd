@@ -1,0 +1,275 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: proporções e porcentagens por amostragem"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+---
+
+# Características qualitativas
+
+## Características qualitativas {.allowframebreaks}
+
+- Às vezes, desejamos estimar o número total, a proporção ou a porcentagem de unidades na população que possuem alguma \structure{característica} ou \structure{atributo} ou se enquadram em alguma classe definida.
+    - Muitos dos resultados regularmente publicados de censos ou pesquisas são desta forma, por exemplo, o __número de pessoas desempregadas__, a __porcentagem da população nativa__.
+- A classificação pode ser introduzida diretamente no questionário, como nas perguntas que são respondidas com um simples __"sim"__ ou __"não"__.
+- Em outros casos, as medidas originais são mais ou menos contínuas e a classificação é introduzida na tabulação dos resultados.
+    - Assim, podemos registrar as idades dos respondentes até o ano mais próximo, mas publicar a porcentagem da população com 60 anos ou mais.
+
+\framebreak
+
+\structure{Notação}
+
+Supomos que cada unidade na população cai em uma das duas classes \structure{$C$} e \structure{$C'$}. A notação é a seguinte:
+
+\footnotesize
+
+\begin{table}[]
+\begin{tabular}{ccccccc}
+\hline
+\multicolumn{3}{c}{Número de unidades da categoria $C$ na} &  & \multicolumn{3}{c}{Proporção de unidades de $C$ na} \\ \cline{1-3} \cline{5-7} 
+População      &       & Amostra      &  & População          &           & Amostra            \\ \cline{1-1} \cline{3-3} \cline{5-5} \cline{7-7} 
+$A$            &       & $a$                               &  & $P = A/N$          &           & $p = a/n$          \\ \hline
+\end{tabular}
+\end{table}
+
+\normalsize
+
+\framebreak
+
+- A estimativa amostral de \structure{$P$} é \structure{$p$}, e a estimativa amostral de \structure{$A$} é \structure{$Np$} ou \structure{$Na/n$}.
+- No trabalho estatístico, a \structure{distribuição binomial} é frequentemente aplicada a estimativas como \structure{$a$} e \structure{$p$}.
+- Como será visto, a distribuição correta para populações finitas é a \structure{hipergeométrica}, embora o binomial seja geralmente uma aproximação satisfatória.
+
+# Variâncias das estimativas amostrais
+
+## Variâncias das estimativas amostrais {.allowframebreaks}
+
+- Por meio de um artifício simples, é possível aplicar os teoremas estabelecidos nas aulas anteriores a essa situação.
+- Para qualquer unidade na amostra ou população, atribui-se valor \structure{$1$} a \structure{$Y_i$} se a unidade estiver em \structure{$C$}, e \structure{$0$} se estiver em \structure{$C'$}.
+- Para esta população de valores \structure{$Y_i$}, é evidente que
+
+\begin{eqnarray*}
+Y_T = \sum_{i=1}^N{Y_i} = A,\\
+\overline{Y} = \frac{1}{N}\sum_{i=1}^N{Y_i} = \frac{A}{N} = P.
+\end{eqnarray*}
+
+\framebreak
+
+- E também, para a amostra,
+
+$$
+\overline{y} = \frac{1}{n}\sum_{i=1}^n{Y_i} = \frac{a}{n} = p.
+$$
+
+\framebreak
+
+- Consequentemente, o problema de estimar \structure{$A$} e \structure{$P$} pode ser considerado como o de estimar o total e a média de uma população em que cada \structure{$Y_i$} é \structure{$1$} ou \structure{$0$}.
+- Para usar os teoremas das aulas anteriores, primeiro expressamos \structure{$S^2$} e \structure{$s^2$} em termos de \structure{$P$} e \structure{$p$}.
+- Observe que
+
+$$
+\sum_{i=1}^N{Y_i^2} = A = NP,\quad \sum_{i=1}^n{Y_i^2} = a = np.
+$$
+
+\framebreak
+
+- Portanto,
+
+\begin{align*}
+S^2 &= \frac{\sum_{i=1}^N{(Y_i - \overline{Y})^2}}{N-1} = \frac{\sum_{i=1}^N{Y_i^2} - N\overline{Y}^2}{N-1}\\
+&= \frac{1}{N-1}(NP - NP^2) = \frac{N}{N-1}PQ,
+\end{align*}
+em que \structure{$Q = 1 - P$}. Semelhantemente,
+
+\begin{equation}
+\label{s2}
+s^2 = \frac{\sum_{i=1}^n{(Y_i - \overline{y})^2}}{n-1} = \frac{n}{n-1}pq.
+\end{equation}
+
+\framebreak
+
+- A aplicação dos \structure{teoremas das aulas 9, 10 e 11} a essa população fornece os seguintes resultados para uma amostragem aleatória simples das unidades que estão sendo classificadas.
+
+::: {.block}
+### Teorema
+
+A proporção da amostra \structure{$p = a/n$} é uma estimativa não enviesada da proporção da população \structure{$P = A/N$}.
+
+:::
+
+::: {.block}
+### Teorema
+
+A variância de \structure{$p$} é
+
+\begin{equation}
+\label{var.p}
+\Var(p) = \E(p - P)^2 = \frac{S^2}{n}\left(\frac{N-n}{N}\right) = \frac{PQ}{n}\left(\frac{N-n}{N-1}\right).
+\end{equation}
+
+:::
+
+\framebreak
+
+::: {.block}
+### Corolário
+
+Se \structure{$p$} e \structure{$P$} são as porcentagens da amostra e da população, respectivamente, caindo na classe \structure{$C$}, \eqref{var.p} continua valendo para a variância de \structure{$p$}.
+:::
+
+::: {.block}
+### Corolário
+
+A variância de \structure{$\widehat{A} = Np$}, o número total estimado de unidades na classe \structure{$C$}, é
+
+$$
+\Var(\widehat{A}) = \frac{N^2PQ}{n}\left(\frac{N-n}{N-1}\right).
+$$
+
+:::
+
+\framebreak
+
+::: {.block}
+### Teorema
+
+Uma estimativa imparcial da variância de \structure{$p$}, derivada da amostra, é
+
+$$
+\widehat{Var}(p) = s^2_p = \frac{N-n}{(n-1)N}pq.
+$$
+:::
+
+\framebreak
+
+__Demonstração.__ No corolário do teorema da aula 11 foi mostrado que para uma variável \structure{$Y_i$} uma estimativa não enviesada da variância da média amostral \structure{$\overline{y}$} é
+
+$$
+\widehat{\Var}(\overline{y}) = \frac{s^2}{n}\frac{(N-n)}{N}.
+$$
+
+- Para proporções, \structure{$p$} toma o lugar de \structure{$\overline{y}$}, e em \eqref{s2} mostramos que
+
+$$
+s^2 = \frac{n}{n-1}pq.
+$$
+
+\framebreak
+
+- Portanto,
+
+$$
+\widehat{Var}(p) = s^2_p = \frac{N-n}{(n-1)N}pq.
+$$
+
+- Segue-se que se \structure{$N$} é muito grande em relação a \structure{$n$}, de modo que a \structure{fpc} é desprezível, uma estimativa não enviesada da variância de \structure{$p$} é
+
+$$
+\frac{pq}{n-1}.
+$$
+
+- O resultado pode parecer intrigante, uma vez que a expressão \structure{$pq/n$} é quase invariavelmente usada na prática para a variância estimada.
+    + O fato é que \structure{$pq/n$} não é imparcial, mesmo com uma população infinita.
+
+\framebreak
+
+::: {.block}
+### Corolário
+
+Uma estimativa não enviesada da variância de \structure{$\widehat{A} = Np$}, o número total estimado de unidades da classe \structure{$C$} na população, é
+
+$$
+\widehat{\Var}(\widehat{A}) = s_{N_p}^2 = \frac{N(N-1)}{n-1}pq.
+$$
+
+:::
+
+# Exemplo {.allowframebreaks}
+
+- De uma lista de 3042 nomes e endereços, uma amostra aleatória simples de 200 nomes mostrou na investigação 38 endereços errados.
+- __Problema:__ estimar o número total de endereços que precisam de correção na lista e encontrar o erro padrão dessa estimativa.
+- Nós temos
+
+$$
+N = 3042;\quad n = 200;\quad a = 38;\quad p = 0,19.
+$$
+
+\framebreak
+
+- O número total estimado de endereços errados é
+
+$$
+\widehat{A} = Np = 3042 \times 0,19 \approx 578.
+$$
+
+- O erro padrão será
+
+$$
+s_{\widehat{A}} = \sqrt{[(3042 \times 2842 \times 0,19 \times 0,81)/199]} \approx 81,8.
+$$
+
+\framebreak
+
+- Como a fração de amostragem está abaixo de 7%, a fpc faz pouca diferença.
+- Para removê-lo, substitua o termo \structure{$N - n$} por \structure{$N$}.
+- Se, além disso, substituirmos \structure{$n - 1$} por \structure{$n$}, temos a fórmula mais simples
+
+$$
+s_{N_p} = N\sqrt{pq/n} = (3042) \sqrt{[(0,19 \times 0,81)/200]} = 84,4.
+$$
+
+- Isso está bastante de acordo com o resultado anterior, 81,8.
+
+# Considerações finais {.allowframebreaks}
+
+- As expressões anteriores para a variância e a variância estimada de \structure{$p$} são válidas apenas se as unidades forem classificadas em \structure{$C$} ou \structure{$C'$}, de modo que \structure{$p$} seja a razão entre o número de unidades em \structure{$C$} na amostra e o número total de unidades na amostra.
+- Em muitos levantamentos por amostragem, cada unidade é composta por um __grupo de elementos__, e são os elementos que são classificados. Alguns exemplos são os seguintes:
+
+\begin{table}[]
+\begin{tabular}{ccc}
+\hline
+Unidade de amostragem && Elementos componentes \\
+\hline
+Família/domicílio && Membros da família/domicílio \\
+Restaurante && Funcionários \\
+Engradados de ovos && Cada ovo \\
+Pessegueiro && Cada pêssego \\
+\hline
+\end{tabular}
+\end{table}
+
+\framebreak
+
+- Se uma amostra aleatória simples de unidades for delineada para estimar a proporção \structure{$P$} dos __elementos__ na população que pertencem à classe \structure{$C$}, as fórmulas anteriores __não se aplicam__.
+    + Os métodos apropriados são fornecidos em aulas futuras.
+
+## Para casa
+
+- Revisar os tópicos discutidos nesta aula.
+- Atividade de avaliação 2.
+
+## Próxima aula
+
+- A influência de $P$ nos erros padrões.
+- As distribuições binomial e hipergeométrica.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-barras01.jpg'))
+
+```
+

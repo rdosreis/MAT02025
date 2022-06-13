@@ -10,9 +10,9 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
+# header-includes:
+#   - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
 ---
 
 # O professor
@@ -38,10 +38,6 @@ knitr::include_graphics(here::here('images', 'hi_my_name_is.png'))
 - Os meus interesses de pesquisa são __Inferência causal em epidemiologia__, __Análise de mediação__, __Modelos de predição de risco__ e __Análise de sobrevivência__.
 - Em estatística aplicada eu tenho interesse na __epidemiologia do Diabetes Mellitus__.
 
-<!-- - Eu sou um grande entusiasta do R! -->
-<!-- - Nascido em Porto Velho, morador de Porto Alegre, com uma passagem (estatisticamente) significante por Belo Horizonte! -->
-<!-- - Sigo acreditando que a Terra é redonda! -->
-
 # A disciplina
 
 ## Objetivos
@@ -53,7 +49,7 @@ knitr::include_graphics(here::here('images', 'hi_my_name_is.png'))
 
 - __Disciplina:__ Amostragem 1
 - __Turma:__ U
-- __Modalidade:__ Ensino remoto emergencial \structure{(Moodle)}
+- __Modalidade:__ Ensino presencial
 - __Professor:__ Rodrigo Citton Padilha dos Reis
     + e-mail: `citton.padilha@ufrgs.br` ou `rodrigocpdosreis@gmail.com` 
     + Sala: B215 do Instituto de Matemática e Estatística
@@ -70,21 +66,25 @@ knitr::include_graphics(here::here('images', 'hi_my_name_is.png'))
 - __Exercícios__
     + Listas de exercícios
     + Para casa
-    + Questionários do Moodle
 - __Canais de comunicação:__
     + Durante as aulas
-    + Moodle: aulas, materiais, listas de exercícios
+    + Moodle: aulas, materiais, listas de exercícios e __fórum geral__
     + Sala de aula virtual: notas das avaliações
     + e-mail do professor
 
 ## Aulas e material didático
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', paged.print=FALSE}
-knitr::include_graphics(here::here('images','videoaula-2.png'))
-```
+- __Aulas:__ terças e quintas, das 8hs 30min às 10hs 10min, na Sala F105 do Instituto de Química - Campus do Vale
+    + _8hs 30min:_ chegada
+    + _8hs 40min:_ início
+    + _10hs:_ fim/dúvidas
+    + _10hs 10min:_ saída
 
-- __Aulas:__ Terças e quintas, das 8hs 30min às 9hs 30min, no MConf do Moodle da disciplina
-    + As aulas serão realizadas de maneira __síncrona__ com __gravação__ e disponibilizadas para posterior consulta
+## Aulas e material didático
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+knitr::include_graphics(here::here('images','covid-recomendacoes.jpg'))
+```
 
 ## Aulas e material didático
 
@@ -106,38 +106,46 @@ hist(x, col = 'black', border = 'white')
 ## Conteúdo programático {.allowframebreaks}
 
 - __Área 1__
-    + Introdução
+    + Introdução à teoria da amostragem
     + Conceitos básicos
 
 - __Área 2__
     + Amostragem aleatória simples
     + Estimação
-
+        + Média, total e razão (índice)
+        + Proporções
+    
 - __Área 3__
     + Dimensionamento de amostra __(introdução)__
 
 ## Avaliação
 
-- Serão realizadas pelo menos uma (e no máximo três) avaliação(ões) de cada área por meio de questionários e tarefas do Moodle
+- Serão realizadas quatro atividades de avaliação (pelo menos uma em de cada área):
+    + duas provas ($P_1$ e $P_2$) presenciais e individuais;
+    + dois trabalhos em grupo ($T_1$ e $T_2$).
 - Cada atividade de avaliação vale 10 pontos
-- Será realizado um um teste no Moodle (individual) como atividade de recuperação ($TR$)
+- Será realizado uma prova presencial e individual como atividade de recuperação ($PR$)
     + Para os alunos que não atingirem o conceito mínimo
-    + __Este teste abrange todo o conteúdo da disciplina__
+    + __Esta prova abrange todo o conteúdo da disciplina__
 
 ## Avaliação
 
 $$
-MF = \mbox{média das atividades de avaliação}
+MF = \frac{P_1 + P_2 + T_1 + T_2}{4}
 $$
 
 + __A:__ $9 \leq MF \leq 10$
 + __B:__ $7,5 \leq MF < 9$
 + __C:__ $6 \leq MF < 7,5$
++ __D:__ $MF < 6$
++ __FF:__ se o aluno tiver frequência inferior a 75% da carga horária prevista no plano da disciplina
 
-+ Se $MF < 6$ o aluno poderá realizar o teste de recuperação e neste caso
+## Avaliação
+
++ Se $MF < 6$ e frequência mínima de 75% o aluno poderá realizar a prova de recuperação e neste caso
 
 $$
-MF' = MF \times 0,4 + TR \times 0,6
+MF' = MF \times 0,4 + PR \times 0,6
 $$
 
 - __C:__ $MF' \geq 6$
@@ -205,7 +213,7 @@ knitr::include_graphics(here::here('images', 'ibge-pesquisas.jpg'))
 
 - Todas estas amostras foram obtidas da mesma forma?
     + O que é uma amostra?
-- Foram obtidas da mesma população?
+- Elas foram obtidas da mesma população?
     + O que é uma população?
 - A partir dos resultados da amostra, podemos generalizar os resultados obtidos para toda a população?
     + De que forma?
@@ -219,12 +227,12 @@ knitr::include_graphics(here::here('images', 'ibge-pesquisas.jpg'))
 - Estas questões constituem o nosso objeto de estudo:
 
 \begin{center}
-a {\bf Teoria da Amostragem.}
+a {\bf Teoria da Amostragem}.
 \end{center}
 
 ## Próxima aula
 
-- Introdução ao delineamento de pesquisa.
+- Revisão de conceitos básicos de __probabilidade e estatística__.
 
 ## Por hoje é só!
 

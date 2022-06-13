@@ -1,0 +1,201 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "Principais fases de um levantamento por amostragem"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2021
+header-includes:
+  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+---
+
+# Introdução
+
+## Introdução {.allowframebreaks}
+
+- Como introdução à discussão do papel que a teoria representa em um levantamento por amostragem, é útil descrever, resumidamente, as fases abrangidas pelo planejamento e pela execução de um levantamento\footnote{Veja uma discussão alternativa em https://amostragemcomr.github.io/livro/conceitos.html\#planejamento-e-execu\%C3\%A7\%C3\%A3o-de-pesquisas-por-amostragem}.
+
+## Introdução {.allowframebreaks}
+
+A complexidade de levantamentos pode variar bastante.
+
+\begin{columns}[c]
+\column{2in}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=1\columnwidth]{images/arquivo_vs_rio.jpg}
+\end{center}
+\end{figure}
+\column{2.6in}
+\begin{itemize}\setlength{\itemsep}{+2mm}
+\item Tirar uma amostra entre 5000 cartões perfeitamente arrumado e numerados em um arquivo é uma tarefa fácil.
+\item Outra coisa é coletar amostras de habitantes de uma região onde os tranportes se fazem sobre água e através de florestas, no qual falam-se 15 línguas e dialetos diferentes, em que forasteiros ``perguntadores'' nem sempre são bem-vindos.
+\end{itemize}
+\end{columns}
+
+## Atividades típicas em um levantamento
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='90%', out.height='80%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'fases_levantamento.jpg'))
+
+```
+
+# Construções conceituais
+
+## Formulação do problema
+
+- Construção do \structure{quadro conceitual}.
+- \structure{Hipóteses} e expectativas sobre os resultados.
+    
+## População de estudo, objetivos e variáveis {.allowframebreaks}
+
+- A \structure{população de estudo} é definida como a parte identificável e acessível do conjunto \structure{(população-alvo)} para o qual idealmente se deseja a informação.
+    + A distância entre ambas é decorrente quer das dificuldades da realidade, quer das limitações impostas pelo delineamento.
+    
+\framebreak
+
+### Exemplo (pop.-alvo vs. pop. estudo)
+
+- Um estudo desejou avaliar o impacto de programas incrementais sobre a prevalência de cárie dental em crianças em idade escolar.
+    +  A __população-alvo__ era composta de \structure{todas as crianças do município de São José dos Campos (SP) que frequentavam escolas públicas dos ensinos fundamental e médio}.
+- Entretanto, a necessidade de controlar um possível efeito de "confundimento" da idade e do tempo de exposição aos programas, associada à realidade dos recursos disponíveis, indicou ser adequado e oportuno restringir a __população de estudo__ aos \structure{escolares de 12 anos que participaram dos programas incrementais por no mínimo dois anos consecutivos}.
+
+## População de estudo, objetivos e variáveis {.allowframebreaks}
+
+- Definir os \structure{objetivos} significa explicitar, com precisão, as evidências pretendidas e o uso do conhecimento adquirido sobre a realidade estudada.
+- Estabelecer as \structure{variáveis} é identificar as características observadas e analisadas.
+- Reconhecer a natureza das observações facilita a determinação do tipo de variável (quantitativa ou qualitativa) e as decisões técnicas durante o planejamento.
+
+### Comentário
+
+Essas atividades marcam a passagem do enfoque abstrato para a representação concreta e observável do objeto da pesquisa.
+
+# Planejamento e amostra
+
+## Plano inicial
+
+Monta a estrutura lógica do estudo.
+
+- O \structure{plano de coleta} determina se o estudo é __descritivo__ ou __analítico__, define as __variáveis prioritárias__ a serem observadas, os fatores que vão ser controlados e os \structure{grupos populacionais} a serem separados para a comparação (sexo, faixa etária, raça/cor, escolaridade, região).
+- O \structure{plano de análise} é preliminar, não consistindo, porém, na descrição detalhada de métodos e técnicas utilizados na análise estatística.
+    + Decide a forma de organização dos resultados e as medidas empíricas (índices) para o cálculo dos valores populacionais pesquisados e também escolhe as estratégias para verificação de hipóteses ou dos resultados esperados.
+    
+## Questionário
+
+- A __elaboração__ e o __teste__ do \structure{instrumento de coleta} de dados, acompanhado do levantamento de \structure{recursos necessários} à realização do estudo, podem ocorrer durante a construção do plano inicial.
+    + \structure{recursos necessários:} contratação da equipe de campo; supervisores; treinamento (a entrevista será presencial ou por telefone?); passagens e diárias serão necessárias?
+- O \structure{tempo} necessário para coleta e processamento de dados e o \structure{quadro de pessoal} disponível influenciam o tipo de amostragem adotado.
+
+## Plano de amostragem
+
+- Esta etapa compreende a definição do \structure{tamanho} e do \structure{desenho da amostra}, consistindo também na escolha de procedimentos para cálculos das estimativas.
+- O plano inicial e os recursos disponíveis fundamentam as decisões sobre os critérios de custo e precisão dos resultados.
+
+## Desenho da amostra {.allowframebreaks}
+
+- O \structure{desenho} (esquema) da amostra consiste em decidir o modelo de __sorteio__ ou __tipo de amostra:__
+    + Sistemática;
+    + Casual (aleatória/acidental) simples;
+    + Estratificada;
+    + Por conglomerados.
+
+\framebreak
+
+- Nessa etapa, a população de estudo é delimitada em termos \structure{espaciais} e \structure{temporais}, o que viabiliza a identificação, mesmo que indireta, do total de elementos que a compõem.
+- A listagem desses elementos forma o \structure{sistema} ou \structure{cadastros}\footnote{Veja os principais cadastros utilizados em diversas pesquisas: https://amostragemcomr.github.io/livro/conceitos.html\#cadastros}, do qual a amostra é sorteada.
+- O tamanho da amostra resulta da conciliação do atendimento do plano de análise proposto com as limitações dos recursos disponíveis.
+    
+## Estudo-piloto
+
+- O \structure{estudo-piloto} impõe-se como teste para a aplicação e o ajuste de todas as decisões tomadas na composição do processo.
+    + Sorteio de amostra proposta, coleta e no processamento preliminar de dados.
+- Deve ser realizado em populações semelhantes à de estudo.
+- Também pode ser usado para determinação do tamanho da amostra ("final").
+
+# Operações
+
+## Coleta, consistência e processamento {.allowframebreaks}
+
+- \structure{Coletar}, \structure{conferir} e \structure{processar} os dados são atividades que podem e devem ser realizadas conjunta e progressivamente.
+- A \structure{crítica} e \structure{tratamento} dos dados coletados é uma etapa indispensável para permitir a eliminação de erros grosseiros na massa de dados coletados (idade $>$ 200 anos; indivíduo do sexo masculino com tempo de gestação $>$ 0), os quais podem distorcer significativamente os resultados da pesquisa.
+    + É preciso ter formas de detectar inconsistências e definir o tratamento para a correção dos dados individuais.
+- \structure{Codificação}, \structure{criação de variáveis derivadas} e \structure{cálculo de pesos amostrais} fazem parte da elaboração dos \structure{arquivos de dados} para análises.
+    + \structure{Dicionários de variáveis} também são produzidos nesta etapa.
+
+## Análises de dados {.allowframebreaks}
+
+- Esta compreende a \structure{análise estatística} e a \structure{interpretação dos resultados}.
+- O plano preliminar de análise é aprofundado e os métodos são escolhidos para a análise estatística dos dados.
+    + As \structure{estimativas por intervalo} são comuns aos estudos descritivos, enquanto \structure{testes de significância} são aplicados para verificar diferenças entre grupos.
+- A \structure{interpretação dos resultados} obtidos deve ser realizada à luz do contexto construído na primeira fase do processo.
+    + Alcançar respostas para o problema tal como o formulado e atender aos objetivos devem ser os critérios e nortear a última atividade do processo da pesquisa.
+    
+## Elaboração do relatório{.allowframebreaks}
+
+- Esta não deve ser considerada uma atividade final, mas precisa ser estabelecida como uma dinâmica de registro que acompanha todas as fases do trabalho.
+    - Relatório científico como \structure{repositório do conhecimento} produzido no decorrer processo da pesquisa.
+
+# Etapas e considerações complementares
+
+## Etapas complementares
+
+- Divulgação dos resultados:
+    + Relatório(s);
+    + Artigos em periódicos científicos;
+    + Imprenssa e público especializado.
+- Gerenciamento de repositório (público?) dos arquivos de dados (e documentação necessária para a análise).
+
+## Fontes de erros {.allowframebreaks}
+
+__Erros amostrais__
+
+- Boas práticas de levantamentos incluem o cálculo de erros amostrais (variação), que é possível se métodos probabilísticos são usados na seleção da amostra.
+    + Intervalos de confiança, erros padrões, entre outros, devem ser divulgados em conjunto com as estimativas pontuais.
+
+\framebreak
+
+__Erros não-amostrais__
+
+- Incluem o efeito de recusas e ausência no momento da visita do entrevistador, repondentes fornecendo informação incorreta, codificação ou outros erros de processamento.
+- Não é possível estimar o tamanho dos erros não-amostrais.
+- No entanto, podemos aprender com diferentes levantamentos amostrais (prévios) a respeito dos tipos de erros não-amostrais que costumam surgir, e tentar minimizá-los.
+
+\framebreak
+
+Os principais erros que podem causar viéses nos resultados são:
+
+1. __Operações de amostragem:__ seleção da amostra, definição inadequada da população (parte da população é omitida).
+2. __Não-entrevistados:__ diferenças entre os não-entrevistados (dados ausentes) e os entrevistados.
+3. __Adequação do respondente:__ em alguns casos os respondentes não podem ser entrevistados e a informação é obtida por outros, porém o respondente "substituto" nem sempre é tão conhecedor dos fatos.
+4. __Entendimento dos conceitos e falta de conhecimento:__ alguns respondentes podem não entender o que é desejado, ou não saber a informação requisitada.
+5. __Questões mal formuladas:__ acabam induzindo o respondente a uma certa resposta.
+6. __Erros de processamento:__ erros de codificação, chaves-de-identificação erradas, erros de programação, etc.
+7. __Erros de entrevistadores:__ entrevistadores podem errar na leitura da questão ou embaralhar as respostas e assim introduzir viés.
+
+## Para casa
+
+- Lista de exercícios 1 \structure{(no Moodle)}.
+
+## Próxima aula
+
+- Amostragem probabilística.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-pizza.jpg'))
+
+```
+

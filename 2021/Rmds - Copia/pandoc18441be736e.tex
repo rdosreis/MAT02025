@@ -1,0 +1,357 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usetheme[]{Antibes}
+\usecolortheme{dolphin}
+\usefonttheme{structurebold}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={MAT02025 - Amostragem 1},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\newcount\tmpnum
+\def\tallymarks#1{\leavevmode \lower1bp\vbox to9bp{}%
+   \tmpnum=#1
+   \loop \ifnum\tmpnum<5 \kern1bp \tallynum\tmpnum \else \tallyV \fi
+         \advance\tmpnum by-5
+         \ifnum\tmpnum>0 \repeat
+}
+\def\tallynum#1{\bgroup\tmpnum=#1\relax
+   \loop \ifnum\tmpnum>0
+         \kern1bp \tallyI \kern1bp
+         \advance\tmpnum by-1
+         \repeat
+   \egroup
+}
+\def\tallyI{\pdfliteral{q .5 w 0 -1 m 0 8 l S Q}}
+\def\tallyV{\kern1bp\pdfliteral{q .5 w -1 0 m 9 7 l S Q}\tallynum4\kern1bp }
+
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{items}[default] 
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{footline}{}
+\setbeamercolor{alerted text}{fg=purple}
+\titlegraphic{\hfill\includegraphics[height=1cm]{logos/Logo-40-anos-estatistica.png}}
+
+\def\Corr{\mbox{Corr}\,}
+\def\Cov{\mbox{Cov}\,}
+\def\Var{\mbox{Var}\,}
+\def\E{\mbox{E}\,}
+\definecolor{darkpastelblue}{rgb}{0.47, 0.62, 0.8}
+\definecolor{darkpastelgreen}{rgb}{0.01, 0.75, 0.24}
+\definecolor{darkpastelpurple}{rgb}{0.59, 0.44, 0.84}
+\definecolor{darkpastelred}{rgb}{0.76, 0.23, 0.13}
+
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{MAT02025 - Amostragem 1}
+\subtitle{O erro quadrático médio}
+\author{Rodrigo Citton P. dos Reis\\
+\texttt{citton.padilha@ufrgs.br}}
+\date{Porto Alegre, 2021}
+\institute{\textsc{Universidade Federal do Rio Grande do Sul}\\
+\textsc{Instituto de Matemática e Estatística}\\
+\textsc{Departamento de Estatística}}
+
+\begin{document}
+\frame{\titlepage}
+
+\hypertarget{o-erro-quadruxe1tico-muxe9dio}{%
+\section{O erro quadrático médio}\label{o-erro-quadruxe1tico-muxe9dio}}
+
+\begin{frame}[allowframebreaks]{O erro quadrático médio}
+\protect\hypertarget{o-erro-quadruxe1tico-muxe9dio-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Para comparar um estimador enviesado com um estimador imparcial, ou
+  dois estimadores com diferentes valores de enviesamento, um critério
+  útil é o \structure{erro quadrático médio} \textbf{(EQM)} da
+  estimativa, medido a partir do valor da população que está sendo
+  estimado.
+\item
+  Formalmente
+\end{itemize}
+
+\begin{eqnarray*}
+EQM(\hat{\theta}) &=& \E(\hat{\theta} - \theta)^2 \\
+&=& \E\{[\hat{\theta} - \textcolor{red}{\E(\hat{\theta})}] + [\textcolor{red}{\E(\hat{\theta})} - \theta]\}^2 \\
+&=& \E\{[\hat{\theta} - \E(\hat{\theta})]^2 + 2[\hat{\theta} - \E(\hat{\theta})][\E(\hat{\theta}) - \theta] + [\E(\hat{\theta}) - \theta]^2\} \\
+&=& \E\{[\hat{\theta} - \E(\hat{\theta})]^2\} + 2[\E(\hat{\theta}) - \theta]\E[\hat{\theta} - \E(\hat{\theta})] + \E[\E(\hat{\theta}) - \theta]^2 \\
+&=& \Var(\hat{\theta}) + 2[\E(\hat{\theta}) - \theta]\textcolor{red}{[\E(\hat{\theta}) - \E(\hat{\theta})]} + [B(\hat{\theta})]^2 \\
+&=& \Var(\hat{\theta}) + [B(\hat{\theta})]^2.
+\end{eqnarray*}
+
+\framebreak
+
+\begin{itemize}
+\tightlist
+\item
+  Note que se um estimador \(\hat{\theta}\) é não enviesado para
+  \(\theta\), então
+\end{itemize}
+
+\[
+EQM(\hat{\theta}) = \Var(\hat{\theta}) + [\textcolor{red}{0}]^2 = \Var(\hat{\theta}) = \sigma^2_{\hat{\theta}}.
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  No exemplo da aula passada, considerando o parâmetro populacional de
+  interesse como a média, \(\mu\), temos
+  \(EQM(\hat{\mu}) = \sigma^2_{\hat{\mu}} + B^2\), em que
+  \(B = m - \mu\).
+\end{itemize}
+
+\framebreak
+
+\begin{itemize}
+\tightlist
+\item
+  O uso do EQM como critério de precisão de um estimador equivale a
+  considerar equivalentes duas estimativas que têm o mesmo erro
+  quadrático médio.
+\item
+  Isso não é inteiramente verdadeiro, porque a distribuição de
+  frequência de erros \((\hat{\mu} - \mu)\) não será a mesma para dois
+  estimadores, caso eles apresentem viéses de valores diferentes.
+\item
+  Entretanto,
+  \structure{Hansen, Hurwitz e Madow (1953)}\footnote{Hansen, M. H., Hurwitz, W. N. e Madow, W. G. (1953) {\bf Sample Survey methods and theory}, John Wiley \& Sons, Nova York, Vol. I, pg. 58.}
+  que se \(B/\sigma\) for menor que cerca que \(0,5\), as duas
+  distribuições de frequência são quase idênticas em relação aos erros
+  \textbf{absolutos} \(|\hat{\mu} - \mu|\) de tamanhos diferentes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{O erro quadrático médio}
+\protect\hypertarget{o-erro-quadruxe1tico-muxe9dio-2}{}
+\begin{itemize}
+\tightlist
+\item
+  Mais uma vez suponha que \(\hat{\mu}\) tem uma distribuição
+  aproximadamente normal com média \(m = \E(\hat{mu})\) e desvio padrão
+  \(\sigma = \sigma_{\hat{\mu}}\). Ainda, denote
+  \(EQM = EQM(\hat{\mu}) = \sigma^2 + B^2\)
+\item
+  Então
+\end{itemize}
+
+\[
+\Pr\left(|\hat{\mu} - \mu| \geq  \sqrt{EQM}\right) = \frac{1}{\sigma\sqrt{2\pi}}\int_{\mu + \sqrt{EQM}}^{\infty}{e^{-(\hat{\mu} - m)^2/2\sigma^2}d\hat{\mu}}.
+\]
+
+\framebreak
+
+\begin{longtable}[]{@{}cccc@{}}
+\caption{Proporção de casos em que o valor verdadeiro, \(\mu\), não está
+incluído no intervalo \(\hat{\mu} \pm k\sqrt{EQM}\), para diferentes
+níveis de viés em \(\hat{\mu}\)}\tabularnewline
+\toprule
+\(B/\sigma\) & \(\geq \sqrt{EQM}\) & \(\geq 1,96\sqrt{EQM}\) &
+\(\geq 2,576\sqrt{EQM}\) \\
+\midrule
+\endfirsthead
+\toprule
+\(B/\sigma\) & \(\geq \sqrt{EQM}\) & \(\geq 1,96\sqrt{EQM}\) &
+\(\geq 2,576\sqrt{EQM}\) \\
+\midrule
+\endhead
+0.0 & 0.32 & 0.050 & 0.0100 \\
+0.1 & 0.32 & 0.050 & 0.0100 \\
+0.2 & 0.32 & 0.050 & 0.0100 \\
+0.3 & 0.32 & 0.050 & 0.0098 \\
+0.4 & 0.32 & 0.050 & 0.0095 \\
+0.5 & 0.32 & 0.049 & 0.0090 \\
+0.6 & 0.32 & 0.048 & 0.0083 \\
+1.0 & 0.35 & 0.038 & 0.0041 \\
+1.5 & 0.38 & 0.021 & 0.0008 \\
+2.0 & 0.41 & 0.009 & 0.0001 \\
+2.5 & 0.42 & 0.003 & - \\
+3.0 & 0.44 & 0.001 & - \\
+\bottomrule
+\end{longtable}
+
+\framebreak
+
+\begin{center}\includegraphics[width=1\linewidth]{C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/output_pdf/05_eqm_files/figure-beamer/unnamed-chunk-2-1} \end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Comentários}
+\protect\hypertarget{comentuxe1rios}{}
+\begin{itemize}
+\tightlist
+\item
+  Esses resultados, para muitos propósitos práticos, concordam com as
+  interpretações baseadas nos múltiplos correspondentes do desvio padrão
+  quando uma estimativa não enviesada é usada.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ou seja, quando
+    \(\sqrt{EQM} = \sqrt{\sigma^2 + B^2} = \sqrt{\sigma^2 + 0} = \sigma\).
+  \end{itemize}
+\item
+  Da aula passada, temos
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/images/slide-aula-04} \end{center}
+
+\framebreak
+
+\scriptsize
+
+\begin{itemize}
+\tightlist
+\item
+  Devido à dificuldade de garantir que nenhum viés insuspeitado entre
+  nas estimativas, geralmente falaremos da \structure{precisão} de uma
+  estimativa em vez de sua \structure{acurácia} (exatidão).
+\item
+  A acurácia se refere ao tamanho dos desvios da verdadeira média
+  \(\mu\), enquanto a precisão se refere ao tamanho dos desvios da média
+  \(m\) obtida pela aplicação repetida do procedimento de amostragem.
+\end{itemize}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/images/acuracia_precisao} \end{center}
+
+\framebreak
+
+\begin{center}\includegraphics[width=1\linewidth]{C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/images/acuracia_precisao-2} \end{center}
+\end{frame}
+
+\hypertarget{exercuxedcios}{%
+\section{Exercícios}\label{exercuxedcios}}
+
+\begin{frame}{Para casa}
+\protect\hypertarget{para-casa}{}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Atividade de avaliação I}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Próxima aula}
+\protect\hypertarget{pruxf3xima-aula}{}
+\begin{itemize}
+\tightlist
+\item
+  Amostragem aleatória simples;
+\item
+  Definições e notação.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Por hoje é só!}
+\protect\hypertarget{por-hoje-uxe9-suxf3}{}
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+\begin{center}\includegraphics[width=0.5\linewidth,height=0.5\textheight]{C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/images/Statistically-Insignificant-errorbar} \end{center}
+\end{frame}
+
+\end{document}
