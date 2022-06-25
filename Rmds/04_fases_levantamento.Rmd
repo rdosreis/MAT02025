@@ -10,9 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
 ---
 
 # Introdução
@@ -34,8 +32,8 @@ A complexidade de levantamentos pode variar bastante.
 \end{figure}
 \column{2.6in}
 \begin{itemize}\setlength{\itemsep}{+2mm}
-\item Tirar uma amostra entre 5000 cartões perfeitamente arrumado e numerados em um arquivo é uma tarefa fácil.
-\item Outra coisa é coletar amostras de habitantes de uma região onde os tranportes se fazem sobre água e através de florestas, no qual falam-se 15 línguas e dialetos diferentes, em que forasteiros ``perguntadores'' nem sempre são bem-vindos.
+\item Tirar uma amostra entre 5000 cartões perfeitamente arrumados e numerados em um arquivo é uma tarefa fácil.
+\item Outra coisa é coletar amostras de habitantes de uma região onde os tranportes se fazem sobre água e através de florestas, no qual falam-se 15 línguas e dialetos diferentes e cujos habitantes são extremamente desconfiados em relação a forasteiros perguntadores.
 \end{itemize}
 \end{columns}
 
@@ -56,7 +54,7 @@ knitr::include_graphics(here::here('images', 'fases_levantamento.jpg'))
     
 ## População de estudo, objetivos e variáveis {.allowframebreaks}
 
-- A \structure{população de estudo} é definida como a parte identificável e acessível do conjunto \structure{(população-alvo)} para o qual idealmente se deseja a informação.
+- A \structure{população de estudo} é definida como __a parte identificável e acessível do conjunto__ \structure{(população-alvo)} para o qual idealmente se deseja a informação.
     + A distância entre ambas é decorrente quer das dificuldades da realidade, quer das limitações impostas pelo delineamento.
     
 \framebreak
@@ -110,7 +108,7 @@ Monta a estrutura lógica do estudo.
 
 - Nessa etapa, a população de estudo é delimitada em termos \structure{espaciais} e \structure{temporais}, o que viabiliza a identificação, mesmo que indireta, do total de elementos que a compõem.
 - A listagem desses elementos forma o \structure{sistema} ou \structure{cadastros}\footnote{Veja os principais cadastros utilizados em diversas pesquisas: https://amostragemcomr.github.io/livro/conceitos.html\#cadastros}, do qual a amostra é sorteada.
-- O tamanho da amostra resulta da conciliação do atendimento do plano de análise proposto com as limitações dos recursos disponíveis.
+- O \structure{tamanho da amostra} resulta da conciliação do atendimento do plano de análise proposto com as limitações dos recursos disponíveis.
     
 ## Estudo-piloto
 
@@ -127,7 +125,7 @@ Monta a estrutura lógica do estudo.
 - A \structure{crítica} e \structure{tratamento} dos dados coletados é uma etapa indispensável para permitir a eliminação de erros grosseiros na massa de dados coletados (idade $>$ 200 anos; indivíduo do sexo masculino com tempo de gestação $>$ 0), os quais podem distorcer significativamente os resultados da pesquisa.
     + É preciso ter formas de detectar inconsistências e definir o tratamento para a correção dos dados individuais.
 - \structure{Codificação}, \structure{criação de variáveis derivadas} e \structure{cálculo de pesos amostrais} fazem parte da elaboração dos \structure{arquivos de dados} para análises.
-    + \structure{Dicionários de variáveis} também são produzidos nesta etapa.
+    + \structure{Dicionários de variáveis} também são produzidos nesta etapa. Veja um exemplo de [dicionário de variáveis da PNS 2013](https://www.pns.icict.fiocruz.br/wp-content/uploads/2021/06/Dicionario-de-variaveis_PNS-2013.xlsx).
 
 ## Análises de dados {.allowframebreaks}
 
