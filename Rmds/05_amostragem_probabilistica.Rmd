@@ -51,7 +51,7 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 
 ## O papel da teoria da amostragem {.allowframebreaks}
 
-- Na teoria e levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
+- Na teoria de levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
 - Em particular, sua forma matemática não é considerada conhecida, de modo que a abordagem pode ser descrita como livre de modelo ou livre de distribuição\footnote{Inferência baseada no delineamento.}.
 
 ## O papel da teoria da amostragem {.allowframebreaks}
@@ -59,7 +59,7 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 - Uma segunda diferença é que __as populações__ no trabalho de levantamento __contêm um número finito de unidades__.
 - Os resultados são um pouco mais complicados quando a amostragem é de uma população finita em vez de infinita.
 - Para fins práticos, essas diferenças nos resultados para populações finitas e infinitas podem frequentemente ser ignoradas.
-- Casos em que não seja assim serão apontados.
+    - Casos em que não seja assim serão apontados.
 
 # Amostragem probabilística
 
@@ -79,13 +79,10 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 2. A cada amostra possível, $S_j$, é atribuído uma probabilidade conhecida de seleção, $\pi_j$.
 3. Selecionamos uma das $S_j$ por um processo aleatório em que cada $S_j$ recebe sua adequada probabilidade $\pi_j$ de ser selecionada.
     - No exemplo, podemos atribuir __probabilidades iguais__ às três amostras. Em seguida, o sorteio em si pode ser feito escolhendo um __número aleatório__\footnote{Veja o material suplementar sobre números aleatórios no Moodle.} entre 1 e 3. Se este número for $\ell$, $S_{\ell}$ é a amostra retirada.
-
-## Amostragem probabilística: propriedades {.allowframebreaks}
-
 4. O método para calcular a estimativa da amostra deve ser conhecido e deve levar a uma estimativa única para qualquer amostra específica.
     - Podemos declarar, por exemplo, que a estimativa deve ser a média das medidas nas unidades individuais da amostra.
 
-\framebreak
+## Amostragem probabilística: propriedades {.allowframebreaks}
 
 - Para qualquer procedimento de amostragem que satisfaça essas propriedades, podemos calcular a distribuição de frequência das estimativas que ele gera, __se aplicado repetidamente à mesma população__.
 - Sabemos com que frequência qualquer amostra particular $S_j$ será selecionada, e sabemos como calcular a estimativa a partir dos dados em $S_j$.
@@ -146,80 +143,80 @@ knitr::kable(x = df2,
 
 ```
 
-\framebreak
+<!-- \framebreak -->
 
-\footnotesize
+<!-- \footnotesize -->
 
-```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
 
-x <- expand.grid(rep(list(LETTERS[1:6]), 2))
+<!-- x <- expand.grid(rep(list(LETTERS[1:6]), 2)) -->
 
-idade <- c(2,4,6,8,10,12)
-idade.pares <- expand.grid(rep(list(idade), 2))
-idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean)
+<!-- idade <- c(2,4,6,8,10,12) -->
+<!-- idade.pares <- expand.grid(rep(list(idade), 2)) -->
+<!-- idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean) -->
 
-df3 <- data.frame(numero = 1:36,
-                  amostra = paste("(", x$Var1, ", ", x$Var2, ")", sep = ""),
-                  p = rep(as.character(MASS::fractions(1/36)), 36),
-                  xs = paste("(", idade.pares$Var1, ", ", idade.pares$Var2, ")", sep = ""),
-                  xbarra = idade.media)
+<!-- df3 <- data.frame(numero = 1:36, -->
+<!--                   amostra = paste("(", x$Var1, ", ", x$Var2, ")", sep = ""), -->
+<!--                   p = rep(as.character(MASS::fractions(1/36)), 36), -->
+<!--                   xs = paste("(", idade.pares$Var1, ", ", idade.pares$Var2, ")", sep = ""), -->
+<!--                   xbarra = idade.media) -->
 
-knitr::kable(x = df3,
-             format = "markdown",
-             col.names = c("$S_j$",
-                           "Amostras",
-                           "$\\pi_j$",
-                           "$(x_1, x_2)$",
-                           "$\\bar{x}_j$"),
-             align = "ccccc")
+<!-- knitr::kable(x = df3, -->
+<!--              format = "markdown", -->
+<!--              col.names = c("$S_j$", -->
+<!--                            "Amostras", -->
+<!--                            "$\\pi_j$", -->
+<!--                            "$(x_1, x_2)$", -->
+<!--                            "$\\bar{x}_j$"), -->
+<!--              align = "ccccc") -->
 
-```
+<!-- ``` -->
 
-\framebreak
+<!-- \framebreak -->
 
-```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
 
-barplot(table(df3$xbarra),
-     col = "steelblue",
-     border = "white",
-     ylab = "Frequência",
-     xlab = expression(bar(x)))
+<!-- barplot(table(df3$xbarra), -->
+<!--      col = "steelblue", -->
+<!--      border = "white", -->
+<!--      ylab = "Frequência", -->
+<!--      xlab = expression(bar(x))) -->
 
-```
+<!-- ``` -->
 
-## Exercício {.allowframebreaks}
+<!-- ## Exercício {.allowframebreaks} -->
 
-Extras:
+<!-- Extras: -->
 
-5. Onde você já viu este esquema de sorteio?
-6. Discuta de onde vem a distribuição de $\bar{x}$.
+<!-- 5. Onde você já viu este esquema de sorteio? -->
+<!-- 6. Discuta de onde vem a distribuição de $\bar{x}$. -->
 
-7. Imagine $N = 26$ e amostras de tamanho $4$.
+<!-- 7. Imagine $N = 26$ e amostras de tamanho $4$. -->
 
-\framebreak
+<!-- \framebreak -->
 
-```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
 
-x <- expand.grid(rep(list(LETTERS), 4))
+<!-- x <- expand.grid(rep(list(LETTERS), 4)) -->
 
-idade <- 1:26 * 2
-idade.pares <- expand.grid(rep(list(idade), 4))
-idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean)
+<!-- idade <- 1:26 * 2 -->
+<!-- idade.pares <- expand.grid(rep(list(idade), 4)) -->
+<!-- idade.media <- apply(X = idade.pares, MARGIN = 1, FUN = mean) -->
 
-hist(idade.media,
-     prob = T,
-     main = "",
-     col = "steelblue",
-     border = "white",
-     ylab = "Densidade",
-     xlab = expression(bar(x)))
+<!-- hist(idade.media, -->
+<!--      prob = T, -->
+<!--      main = "", -->
+<!--      col = "steelblue", -->
+<!--      border = "white", -->
+<!--      ylab = "Densidade", -->
+<!--      xlab = expression(bar(x))) -->
 
-curve(expr = dnorm(x, mean = mean(idade.media), sd = sd(idade.media)),
-      lty = 2, lwd = 2,
-      col = "red",
-      add = T)
+<!-- curve(expr = dnorm(x, mean = mean(idade.media), sd = sd(idade.media)), -->
+<!--       lty = 2, lwd = 2, -->
+<!--       col = "red", -->
+<!--       add = T) -->
 
-```
+<!-- ``` -->
 
 # Amostragem não-probabilística
 

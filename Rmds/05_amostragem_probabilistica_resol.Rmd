@@ -51,7 +51,7 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 
 ## O papel da teoria da amostragem {.allowframebreaks}
 
-- Na teoria e levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
+- Na teoria de levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
 - Em particular, sua forma matemática não é considerada conhecida, de modo que a abordagem pode ser descrita como livre de modelo ou livre de distribuição\footnote{Inferência baseada no delineamento.}.
 
 ## O papel da teoria da amostragem {.allowframebreaks}
@@ -59,7 +59,7 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 - Uma segunda diferença é que __as populações__ no trabalho de levantamento __contêm um número finito de unidades__.
 - Os resultados são um pouco mais complicados quando a amostragem é de uma população finita em vez de infinita.
 - Para fins práticos, essas diferenças nos resultados para populações finitas e infinitas podem frequentemente ser ignoradas.
-- Casos em que não seja assim serão apontados.
+    - Casos em que não seja assim serão apontados.
 
 # Amostragem probabilística
 
@@ -79,13 +79,10 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 2. A cada amostra possível, $S_j$, é atribuído uma probabilidade conhecida de seleção, $\pi_j$.
 3. Selecionamos uma das $S_j$ por um processo aleatório em que cada $S_j$ recebe sua adequada probabilidade $\pi_j$ de ser selecionada.
     - No exemplo, podemos atribuir __probabilidades iguais__ às três amostras. Em seguida, o sorteio em si pode ser feito escolhendo um __número aleatório__\footnote{Veja o material suplementar sobre números aleatórios no Moodle.} entre 1 e 3. Se este número for $\ell$, $S_{\ell}$ é a amostra retirada.
-
-## Amostragem probabilística: propriedades {.allowframebreaks}
-
 4. O método para calcular a estimativa da amostra deve ser conhecido e deve levar a uma estimativa única para qualquer amostra específica.
     - Podemos declarar, por exemplo, que a estimativa deve ser a média das medidas nas unidades individuais da amostra.
 
-\framebreak
+## Amostragem probabilística: propriedades {.allowframebreaks}
 
 - Para qualquer procedimento de amostragem que satisfaça essas propriedades, podemos calcular a distribuição de frequência das estimativas que ele gera, __se aplicado repetidamente à mesma população__.
 - Sabemos com que frequência qualquer amostra particular $S_j$ será selecionada, e sabemos como calcular a estimativa a partir dos dados em $S_j$.
