@@ -15,7 +15,13 @@ date: |
 
 # O uso da distribuição normal
 
-## O uso da distribuição normal
+## O uso da distribuição normal {.allowframebreaks}
+
+- Como foi dito na aula passada, as __amostragens__, nos levantamentos, frequentemente são bastante __grandes__ para que as \structure{estimativas} baseadas nelas sejam mais ou menos \structure{normalmente distribuídas}.
+- Além disso, com a amostragem probabilística, temos fórmulas que nos dão o valor médio e a variância das estimativas^[Também se diz "o valor médio e a variância do __estimador__".].
+- Vamos considerar, primeiramente, os estimadores __sem tendência__.
+
+## O uso da distribuição normal {.allowframebreaks}
 
 - Um estimador $\hat{\theta}$ de $\theta$ dado por um plano de amostragem é denominado \structure{imparcial}\footnote{Ou {\bf não-tendencioso}, ou {\bf não-enviesado}. {\bf Exercício:} no exercício da aula passada, mostre que a média amostral é um estimador não enviesado para a média populacional.} se o valor médio de $\hat{\theta}$, tomado em todas as amostras possíveis fornecidas pelo plano, for igual a $\theta$.
 - Na notação da aula anterior, esta condição pode ser escrita como:
@@ -25,10 +31,10 @@ $$
 $$
 em que $\hat{\theta}_j$ é a estimativa dada pela $j$-ésima amostra.
 
-## O uso da distribuição normal
+<!-- ## O uso da distribuição normal -->
 
-- As amostras nos levantamentos são frequentemente grandes o suficiente para que as estimativas feitas a partir delas tenham \structure{distribuição aproximadamente normal}.
-- Além disso, com a amostragem probabilística, __temos fórmulas__ que fornecem a __média__ e a __variância das estimativas__.
+<!-- - As amostras nos levantamentos são frequentemente grandes o suficiente para que as estimativas feitas a partir delas tenham \structure{distribuição aproximadamente normal}. -->
+<!-- - Além disso, com a amostragem probabilística, __temos fórmulas__ que fornecem a __média__ e a __variância das estimativas__. -->
 
 ## O uso da distribuição normal
 
