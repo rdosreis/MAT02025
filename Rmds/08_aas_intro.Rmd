@@ -1,0 +1,220 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "Amostragem aleatória simples"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2022
+---
+
+# Amostragem aleatória simples
+
+## Amostragem aleatória simples {.allowframebreaks}
+
+- Os \structure{levantamentos por amostragem} dizem respeito a amostras retiradas de populações que contêm um número finito, \structure{$N$}, de unidades.
+- Se todas essas unidades podem ser distinguidas umas das outras, o número de amostras distintas de tamanho \structure{$n$}, que podem ser retiradas das \structure{$N$} unidades, é dado pela seguinte fórmula combinatória:
+
+$$
+{{N}\choose{n}} = _NC_n = \frac{N!}{n!(N-n)!}.
+$$
+
+\framebreak
+
+- Por exemplo, se a população contiver cinco unidades designadas por \structure{$A, B, C, D$} e \structure{$E$}, há dez amostras distintas de tamanho \structure{$3$}:
+
+$$
+\begin{array}{ccccc}
+ABC & ABD & ABE & ACD & ACE\\
+ADE & BCD & BCE & BDE & CDE
+\end{array}
+$$
+
+- Note que a mesma letra não se repete dentro da mesma amostra.
+    + Não se leva em consideração a ordem em que as letras aparecem na amostra, de modo que as seis amostras \structure{$ABC, ACB, BAC, BCA, CAB$} e \structure{$CBA$} são consideradas como uma única.
+
+\framebreak
+
+###
+
+A \structure{amostragem aleatória simples}\footnote{Também conhecida como {\bf amostragem casual simples} ou {\bf amostragem acidental irrestrita}} (AAS) é um processo para selecionar \structure{$n$} unidades de \structure{$N$} de modo que cada uma das \structure{$_NC_n$} amostras distintas tenha uma \structure{chance igual de ser extraída}.
+
+## Amostragem aleatória simples {.allowframebreaks}
+
+- Na prática, uma amostra aleatória simples é sorteada \structure{unidade por unidade}.
+- As unidades da população são numeradas de \structure{$1\ \mbox{a}\ N$}.
+- Uma série de \structure{números aleatórios} entre \structure{$1\ \mbox{e}\ N$} é então sorteada, por meio de uma \structure{tabela de números aleatórios} ou por meio de um \structure{programa de computador} que produz tal tabela.
+- Em qualquer sorteio, o processo usado deve dar uma chance igual de seleção a qualquer número na população \structure{ainda não sorteado}.
+- As unidades que contêm esses \structure{$n$} números \structure{constituem a amostra} (selecionada).
+
+\framebreak
+
+- É facilmente verificado que todas as \structure{$_NC_n$} amostras distintas têm chances iguais de serem selecionadas por este processo.
+- Considere uma amostra distinta, ou seja, um conjunto de \structure{$n$} unidades especificadas.
+- No primeiro sorteio __(o sorteio da primeira unidade da amostra)__, a probabilidade de que alguma das \structure{$n$} unidades especificadas seja selecionada é \structure{$n/N$}.
+- No segundo sorteio __(o sorteio da segunda unidade da amostra)__, a probabilidade de que alguma das unidades restantes \structure{$(n -1)$} especificadas seja retirada é \structure{$(n -1)/( N- 1)$} e assim por diante.
+
+\framebreak
+
+- Portanto, a probabilidade de que todas as \structure{$n$} unidades especificadas sejam selecionadas em \structure{$n$} sorteios é
+
+$$
+\frac{n}{N}\cdot \frac{(n - 1)}{(N - 1)}\cdot \frac{(n - 2)}{(N - 2)} \ldots  \frac{1}{(N - n + 1)} = \frac{n!(N - n)!}{N!} = \frac{1}{_NC_n}.
+$$
+
+\framebreak
+
+- Como um número sorteado é removido da população em todos os sorteios subsequentes, esse método também é chamado de amostragem aleatória \structure{sem reposição}.
+- A amostragem aleatória \structure{com reposição} é inteiramente viável: em qualquer sorteio, todos os \structure{$N$} membros da população têm a mesma chance de serem sorteados, não importa quantas vezes eles já tenham sido sorteados.
+- As fórmulas para as variâncias e variâncias estimadas das estimativas feitas a partir da amostra são frequentemente mais simples quando a amostragem é "com reposição" do que quando é "sem reposição".
+    + Por esta razão, a amostragem com reposição é às vezes usada nos planos de amostragem mais complexos, embora à primeira vista pareça fazer pouco sentido em ter a mesma unidade duas ou mais vezes na amostra.
+
+# Seleção de uma amostra aleatória simples
+
+## Seleção de uma AAS {.allowframebreaks}
+
+- As tabelas de números aleatórios são tabelas de dígitos $0, 1, 2, \ldots, 9$, cada dígito tendo uma chance igual de seleção em qualquer sorteio.
+- Entre as maiores tabelas estão as publicadas pela \structure{Rand Corporation (1955)}\footnote{Rand Corporation (1955). {\bf A Million Random Digits}. Free Press, Glencoe, III.}.
+- Diversas tabelas estão disponíveis, muitas em livros de estatística.
+- A tabela a seguir apresenta 1000 dígitos aleatórios para ilustração, de \structure{Snedecor e Cochran (1967)}\footnote{Snedecor, G. W., and Cochran, W. G. (1967). {\bf Statistical Methods. Iowa State University Press, Ames,
+Iowa}, sixth edition.}.
+
+## Seleção de uma AAS {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='85%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'numeros_aleatorios.png'))
+
+```
+
+\framebreak
+
+- Ao usar essas tabelas para selecionar uma amostra aleatória simples, o primeiro passo é numerar as unidades na população de $1$ a $N$.
+- Se o primeiro dígito de $N$ for um número entre $5$ e $9$, o seguinte método de seleção é adequado.
+
+### 
+- Suponha que $N = 528$, e queremos $n = 10$.
+    + Selecione três colunas da tabela de números aleatórios, digamos as colunas \structure{25 a 27}.
+    + Desça pelas três colunas, selecionando os primeiros $10$ números distintos entre $001$ e $528$.
+    + Estes são $36, 509, 364, 417 , 348, 127, 149, 186, 290$ e $162$.
+    + Para os dois últimos números, saltamos para as colunas \structure{30 a 32}.
+
+## Seleção de uma AAS {.allowframebreaks}
+
+- Com $N = 128$, por exemplo, um segundo método que envolve menos rejeição e é facilmente aplicado é o seguinte.
+- Em uma série de números de três dígitos, subtraia 200 de todos os números entre 201 e 400, 400 de todos os números entre 401 e 600, 600 de todos os números entre 601 e 800, 800 de todos os números entre 801 e 999 e, é claro, 000 de todos os números entre 000 e 200.
+- Todos os restantes maiores que 129 e os números 000, 200, e assim por diante, são rejeitados.
+- Usando as colunas 05 a 07 na tabela de números aleatórios, obtemos $26, 52, 7, 94, 16, 48, 41, 80, 128$ e $92$, o sorteio exigindo 15 números de três dígitos para $n = 10$.
+
+\framebreak
+
+- Uma alternativa seria utilizar uma urna.
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%', paged.print=FALSE}
+knitr::include_graphics(here('images','sorteio.png'))
+```
+
+\framebreak
+
+- Hoje em dia possuímos __"urnas eletrônicas"__!
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+sample(x = 1:528, size = 10, replace = FALSE)
+
+sample(x = 1:128, size = 10, replace = FALSE)
+
+```
+
+# Definições e notação
+
+## Definições e notação {.allowframebreaks}
+
+- Nos levantamentos por amostragem, decidimos sobre certas propriedades, que tentamos medir e registrar, para cada unidade incluída na amostra.
+- Essas propriedades das unidades são chamadas de \structure{características}.
+
+\framebreak
+
+- Os valores obtidos para qualquer característica específica nas $N$ unidades que compõem a população são denotados por \structure{$Y_1, Y_2, \ldots, Y_N$}.
+- Os valores correspondentes para as unidades na amostra são denotados por \structure{$Y_1, Y_2, \ldots, Y_n$} ou, se desejarmos nos referir a um membro típico da amostra, por \structure{$Y_i\ (i = 1, 2, \ldots, n)$}.
+    + Observe que a amostra __não consistirá__ nas primeiras $n$ unidades da população, exceto no caso, geralmente raro, em que essas unidades foram sorteadas.
+
+\framebreak
+
+- As letras __maiúsculas__ referem-se às características da população e as __minúsculas__ às da amostra.
+    + Para totais e médias, temos as seguintes definições.
+
+\scriptsize
+
+\begin{table}[]
+\begin{tabular}{lcc}
+\hline
+Característica & População & Amostra \\
+\hline
+Total              & $Y_T = \sum_{i = 1}^N{Y_i} = Y_1 + Y_2 + \ldots + Y_N$ & $y_T = \sum_{i = 1}^n{Y_i} = Y_1 + Y_2 + \ldots + Y_n$ \\
+ &  &  \\
+Média        &  $\overline{Y} = \frac{\sum_{i = 1}^N{Y_i}}{N} = \frac{Y_1 + Y_2 + \ldots + Y_N}{N}$ & $\overline{y} = \frac{\sum_{i = 1}^n{Y_i}}{n} = \frac{Y_1 + Y_2 + \ldots + Y_n}{n}$\\
+\hline
+\end{tabular}
+\end{table}
+
+\framebreak
+
+\normalsize
+
+Embora se possa realizar uma amostragem com muitas finalidades, na maioria dos casos o interesse se concentra em quatro características da população:
+
+1. Média \structure{$= \overline{Y}$} (por exemplo, o número médio de crianças por escola).
+2. Total \structure{$= Y_T$} (por exemplo, o número total de acres de trigo em uma região).
+3. A realação (razão, ou índice) entre dois totais ou médias \structure{$R = Y_T/X_T = \overline{Y}/\overline{X}$} (por exemplo, relação entre custo semanal em alimentos e tamanho da família).
+4. Proporção de unidades que pertencem a uma determina classe/categoria (por exemplo, proporção de pessoas com diabetes).
+
+\framebreak
+
+- A estimativa das três primeiras quantidades será discutida na primeira parte desta área.
+- O símbolo \structure{``$\ \hat{}\ $''} denota uma estimativa de uma característica da população feita a partir de uma amostra.
+- De acordo com a relação acima, temos:
+
+\begin{table}[]
+\begin{tabular}{lll}
+\hline
+ &  & Representação da estimativa \\
+\hline
+Média da população $\overline{Y}$ & & $\displaystyle{\hat{\overline{Y}} = \overline{y} = \sum_{i=1}^n{Y_i}/n}$ \\
+Total da população $Y_T$ & & $\displaystyle{\hat{Y}_T = N\overline{y} = N\sum_{i=1}^n{Y_i}/n}$ \\
+Índice da população $R$ & & $\displaystyle{\hat{R} = \sum_{i=1}^n{Y_i}/\sum_{i=1}^n{X_i}}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\framebreak
+
+- Em $\hat{Y}_T$, o \structure{fator $N/n$}, pelo qual o valor total da amostra é multiplicado, é às vezes chamado de \structure{fator de expansão} ou \structure{crescimento} ou \structure{de inflação}.
+- Seu inverso \structure{$n/N$}, a relação entre o tamanho da amostra e o da população, é chamado de \structure{fração de amostragem} e é denotado pela letra \structure{$f$}.
+
+## Para casa
+
+- Realize um sorteio de uma amostra aleatória simples como o apresentado no exemplo de aula utilizando a tabela de números aleatórios.
+- Repita o sorteio utilizando a função `sample` do `R`, ou algum outro recurso computacional.
+
+## Próxima aula
+
+- Propriedades e variâncias dos estimadores.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-barras.jpg'))
+
+```
+
