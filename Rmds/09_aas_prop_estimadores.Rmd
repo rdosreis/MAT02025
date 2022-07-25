@@ -10,9 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
 ---
 
 # Relembrando
@@ -54,7 +52,7 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-03.png'))
 
 ::: {.block}
 
-### Teorema
+### Teorema 9.1
 
 O valor média da amostra $\overline{y}$ é uma estimativa sem tendência para $\overline{Y}$.
 
@@ -107,22 +105,22 @@ $$
 
 \begin{align} 
 \label{vies3}
-\textcolor{darkpastelpurple}{\E(\overline{y})} &= \frac{n!(N - n)!}{nN!}\times\textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}} \nonumber\\
+\textcolor{black}{\E(\overline{y})} &= \frac{n!(N - n)!}{nN!}\times\textcolor{blue}{\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j}} \nonumber\\
 &= \frac{n(n-1)!(N - n)!}{nN(N-1)!}\times\frac{(N-1)!}{(n-1)!(N-n)!}\times \sum_{j=1}^N{Y_j} \nonumber\\
-&= \frac{1}{N}\sum_{j=1}^N{Y_j} = \textcolor{darkpastelpurple}{\overline{Y}}.
+&= \frac{1}{N}\sum_{j=1}^N{Y_j} = \textcolor{black}{\overline{Y}}.
 \end{align} 
 
 \framebreak
 
 ::: {.block}
 
-### Corolário
+### Corolário 9.1
 
 $\hat{Y}_T = N\overline{y}$ é um estimador imparcial do valor total populacional $Y_T$.
 
 :::
 
-- __Para casa:__ utilize o __Teorema__ apresentado na aula para demonstrar o __Corolário__.
+- __Para casa:__ utilize o __Teorema 9.1__ apresentado na aula para demonstrar o __Corolário__.
 
 # Um outro método de demonstração
 
@@ -175,7 +173,7 @@ em que o somatório abrange todas as $N$ unidades da população.
 
 \framebreak
 
-- Dessa forma, $a_i$ se distribui como uma variável binomial, em uma única tentativa\footnote{Ou seja, uma variável com distribuição Bernoulli.}, com \structure{$P = n/N$}. Portanto,
+- Dessa forma, $a_i$ se distribui como uma \structure{variável binomial}, em uma única tentativa\footnote{Ou seja, uma variável com distribuição Bernoulli.}, com \structure{$P = n/N$}. Portanto,
 
 $$
 \E(a_i) = P = \frac{n}{N},\quad \Var(a_i) = \frac{n}{N}\left(1 - \frac{n}{N}\right).
@@ -194,6 +192,7 @@ $$
 ## Para casa
 
 - Refaça as demonstrações da aula de hoje.
+- Leia o artigo __"On Samples from Finite Populations"__\footnote{Cornfield, J. (1944). \emph{On Samples from Finite Populations}. Journal of the American Statistical Association, 39(226), 236.}, disponível no Moodle.
 
 ## Próxima aula
 
