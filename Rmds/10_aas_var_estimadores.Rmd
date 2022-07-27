@@ -37,7 +37,7 @@ $$
 
 \framebreak
 
-- \structure{Por uma questão de notação}, os resultados são apresentados de acordo com uma expressão ligeiramente diferente, na qual usa-se o divisor \structure{$(N - 1)$} em lugar de \structure{$N$}. Assim, temos
+- \structure{Por uma questão de notação}, os resultados são apresentados de acordo com uma expressão ligeiramente diferente, na qual usa-se o divisor $(N - 1)$ em lugar de $N$. Assim, temos
 
 $$
 S^2 = \frac{\displaystyle\sum_{i=1}^N{(Y_i - \overline{Y})^2}}{N - 1}.
@@ -45,18 +45,18 @@ $$
 
 \framebreak
 
-- Examinamos, agora, a variância de \structure{$\overline{y}$}. Isso quer dizer $\E[(\overline{y} - \overline{Y})^2]$, tomando dentre todas as \structure{$\Comb{N}{n}$}.
+- Examinamos, agora, a variância de $\overline{y}$. Isso quer dizer $\E[(\overline{y} - \overline{Y})^2]$, tomado dentre todas as $\Comb{N}{n}$.
 
 ::: {.block}
 
-### Teorema
+### Teorema 10.1
 
 A variância do valor médio, $\overline{y}$, de uma amostra aleatórica simples é dada pela fórmula:
 
 $$
-\Var(\overline{y}) = \E[(\overline{y} - \overline{Y})^2] = \frac{S^2}{n}\textcolor{blue}{\frac{(N-n)}{N}} = \frac{S^2}{n}(1 - f),
+\Var(\overline{y}) = \E[(\overline{y} - \overline{Y})^2] = \frac{S^2}{n}\textcolor{black}{\frac{(N-n)}{N}} = \frac{S^2}{n}(1 - \textcolor{black}{f}),
 $$
-em que \structure{$f = n/N$} é a __fração de amostragem__.
+em que $\textcolor{black}{f = n/N}$ é a \structure{fração de amostragem}.
 :::
 
 \framebreak
@@ -72,22 +72,28 @@ em que o somatório abrange todas as $N$ unidades da população.
 
 ## Variâncias dos estimadores {.allowframebreaks}
 
--  Lembre que, nesta representação da média amostral, os \structure{$a_i$ são variáveis aleatórias} ($a_i = 1$, se $i$-ésima unidade da população é selecionada para a amostra; e $a_i = 0$, caso contrário), e os $Y_i$ constituem __um conjunto de números fixos__.
-- Ainda, temos que $a_i$ é uma variável aleatória com \structure{distribuição Bernolli} com \structure{$\E(a_i) = P = \frac{n}{N}$} e \structure{$\Var(a_i) = \frac{n}{N}\left(1 - \frac{n}{N}\right) = P(1 - P)$}.
+-  Lembre que, nesta representação da média amostral, os $a_i$ \structure{são variáveis aleatórias} ($a_i = 1$, se $i$-ésima unidade da população é selecionada para a amostra; e $a_i = 0$, caso contrário), e os $Y_i$ \structure{constituem um conjunto de números fixos}.
+- Ainda, temos que $a_i$ é uma variável aleatória com \structure{distribuição Bernolli} com 
+
+$$
+\E(a_i) = P = \frac{n}{N},\quad \Var(a_i) = \frac{n}{N}\left(1 - \frac{n}{N}\right).
+$$
+
 
 \framebreak
 
-- A \structure{covariância} de \structure{$a_i$} e \structure{$a_j$} é, por definição, 
+- A \structure{covariância} de $a_i$ e $a_j$ é, por definição, 
 
 $$
 \Cov(a_i, a_j) = \E\{[a_i - \E(a_i)][a_j - \E(a_j)]\} = \E(a_ia_j) - \E(a_i)\E(a_j).
 $$
 
-- Note que \structure{$a_ia_j$} é igual a 1 se as unidades \structure{$i$} e \structure{$j$} estiverem na amostra, ou é 0, caso contrário.
+- Note que $a_ia_j$ é igual a $1$ se as unidades $i$ e $j$ estiverem na amostra, ou é $0$, caso contrário.
+    - Logo, $\E(a_ia_j) = 1 \times \Pr(a_ia_j = 1) + 0 \times \Pr(a_ia_j = 0) = \Pr(a_ia_j = 1) = \Pr(a_i = 1, a_j = 1)$.
 
 \framebreak
 
-- A probabilidade de que duas unidades específicas estejam ambas na amostra é \structure{$[n(n-1)]/[N(N-1)]$}. Portanto,
+- A probabilidade de que duas unidades específicas estejam ambas na amostra é $[n(n-1)]/[N(N-1)]$. Portanto,
 
 
 \begin{align*}
@@ -106,16 +112,17 @@ $$
  &= \frac{1}{n^2}\Var\left(\sum_{i=1}^N{a_iY_i}\right)\\
  &= \frac{1}{n^2}\left[\sum_{i=1}^N{\Var(a_iY_i)} + 2\sum_{i<j}{\Cov(a_iY_i, a_jY_j)}\right]\\
  &= \frac{1}{n^2}\left[\sum_{i=1}^N{Y_i^2\Var(a_i)} + 2\sum_{i<j}{Y_iY_j\Cov(a_i, a_j)}\right]\\
- &= \frac{1}{n^2}\left[\sum_{i=1}^N{Y_i^2\textcolor{blue}{\left(\frac{n}{N}\right)\left(1 - \frac{n}{N}\right)}} + 2\sum_{i<j}{Y_iY_j\left\{-\frac{1}{\textcolor{blue}{N}}\frac{\textcolor{blue}{n}}{(N-1)}\textcolor{blue}{\left(1 - \frac{n}{N}\right)}\right\}}\right]
+ &= \frac{1}{n^2}\left[\sum_{i=1}^N{Y_i^2\textcolor{black}{\left(\frac{n}{N}\right)\left(1 - \frac{n}{N}\right)}} + 2\sum_{i<j}{Y_iY_j\left\{-\frac{1}{\textcolor{black}{N}}\frac{\textcolor{black}{n}}{(N-1)}\textcolor{black}{\left(1 - \frac{n}{N}\right)}\right\}}\right]
 \end{align*}
 
 \framebreak
 
 \begin{align*}
  &= \frac{(1-f)}{nN}\left[\sum_{i=1}^N{Y_i^2} - \frac{1}{N-1}\textcolor{red}{\sum_{i\neq j}{Y_iY_j}}\right]\\
- &= \frac{(1-f)}{nN}\left[\sum_{i=1}^N{Y_i^2} + \frac{1}{N-1}\textcolor{red}{\left(\sum_{i=1}^N{Y_i^2} - N^2\overline{Y}^2\right)}\right]\\
+ &= \frac{(1-f)}{nN}\left[\sum_{i=1}^N{Y_i^2} \textcolor{red}{+} \frac{1}{N-1}\textcolor{red}{\left(\sum_{i=1}^N{Y_i^2} - N^2\overline{Y}^2\right)}\right]\ \mbox{(soma produtos mesma variável)}\\
  &= \frac{(1-f)}{nN}\frac{N}{(N-1)}\textcolor{orange}{\left[\sum_{i=1}^N{Y_i^2} - N\overline{Y}^2\right]}\\
- &= \frac{(1-f)}{n(N-1)}\textcolor{orange}{\left[\sum_{i=1}^N{(Y_i - \overline{Y})}^2\right]} = \frac{S^2}{n}(1 - f).
+ &= \frac{(1-f)}{n(N-1)}\textcolor{orange}{\left[\sum_{i=1}^N{(Y_i - \overline{Y})}^2\right]}\ \mbox{(soma dos desvios quadráticos)}\\
+ &= \frac{S^2}{n}(1 - f).
 \end{align*}
 
 - Para estas duas últimas identidades, ver o Capítulo 2.6, "Expressões úteis", do livro "Elementos de Amostragem" __(Bolfarine e Bussab, 2005)__.
@@ -126,12 +133,12 @@ $$
 
 ::: {.block}
 
-### Corolário 1
+### Corolário 10.1
 
 O \structure{erro padrão} de $\overline{y}$ é dado pela fórmula
 
 $$
-\sigma_{\overline{y}} = \frac{S}{\sqrt{n}}\sqrt{\textcolor{blue}{(N-n)/N}} = \frac{S}{\sqrt{n}}\sqrt{1 - f}.
+\sigma_{\overline{y}} = \frac{S}{\sqrt{n}}\sqrt{\textcolor{black}{(N-n)/N}} = \frac{S}{\sqrt{n}}\sqrt{1 - f}.
 $$
 
 :::
@@ -140,12 +147,12 @@ $$
 
 ::: {.block}
 
-### Corolário 2
+### Corolário 10.2
 
 A \structure{variância} de $\hat{Y}_T = N\overline{y}$, como estimativa do valor total da população $Y_T$, é dada pela fórmula
 
 $$
-\Var(\hat{Y}_T) = \E[(\hat{Y}_T - Y_T)^2] = \frac{N^2S^2}{n}\textcolor{blue}{\frac{(N-n)}{N}} = \frac{N^2S^2}{n}(1 - f).
+\Var(\hat{Y}_T) = \E[(\hat{Y}_T - Y_T)^2] = \frac{N^2S^2}{n}\textcolor{black}{\frac{(N-n)}{N}} = \frac{N^2S^2}{n}(1 - f).
 $$
 
 :::
@@ -154,12 +161,12 @@ $$
 
 ::: {.block}
 
-### Corolário 3
+### Corolário 10.3
 
 O \structure{erro padrão} de $\hat{Y}_T$ é calculado pela fórmula
 
 $$
-\sigma_{\hat{Y}_T} = \frac{NS}{\sqrt{n}}\sqrt{\textcolor{blue}{(N-n)/N}} = \frac{NS}{\sqrt{n}}\sqrt{1 - f}.
+\sigma_{\hat{Y}_T} = \frac{NS}{\sqrt{n}}\sqrt{\textcolor{black}{(N-n)/N}} = \frac{NS}{\sqrt{n}}\sqrt{1 - f}.
 $$
 
 :::
@@ -168,23 +175,24 @@ $$
 
 ## Correções das populações finitas {.allowframebreaks}
 
-- Para uma amostra aleatória de tamanho \structure{$n$}, proveniente de uma __população infinita__, é sabido que a variância do valor médio é \structure{$\sigma^2/n$}.
-- A única modificação desse valor, quando a __população é finita__, é a introdução do fator \structure{$(N-n)/N$}.
-- Os fatores \structure{$(N-n)/N$} para a variância, e \structure{$\sqrt{(N-n)/N}$}, para o erro padrão, são chamados \structure{correções das populações finitas (cpf)}.
-    + São apresentados com o divisor \structure{$(N-1)$}, em vez \structure{$N$}, pelos autores que dão os resultados em função de \structure{$\sigma$}.
+- Para uma amostra aleatória de tamanho $n$, proveniente de uma __população infinita__, é sabido que a variância do valor médio é $\sigma^2/n$.
+- A única modificação desse valor, quando a __população é finita__, é a introdução do fator $(N-n)/N$.
+- Os __fatores__ $(N-n)/N$ __para a variância__, e $\sqrt{(N-n)/N}$, __para o erro padrão__, são chamados \structure{correções das populações finitas (cpf)}.
+    + São apresentados com o divisor $(N-1)$, em vez $N$, pelos autores que dão os resultados em função de $\sigma$.
 
 \framebreak
 
-- Desde que a fração \structure{$n/N$}, permaneça baixa, esses fatores se aproximam do valor da unidade, e o tamanho da população, como tal, não tem influência direta no erro padrão do valor médio amostral.
+- Desde que a fração $n/N$, permaneça baixa, esses fatores ($[N-n]/N$) se aproximam do valor da unidade, e o tamanho da população, como tal, não tem influência direta no erro padrão do valor médio amostral.
+    + Ou seja, $\frac{(N-n)}{N} = 1 - \frac{n}{N} \approx 1$, quando $\frac{n}{N} \approx 0$.
     + Por exemplo, se $S$ é o __mesmo em duas populações__, uma amostra de 500 unidades de uma população de 200.000, dá uma estimativa quase tão precisa do valor médio da população quanto uma amostra de 500 unidades de uma população de 10.000.
-- Na prática, as cpf podem ser ignoradas, quando quer a fração de amostragem não exceda a 5% e, em muitos casos, até mesmo quando seu valor chegue a 10%.
+- Na prática, as \structure{cpf} podem ser ignoradas, quando quer a fração de amostragem não exceda a 5% e, em muitos casos, até mesmo quando seu valor chegue a 10%.
     + \structure{A consequência de se ignorar as correções é a superestimação do erro padrão da estimativa $\overline{y}$}.
     + __Pergunta:__ no que isto implica?
 
 ## Para casa
 
 - Refaça as demonstrações da aula de hoje.
-- Utilize o __Teorema__ apresentado na aula para demonstrar os __Corolários 1, 2__ e __3__.
+- Utilize o __Teorema 10.1__ apresentado na aula para demonstrar os __Corolários 10.1__, __10.2__ e __10.3__.
 
 ## Próxima aula
 

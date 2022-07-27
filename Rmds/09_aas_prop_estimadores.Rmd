@@ -54,7 +54,7 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-03.png'))
 
 ### Teorema 9.1
 
-O valor média da amostra $\overline{y}$ é uma estimativa sem tendência para $\overline{Y}$.
+A média amostral $\overline{y}$ é uma estimativa sem tendência para $\overline{Y}$.
 
 :::
 
