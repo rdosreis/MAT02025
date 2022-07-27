@@ -10,9 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
 ---
 
 # Relembrando
@@ -88,8 +86,11 @@ $$
 \Cov(a_i, a_j) = \E\{[a_i - \E(a_i)][a_j - \E(a_j)]\} = \E(a_ia_j) - \E(a_i)\E(a_j).
 $$
 
-- Note que $a_ia_j$ é igual a $1$ se as unidades $i$ e $j$ estiverem na amostra, ou é $0$, caso contrário.
-    - Logo, $\E(a_ia_j) = 1 \times \Pr(a_ia_j = 1) + 0 \times \Pr(a_ia_j = 0) = \Pr(a_ia_j = 1) = \Pr(a_i = 1, a_j = 1)$.
+- Note que $a_ia_j$ é igual a $1$ se as unidades $i$ e $j$ estiverem na amostra, ou é $0$, caso contrário. Logo, 
+
+$$
+\E(a_ia_j) = 1 \times \Pr(a_ia_j = 1) + 0 \times \Pr(a_ia_j = 0) = \Pr(a_ia_j = 1) = \Pr(a_i = 1, a_j = 1).
+$$
 
 \framebreak
 
