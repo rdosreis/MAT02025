@@ -10,9 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
 ---
 
 # Estimativa do erro padrão de uma amostra
@@ -21,21 +19,21 @@ header-includes:
 
 As fórmulas que nos dão os \structure{erros padrões} das estimativas da \structure{média ($\overline{y} = (1/n)\sum_{i=1}^n{Y_i}$)} e \structure{total ($\hat{Y}_T = N\overline{y}$)} populacionais são usadas principalmente para três finalidades:
 
-1. comparar a precisão obtida por amostragem aleatória simples com a dada por outros métodos de amostragem;
-2. para estimar o tamanho da amostra necessária em um levantamento que está sendo planejado;
-3. para estimar a precisão realmente alcançada em um levantamento que foi concluído.
+1. __comparar a precisão__ obtida por amostragem aleatória simples com a precisão dada por outros métodos de amostragem;
+2. para __estimar o tamanho da amostra__ necessária em um levantamento que está sendo planejado;
+3. para __estimar a precisão__ realmente alcançada em um levantamento que foi concluído.
 
 \framebreak
 
-- As fórmulas envolvem $S^2$, a \structure{variância da população}.
-- Na prática, isso não será conhecido, mas pode ser estimado a partir dos dados da amostra.
+- As expressões desenvolvidas na última aula envolvem $S^2$, a \structure{variância da população}.
+- __Na prática__, isso não __será conhecido__, \structure{mas pode ser estimado} a partir dos dados da amostra.
     + Se vamos estimar $S^2$, não deveríamos fazer a mesma avaliação\footnote{Ou seja, avaliar a imparcialidade deste estimador.} que fizemos para $\overline{y}$ e $\hat{Y}_T$? _(Sim ou sim?)_
     
 ## Estimativa do erro padrão {.allowframebreaks}
 
 ::: {.block}
 
-### Teorema
+### Teorema 11.1
 
 Em uma amostra aleatória simples,
 
@@ -59,11 +57,12 @@ s^2 &= \frac{1}{n - 1}\sum_{i=1}^n{[(Y_i - \textcolor{red}{\overline{Y}}) - (\ov
 &= \frac{1}{n - 1}\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2} - n(\overline{y} - \overline{Y})^2\right].
 \end{align*}
 
-```{r, message=FALSE, echo=FALSE, out.width="50%", purl=FALSE, fig.align='right'}
 
-knitr::include_graphics(here::here('images', 'quadro_verde.jpg'))
+<!-- ```{r, message=FALSE, echo=FALSE, out.width="50%", purl=FALSE, fig.align='right'} -->
 
-```
+<!-- knitr::include_graphics(here::here('images', 'quadro_verde.jpg')) -->
+
+<!-- ``` -->
 
 \framebreak
 
@@ -73,10 +72,10 @@ Agora, calculamos a média de todas as amostras aleatórias simples de tamanho $
 
 \begin{align*}
 \textcolor{red}{\E(s^2)} &= \E\left\{\frac{1}{n - 1}\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2} - n(\overline{y} - \overline{Y})^2\right]\right\}\\
-&= \frac{1}{n - 1}\left\{\textcolor{darkpastelblue}{\E\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2}\right]} - n\textcolor{darkpastelgreen}{\E\left[(\overline{y} - \overline{Y})^2\right]}\right\}\\
-&= \frac{1}{n - 1}\left[\textcolor{darkpastelblue}{\frac{n}{N}\sum_{i=1}^N{(Y_i - \overline{Y})^2}} - n\textcolor{darkpastelgreen}{\Var(\overline{y})}\right]\\
-&= \frac{1}{n - 1}\left[\frac{n(N-1)}{\textcolor{darkpastelpurple}{N}}\textcolor{darkpastelpurple}{S^2} - \textcolor{darkpastelred}{n}\frac{\textcolor{darkpastelpurple}{S^2}}{\textcolor{darkpastelred}{n}}\frac{(N-n)}{\textcolor{darkpastelpurple}{N}}\right]\\
-&= \frac{\textcolor{darkpastelpurple}{S^2}}{(n - 1)\textcolor{darkpastelpurple}{N}}[n(N - 1) - (N - n)] = \textcolor{red}{S^2}.
+&= \frac{1}{n - 1}\left\{\textcolor{orange}{\E\left[\sum_{i=1}^n{(Y_i - \overline{Y})^2}\right]} - n\textcolor{darkpastelgreen}{\E\left[(\overline{y} - \overline{Y})^2\right]}\right\}\\
+&= \frac{1}{n - 1}\left[\textcolor{orange}{\frac{n}{N}\sum_{i=1}^N{(Y_i - \overline{Y})^2}} - n\textcolor{darkpastelgreen}{\Var(\overline{y})}\right]\\
+&= \frac{1}{n - 1}\left[\frac{n(N-1)}{\textcolor{black}{N}}\textcolor{black}{S^2} - \textcolor{darkpastelred}{n}\frac{\textcolor{black}{S^2}}{\textcolor{darkpastelred}{n}}\frac{(N-n)}{\textcolor{black}{N}}\right]\\
+&= \frac{\textcolor{black}{S^2}}{(n - 1)\textcolor{black}{N}}[n(N - 1) - (N - n)] = \textcolor{red}{S^2}.
 \end{align*}
 
 \normalsize
@@ -85,7 +84,7 @@ Agora, calculamos a média de todas as amostras aleatórias simples de tamanho $
 
 ::: {.block}
 
-### Corolário
+### Corolário 11.1
 
 As estimativas (estimadores) imparciais das variâncias de $\overline{y}$ e $\hat{Y}_T = N\overline{y}$ são:
 
@@ -242,10 +241,10 @@ Isso fornece 18107 e 21669 para os limites de confiança de 80%\footnote{Uma est
 ## Para casa
 
 - Refaça as demonstrações da aula de hoje.
-- Utilize o __Teorema__ apresentado na aula para demonstrar o __Corolário__.
+- Utilize o __Teorema 11.1__ apresentado na aula para demonstrar o __Corolário 11.1__.
 - Com os dados do exemplo da aula:
-    + construa um intervalo de 95% de confiança para o número total de assinaturas do requerimento;
-    + construa um intervalo de 90% de confiança para o número médio de assinaturas por folha do requerimento;
+    + construa um __intervalo de 95%__ de confiança para o __número total__ de assinaturas do requerimento;
+    + construa um __intervalo de 90%__ de confiança para o __número médio__ de assinaturas por folha do requerimento;
     + interprete os seus resultados.
 
 ## Próxima aula

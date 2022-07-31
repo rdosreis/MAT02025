@@ -10,9 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
-header-includes:
-  - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
+  | Porto Alegre, 2022
 ---
 
 # Exemplo
@@ -107,7 +105,7 @@ round(YT.chapeu + c(-1, 1) * qnorm(p = 0.9) *  s.YT.chapeu)
 
 # IC 80% para o total de assinaturas
 # (utilizando a distribuição t)
-round(YT.chapeu + c(-1, 1) * qt(p = 0.9, df = 49) *  s.YT.chapeu)
+round(YT.chapeu + c(-1, 1) * qt(p = 0.9, df = n - 1) *  s.YT.chapeu)
 
 ```
 \normalsize
