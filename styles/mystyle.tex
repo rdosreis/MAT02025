@@ -4,11 +4,15 @@
 \usepackage{mathtools}
 \usepackage{tikz}
 \usepackage{amsmath}
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}
 
 \setbeamercolor{math text}{fg=black!15!blue}
 
 \newcommand\beamermathcolor[1]{\color{#1}\setbeamercolor{math text}{fg=#1}}
 \newcommand{\Comb}[2]{{}_{#1}{C}_{#2}}
+\newcommand{\specialcell}[2][c]{%
+\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 \newcount\tmpnum
 \def\tallymarks#1{\leavevmode \lower1bp\vbox to9bp{}%

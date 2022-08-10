@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
+  | Porto Alegre, 2022
 ---
 
 # Estimativa de um índice
@@ -22,14 +22,14 @@ No sentido mais simples do termo, podemos dizer que um __número índice__ é um
 ## Estimativa de um índice {.allowframebreaks}
 
 - Frequentemente, a quantidade que deve ser estimada a partir de uma amostra aleatória simples é a \structure{razão de duas variáveis}, ambas as quais variam de unidade para unidade.
-- Em um levantamento por amostragem domiciliar, os exemplos são:
-    + o __número de aparelhos de celular por residente__;
+- Em um levantamento por amostragem domiciliar, alguns exemplos são:
+    + o __número de aparelhos de celular por residente__ (o número de celulares e residentes variam de domicílio para domicílio);
     + a __despesa com aplicativos de transporte por residente adulto__;
     + o __número médio de horas por semana gastas assistindo programas no serviço de _streaming_ por criança de 10 a 15 anos__.
 
 \framebreak
 
-- A fim de estimar a primeira dessas quantidades, registraríamos para o \structure{$i$}-ésimo domicílio \structure{$(i = 1, 2, \ldots, n)$} o número de residentes \structure{$X_i$} que ali vivem e o número total de aparelhos de celular \structure{$Y_i$} que eles possuem.
+- A fim de estimar a primeira dessas quantidades, registraríamos para o $i$-ésimo domicílio $(i = 1, 2, \ldots, n)$ o número de residentes $X_i$ que ali vivem e o número total de aparelhos de celular $Y_i$ que eles possuem.
 - O \structure{parâmetro da população} a ser estimado é a \structure{razão (ou índice)}
 
 $$
@@ -62,9 +62,9 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'dm-01.png'))
 
 \framebreak
 
-- A \structure{distribuição amostral} de \structure{$\widehat{R}$} é mais complicada que a de \structure{$\overline{y}$}, porque tanto o numerador \structure{$\overline{y}$}, quanto o denominador, \structure{$\overline{x}$}, variam de amostra para amostra.
-- Em __pequenas amostras__, a distribuição de \structure{$\widehat{R}$} é __assimétrica__, e \structure{$\widehat{R}$} é, geralmente, uma estimativa ligeiramente __enviesada__ de \structure{$R$}.
-- Em __grandes amostras__, a distribuição de \structure{$\widehat{R}$} tende à __normalidade__ e o __viés__ torna-se __insignificante__.
+- A \structure{distribuição amostral} de $\widehat{R}$ é mais complicada que a de $\overline{y}$, porque tanto o numerador $\overline{y}$, quanto o denominador, $\overline{x}$, variam de amostra para amostra.
+- Em __pequenas amostras__, a distribuição de $\widehat{R}$ é __assimétrica__, e $\widehat{R}$ é, geralmente, uma estimativa ligeiramente __enviesada__ de $R$.
+- Em __grandes amostras__, a distribuição de $\widehat{R}$ tende à __normalidade__ e o __viés__ torna-se __insignificante__.
 
 \framebreak
 
@@ -72,14 +72,15 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'dm-01.png'))
 
 ::: {.block}
 
-### Teorema
+### Teorema 14.1
 
-Se as variáveis $Y_i$ e $X_i$ são medidas em cada unidade de uma amostra aleatória simples de tamanho $n$, que se presume grande, a variância de $\widehat{R} = {\overline{y}}/{\overline{x}}$ é, aproximadamente,
+Se as variáveis $Y_i$ e $X_i$ são medidas em cada unidade de uma amostra aleatória simples de tamanho $n$, que se presume grande, a variância de $\widehat{R} = {\overline{y}}/{\overline{x}}$ é, aproximadamente\footnote{O símbolo $\stackrel{\cdot}{=}$ indica "aproximadamente igual".},
 
 $$
 \Var(\widehat{R}) \stackrel{\cdot}{=} \frac{1-f}{n\overline{X}^2}\frac{\sum_{i=1}^N{(Y_i - RX_i)^2}}{N-1},
 $$
-em que \structure{$R = \overline{Y}/\overline{X}$} é o __índice dos valores médios da população__, e \structure{$f = n/N$} é a __fração de amostragem__.
+em que $R = \overline{Y}/\overline{X}$ é o __índice dos valores médios da população__, e $f = n/N$ é a __fração de amostragem__.
+
 :::
 
 ## Estimativa de um índice {.allowframebreaks}
@@ -90,22 +91,22 @@ $$
 \widehat{R} - R = \frac{\overline{y}}{\overline{x}} - R = \frac{\overline{y} - R\overline{x}}{\overline{x}}.
 $$
 
-- Se \structure{$n$} é grande, \structure{$\overline{x}$} não deve ser muito diferente de \structure{$\overline{X}$}.
-- Para evitar ter que calcular a distribuição da razão de duas variáveis aleatórias \structure{$\overline{y} - R\overline{x}$} e \structure{$\overline{x}$}, substituímos \structure{$\overline{x}$} por \structure{$\overline{X}$} no denominador da expressão acima como uma aproximação. Isso dá
+- Se $n$ é grande, $\overline{x}$ não deve ser muito diferente de $\overline{X}$.
+- Para evitar ter que calcular a distribuição da razão de duas variáveis aleatórias $\overline{y} - R\overline{x}$ e $\overline{x}$, substituímos $\overline{x}$ por $\overline{X}$ no denominador da expressão acima __como uma aproximação__. Isso dá
 
 $$
 \widehat{R} - R \stackrel{\cdot}{=} \frac{\overline{y} - R\overline{x}}{\overline{X}}.
 $$
 \framebreak
 
-- Agora calcule a média de todas as amostras aleatórias simples de tamanho \structure{$n$}:
+- Agora calcule a média de todas as amostras aleatórias simples de tamanho $n$:
 
 $$
 \E(\widehat{R} - R) \stackrel{\cdot}{=} \frac{\E(\overline{y} - R\overline{x})}{\overline{X}} = \frac{\overline{Y} - R\overline{X}}{\overline{X}} = 0,
 $$
 uma vez que $R = \overline{Y}/\overline{X}$.
 
-- Isso mostra que, para a ordem de aproximação usada aqui, \structure{$\widehat{R}$} é uma estimativa não enviesada de \structure{$R$}.
+- Isso mostra que, para a ordem de aproximação usada aqui, $\widehat{R}$ é uma estimativa não enviesada de $R$.
 
 \framebreak
 
@@ -115,9 +116,9 @@ $$
 \Var(\widehat{R}) = \E(\widehat{R} - R)^2 \stackrel{\cdot}{=} \frac{1}{\overline{X}^2}\E(\overline{y} - R\overline{x})^2.
 $$
 
-- A quantidade \structure{$\overline{y} - R\overline{x}$} é a média amostral da variável \structure{$D_i = Y_i - RX_i$}, cuja média populacional, \structure{$\overline{D} = \overline{Y} - R\overline{X}$}, é igual a \structure{$0$}.
+- A quantidade $\overline{y} - R\overline{x}$ é a média amostral da variável $D_i = Y_i - RX_i$, cuja média populacional, $\overline{D} = \overline{Y} - R\overline{X}$, é igual a $0$.
 
-- Portanto, podemos encontrar \structure{$\Var(\widehat{R})$} aplicando o teorema para a variância da média de uma amostra aleatória simples à variável \structure{$D_i$} e dividindo por \structure{$\overline{X}^2$}.
+- Portanto, podemos encontrar $\Var(\widehat{R})$ aplicando o teorema para a variância da média de uma amostra aleatória simples à variável $D_i$ e dividindo por $\overline{X}^2$.
 
 \framebreak
 
@@ -142,25 +143,25 @@ $$
 \frac{\sum_{i=1}^n{(Y_i - \widehat{R}X_i)^2}}{n - 1}.
 $$
 
-- Pode-se demonstrar que essa estimativa tem um \structure{viés de ordem $1/n$}.\footnote{Ou seja, conforme $n\rightarrow\infty$ o viés decresce a zero mais rapidamente que a sequência $1/n$ ($\mbox{Viés}_n = o(n^{-1})$).}
+- Pode-se demonstrar que essa estimativa tem um \structure{viés de ordem} $1/n$.\footnote{Ou seja, conforme $n\rightarrow\infty$ o viés decresce a zero mais rapidamente que a sequência $1/n$. Ou, utilizando a notação $o(\cdot)$, temos que $\mbox{Viés}_n = o(n^{-1})$.}
 
 ## Estimativa de um índice {.allowframebreaks}
 
-- Para o \structure{erro padrão estimado} de \structure{$\widehat{R}$}, temos
+- Para o \structure{erro padrão estimado} de $\widehat{R}$, temos
 
 $$
 s_{\widehat{R}} = \frac{\sqrt{1 - f}}{\sqrt{n}\overline{X}}\sqrt{\frac{\sum_{i=1}^n{(Y_i - \widehat{R}X_i)^2}}{n - 1}}.
 $$
 
-- Se \structure{$\overline{X}$} não é conhecido, a estimativa amostral \structure{$\overline{x}$} o substitui no denominador da fórmula.
+- Se $\overline{X}$ não é conhecido, a estimativa amostral $\overline{x}$ o substitui no denominador da fórmula.
 
-- Uma fórmula prática para calcular \structure{$s_{\widehat{R}}$} é dada por
+- Uma fórmula prática para calcular $s_{\widehat{R}}$ é dada por
 
 $$
 s_{\widehat{R}} = \frac{\sqrt{1 - f}}{\sqrt{n}\overline{X}}\sqrt{\frac{\sum_{i=1}^n{Y_i^2} - 2\widehat{R}\sum_{i=1}^n{Y_iX_i} + \widehat{R}^2\sum_{i=1}^n{X_i^2}}{n - 1}}.
 $$
 
-# Para casa {.allowframebreaks}
+# Para casa (PQP) {.allowframebreaks}
 
 - A tabela a seguir mostra o número de pessoas ($X_1$), a renda familiar semanal ($X_2$) e os gastos semanais com alimentação ($Y$) em uma amostra aleatória simples de 33 famílias de baixa renda.
 - Como a amostra é pequena, os dados se destinam apenas a ilustrar os cálculos.
