@@ -31,6 +31,13 @@
 \def\tallyI{\pdfliteral{q .5 w 0 -1 m 0 8 l S Q}}
 \def\tallyV{\kern1bp\pdfliteral{q .5 w -1 0 m 9 7 l S Q}\tallynum4\kern1bp }
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 \setbeamertemplate{frametitle continuation}{}
 \setbeamertemplate{items}[default] 
 \setbeamertemplate{enumerate items}[default]
