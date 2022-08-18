@@ -1,6 +1,6 @@
 ---
 title: "MAT02025 - Amostragem 1"
-subtitle: "AAS: validade da aproximação normal (ou TCL para população finita)"
+subtitle: "AAS: validade da aproximação normal\n ou o TCL para população finita"
 fontsize: 10pt
 author: |
   | Rodrigo Citton P. dos Reis
@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
+  | Porto Alegre, 2022
 ---
 
 # Teorema Central do Limite para população finita
@@ -18,29 +18,29 @@ date: |
 ## TCL para população finita {.allowframebreaks}
 
 - Quando as observações individuais \structure{$Y_1, Y_2, \ldots, Y_n$ não são normalmente distribuídas}, os níveis de confiança aproximados dos intervalos de confiança usuais dependem da \structure{distribuição normal aproximada da média amostral $\overline{y}$}.
-- Se \structure{$Y_1, Y_2, \ldots, Y_n$} são uma \structure{sequência de variáveis aleatórias independentes e identicamente distribuídas} com __média e variância finitas__, a distribuição de
+- Se \structure{$Y_1, Y_2, \ldots, Y_n$} são uma sequência de variáveis aleatórias \structure{independentes} e \structure{identicamente distribuídas} com média e variância finitas, a distribuição de
 
 $$
 \frac{\overline{y} - \overline{Y}}{\sqrt{\Var(\overline{y})}}
 $$
-aproxima-se de uma \structure{distribuição normal padrão} à medida que \structure{$n$ se torna grande}, pelo \structure{teorema central do limite (TCL)}.
+aproxima-se de uma \structure{distribuição normal padrão} à medida que $n$ \structure{aumenta}, pelo \structure{teorema central do limite (TCL)}.
 
-- O resultado também é válido se a variância for substituída por um estimador de variância razoável.
-
-\framebreak
-
-- Quando uma população finita é amostrada usando \structure{amostragem aleatória com reposição}, as \structure{$n$} observações \structure{são de fato independentes e distribuídas de forma idêntica}, de modo que o __TCL__ usual se aplica.
-- Com a \structure{amostragem aleatória sem reposição}, no entanto, as observações da amostra não são independentes.
-    + Selecionar uma unidade com um grande valor de \structure{$Y$} no primeiro sorteio, por exemplo, remove essa unidade da lista de seleção, portanto, reduz a probabilidade de obter um grande valor de \structure{$Y$} nos sorteios subsequentes.
+- O resultado também é válido se a variância for substituída por um estimador razoável da variância.
 
 \framebreak
 
-- Uma versão especial do __TCL__ se aplica à amostragem aleatória sem reposição de uma população finita\footnote{Hajek, J. (1960). Limiting distributions in simple random sampling from a finite population. \emph{Pub. Math. Inst. Hungarian Acad. Sci.}, 5, 361-374.}\footnote{Erdos, P., and Renyi, A. (1959). On the central limit theorem for samples from a finite population. \emph{Pub. Math. Inst. Hungarian Acad. Sci.}, 4, 49-57.}\footnote{Madow, W. G. (1948). On the limiting distributions of estimates based on samples from finite universes. \emph{Ann. Math. Stat.}, 19, 535-545.}.
+- Quando uma população finita é amostrada usando \structure{amostragem aleatória simples com reposição}, as $n$ observações \structure{são} de fato \structure{independentes} e \structure{identicamente distribuídas}, de modo que o \structure{TCL} usual se aplica.
+- No entanto, com a \structure{amostragem aleatória simples sem reposição}, as observações da amostra \structure{não são independentes}.
+    + Selecionar uma unidade com um grande valor de $Y$ no primeiro sorteio, por exemplo, remove essa unidade da lista de seleção, e portanto, reduz a probabilidade de obter um valor alto de $Y$ nos sorteios subsequentes.
+
+\framebreak
+
+- Uma versão especial do \structure{TCL} se aplica à __amostragem aleatória simples sem reposição__ de uma \structure{população finita}\footnote{Hajek, J. (1960). Limiting distributions in simple random sampling from a finite population. \emph{Pub. Math. Inst. Hungarian Acad. Sci.}, 5, 361-374.}\footnote{Erdos, P., and Renyi, A. (1959). On the central limit theorem for samples from a finite population. \emph{Pub. Math. Inst. Hungarian Acad. Sci.}, 4, 49-57.}\footnote{Madow, W. G. (1948). On the limiting distributions of estimates based on samples from finite universes. \emph{Ann. Math. Stat.}, 19, 535-545.}.
 
 ## TCL para população finita {.allowframebreaks}
 
-- Para amostrar sem reposição de uma população finita, é necessário pensar em uma \structure{sequência de populações}, com o tamanho da população \structure{$N$} se tornando grande junto com o tamanho da amostra \structure{$n$}.
-- Para a população com um determinado tamanho \structure{$N$} na sequência, seja \structure{$\overline{Y}_N$} a média da população e \structure{$\overline{y}_N$} a média amostral de uma amostra aleatória simples selecionada dessa população.
+- Para amostrar sem reposição de uma população finita, é necessário pensar em uma \structure{sequência de populações}, com o tamanho da população $N$ se tornando grande junto com o tamanho da amostra $n$.
+- Para a população com um determinado tamanho $N$ na sequência, seja $\overline{Y}_N$ a média da população e $\overline{y}_N$ a média amostral de uma amostra aleatória simples selecionada dessa população.
 
 \framebreak
 
@@ -49,12 +49,12 @@ aproxima-se de uma \structure{distribuição normal padrão} à medida que \stru
 $$
 \frac{\overline{y}_N - \overline{Y}_N}{\sqrt{\Var(\overline{y}_N)}}
 $$
-aproxima-se da distribuição normal padrão à medida que \structure{$n$} e \structure{$N - n$} se tornam grandes.
+aproxima-se da distribuição normal padrão à medida que $n$ e $N - n$ se tornam grandes.
 
 \framebreak
 
-- O resultado também é válido para \structure{$\Var(\overline{y}_N)$} substituída pela variância estimada \structure{$\widehat{\Var}(\overline{y}_N)$} da média amostral de uma amostra aleatória simples de tamanho \structure{$n$} de uma população de tamanho \structure{$N$}.
-- Uma condição técnica do teorema requer que, na progressão das populações hipotéticas de tamanho crescente, a contribuição (proporcional) de qualquer unidade na variância da populacional não seja muito grande.
+- O resultado também é válido para $\Var(\overline{y}_N)$ substituída pela variância estimada $\widehat{\Var}(\overline{y}_N)$ da média amostral de uma amostra aleatória simples de tamanho $n$ de uma população de tamanho $N$.
+- Uma condição técnica do teorema requer que, na progressão das populações hipotéticas de tamanho crescente, a contribuição (proporcional) de qualquer unidade na variância populacional não seja muito grande.
 
 \framebreak
 
@@ -71,16 +71,18 @@ $$
 
 ## Alguns detalhes {.allowframebreaks}
 
-- O __TCL__ para população finita requer o conceito de uma sequência de populações \structure{$U_1, U_2,\ldots$}; a \structure{$N$}-ésima população na sequência tem \structure{$N$} unidades e valores \structure{$Y_{1N}, Y_{2N},\ldots, Y_{NN}$}.
-- O tamanho da amostra \structure{$n_N$} da amostra aleatória simples selecionada da \structure{$N$}-ésima população também depende de \structure{$N$}, e a média amostral dessa amostra é \structure{$\overline{y}_N = \sum_{i\in S}{Y_{iN}}/n_N$}.
+- O \structure{TCL} para população finita requer o conceito de uma sequência de populações $U_1, U_2,\ldots$.
+    + A $N$-ésima população na sequência tem $N$ unidades e valores $Y_{1N}, Y_{2N},\ldots, Y_{NN}$.
+- O tamanho da amostra aleatória simples selecionada da $N$-ésima população, $n_N$, também depende de $N$, e a média (amostral) dessa amostra é $\overline{y}_N = \sum_{i=1}^{n_N}{Y_{iN}}/n_N$.
 
 \framebreak
 
-- Para qualquer constante \structure{$\epsilon > 0$}, denote o conjunto de unidades com valores de \structure{$Y$} mais distantes da média na \structure{$N$}-ésima população por
+- Para qualquer constante $\epsilon > 0$, denote o conjunto de unidades com valores de $Y$ mais distantes da média na $N$-ésima população por
 
 $$
-A_N = \left\{i : |Y_{iN} - \overline{Y}_N| > \epsilon\sqrt{(1 - f)S^2_N}\right\}.
+A_N = \left\{i : |Y_{iN} - \overline{Y}_N| > \epsilon\sqrt{n_N(1 - f_N)S^2_N}\right\},
 $$
+em que $\overline{Y}_N$, $f_N$ e $S_N^2$ são, respectivamente, a média populacional, a fração de amostragem e a variância populacional na $N$-ésima população da sequência de populações.
 
 \framebreak
 
@@ -100,37 +102,45 @@ conforme $n_N \rightarrow \infty$ e $(N - n_N) \rightarrow \infty$ quando $N \ri
 
 ## Exemplo 1 {.allowframebreaks}
 
-- A população de 31 cerejeiras pretas (objeto `trees` no `R`) usadas pode ser usada para ilustrar o __TCL__ para população finita.
-- Primeiro, a distribuição dos volumes das árvores na própria população é ilustrada com o histograma dos 31 valores de $Y$.
+- A população\footnote{Para fins ilustrativos, vamos supor que este conjunto de dados forma uma população de diamantes.} de 53940 diamantes (objeto `diamonds` no pacote `ggplot2` do `R`) pode ser usada para ilustrar o \structure{TCL para população finita}.
+- Distribuição do peso em quilates ($Y$) dos diamantes na própria população.
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%'}
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%'}
 
-y <- trees$Volume
+library(ggplot2)
+
+data("diamonds")
+
+# y <- trees$Volume
+
+y <- diamonds$carat
 N <- length(y)
 hist(y, probability = T,
      main = "",
      xlab = "Y",
      ylab = "Densidade",
      border = "white",
-     col = "#1B9E77")
+     col = "#1B9E77",
+     breaks = 30)
 
 
 ```
 
-\framebreak
+## Exemplo 1 {.allowframebreaks}
 
-- Observe que a variável de interesse na população não tem distribuição normal, tendo uma forma assimétrica e acidentada.
-- Em seguida, simulações são executadas para a estratégia de amostragem amostragem aleatória simples com tamanhos de amostra 1, 2, 5, 15, 25 e 30.
+- Observe que a variável de interesse na população __não tem distribuição normal__, tendo uma forma assimétrica e acidentada.
+- Em seguida, vamos apresentar distribuições da média amostral, obtidas pela repetição da seleção da amostra, utilizando amostragem amostragem aleatória simples sem reposição, nesta população de tamanho $N = 53940$, com tamanhos de amostra $n \in \{1, 5, 20, 50, 100, 1000\}$.
 
 \framebreak
 
 ```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
+
+b <- 10000
+
+n <- 1
 
 ybar <- numeric(0)
 
-b <- 10000
-n <- 1
-
 for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
 
 hist(ybar, probability = T,
@@ -138,30 +148,17 @@ hist(ybar, probability = T,
      xlab = expression(bar(y)),
      ylab = "Densidade",
      border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
+     col = "#D95F02", breaks = 30)
 
 legend("topright", legend = "n = 1", bty = "n")
 
-```
-
-\framebreak
-
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
-
-n <- 2
-
-for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
-
-hist(ybar, probability = T,
-     main = "",
-     xlab = expression(bar(y)),
-     ylab = "Densidade",
-     border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
-
-legend("topright", legend = "n = 2", bty = "n")
+enes <- c(rep(1, b),
+          rep(5, b),
+          rep(20, b),
+          rep(50, b),
+          rep(100, b),
+          rep(1000, b))
+ybares <- ybar
 
 ```
 
@@ -178,18 +175,19 @@ hist(ybar, probability = T,
      xlab = expression(bar(y)),
      ylab = "Densidade",
      border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
+     col = "#D95F02", breaks = 30)
 
 legend("topright", legend = "n = 5", bty = "n")
 
+ybares <- c(ybares, ybar)
+
 ```
 
 \framebreak
 
 ```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
 
-n <- 15
+n <- 20
 
 for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
 
@@ -198,10 +196,11 @@ hist(ybar, probability = T,
      xlab = expression(bar(y)),
      ylab = "Densidade",
      border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
+     col = "#D95F02", breaks = 30)
 
-legend("topright", legend = "n = 15", bty = "n")
+legend("topright", legend = "n = 20", bty = "n")
+
+ybares <- c(ybares, ybar)
 
 ```
 
@@ -209,7 +208,7 @@ legend("topright", legend = "n = 15", bty = "n")
 
 ```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
 
-n <- 25
+n <- 50
 
 for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
 
@@ -218,10 +217,11 @@ hist(ybar, probability = T,
      xlab = expression(bar(y)),
      ylab = "Densidade",
      border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
+     col = "#D95F02", breaks = 30)
 
-legend("topright", legend = "n = 25", bty = "n")
+legend("topright", legend = "n = 50", bty = "n")
+
+ybares <- c(ybares, ybar)
 
 ```
 
@@ -229,7 +229,7 @@ legend("topright", legend = "n = 25", bty = "n")
 
 ```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
 
-n <- 30
+n <- 100
 
 for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
 
@@ -238,19 +238,61 @@ hist(ybar, probability = T,
      xlab = expression(bar(y)),
      ylab = "Densidade",
      border = "white",
-     col = "#D95F02",
-     xlim = c(10,80))
+     col = "#D95F02", breaks = 30)
 
-legend("topright", legend = "n = 30", bty = "n")
+legend("topright", legend = "n = 100", bty = "n")
+
+ybares <- c(ybares, ybar)
 
 ```
 
 \framebreak
 
-- Os histogramas acima mostram que conforme o tamanho da amostra $n$ aumenta, a distribuição de $\overline{y}$ torna-se cada vez mais normal, desde que $N - n$ também seja suficientemente grande.
-- Com uma população finita tão pequena, com $N = 31$, o efeito do número não amostrado $N - n$ é pronunciado.
-- Assim, a aproximação normal fica melhor à medida que $n$ aumenta até cerca de metade de $N$ e depois piora.
-- A dispersão da distribuição amostral de $\overline{y}$ fica mais estreita, mesmo que menos simétrica, conforme o tamanho da amostra aumenta.
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
+
+n <- 1000
+
+for (k in 1:b){s <- sample(1:N, n); ybar[k] <- mean(y[s])}
+
+hist(ybar, probability = T,
+     main = "",
+     xlab = expression(bar(y)),
+     ylab = "Densidade",
+     border = "white",
+     col = "#D95F02", breaks = 30)
+
+legend("topright", legend = "n = 1000", bty = "n")
+
+ybares <- c(ybares, ybar)
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
+
+df.joy <- data.frame(enes, ybares)
+df.joy$y.bar.center <- (df.joy$ybares - mean(y))/sqrt(var(y)*(1 - df.joy$enes/N)*(1/df.joy$enes))
+df.joy$enes.char <- as.factor(df.joy$enes)
+
+library(ggjoy)
+p <- ggplot(data = df.joy,
+            mapping = aes(x = y.bar.center, y = enes.char, fill = enes.char)) + 
+  geom_joy(alpha = 0.7) + 
+  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3)) +
+  scale_fill_brewer(palette = "Greys") +
+  theme_joy() +
+  labs(x = "z", y = "n", caption = "Processo centralizado.") +
+  theme(legend.position = "none")
+p
+
+
+```
+
+- Os histogramas dos slides anteriores mostram que conforme o tamanho da amostra $n$ aumenta, a distribuição de $\overline{y}$ torna-se cada vez mais próxima da normal, desde que $N - n$ também seja suficientemente grande.
+<!-- - Com uma população finita tão pequena, com $N = 31$, o efeito do número não amostrado $N - n$ é pronunciado. -->
+<!-- - Assim, a aproximação normal fica melhor à medida que $n$ aumenta até cerca de metade de $N$ e depois piora. -->
+<!-- - A dispersão da distribuição amostral de $\overline{y}$ fica mais estreita, mesmo que menos simétrica, conforme o tamanho da amostra aumenta. -->
 
 ## Exemplo 2 {.allowframebreaks}
 
@@ -281,8 +323,9 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'tcl-03.png'))
 - Revisar os tópicos discutidos nesta aula.
 -  Ler o capítulo 10 do Livro "Elementos de amostragem"\footnote{Bolfarine, H. e Bussab, W. O. \bf{Elementos de amostragem}, Blucher, 2005.} (disponível no Sabi+).
 
-## Próxima aula
+## Próximas aulas
 
+- Atividade de Avaliação II.
 - Estimativa de proporções e percentagens.
 
 ## Por hoje é só!
