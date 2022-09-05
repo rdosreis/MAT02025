@@ -1,4 +1,4 @@
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'-----------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 a <- 20
 n <- 50
@@ -43,7 +43,7 @@ legend("bottomright",
 
 
 
-## ----echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+## ----echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE---------------------------------------
 
 # install.packages("samplingbook")
 library(samplingbook)
@@ -52,7 +52,7 @@ Sprop(m = 37, n = 100, N = 500, level = 0.95)
 
 
 
-## ----echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+## ----echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE---------------------------------------
 
 Sprop(m = 2, n = 100, N = 500, level = 0.95)
 

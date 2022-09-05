@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  18 OCT 2021 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  5 SEP 2022 19:14
 entering extended mode
 **C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
 ut_pdf/18_aas_dists_bin_hip.tex
@@ -858,10 +858,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
@@ -916,166 +912,207 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 )) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
-Package: xurl 2020/12/30 v 0.09a modify URL breaks
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
-Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
-
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
-File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count333
-)) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.st
-y
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip68
-\multirow@cntb=\count334
-\multirow@dima=\skip69
-\bigstrutjot=\dimen289
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen290
-\lightrulewidth=\dimen291
-\cmidrulewidth=\dimen292
-\belowrulesep=\dimen293
-\belowbottomsep=\dimen294
-\aboverulesep=\dimen295
-\abovetopsep=\dimen296
-\cmidrulesep=\dimen297
-\cmidrulekern=\dimen298
-\defaultaddspace=\dimen299
-\@cmidla=\count335
-\@cmidlb=\count336
-\@aboverulesep=\dimen300
-\@belowrulesep=\dimen301
-\@thisruleclass=\count337
-\@lastruleclass=\count338
-\@thisrulewidth=\dimen302
 )
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\longtable.s
 ty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip70
-\LTright=\skip71
-\LTpre=\skip72
-\LTpost=\skip73
-\LTchunksize=\count339
-\LTcapwidth=\dimen303
+\LTleft=\skip68
+\LTright=\skip69
+\LTpre=\skip70
+\LTpost=\skip71
+\LTchunksize=\count333
+\LTcapwidth=\dimen289
 \LT@head=\box73
 \LT@firsthead=\box74
 \LT@foot=\box75
 \LT@lastfoot=\box76
-\LT@cols=\count340
-\LT@rows=\count341
-\c@LT@tables=\count342
-\c@LT@chunks=\count343
+\LT@cols=\count334
+\LT@rows=\count335
+\c@LT@tables=\count336
+\c@LT@chunks=\count337
 \LT@p@ftn=\toks47
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\array.sty
-Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen304
-\ar@mcellbox=\box77
-\extrarowheight=\dimen305
-\NC@list=\toks48
-\extratabsurround=\skip74
-\backup@length=\skip75
-\ar@cellbox=\box78
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen306
-\WF@size=\dimen307
-\c@WF@wrappedlines=\count344
-\WF@box=\box79
-\WF@everypar=\toks49
-Package: wrapfig 2003/01/31  v 3.6
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count345
-\float@exts=\toks50
-\float@box=\box80
-\@float@everytoks=\toks51
-\@floatcapt=\box81
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks52
-\minrowclearance=\skip76
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip72
+\multirow@cntb=\count338
+\multirow@dima=\skip73
+\bigstrutjot=\dimen290
 )
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
-Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tabu\tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box82
-\sift@deathcycles=\count346
-\@vwid@loff=\dimen308
-\@vwid@roff=\dimen309
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count339
+\l_MT_multwidth_dim=\dimen291
+\origjot=\skip74
+\l_MT_shortvdotswithinadjustabove_dim=\dimen292
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen293
+\l_MT_above_intertext_sep=\dimen294
+\l_MT_below_intertext_sep=\dimen295
+\l_MT_above_shortintertext_sep=\dimen296
+\l_MT_below_shortintertext_sep=\dimen297
+\xmathstrut@box=\box77
+\xmathstrut@dim=\dimen298
 )
-\c@taburow=\count347
-\tabu@nbcols=\count348
-\tabu@cnt=\count349
-\tabu@Xcol=\count350
-\tabu@alloc=\count351
-\tabu@nested=\count352
-\tabu@target=\dimen310
-\tabu@spreadtarget=\dimen311
-\tabu@naturalX=\dimen312
-\tabucolX=\dimen313
-\tabu@Xsum=\dimen314
-\extrarowdepth=\dimen315
-\abovetabulinesep=\dimen316
-\belowtabulinesep=\dimen317
-\tabustrutrule=\dimen318
-\tabu@thebody=\toks53
-\tabu@footnotes=\toks54
-\tabu@box=\box83
-\tabu@arstrutbox=\box84
-\tabu@hleads=\box85
-\tabu@vleads=\box86
-\tabu@cellskip=\skip77
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.
+sty
+Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfnodeparttextbox=\box78
 )
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/threeparttable\threepar
-ttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box87
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 )
-\tmpnum=\count353
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@nodesepstart=\dimen299
+\pgf@nodesepend=\dimen300
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex)) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pg
+fmath.sty
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex)
+\pgffor@iter=\dimen301
+\pgffor@skip=\dimen302
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@plot@mark@count=\count340
+\pgfplotmarksize=\dimen303
+)
+\tikz@lastx=\dimen304
+\tikz@lasty=\dimen305
+\tikz@lastxsaved=\dimen306
+\tikz@lastysaved=\dimen307
+\tikz@lastmovetox=\dimen308
+\tikz@lastmovetoy=\dimen309
+\tikzleveldistance=\dimen310
+\tikzsiblingdistance=\dimen311
+\tikz@figbox=\box79
+\tikz@figbox@bg=\box80
+\tikz@tempbox=\box81
+\tikz@tempbox@bg=\box82
+\tikztreelevel=\count341
+\tikznumberofchildren=\count342
+\tikznumberofcurrentchild=\count343
+\tikz@fig@count=\count344
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfmatrixcurrentrow=\count345
+\pgfmatrixcurrentcolumn=\count346
+\pgf@matrix@numberofcolumns=\count347
+)
+\tikz@expandcount=\count348
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+))) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/04/07 3.57 The Babel package
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/04/07 3.57 Babel common definitions
+\babel@savecnt=\count349
+\U@D=\dimen312
+\l@babelnohyphens=\language79
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read3
+)
+LaTeX Info: Redefining \textlatin on input line 717.
+\bbl@dirlevel=\count350
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazil.l
+df
+Language: portuges 2021/02/04 v1.2s Portuguese support from the babel system
+Package babel Info: \l@brazil = using hyphenrules for portuguese
+(babel)             (\language56) on input line 111.
+Package babel Info: Making " an active character on input line 143.
+))
+\tmpnum=\count351
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count352
+)) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2020/12/30 v 0.09a modify URL breaks
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 150.
+(hyperref)                removing `\\' on input line 158.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 156.
+(hyperref)                removing `math shift' on input line 164.
 
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count354
-\l__pdf_internal_box=\box88
+\l__color_backend_stack_int=\count353
+\l__pdf_internal_box=\box83
 ) (18_aas_dists_bin_hip.aux)
 \openout1 = `18_aas_dists_bin_hip.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1114,17 +1151,17 @@ LaTeX Font Info:    ... okay on input line 156.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
-\scratchdimen=\dimen319
-\scratchbox=\box89
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count358
-\MPscratchDim=\dimen320
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks56
+\scratchcounter=\count354
+\scratchdimen=\dimen313
+\scratchbox=\box84
+\nofMPsegments=\count355
+\nofMParguments=\count356
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count357
+\MPscratchDim=\dimen314
+\MPnumerator=\count358
+\makeMPintoPDFobject=\count359
+\everyMPtoPDFconversion=\toks51
 )
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1136,7 +1173,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 156.
+Package hyperref Info: Link coloring OFF on input line 164.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -1146,57 +1183,57 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count361
+\c@section@level=\count360
 )
-LaTeX Info: Redefining \ref on input line 156.
-LaTeX Info: Redefining \pageref on input line 156.
-LaTeX Info: Redefining \nameref on input line 156.
+LaTeX Info: Redefining \ref on input line 164.
+LaTeX Info: Redefining \pageref on input line 164.
+LaTeX Info: Redefining \nameref on input line 164.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 156.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 164.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 156.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 164.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 156.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 164.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 156.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 164.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 156.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 156.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 164.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 156.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 156.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 156.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 164.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 156.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 156.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 156.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 164.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 156.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 156.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 156.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 164.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 156.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 156.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 164.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 156.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 164.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 156.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 156.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 156.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 156.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 156.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 164.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 156.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 164.
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1222,14 +1259,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 156.
+LaTeX Info: Redefining \microtypecontext on input line 164.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 156.
+LaTeX Info: Redefining \showhyphens on input line 164.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1239,7 +1276,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 (18_aas_dists_bin_hip.nav)
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-157.
+165.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1248,34 +1285,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-57.
+65.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-157.
+165.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-157.
+165.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 157.
+(Font)              <10> on input line 165.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 157.
+(Font)              <7> on input line 165.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 157.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 157
+(Font)              <5> on input line 165.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 165
 .
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 157
+LaTeX Font Info:    Trying to load font information for U+msb on input line 165
 .
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1283,53 +1320,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 157.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 165.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 157.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 165.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 157.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 165.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-57.
+65.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 15
-7.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 16
+5.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <7> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 157.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 165.
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<logos/Logo-40-anos-estatistica.png, id=13, 453.695pt x 291.0875pt>
-File: logos/Logo-40-anos-estatistica.png Graphic file (type png)
-<use logos/Logo-40-anos-estatistica.png>
-Package pdftex.def Info: logos/Logo-40-anos-estatistica.png  used on input line
- 157.
-(pdftex.def)             Requested size: 44.34065pt x 28.45274pt.
+<logos/ime.png, id=13, 341.275pt x 148.555pt>
+File: logos/ime.png Graphic file (type png)
+<use logos/ime.png>
+Package pdftex.def Info: logos/ime.png  used on input line 165.
+(pdftex.def)             Requested size: 65.36366pt x 28.45274pt.
 [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
- <./logos/Logo-40-anos-estatistica.png>]
+ <./logos/ime.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 161.
+(Font)              <14.4> on input line 169.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 161.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 169.
 [2
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 290.
+(Font)              <9> on input line 297.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 290.
+(Font)              <6> on input line 297.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 297.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 297.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-1-1.pdf, id=40, 72
 2.7pt x 505.89pt>
@@ -1340,7 +1376,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-1-1.pdf  used on input line 290.
+chunk-1-1.pdf  used on input line 297.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-2-1.pdf, id=41, 72
@@ -1352,7 +1388,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-2-1.pdf  used on input line 290.
+chunk-2-1.pdf  used on input line 297.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-3-1.pdf, id=42, 72
@@ -1364,7 +1400,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-3-1.pdf  used on input line 290.
+chunk-3-1.pdf  used on input line 297.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-4-1.pdf, id=43, 72
@@ -1376,7 +1412,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-4-1.pdf  used on input line 290.
+chunk-4-1.pdf  used on input line 297.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 [3
 
@@ -1411,14 +1447,10 @@ ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-3-1.pdf>] [10
 ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-4-1.pdf>] [12
 
 ]
-<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/image
-s/bin.jpg, id=156, 339.669pt x 264.99pt>
-File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
-images/bin.jpg Graphic file (type jpg)
-<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/i
-mages/bin.jpg>
-Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
-mostragem/MAT02025/images/bin.jpg  used on input line 381.
+<../images/bin.jpg, id=156, 339.669pt x 264.99pt>
+File: ../images/bin.jpg Graphic file (type jpg)
+<use ../images/bin.jpg>
+Package pdftex.def Info: ../images/bin.jpg  used on input line 382.
 (pdftex.def)             Requested size: 46.0916pt x 35.95406pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-6-1.pdf, id=157, 7
@@ -1430,7 +1462,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-6-1.pdf  used on input line 381.
+chunk-6-1.pdf  used on input line 382.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-7-1.pdf, id=158, 7
@@ -1442,12 +1474,11 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-7-1.pdf  used on input line 381.
+chunk-7-1.pdf  used on input line 382.
 (pdftex.def)             Requested size: 245.83282pt x 172.08522pt.
 [13
 
- <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/imag
-es/bin.jpg>] [14
+ <../images/bin.jpg>] [14
 
 
 ] [15
@@ -1467,19 +1498,15 @@ ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-6-1.pdf>] [18
 ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-7-1.pdf>] [19
 
 ]
-<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/image
-s/hyp.jpg, id=230, 427.5975pt x 267.399pt>
-File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
-images/hyp.jpg Graphic file (type jpg)
-<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/i
-mages/hyp.jpg>
-Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
-mostragem/MAT02025/images/hyp.jpg  used on input line 467.
+<../images/hyp.jpg, id=230, 427.5975pt x 267.399pt>
+File: ../images/hyp.jpg Graphic file (type jpg)
+<use ../images/hyp.jpg>
+Package pdftex.def Info: ../images/hyp.jpg  used on input line 463.
 (pdftex.def)             Requested size: 46.0916pt x 28.82234pt.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 467.
+(amsmath)                 on input line 463.
 
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-9-1.pdf, id=231, 7
@@ -1491,7 +1518,7 @@ ic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-9-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-9-1.pdf  used on input line 467.
+chunk-9-1.pdf  used on input line 463.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-10-1.pdf, id=232, 
@@ -1503,12 +1530,11 @@ hic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-10-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-10-1.pdf  used on input line 467.
+chunk-10-1.pdf  used on input line 463.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 [20
 
- <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/imag
-es/hyp.jpg>] [21
+ <../images/hyp.jpg>] [21
 
 
 ] [22
@@ -1526,9 +1552,9 @@ ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-10-1.pdf>] [25
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 501.
+(Font)              <8> on input line 497.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 501.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 497.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-11-1.pdf, id=296, 
 722.7pt x 505.89pt>
@@ -1539,7 +1565,7 @@ hic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-11-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-11-1.pdf  used on input line 501.
+chunk-11-1.pdf  used on input line 497.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
 t_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-12-1.pdf, id=297, 
@@ -1551,7 +1577,7 @@ hic file (type pdf)
 utput_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-12-1.pdf>
 Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
 mostragem/MAT02025/output_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-
-chunk-12-1.pdf  used on input line 501.
+chunk-12-1.pdf  used on input line 497.
 (pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
 [26
 
@@ -1568,33 +1594,25 @@ ut_pdf/18_aas_dists_bin_hip_files/figure-beamer/unnamed-chunk-12-1.pdf>] [29
 ] [30
 
 ]
-<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/image
-s/bin_vs_hyp.jpg, id=356, 1284.8pt x 722.7pt>
-File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
-images/bin_vs_hyp.jpg Graphic file (type jpg)
-<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/i
-mages/bin_vs_hyp.jpg>
-Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
-mostragem/MAT02025/images/bin_vs_hyp.jpg  used on input line 532.
-(pdftex.def)             Requested size: 215.09996pt x 122.1075pt.
+<../images/bin_vs_hyp.jpg, id=356, 963.6pt x 329.73187pt>
+File: ../images/bin_vs_hyp.jpg Graphic file (type jpg)
+<use ../images/bin_vs_hyp.jpg>
+Package pdftex.def Info: ../images/bin_vs_hyp.jpg  used on input line 528.
+(pdftex.def)             Requested size: 215.09506pt x 122.10956pt.
 [31
 
- <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/imag
-es/bin_vs_hyp.jpg>]
-<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/image
-s/Statistically-Insignificant-final01.jpg, id=367, 84.315pt x 84.315pt>
-File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
-images/Statistically-Insignificant-final01.jpg Graphic file (type jpg)
-<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/i
-mages/Statistically-Insignificant-final01.jpg>
-Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
-mostragem/MAT02025/images/Statistically-Insignificant-final01.jpg  used on inpu
-t line 541.
+ <../images/bin_vs_hyp.jpg>]
+<../images/Statistically-Insignificant-final01.jpg, id=367, 84.315pt x 84.315pt
+>
+File: ../images/Statistically-Insignificant-final01.jpg Graphic file (type jpg)
+
+<use ../images/Statistically-Insignificant-final01.jpg>
+Package pdftex.def Info: ../images/Statistically-Insignificant-final01.jpg  use
+d on input line 537.
 (pdftex.def)             Requested size: 153.64905pt x 122.11464pt.
 [32
 
- <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/imag
-es/Statistically-Insignificant-final01.jpg>]
+ <../images/Statistically-Insignificant-final01.jpg>]
 \tf@nav=\write5
 \openout5 = `18_aas_dists_bin_hip.nav'.
 
@@ -1606,13 +1624,13 @@ es/Statistically-Insignificant-final01.jpg>]
 
 (18_aas_dists_bin_hip.aux) ) 
 Here is how much of TeX's memory you used:
- 24845 strings out of 479321
- 471543 string characters out of 2856584
- 781652 words of memory out of 3000000
- 41454 multiletter control sequences out of 15000+600000
- 500740 words of font info for 165 fonts, out of 8000000 for 9000
+ 27985 strings out of 479321
+ 543582 string characters out of 2856584
+ 865854 words of memory out of 3000000
+ 44555 multiletter control sequences out of 15000+600000
+ 500639 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,17n,132p,862b,601s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,17n,132p,862b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
 /enc/dvips/lm/lm-mathsy.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts
 /enc/dvips/lm/lm-ec.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc
@@ -1636,7 +1654,7 @@ public/lm/lmsso10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1
 public/lm/lmsy8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/lm/lmtt10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb>
-Output written on 18_aas_dists_bin_hip.pdf (32 pages, 622869 bytes).
+Output written on 18_aas_dists_bin_hip.pdf (32 pages, 635961 bytes).
 PDF statistics:
  469 PDF objects out of 1000 (max. 8388607)
  74 named destinations out of 1000 (max. 500000)

@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
+  | Porto Alegre, 2022
 ---
 
 # IC aproximado para $P$ {.allowframebreaks}
@@ -18,14 +18,14 @@ date: |
 - Da expressão para a variância estimada de $P$, uma forma da aproximação normal para os limites de confiança de $P$ é
 
 $$
-p \pm \left[z\sqrt{1-f}\sqrt{pq/(n-1)} + \frac{1}{2n}\right]
+p \pm \left[z\sqrt{1-f}\sqrt{pq/(n-1)} + \frac{1}{2n}\right],
 $$
 em que $f = n/N$, $z$ é o desvio normal correspondente à probabilidade de confiança.
 
 \framebreak
 
-- O uso do termo mais familiar \structure{$\sqrt{pq/n}$} raramente faz uma diferença apreciável.
-- O último termo à direita (\structure{$1/2n$}) é uma \structure{correção para continuidade}.
+- O uso do termo mais familiar $\sqrt{pq/n}$ raramente faz uma diferença apreciável.
+- O último termo à direita ($1/2n$) é uma \structure{correção para continuidade}.
     - Isso produz apenas uma ligeira melhora na aproximação.
     - No entanto, sem a correção, a aproximação normal geralmente fornece um intervalo de confiança muito estreito.
 
@@ -62,7 +62,7 @@ $\approx 0$ & 80                                      & $\infty$                
 
 - Os limites de confiança também podem ser obtidos com base na \structure{distribuição hipergeométrica} exata do número de unidades na amostra com o atributo.
 - O método exato é conceitualmente simples, mas computacionalmente complexo.
-- Seja \structure{$a = \sum_{i=1}^n{Y_i}$} o número de unidades com o atributo (pertencentes a classe $C$) na amostra.
+- Seja $a = \sum_{i=1}^n{Y_i}$ o número de unidades com o atributo (pertencentes a classe $C$) na amostra.
 
 \framebreak
 
@@ -71,7 +71,7 @@ $\approx 0$ & 80                                      & $\infty$                
 
 
 $$
-\Pr(X\leq a) = \sum_{j=0}^{a}{\Pr(j, n-j|\widehat{A}_S, N - \widehat{A}_S)} = \sum_{j=0}^{a}{{\widehat{A}_S\choose j}{N-\widehat{A}_S\choose n-j}\Big{/}{N\choose n}} = \alpha_1
+\Pr(X\leq a) = \sum_{j=0}^{a}{\Pr(j, n-j|\widehat{A}_S, N - \widehat{A}_S)} = \sum_{j=0}^{a}{{\widehat{A}_S\choose j}{N-\widehat{A}_S\choose n-j}\Big{/}{N\choose n}} = \alpha_1.
 $$
 \normalsize
 
@@ -82,7 +82,7 @@ $$
 
 
 $$
-\Pr(X \geq a) = \sum_{j=a}^{n}{\Pr(j, n-j|\widehat{A}_I, N - \widehat{A}_I)} = \sum_{j=a}^{n}{{\widehat{A}_I\choose j}{N-\widehat{A}_I\choose n-j}\Big{/}{N\choose n}} = \alpha_2
+\Pr(X \geq a) = \sum_{j=a}^{n}{\Pr(j, n-j|\widehat{A}_I, N - \widehat{A}_I)} = \sum_{j=a}^{n}{{\widehat{A}_I\choose j}{N-\widehat{A}_I\choose n-j}\Big{/}{N\choose n}} = \alpha_2.
 $$
 
 \normalsize
@@ -146,13 +146,13 @@ Procuramos os limites de confiança ótimos $(\widehat{A}_I, \widehat{A}_S)$ que
 
 \framebreak
 
-* Limite superior $\widehat{A}_S$
-     + Comece com o maior valor possível para $A$, ou seja, $A_{max} = N - (n - a)$
-     + Então, diminua incrementalmente enquanto o $\Pr(X \ leq a) < \alpha/2$, de modo que encontremos o maior valor possível que ainda satisfaz a equação
-* Limite inferior $\widehat{A}_I$
-     + Comece com o menor valor possível para $A$, ou seja, $A_{min} = a$
-     + Reescrever $\Pr(X \geq a) = 1 - \Pr (X \leq a) = \alpha/2 \Leftrightarrow \Pr (X \leq a) = 1 - \alpha/2$
-     + Então, aumente incrementalmente enquanto $\Pr (X \leq a) \geq 1 - \alpha/2$, de modo que encontremos o menor valor possível que ainda preenche a equação
+* Limite superior $\widehat{A}_S$:
+     + Comece com o maior valor possível para $A$, ou seja, $A_{max} = N - (n - a)$;
+     + Então, diminua incrementalmente enquanto o $\Pr(X \leq a) < \alpha/2$, de modo que encontremos o maior valor possível que ainda satisfaz a equação.
+* Limite inferior $\widehat{A}_I$:
+     + Comece com o menor valor possível para $A$, ou seja, $A_{min} = a$;
+     + Reescrever $\Pr(X \geq a) = 1 - \Pr (X \leq a) = \alpha/2 \Leftrightarrow \Pr (X \leq a) = 1 - \alpha/2$;
+     + Então, aumente incrementalmente enquanto $\Pr (X \leq a) \geq 1 - \alpha/2$, de modo que encontremos o menor valor possível que ainda preenche a equação.
 
 # Exemplo {.allowframebreaks}
 
@@ -199,13 +199,13 @@ Sprop(m = 37, n = 100, N = 500, level = 0.95)
 
 ## Considerações finais sobre a aproximação normal {.allowframebreaks}
 
-- Na maioria dos cenários, essa estratégia resulta em propriedades satisfatórias.
+- Na maioria dos cenários, essa estratégia (intervalo de confiança utilizando a aproximação normal) resulta em propriedades satisfatórias.
 - No entanto, se $p$ estiver próximo de 0 ou 1, é recomendado usar o intervalo de confiança exato com base na distribuição hipergeométrica^[Kauermann, Goeran, and Helmut Kuechenhoff. 2010. _Stichproben: Methoden Und Praktische Umsetzung Mit R_. Springer-Verlag.].
 - O intervalo aproximado tem uma __probabilidade de cobertura__ tão baixa quanto $n/N$ para qualquer $\alpha$. Portanto, não há garantia de que o intervalo capture o verdadeiro $A$ com o nível de confiança desejado se a amostra for muito menor do que a população^[Wang, Weizhen. 2015. Exact Optimal Confidence Intervals for Hypergeometric Parameters. _Journal of the American Statistical Association_ 110 (512): 1491–9.].
 
 ## Considerações finais sobre a aproximação normal {.allowframebreaks}
 
-- Ainda, com $p$ e $n$ pequenos, o IC aproximado pode produzir limites inferiores a 0
+- Ainda, com $p$ e $n$ pequenos, o IC aproximado pode produzir limites inferiores a 0:
 
 \footnotesize
 

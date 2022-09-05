@@ -1,4 +1,4 @@
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 P <- seq(from = 0, to = 100, by = 10)
 Q <- 100 - P
@@ -14,7 +14,7 @@ par(mfrow = c(1,1))
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 n <- 1:200
 P <- 50
@@ -31,7 +31,7 @@ abline(h = seq(0, 50, by = 5), v = seq(0, 200, by = 50), col = "lightgrey", lty 
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 P <- c(0, 0.1, 0.5, 1, 5, seq(from = 10, to = 90, by = 10))
 Q <- 100 - P
@@ -48,7 +48,7 @@ abline(h = seq(0, 30, by = 5),
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 raiz.n <- c(1:10, seq(20, 100, by = 20))
 P <- 1
@@ -69,7 +69,7 @@ abline(h = seq(0, 10, by = 1),
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 plot(dbinom(x = 0:50, size = 50, prob = 0.2),
      type = "h",
@@ -81,7 +81,7 @@ legend("topright", legend = c("n = 50", "P = 0.2"), bty = "n")
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%'-------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%'----
 
 par(mfrow = c(1,2))
 
@@ -109,7 +109,7 @@ par(mfrow = c(1,1))
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 plot(dhyper(k = 50, m = 200, n = 800, x = 0:50),
      type = "h",
@@ -123,7 +123,7 @@ legend("topright",
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 par(mfrow = c(1,2))
 
@@ -152,7 +152,7 @@ legend("topright",
 par(mfrow = c(1,1))
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 plot(x = (0:50)/50,
      y = dhyper(k = 50, m = 200, n = 800, x = 0:50),
@@ -178,7 +178,7 @@ legend("topright",
 
 
 
-## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'------------
+## ----echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
 
 plot(x = (0:400)/400,
      y = dhyper(k = 400, m = 200, n = 800, x = 0:400),
