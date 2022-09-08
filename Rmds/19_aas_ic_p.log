@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  5 SEP 2022 19:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  8 SEP 2022 00:17
 entering extended mode
 **C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
 ut_pdf/19_aas_ic_p.tex
@@ -1370,17 +1370,17 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 292.
+(Font)              <9> on input line 308.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 292.
+(Font)              <6> on input line 308.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 292.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 308.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 292.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 308.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 292.
+(Font)              <8> on input line 308.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 292.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 308.
 [3
 
 ] [4
@@ -1394,40 +1394,15 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 
 ] [7
 
+] [8
+
 ]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 363.
+(amsmath)                 on input line 408.
 
-
-Overfull \hbox (23.79501pt too wide) detected at line 363
-[][]\OT1/lmss/m/n/10 (\T1/lmss/m/sl/10 X \OMS/lmsy/m/n/10  \T1/lmss/m/sl/10 a\
-OT1/lmss/m/n/10 ) = [] [] = [] [] = \OML/lmm/m/it/10 []:
- []
-
-
-Overfull \hbox (15.69302pt too wide) detected at line 363
-[][]\OT1/lmss/m/n/10 (\T1/lmss/m/sl/10 X \OMS/lmsy/m/n/10  \T1/lmss/m/sl/10 a\
-OT1/lmss/m/n/10 ) = [] [] = [] [] = \OML/lmm/m/it/10 []:
- []
-
-<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
-t_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf, id=91, 722.7pt x 5
-05.89pt>
-File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
-output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf Graphic file (
-type pdf)
-<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/o
-utput_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
-mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1
-.pdf  used on input line 363.
-(pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
-[8
-
-] [9
-
+[9
 
 ] [10
 
@@ -1435,46 +1410,124 @@ mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1
 ] [11
 
 
- <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
-ut_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf>] [12
+] [12
 
-] [13
 
+]
+<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
+t_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf, id=135, 722.7pt x 
+505.89pt>
+File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
+output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf Graphic file (
+type pdf)
+<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/o
+utput_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
+mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1
+.pdf  used on input line 499.
+(pdftex.def)             Requested size: 276.559pt x 193.59105pt.
+<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
+t_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-2-1.pdf, id=136, 722.7pt x 
+505.89pt>
+File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
+output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-2-1.pdf Graphic file (
+type pdf)
+<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/o
+utput_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
+mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-2-1
+.pdf  used on input line 499.
+(pdftex.def)             Requested size: 276.559pt x 193.59105pt.
+<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
+t_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-3-1.pdf, id=137, 722.7pt x 
+505.89pt>
+File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
+output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-3-1.pdf Graphic file (
+type pdf)
+<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/o
+utput_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
+mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-3-1
+.pdf  used on input line 499.
+(pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
+<C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outpu
+t_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-4-1.pdf, id=138, 722.7pt x 
+505.89pt>
+File: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/
+output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-4-1.pdf Graphic file (
+type pdf)
+<use C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/o
+utput_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/A
+mostragem/MAT02025/output_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-4-1
+.pdf  used on input line 499.
+(pdftex.def)             Requested size: 307.28987pt x 215.1046pt.
+[13
 
 ] [14
 
+
+] [15
+
+
+ <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
+ut_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-1-1.pdf>] [16
+
+
+ <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
+ut_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-2-1.pdf>] [17
+
+
+ <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
+ut_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-3-1.pdf>] [18
+
+
+] [19
+
+
+ <C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
+ut_pdf/19_aas_ic_p_files/figure-beamer/unnamed-chunk-4-1.pdf>] [20
+
 ]
 \openout4 = `19_aas_ic_p.vrb'.
 
-(19_aas_ic_p.vrb) [15
+(19_aas_ic_p.vrb) [21
 
-] [16
-
-
-] [17
+] [22
 
 
-] [18
+] [23
+
+
+] [24
+
+
+] [25
+
+
+] [26
+
+] [27
 
 ]
 \openout4 = `19_aas_ic_p.vrb'.
 
-(19_aas_ic_p.vrb) [19
+(19_aas_ic_p.vrb) [28
 
-] [20
+] [29
 
-] [21
+] [30
 
 ]
-<../images/Statistically-Insignificant-final02.jpg, id=228, 84.315pt x 84.315pt
+<../images/Statistically-Insignificant-final02.jpg, id=323, 84.315pt x 84.315pt
 >
 File: ../images/Statistically-Insignificant-final02.jpg Graphic file (type jpg)
 
 <use ../images/Statistically-Insignificant-final02.jpg>
 Package pdftex.def Info: ../images/Statistically-Insignificant-final02.jpg  use
-d on input line 610.
+d on input line 716.
 (pdftex.def)             Requested size: 153.64905pt x 122.11464pt.
-[22
+[31
 
  <../images/Statistically-Insignificant-final02.jpg>]
 \tf@nav=\write6
@@ -1488,42 +1541,41 @@ d on input line 610.
 
 (19_aas_ic_p.aux) ) 
 Here is how much of TeX's memory you used:
- 28302 strings out of 479321
- 540781 string characters out of 2856584
- 868448 words of memory out of 3000000
- 44899 multiletter control sequences out of 15000+600000
- 498006 words of font info for 160 fonts, out of 8000000 for 9000
+ 28376 strings out of 479321
+ 544036 string characters out of 2856584
+ 871589 words of memory out of 3000000
+ 44952 multiletter control sequences out of 15000+600000
+ 497856 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,17n,132p,600b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,17n,132p,600b,716s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvip
 s/lm/lm-ec.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
-/lm-mathit.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
 /lm-mathsy.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
 /lm-rm.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-
+mathit.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-
 mathex.enc}<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
 lmcsc10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmex10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmmi10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmmi9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmss10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmss8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mss9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-ssbx10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmsso10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmsso12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsso8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsso9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsy10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmsy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmsy8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmsy9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mtt10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mtt8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-tti10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/symbols/msam10.pfb>
-Output written on 19_aas_ic_p.pdf (22 pages, 444487 bytes).
+/lmss10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmss8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmss9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mssbx10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsso10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmsso12.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmsso8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmsso9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmsy10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmsy6.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmsy8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsy9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmtt10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmtt8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mtti10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/symbols/msam10.pfb>
+Output written on 19_aas_ic_p.pdf (31 pages, 477546 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 57426 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 431 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 57449 words of extra memory for PDF output out of 61914 (max. 10000000)
 

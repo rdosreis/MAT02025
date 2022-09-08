@@ -24,23 +24,25 @@ em que $f = n/N$, $z$ é o desvio normal correspondente à probabilidade de conf
 
 \framebreak
 
-- O uso do termo mais familiar $\sqrt{pq/n}$ raramente faz uma diferença apreciável.
-- O último termo à direita ($1/2n$) é uma \structure{correção para continuidade}.
-    - Isso produz apenas uma ligeira melhora na aproximação.
-    - No entanto, sem a correção, a aproximação normal geralmente fornece um intervalo de confiança muito estreito.
+- O uso do termo mais familiar $\sqrt{pq/n}$ não apresenta uma diferença notável.
+- O último termo à direita $(1/2n)$ é uma \structure{correção de continuidade}.
+    - Isso produz apenas uma ligeira __melhora na aproximação__.
+    - No entanto, __sem a correção__, a aproximação normal geralmente fornece um __intervalo__ de confiança __muito estreito__.
+
+- __Para pensar:__ intervalos com menor amplitude representam menor incerteza com respeito a estimativa do parâmetro de interesse. Por outro lado, espera-se que $100\times(1 - \alpha)\%$ dos intervalos de confiança de $100\times(1 - \alpha)\%$ contenham o verdadeiro parâmetro. Intervalos "encolhidos" podem não garantir que a __taxa de cobertura__ dos ICs seja próxima à respectiva __taxa nominal__.
 
 \framebreak
 
 - O erro na aproximação normal depende de todas as quantidades $n$, $p$, $N$ e $\alpha$ ($1 - \alpha$ é coeficiente de confiança do intervalo).
-- A quantidade à qual o erro é mais sensível é $np$ ou mais especificamente o número observado na classe menor.
-- A Tabela a seguir fornece regras de trabalho para decidir quando a aproximação normal pode ser usada.
+- A quantidade à qual o erro é mais sensível é $np$, ou mais especificamente, o número observado na menor classe.
+- A tabela a seguir fornece __regras de trabalho__ para decidir quando a aproximação normal pode ser usada.
 
 \footnotesize
 
 \begin{table}[]
 \begin{tabular}{ccc}
 \hline
-$p$         & $np$ = número observado na classe menor & $n$ = tamanho da amostra \\ \hline
+$p$         & $np$ = número observado na menor classe & $n$ = tamanho da amostra \\ \hline
 0,5         & 15                                      & 30                       \\
 0,4         & 20                                      & 50                       \\
 0,3         & 24                                      & 80                       \\
@@ -56,38 +58,157 @@ $\approx 0$ & 80                                      & $\infty$                
 \framebreak
 
 - As regras apresentadas na tabela acima são construídas de modo que, com limites de confiança de 95%, a frequência real com a qual os limites falham em incluir $P$ não seja maior que 5,5%.
+    + Ou seja, a taxa de cobertura dos ICs de 95% com base na aproximação normal (dadas as condições da tabela) não deve ser inferior a 94,5%.
 - Além disso, a probabilidade de que o limite superior esteja abaixo de $P$ está entre 2,5 e 3,5%, e a probabilidade de que o limite inferior exceda $P$ está entre 2,5 e 1,5%.
 
-# IC exato para $P$ {.allowframebreaks}
+## IC para $A$
 
-- Os limites de confiança também podem ser obtidos com base na \structure{distribuição hipergeométrica} exata do número de unidades na amostra com o atributo.
-- O método exato é conceitualmente simples, mas computacionalmente complexo.
-- Seja $a = \sum_{i=1}^n{Y_i}$ o número de unidades com o atributo (pertencentes a classe $C$) na amostra.
+- Para obter os limites de confiança para o parâmetro $A$, número de unidades que pertencem a classe $C$ na população, multiplicamos por $N$ os limites inferior e superior do intervalo de confiança para $P$.
+    + $\widehat{A}_I = N\widehat{P}_I$ e $\widehat{A}_S = N\widehat{P}_S$.
+
+# IC exato para $A$ {.allowframebreaks}
+
+- Os limites de confiança também podem ser obtidos com base na \structure{distribuição hipergeométrica}.
+    + __Lembrando:__ esta é a __distirbuição exata__ do número de unidades na amostra que pertencem a classe $C$, $a$.
+- O __método exato__ de obtenção do intervalo de confiança para $A$ é __conceitualmente simples__, mas __computacionalmente complexo__.
 
 \framebreak
 
-- Para um intervalo de confiança de 100 (1 - $\alpha$)% desejado para o número $A$ de unidades na população com o atributo, um limite superior $\widehat{A}_S$ é determinado como de unidades na população com o atributo dando probabilidade $\alpha_1$ de obter $a$ ou menos unidades com o atributo na amostra, em que $\alpha_1$ é aproximadamente igual a metade do $\alpha$ desejado.
+- Seja $a = \sum_{i=1}^n{Y_i}$ o número de unidades pertencentes a classe $C$ na amostra.
+- Para um intervalo de confiança de $100\times(1 - \alpha)\%$ desejado para o número $A$, um limite superior $\widehat{A}_S$ é determinado como o número de unidades na população que pertencem a classe $C$ que fornece probabilidade $\alpha_1$ de obter $a$ ou menos unidades que pertencem a classe $C$ na amostra, em que $\alpha_1$ é aproximadamente igual a metade do $\alpha$ desejado.
+
+\framebreak
+
 - Ou seja, $\widehat{A}_S$ satisfaz
 
-
-$$
-\Pr(X\leq a) = \sum_{j=0}^{a}{\Pr(j, n-j|\widehat{A}_S, N - \widehat{A}_S)} = \sum_{j=0}^{a}{{\widehat{A}_S\choose j}{N-\widehat{A}_S\choose n-j}\Big{/}{N\choose n}} = \alpha_1.
-$$
-\normalsize
+\begin{eqnarray*}
+\Pr(X\leq a) &=& \sum_{j=0}^{a}{\Pr(j, n-j|\widehat{A}_S, N - \widehat{A}_S)}\\
+&=& \sum_{j=0}^{a}{{\widehat{A}_S\choose j}{N-\widehat{A}_S\choose n-j}\Big{/}{N\choose n}} = \alpha_1.
+\end{eqnarray*}
 
 \framebreak
 
-- O limite inferior $\widehat{A}_I$ é o número de unidades na população com o atributo dando probabilidade $\alpha_2$ de se obter $a$ ou mais unidades com o atributo na amostra, em que $\alpha_2$ é aproximadamente igual a metade do $\alpha$ desejado.
+- O limite inferior $\widehat{A}_I$ é o número de unidades na população  que pertencem a classe $C$ que fornece probabilidade $\alpha_2$ de se obter $a$ ou mais unidades que pertencem a classe $C$ na amostra, em que $\alpha_2$ é aproximadamente igual a metade do $\alpha$ desejado.
 - Ou seja, $\widehat{A}_I$ satisfaz
 
-
-$$
-\Pr(X \geq a) = \sum_{j=a}^{n}{\Pr(j, n-j|\widehat{A}_I, N - \widehat{A}_I)} = \sum_{j=a}^{n}{{\widehat{A}_I\choose j}{N-\widehat{A}_I\choose n-j}\Big{/}{N\choose n}} = \alpha_2.
-$$
-
-\normalsize
+\begin{eqnarray*}
+\Pr(X\geq a) &=& \sum_{j=a}^{n}{\Pr(j, n-j|\widehat{A}_I, N - \widehat{A}_I)}\\ 
+&=& \sum_{j=a}^{n}{{\widehat{A}_I\choose j}{N-\widehat{A}_I\choose n-j}\Big{/}{N\choose n}} = \alpha_2.
+\end{eqnarray*}
 
 - Os limites de confiança para $P$ são então determinados, dividindo-se os limites achados para $A$ por $N$, ou seja: $\widehat{P}_I = \widehat{A}_I/N$ e $\widehat{P}_S = \widehat{A}_S/N$.
+
+<!-- \framebreak -->
+
+<!-- ```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
+
+<!-- a <- 20 -->
+<!-- n <- 50 -->
+<!-- N <- 100 -->
+<!-- A <- N - (n - a) -->
+<!-- Alinha <- N - A -->
+
+<!-- plot(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--      type = "s", -->
+<!--      lwd = 2, -->
+<!--      col = "blue", -->
+<!--      lty = 2, -->
+<!--      xlab = "a", -->
+<!--      ylab = expression(Pr(X <= a)), -->
+<!--      main = "N = 100, n = 50, a = 20") -->
+
+<!-- A <- a -->
+<!-- Alinha <- N - A -->
+<!-- lines(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--       type = "s", -->
+<!--       lwd = 2, -->
+<!--       lty = 2, -->
+<!--       col = "red") -->
+
+<!-- A <- N*(a/n) -->
+<!-- Alinha <- N - A -->
+<!-- lines(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--       type = "s", -->
+<!--       lwd = 2, -->
+<!--       lty = 1, -->
+<!--       col = "black") -->
+
+<!-- abline(h = c(0.025, 0.975), lty = 2) -->
+<!-- abline(v = a) -->
+
+<!-- legend("bottomright", -->
+<!--        lty = c(2, 1, 2), -->
+<!--        lwd = c(2, 2, 2), -->
+<!--        col = c("blue", "black","red"), -->
+<!--        legend = c(expression(hat(A)[I] == 70), expression(hat(A) == 40), expression(hat(A)[S] == 20)), -->
+<!--        bty = "n") -->
+
+<!-- ``` -->
+
+## Algoritmo para obter o IC extato para $A$ {.allowframebreaks}
+
+Procuramos os limites de confiança ótimos $(\widehat{A}_I, \widehat{A}_S)$ que atendem aos requisitos definidos nas equações acima.
+
+* Dada a população total conhecida $N$, o tamanho da amostra $n$ e o número de unidades que pertencem a classe $C$ na amostra $a$, podemos definir alguns limites de viabilidade para $A$:
+     + Naturalmente, o menor valor que $A$ pode assumir é o número observado (na amostra) de unidades que pertencem a classe $C$, $A_{min} = a$.
+     + O maior valor possível de $A$ é igual ao número total $N$ menos as observações na amostra que pertencem a classe $C'$, ou seja, $A_{max} = N - (n - a)$.
+
+\framebreak
+
+\structure{Limite superior $\widehat{A}_S$:}
++ Comece com o maior valor possível para $A$, ou seja, $A_{max} = N - (n - a)$;
++ Então, diminua incrementalmente enquanto o $\Pr(X \leq a) < \alpha/2$, de modo que encontremos o maior valor possível que ainda satisfaz a equação.
+
+\framebreak
+
+- Suponha $\alpha = 0,05$. $\Pr(X\leq a| \widehat{A}_S = 70) < 0,025$.
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_max <- N - (n - a)
+
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 1,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20, ", " , hat(A)[S] == 70)))
+
+abline(h = c(0.025), lty = 2)
+abline(v = a, lty = 2)
+
+```
+
+
+\framebreak
+
+- Supondo $\alpha = 0,05$. $\Pr(X\leq a | \widehat{A}_S = 69) < 0,025$.
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_max <- N - (n - a) - 1
+
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 2,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20, ", " , hat(A)[S] == 69)))
+
+abline(h = c(0.025), lty = 2)
+abline(v = a, lty = 2)
+
+```
 
 \framebreak
 
@@ -96,73 +217,155 @@ $$
 a <- 20
 n <- 50
 N <- 100
-A <- N - (n - a)
-Alinha <- N - A
+A_max <- N - (n - a)
 
-plot(phyper(q = 0:50, k = 50, m = A, n = Alinha),
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
      type = "s",
      lwd = 2,
      col = "blue",
-     lty = 2,
+     lty = 1,
+     ylim = c(0,0.2),
      xlab = "a",
      ylab = expression(Pr(X <= a)),
-     main = "N = 100, n = 50, a = 20")
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20)))
 
-A <- a
-Alinha <- N - A
-lines(phyper(q = 0:50, k = 50, m = A, n = Alinha),
+A_max <- 65
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
       type = "s",
       lwd = 2,
       lty = 2,
-      col = "red")
-
-A <- N*(a/n)
-Alinha <- N - A
-lines(phyper(q = 0:50, k = 50, m = A, n = Alinha),
+      col = "blue")
+  
+A_max <- 60
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
       type = "s",
       lwd = 2,
-      lty = 1,
-      col = "black")
+      lty = 3,
+      col = "blue")
 
-abline(h = c(0.025, 0.975), lty = 2)
-abline(v = a)
+A_max <- 55
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 4,
+      col = "blue")
+
+A_max <- 51
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 5,
+      col = "blue")
+
+
+y <- phyper(q = 0:a, k = n, m = A_max, n = N - A_max)
+x <- seq_along(y)
+y2 <- rep(y, each = 2)
+y2 <- y2[-length(y2)]
+x2 <- rep(x, each = 2)[-1]
+x3 <- c(min(x2), x2, max(x2))
+y3 <- c(0, y2, 0)
+
+polygon(x3, y3, border = NA, col = "lightsalmon")
+
+abline(h = 0.025, lty = 2)
+abline(v = a + 1, lty = 2)
+
+
+legend("topright",
+       lty = 1:5,
+       lwd = 2,
+       col = "blue",
+       legend = c(expression(hat(A)[S] == 70),
+                  expression(hat(A)[S] == 65),
+                  expression(hat(A)[S] == 60),
+                  expression(hat(A)[S] == 55),
+                  expression(hat(A)[S] == 51)),
+       bty = "n")
 
 legend("bottomright",
-       lty = c(2, 1, 2),
-       lwd = c(2, 2, 2),
-       col = c("blue", "black","red"),
-       legend = c(expression(hat(A)[I] == 70), expression(hat(A) == 40), expression(hat(A)[S] == 20)),
+       fill = "lightsalmon",
+       border = "white",
+       legend = expression(phantom() %~~% 0.0225),
        bty = "n")
 
 ```
 
-## Algoritmo para obter o IC extato para $P$ {.allowframebreaks}
+\framebreak
 
-Procuramos os limites de confiança ótimos $(\widehat{A}_I, \widehat{A}_S)$ que atendem aos requisitos definidos nas equações acima.
-
-* Dada a população total conhecida $N$, o tamanho da amostra $n$ e o número de "sucessos" na amostra $a$, podemos definir alguns limites de viabilidade para $A$:
-     + Naturalmente, o menor valor possível é o número observado de sucessos $A_{min} = a$
-     + O maior valor possível é igual ao número total $N$ menos as observações na amostra que pertencem a classe $C'$, ou seja, $A_{max} = N - (n - a)$.
+\structure{Limite inferior $\widehat{A}_I$:}
++ Comece com o menor valor possível para $A$, ou seja, $A_{min} = a$;
++ Reescrever $\Pr(X \geq a) = 1 - \Pr (X \leq a) = \alpha/2 \Leftrightarrow \Pr (X \leq a) = 1 - \alpha/2$;
++ Então, aumente incrementalmente enquanto $\Pr (X \leq a) \geq 1 - \alpha/2$, de modo que encontremos o menor valor possível que ainda preenche a equação.
 
 \framebreak
 
-* Limite superior $\widehat{A}_S$:
-     + Comece com o maior valor possível para $A$, ou seja, $A_{max} = N - (n - a)$;
-     + Então, diminua incrementalmente enquanto o $\Pr(X \leq a) < \alpha/2$, de modo que encontremos o maior valor possível que ainda satisfaz a equação.
-* Limite inferior $\widehat{A}_I$:
-     + Comece com o menor valor possível para $A$, ou seja, $A_{min} = a$;
-     + Reescrever $\Pr(X \geq a) = 1 - \Pr (X \leq a) = \alpha/2 \Leftrightarrow \Pr (X \leq a) = 1 - \alpha/2$;
-     + Então, aumente incrementalmente enquanto $\Pr (X \leq a) \geq 1 - \alpha/2$, de modo que encontremos o menor valor possível que ainda preenche a equação.
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_min <- a
+
+plot(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 1,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20)))
+
+A_min <- 25
+lines(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+      type = "s",
+      lwd = 2,
+      lty = 2,
+      col = "blue")
+  
+A_min <- 30
+lines(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+      type = "s",
+      lwd = 2,
+      lty = 3,
+      col = "blue")
+
+y <- phyper(q = 0:a, k = n, m = A_min, n = N - A_min)
+x <- seq_along(y)
+y2 <- rep(y, each = 2)
+y2 <- y2[-length(y2)]
+x2 <- rep(x, each = 2)[-1]
+x3 <- c(min(x2), x2, max(x2))
+y3 <- c(0, y2, 0)
+
+polygon(x3, y3, border = NA, col = "lightsalmon")
+
+abline(h = 1 - 0.025, lty = 2)
+abline(v = a + 1, lty = 2)
+
+legend("bottomright",
+       lty = c(1:3, 0),
+       lwd = c(2,2,2, 0),
+       col = c(rep("blue", 3), NULL),
+       fill = c(rep("white", 3), "lightsalmon"),
+       border = rep("white", 4),
+       legend = c(expression(hat(A)[I] == 20),
+                  expression(hat(A)[I] == 25),
+                  expression(hat(A)[I] == 30),
+                  expression(phantom() %~~% 0.9922)),
+       bty = "n")
+
+```
 
 # Exemplo {.allowframebreaks}
 
-- Em um levantamento por amostragem, utilizando amostragem aleatória simples sem reposição, de tamanho $n = 100$, de uma população de tamanho 500, foi observado que 37 indivíduos são favoráveis a adoção de uma certa política pública.
+- Em um \structure{levantamento por amostragem}, utilizando __amostragem aleatória simples sem reposição__, de tamanho $n = 100$, de uma população de tamanho $N = 500$, foi observado que $a = 37$ indivíduos são favoráveis a adoção de uma certa política pública (por exemplo, a adoção da __semana de 4 dias de trabalho__).
     + Os demais são contrários ou não sabem opinar.
-- Os limites de confiança de 95% para a proporção e para o número total de unidades da categoria $C$ na população podem ser obtidos utilizando a aproximação normal e a distribuição hipergeométrica.
+- Os limites de confiança de 95% para a __proporção__ e para o __número total de unidades__ que pertencem a classe $C$ (__favoráveis a adoção da política pública__) na população podem ser obtidos utilizando a aproximação normal e a distribuição hipergeométrica.
 
 \framebreak
 
-__Aproximação normal__
+\structure{IC para $P$ utilizando aproximação normal}
 
 - O erro padrão estimado de $p$ é
 
@@ -170,18 +373,32 @@ $$
 \sqrt{1-f}\sqrt{pq/(n-1)} = \sqrt{0,8}\sqrt{(0,37)(0,63)/99} = 0, 0434.
 $$
 
-- A correção de continuidade, $1/2n$, é igual a 0,005. Portanto, os limites de 95% para $P$ podem ser estimados como
+- A correção de continuidade, $1/2n$, é igual a $0,005$. Portanto, os limites de 95% para $P$ podem ser estimados como
 
-$$
-0,37 \pm (1,96 \times 0,0434 + 0,005) = 0,37 \pm 0,090 = (0,280; 0,460).
-$$
-
-- Para achar os limites para o número total de unidades da população que pertencem à categoria $C$, multiplicamos os valores acima por $N$ e obtemos 140 e 230, respectivamente.
+\begin{eqnarray*}
+IC(P; 95\%) &=& 0,37 \pm (1,96 \times 0,0434 + 0,005)\\
+&=& 0,37 \pm 0,090 = (0,280; 0,460).
+\end{eqnarray*}
 
 \framebreak
 
-__Distribuição hipergeométrica__
+\structure{IC para $A$ utilizando aproximação normal}
 
+- Para achar os limites para o número total $A$ de unidades da população que pertencem à categoria $C$, multiplicamos os valores acima por $N$:
+
+\begin{eqnarray*}
+IC(A; 95\%) &=& (500\times 0,280; 500\times 0,460)\\
+&=& (140; 230)\\
+\end{eqnarray*}
+
+\framebreak
+
+\structure{IC para $A$ e $P$ extato}
+
+- Como visto anteriormente, o intervalo de confiança exato é baseado na __distribuição hipergeométrica__ (distribuição exata de $a$) e requer a avaliação da distribuição acumalada.
+- O pacote `samplingbook` do `R` possui uma função (`Sprop`) que facilita o trabalho do profissonal de estatística.
+
+\framebreak
 \footnotesize
 
 ```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
@@ -189,7 +406,9 @@ __Distribuição hipergeométrica__
 # install.packages("samplingbook")
 library(samplingbook)
 
-Sprop(m = 37, n = 100, N = 500, level = 0.95)
+# ?Sprop
+Sprop(m = 37, # m = a 
+      n = 100, N = 500, level = 0.95)
 
 ```
 
@@ -197,21 +416,26 @@ Sprop(m = 37, n = 100, N = 500, level = 0.95)
 
 \framebreak
 
-## Considerações finais sobre a aproximação normal {.allowframebreaks}
+# Considerações finais {.allowframebreaks}
 
-- Na maioria dos cenários, essa estratégia (intervalo de confiança utilizando a aproximação normal) resulta em propriedades satisfatórias.
+::: {.block}
+
+### Sobre a aproximação normal
+
+- Na maioria dos cenários, a construção do intervalo de confiança utilizando a aproximação normal resulta em propriedades satisfatórias.
 - No entanto, se $p$ estiver próximo de 0 ou 1, é recomendado usar o intervalo de confiança exato com base na distribuição hipergeométrica^[Kauermann, Goeran, and Helmut Kuechenhoff. 2010. _Stichproben: Methoden Und Praktische Umsetzung Mit R_. Springer-Verlag.].
 - O intervalo aproximado tem uma __probabilidade de cobertura__ tão baixa quanto $n/N$ para qualquer $\alpha$. Portanto, não há garantia de que o intervalo capture o verdadeiro $A$ com o nível de confiança desejado se a amostra for muito menor do que a população^[Wang, Weizhen. 2015. Exact Optimal Confidence Intervals for Hypergeometric Parameters. _Journal of the American Statistical Association_ 110 (512): 1491–9.].
+- Ainda, com $p$ e $n$ pequenos, o IC aproximado pode produzir __limites inferiores__ menores que 0.
+:::
 
-## Considerações finais sobre a aproximação normal {.allowframebreaks}
-
-- Ainda, com $p$ e $n$ pequenos, o IC aproximado pode produzir limites inferiores a 0:
+## Considerações finais {.allowframebreaks}
 
 \footnotesize
 
 ```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 
-Sprop(m = 2, n = 100, N = 500, level = 0.95)
+Sprop(m = 2, n = 30, # n e p pequenos
+      N = 500, level = 0.95)
 
 ```
 
@@ -220,11 +444,12 @@ Sprop(m = 2, n = 100, N = 500, level = 0.95)
 ## Para casa
 
 - Revisar os tópicos discutidos nesta aula.
+- Rodar a simução de Monte Carlo para avaliar as taxas de cobertura dos ICs para $P$ considerando diferentes tamanhos de população, amostra, valores de $P$ e de $\alpha$.
 - Implementar o IC para $P$ utilizando a distribuição binomial como aproximação da distribuição hipergeométrica.
 
 ## Próxima aula
 
-- Classificação em mais de duas categorias.
+- Porporações para classificações em mais de duas categorias.
 
 ## Por hoje é só!
 
