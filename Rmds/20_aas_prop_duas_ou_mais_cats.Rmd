@@ -10,21 +10,31 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
+  | Porto Alegre, 2022
 ---
 
-## Proporções: duas ou mais categorias {.allowframebreaks}
+# Proporções: duas ou mais categorias {.allowframebreaks}
 
-- Até o momento foi tratado o caso em que temos uma variável dicotômica (ou dicotomizada), resultando na classificação da população em duas categorias.
-- Muitas vezes temos a necessidade de definir mais de duas categorias.
-    * Estudar a distribuição por faixas etárias de um grupo de pessoas.
-    * Estudar a classificação econômica das empresas de determinado país.
-    * Estimar a intenção de votos dos candidatos em uma eleição com mais de 2 candidatos, além das possibilidades de voto em branco ou nulo ou, ainda, eleitores indecisos.
-- Nesses casos, há interesse de estimar a proporção de unidades em cada uma das possíveis categorias e respectiva precisão.
+- Até o momento foi tratado o caso em que temos uma \structure{variável dicotômica} **(ou dicotomizada)**, resultando na \structure{classificação} da população em \structure{duas categorias}.
+- Muitas vezes temos a necessidade de definir uma \structure{classificação} com \structure{mais de duas categorias}.
 
 \framebreak
 
-\structure{Exemplo:} seja uma escola com 1.000 alunos distribuídos entre as 9 etapas do ensino fundamental:
+Por exemplo,
+
+* Estudar a distribuição por **faixas etárias** de um grupo de pessoas.
+    + \structure{18-24; 25-44; 45-64; 65+}.
+* Estudar a **classificação econômica das empresas** de determinado país.
+    + Do Setor \structure{primário; secundário; ou terciário}.
+    + Empresa do tipo \structure{extrativista; agropecuária; industrial; comercial; serviços}.
+* Estimar a **intenção de voto** das chapas do DCE em uma **eleição com mais de 2 chapas**, além das possibilidades de voto em branco ou nulo ou, ainda, eleitores indecisos.
+    + Intenção de voto na \structure{Chapa 1; Chapa 2; ... ; Chapa 6}.
+
+Nesses casos, há interesse de estimar a \structure{proporção de unidades em cada uma das possíveis categorias}} e a **respectiva precisão**.
+
+\framebreak
+
+\structure{Exemplo:} seja uma escola com 1.000 alunos distribuídos entre as 9 etapas do ensino fundamental.
 
 \footnotesize
 
@@ -32,26 +42,26 @@ date: |
 ----------
 Etapa de ensino   Alunos       Proporção
 ---------------- -----------  -------------
- 1° ano           110           0,110    
-                              
- 2° ano           108           0,108    
-                              
- 3° ano           110           0,110    
-                              
- 4° ano           115           0,115    
-                              
- 5° ano           104           0,104    
-                              
- 6° ano           119           0,119    
-                              
- 7° ano           116           0,116    
-                              
- 8° ano           107           0,107    
-                              
- 9° ano           111           0,111    
-                              
+ 1° ano           110           0,110
+
+ 2° ano           108           0,108
+
+ 3° ano           110           0,110
+
+ 4° ano           115           0,115
+
+ 5° ano           104           0,104
+
+ 6° ano           119           0,119
+
+ 7° ano           116           0,116
+
+ 8° ano           107           0,107
+
+ 9° ano           111           0,111
+
  **Total**       **1.000**     **1,000**
- 
+
 ----------
 </center>
 
@@ -59,63 +69,103 @@ Etapa de ensino   Alunos       Proporção
 
 \framebreak
 
-- Observe que, para calcular as proporções em cada uma das categorias, na verdade o que se faz é atribuir o valor $1$ às unidades da categoria em questão e o valor $0$ para as unidades pertencentes às demais categorias.
-- Em outras palavras, se a variável tem \structure{$m$} categorias é como se fossem \structure{$m$} problemas com duas categorias.
+Para este exemplo, podemos pensar na seguinte notação:
 
-- A proporção de unidades da população pertencentes à categoria $C\in (1, 2,.., m)$, é dada por:
+- $X$ é uma característica (um atributo, ou classificação) que assume os seguintes valores
+
+$$
+X = \left\{
+\begin{array}{ll}
+C_1, & \mbox{se aluno do 1º ano}\\
+C_2, & \mbox{se aluno do 2º ano}\\
+\vdots& \vdots\\
+C_9, & \mbox{se aluno do 9º ano}\\
+\end{array}
+\right.
+$$
+
+- Gostaríamos de estimar $P_1, P_2, \ldots, P_9$, em que $P_{j}$ é a proporção populacional de unidades na classe $C_j$.
+
+\framebreak
+
+- Observe que, para calcular as proporções em cada uma das categorias, na verdade o que se faz é atribuir o valor $1$ às unidades da categoria em questão e o valor $0$ para as unidades pertencentes às demais categorias.
+- Em outras palavras, se a variável tem $m$ categorias é como se fossem $m$ problemas com duas categorias.
+
+- A proporção de unidades da população pertencentes à categoria $C \in \{1, 2,\ldots, m\}$, é dada por:
 
 $$
 P_C = \frac{A_C}{N},
 $$
-em que $A_C$ é o número de unidades na categoria $C$ e $N$ é o tamanho total da população.
+em que $A_C$ é o **número de unidades na categoria** $C$ **na população** e $N$ é o tamanho total da população.
 
 \framebreak
 
-- Seja uma amostra aleatória simples (com ou sem reposição) de tamanho \structure{$n$} e seja a variável indicadora \structure{$Y_i$} definida como:
+- Seja uma amostra aleatória simples de tamanho $n$ e seja a variável indicadora $Y_i$ definida como:
 
 $$
-\displaystyle Y_i= \begin{cases} 1, \text { se a unidade} \textit{ i } \text{pertence à categoria $C$} \\ 0, \text { se a unidade}\textit{ i } \text{ pertence a outra categoria} \end{cases}
+Y_i = \left\{
+\begin{array}{ll}
+1, & \mbox{se a unidade}\ i\ \mbox{pertence à categoria}\ C; \\
+0, & \mbox{se a unidade}\ i\ \mbox{pertence a outra categoria}.
+\end{array}
+\right.
 $$
 
-- Com tal definição pode-se ver que o número de unidades da categoria \structure{$C$} na amostra será dado por:
+- Com tal definição pode-se ver que o **número de unidades da categoria** $C$ **na amostra** será dado por:
 
 $$
-\displaystyle a_C=\sum_{i=1}^{n} Y_i.
-$$
-
-- Um estimador para a proporção de unidades populacionais pertencentes à categoria \structure{$C$} é dado por:
-
-$$
-\displaystyle p_C = \frac{1}{n} \sum_{i=1}^{n} Y_i =\frac{a_C}{n}.
+a_C = \sum_{i=1}^{n}{Y_i},\ C\in\{1, 2, \ldots,m\}.
 $$
 
 \framebreak
+
+- Um estimador para a proporção de unidades populacionais pertencentes à categoria $C$ é dado por:
+
+$$
+p_C = \frac{1}{n} \sum_{i=1}^{n}{Y_i} = \frac{a_C}{n},\ C\in\{1, 2, \ldots,m\}.
+$$
+
+\framebreak
+
+### Obeservações
 
 - O problema foi reduzido ao caso de estimar proporções em variáveis com duas categorias.
 - Pode-se obter, também, estimativas de precisão utilizando os mesmos resultados já apresentados nas aulas 17, 18 e 19.
 
-\framebreak
+# Agrupando categorias {.allowframebreaks}
 
-- Muitas vezes pode-se estar interessado em estimar proporções para agrupamentos das categorias originais. 
-- Voltando ao exemplo da escola do ensino fundamental, pode ser de interesse estudar a proporção de seus alunos que estão matriculados no primeiro segmento do ensino fundamental.
-    + Nesse caso, seriam contabilizados como pertencentes à categoria \structure{$C$} de interesse todos os alunos do 1º até o 5º ano, para os quais \structure{$Y_C=1$}, sendo \structure{$Y_C=0$} para os demais alunos da escola.
+- Muitas vezes pode-se estar interessado em estimar \structure{proporções para agrupamentos das categorias originais}.
+- Voltando ao **exemplo da escola do ensino fundamental**, pode ser de interesse estudar a **proporção** de seus **alunos** que estão **matriculados no primeiro segmento do ensino fundamental** (1º até o 5º ano).
+    + Nesse caso, seriam contabilizados como pertencentes à categoria $C$ de interesse todos os alunos do 1º até o 5º ano, para os quais $Y = 1$, sendo $Y = 0$ para os demais alunos da escola.
 
-\framebreak
+## Não-resposta {.allowframebreaks}
 
-- Outro caso de interesse ocorre quando, na aplicação de um questionário, por exemplo, aparecem respondentes que se recusaram a responder ou, mesmo, disseram que não sabiam a resposta.
-- Num caso como esse, pode-se estar interessado em estimar a proporção das pessoas que responderam determinada alternativa, entre as pessoas que efetivamente responderam a pesquisa escolhendo uma das alternativas válidas.
-- Um exemplo prático seria uma pesquisa sobre a intenção de voto numa eleição com apenas dois candidatos.
-    + Nesse caso, o entrevistado poderia responder que votará no canditato \alert{A}, no candidato \textcolor{orange}{B}, que votará __nulo__ ou _em branco_, onde apenas as duas primeiras alternativas seriam consideradas como \structure{votos válidos}.
+- Outro caso de interesse ocorre quando, na aplicação de um questionário, por exemplo, aparecem **respondentes que se recusaram a responder** ou, mesmo, disseram que **não sabiam a resposta**.
+- Num caso como esse, pode-se estar interessado em estimar a \structure{proporção das pessoas que responderam determinada alternativa}, **entre as pessoas que efetivamente responderam a pesquisa escolhendo uma das alternativas válidas** (respostas válidas, votos válidos, etc.).
 
 \framebreak
 
-- Pode-se estimar a proporção para cada uma das quatro categorias iniciais ou apenas a proporção de votos válidos para cada um dos dois candidatos:
+- Um exemplo prático seria uma pesquisa sobre a intenção de voto numa eleição com apenas duas chapas.
+    + Nesse caso, o entrevistado poderia responder que votará na chapa \textcolor{darkgreen}{A}, na chapa \textcolor{orange}{B}, que votará __nulo__ ou _em branco_, ou __não sabe__ em que chapa irá votar, onde apenas as duas primeiras alternativas seriam consideradas como \structure{votos válidos}.
+
+\framebreak
+
+- Pode-se estimar a proporção para cada uma das cinco categorias iniciais (\textcolor{darkgreen}{A}, \textcolor{orange}{B}, __nulo__, _em branco_, ou __não sabe__) ou apenas a \structure{proporção de votos válidos} para cada uma das duas chapas:
 
 $$
-\displaystyle p_A=\frac {a_A} {a_A+a_B} \quad\mbox{e} \quad p_B=\frac {a_B} {a_A+a_B}.
+p_{\color{darkgreen}{A}} = \frac{a_{\color{darkgreen}{A}}}{a_{\color{darkgreen}{A}} + a_{\color{orange}{B}}} \quad\mbox{e} \quad p_{\color{orange}{B}} = \frac{a_{\color{orange}{B}}}{a_{\color{darkgreen}{A}} + a_{\color{orange}{B}}}.
 $$
 
-- Vale notar que na expressão acima, tanto o numerador como o denominador do estimador da proporção são variáveis aleatórias, pois a população (eleitores que efetivamente vão votar num dos candidatos) é desconhecida.
+- Vale notar que na expressão acima, tanto o numerador como o denominador do estimador da proporção são variáveis aleatórias, pois a população (eleitores que efetivamente vão votar em uma das duas chapas) é desconhecida.
+
+# Um exemplo
+
+## Índice de Desempenho Acadêmico {.allowframebreaks}
+
+- O \structure{Índice de Desempenho Acadêmico da Califórnia} (_Academic Performance Index_, API) é calculado a partir de testes padronizados administrados a alunos em escolas da Califórnia.
+- Além dos dados de desempenho acadêmico das escolas, há uma ampla gama de variáveis socioeconômicas disponíveis.
+
+- Os dados a seguir se referem a uma amostra aleatória simples de tamanho $n = 200$ de uma população de $N = 6194$ escolas.
 
 \framebreak
 
@@ -126,19 +176,151 @@ $$
 library(survey)
 data(api)
 
-# View(apisrs)
 # ?apisrs
+head(apisrs[,1:4])
+
+```
+
+\framebreak
+
+\normalsize
+
+- As escolas podem ser classificadas como **"Elementary"** (`E`), **"Middle"** (`M`), **"High School"** (`H`).
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+(a <- table(apisrs$stype)) # a_E, a_H, a_M
+
+(p <- prop.table(a)) # p_E, p_H, p_M
+
+```
+
+\framebreak
+
+\normalsize
+
+- Podes obter estimativas do erro padrão das proporções.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+n <- 200
+N <- 6194
+f <- n/N
+(q <- 1 - p) # q_E, q_H, q_M
+
+round(ep <- sqrt( (1 - f) * ((p*q)/(n - 1)) ), 4)
+
+```
+
+\framebreak
+
+\normalsize
+
+- E também podemos obter limites de confiança **(IC 95% usando a aproximação normal)**.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+round(li <- p - qnorm(p = 0.975) * ep , 3)
+round(ls <- p + qnorm(p = 0.975) * ep + 1/(2*n), 3)
+
+```
+
+\framebreak
+
+\normalsize
+
+- Uma outra forma (mais direta e confiável) de se estimar estas proporções populacionais com os respectivos intervalos de confiança é utilizando o pacote `survey`.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 
 # O objeto design
 api.des <- svydesign(id = ~1,
                      fpc = ~fpc,
                      data = apisrs)
 
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
 # Estimativa da proporção de escolas
 # do tipo "Elementary/Middle/High School"
-svyciprop(formula = ~I(stype == "E"), design = api.des)
-svyciprop(formula = ~I(stype == "M"), design = api.des)
-svyciprop(formula = ~I(stype == "H"), design = api.des)
+# e intervalo de confiança de 95%
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "mean")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "mean")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "mean")
+
+```
+
+\framebreak
+
+\normalsize
+
+- A função `svyciprop` também possui outros métodos de construção dos ICs de $P$.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Método xlogit
+
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "xlogit")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "xlogit")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "xlogit")
+
+# Método likelihood
+
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "likelihood")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "likelihood")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "likelihood")
+
+```
+
+\framebreak
+
+\normalsize
+
+- O coeficiente de confiança dos ICs também podem ser especificados pela função `svyciprop`.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# IC 90%
+
+svyciprop(formula = ~I(stype == "E"), design = api.des,
+          method = "mean", level = 0.9)
+svyciprop(formula = ~I(stype == "H"), design = api.des,
+          method = "xlogit", level = 0.9)
+svyciprop(formula = ~I(stype == "M"), design = api.des,
+          method = "xlogit", level = 0.9)
+
+# IC 99%
+
+svyciprop(formula = ~I(stype == "E"), design = api.des,
+          method = "mean", level = 0.99)
+svyciprop(formula = ~I(stype == "H"), design = api.des,
+          method = "xlogit", level = 0.99)
+svyciprop(formula = ~I(stype == "M"), design = api.des,
+          method = "xlogit", level = 0.99)
 
 ```
 
