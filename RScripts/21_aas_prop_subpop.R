@@ -1,66 +1,80 @@
-## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
 
 # Dados dos municípios (população)
-mun <- readRDS(file = here::here("dados",
-                                 "MunicBR_dat.rds"))
+mun_aas <- readRDS(file = here::here("dados",
+                                 "MunicBR_amostra.rds"))
 
-# Criando a variável Região
-mun$Regiao <- NA
-
-mun$Regiao[mun$SiglaUF %in% c("RS", "SC", "PR")] <- "Sul"
-mun$Regiao[mun$SiglaUF %in% c("SP", "MG", "RJ", "ES")] <- "Sudeste"
-mun$Regiao[mun$SiglaUF %in% c("MS", "MT", "GO", "DF")] <- "Centro-Oeste"
-mun$Regiao[mun$SiglaUF %in% c("RO", "AC", "AM", "PA", "TO", "RR", "AP")] <- "Norte"
-mun$Regiao[mun$SiglaUF %in% c("BA", "SE", "AL", "PE", "PB", "PI", "MA", "CE", "RN")] <- "Nordeste"
-
-mun$Regiao <- factor(mun$Regiao)
+mun_aas
 
 
 
-## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
 
-# Sorteio da amostra
-set.seed(2810)
+# Estimativa populacional
+round(mean(mun_aas$Pop_menor_10), 2)
 
-cod_amostra <- sample(x = mun$CodMunic,
-                      size = 300,
-                      replace = F)
+# Estimativa subpopulacionais
+library(dplyr)
 
-mun_amostra <- mun[which(mun$CodMunic %in% cod_amostra),]
-
-# Criando a variável Pop < 10 mil hab.
-mun_amostra$Pop_menor_10 <- ifelse(mun_amostra$Pop < 10000, 1, 0)
-
-# cpf
-mun_amostra$cpf <- length(mun$CodMunic)
+mun_aas %>% 
+  group_by(Regiao) %>% 
+  summarize(round(mean(Pop_menor_10), 2))
 
 
 
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
 
-## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------------------------
+# install.packages(srvyr)
+library(srvyr)
 
-mean(mun_amostra$Pop_menor_10)
-by(data = mun_amostra$Pop_menor_10,
-   INDICES = mun_amostra$Regiao,
-   FUN = mean)
+mun_des <- mun_aas %>% 
+  as_survey_design(ids = 1,
+                   fpc = cpf)
 
-
-
-## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------------------------
-
-library(survey)
-
-mun_des <- svydesign(ids = ~1,
-                     fpc = ~cpf,
-                     data = mun_amostra)
+summary(mun_des)
 
 
-svyby(formula = ~Pop_menor_10,
-      by = ~Regiao,
-      design = mun_des,
-      FUN = svyciprop)
 
-svyby(formula = ~Pop_menor_10,
-      by = ~Regiao,
-      design = mun_des,
-      FUN = svyciprop, vartype = "ci")
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+
+# Estimativa populacional
+mun_des %>% 
+  summarize(
+    Proporção = survey_mean(Pop_menor_10, vartype = "ci")) %>% 
+  round(2)
+
+
+
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean()) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)})
+
+
+
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean(),
+            a = unweighted(n())) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)})
+
+
+
+## ----echo=TRUE, message=FALSE, warning=FALSE--------------------------------------------------
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean(vartype = "ci"),
+            Total = survey_total(vartype = "ci")) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)}) %>% 
+  mutate_at(vars(matches("Total")), function(x){round(x)}) %>% 
+  filter(Pop_menor_10 == 1) %>% select(-Pop_menor_10) %>% knitr::kable()
+
+
