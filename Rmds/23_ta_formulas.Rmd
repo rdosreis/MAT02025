@@ -10,38 +10,48 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2021
+  | Porto Alegre, 2022
 ---
 
 # A fórmula para $n$ na amostragem para proporções
 
 ## $n$ na amostragem para proporções {.allowframebreaks}
 
-- As unidades são classificadas em duas classes, \structure{$C$} e \structure{$C'$}.
-- Admitiu-se uma certa \alert{margem de erro $d$} na proporção estimada \structure{$p$} de unidades na classe \structure{$C$}, e há um pequeno risco \alert{$\alpha$} de que estejamos dispostos a incorrer de que o erro real seja maior do que \structure{$d$}; ou seja, nós queremos
+- **Relembrando:** as unidades são classificadas em duas classes, $C$ e $C'$.
+- Admite-se uma certa \alert{margem de erro} $d$ na proporção estimada $p$ de unidades na classe $C$, e há um pequeno risco $\alpha$ de que estejamos dispostos a incorrer de que o erro real seja maior do que $d$; ou seja, nós queremos^[Um erro ($p - P$) maior que $d$ ocorre com probabilidade $\alpha$.]
 
 $$
 \Pr(|p - P|\geq d) = \alpha.
 $$
 
-\framebreak
+## $n$ na amostragem para proporções {.allowframebreaks}
 
-- A amostragem aleatória simples é assumida e $p$ é considerado como normalmente distribuído. Da expressão (2) da aula 17,
+- A **amostragem aleatória simples** é assumida e $p$ é considerado como normalmente distribuído. Da expressão \structure{(2)} da aula 17 \structure(Teo. 17.2)},
 
 $$
 \sigma_p = \sqrt{\frac{N - n}{N - 1}}\sqrt{\frac{PQ}{n}}.
 $$
 
-- Portanto, a fórmula que conecta \alert{$n$} com o grau de precisão desejado é
+- Portanto, a fórmula que conecta $n$ com o grau de precisão desejado é
 
 $$
 d = z_{\alpha}\sqrt{\frac{N - n}{N - 1}}\sqrt{\frac{PQ}{n}},
 $$
+\framebreak
+
 em que $z_{\alpha}$ é a abscissa da curva normal que define uma área $\alpha$ nas caudas.
+
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='75%', purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'regiao2alfa-1.png'))
+
+```
+
 
 \framebreak
 
-- Resolvendo para \alert{$n$}, encontramos
+- Resolvendo para $n$, encontramos
 
 \begin{equation}
 \label{n.prop}
@@ -59,8 +69,8 @@ em que $V = (d^2/z^2_{\alpha}) = pq/n_0 =$ variância desejada da prporção amo
 
 \framebreak
 
-- Na prática, primeiro calculamos \alert{$n_0$}.
-    - Se \alert{$n_0/N$} for desprezível, \alert{$n_0$} é uma aproximação satisfatória para \alert{$n$} de \eqref{n.prop}.
+- Na prática, primeiro calculamos $n_0$.
+    - Se $n_0/N$ for desprezível, $n_0$ é uma aproximação satisfatória para $n$ de \eqref{n.prop}.
     - Se não, é aparente na comparação de \eqref{n.prop} e \eqref{n0.prop} que $n$ é obtido como
 
 \begin{equation}
@@ -143,9 +153,9 @@ $$
 $$
 \Pr\left(\left|\frac{\overline{y} - \overline{Y}}{\overline{Y}}\right|\geq r \right) = \Pr\left(\left|\frac{N\overline{y} - N\overline{Y}}{N\overline{Y}}\right|\geq r \right) = \Pr(|\overline{y} - \overline{Y}|\geq r\overline{Y}) = \alpha,
 $$
-em que $\alpha$ é uma pequena probabilidade.
+em que $\alpha$ é uma probabilidade pequena.
 
-- Assumimos que $\overline{y}$ é normalmente distribuído: do corolário 1 da aula 10, seu erro padrão é
+- Assumimos que $\overline{y}$ é normalmente distribuído: do \structure{Corolário 10.1} (aula 10), seu erro padrão é
 
 $$
 \sigma_{\overline{y}} = \sqrt{\frac{N - n}{N}}\frac{S}{\sqrt{n}}.
@@ -159,14 +169,14 @@ $$
 r\overline{Y} = z_{\alpha}\sigma_{\overline{y}} = z_{\alpha}\sqrt{\frac{N - n}{N}}\frac{S}{\sqrt{n}}
 $$
 
-- Resolvendo para \alert{$n$}, encontramos
+- Resolvendo para $n$, encontramos
 
 $$
 n = \left(\frac{z_{\alpha}S}{r\overline{Y}}\right)^2\Big/\left[1 + \frac{1}{N}\left(\frac{z_{\alpha}S}{r\overline{Y}}\right)^2\right].
 $$
 
 - Observe que a característica da população da qual $n$ depende é seu coeficiente de variação $S/\overline{Y}$.
-- Isso geralmente é mais estável e fácil de "estimar" antecipadamente que a própria $S$.
+- Isso geralmente é mais estável e fácil de "estimar" antecipadamente que o próprio $S$.
 
 \framebreak
 
@@ -238,7 +248,7 @@ nCont(S2 = 85.6, ybarU = 19, N = 430, CV0 = (0.10/1.96))
 ## Para casa
 
 - Revisar os tópicos discutidos nesta aula.
-- Demonstrar \eqref{n.prop}.
+<!-- - Demonstrar \eqref{n.prop}. -->
 - Consultar e estudar a página:
 
 \footnotesize

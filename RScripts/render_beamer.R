@@ -2,7 +2,7 @@ library(here)
 library(rmarkdown)
 
 pasta <- "Rmds"
-arquivo <- "22_ta_intro"
+arquivo <- "23_ta_formulas"
 
 arquivo_rmd <- paste0(arquivo, ".Rmd")
 arquivo_pdf <- paste0(arquivo, ".pdf")

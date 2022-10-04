@@ -1,4 +1,4 @@
-## ---- echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE--------------------------------------
 
 # install.packages("PracTools")
 library(PracTools)
@@ -10,7 +10,7 @@ nProp(V0 = (0.05/1.96)^2, N = 3200, pU = 0.5)
 
 
 
-## ---- echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE----------------------------------------------
+## ---- echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE--------------------------------------
 
 # install.packages("PracTools")
 library(PracTools)
