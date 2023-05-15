@@ -10,33 +10,24 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 # header-includes:
 #   - \titlegraphic{\hfill\includegraphics[height=1.5cm]{logos/Logo-40-anos-estatistica.png}}
 ---
 
 # O professor
 
-## Olá!
-
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='80%', out.height='80%', paged.print=FALSE}
-
-knitr::include_graphics(here::here('images', 'hi_my_name_is.png'))
-
-```
-
 ## Olá! {.allowframebreaks}
 
 \ttfamily
 
-- Desde __outubro de 2017__ eu sou Professor do __Departamento de Estatística__ e faço parte do Corpo Docente do __Programa de Pós Graduação em Epidemiologia__ da __Universidade Federal do Rio Grande do sul__ (UFRGS). Além disso, eu atuo como pesquisador no __Estudo Longitudinal de Saúde do Adulto (ELSA-Brasil)__.
+\ttfamily
+
+- Desde __outubro de 2017__ eu sou Professor do __Departamento de Estatística__ e faço parte do Corpo Docente do __Programa de Pós Graduação em Epidemiologia__ da __Universidade Federal do Rio Grande do sul__ (UFRGS). 
 
 - Eu me formei __Bacharel em Estatística__ pelo Departamento de Estatística da UFRGS em __2007__, e __Mestre__ (__2010__) e __Doutor__ (__2014__) __em Estatística__ pelo __Programa de Pós Graduação em Estatística__ da __Universidade Federal de Minas Gerais__. 
-- A minha dissertação de mestrado, intitulada _Técnicas estatísticas para avaliação de novos marcadores de risco: aplicações envolvendo o Modelo de Cox_, foi orientada pelos Professores Enrico A. Colosimo e Maria do Carmo P. Nunes.
-- A minha tese de doutorado, intitulada _Análise hierárquica de múltiplos sistemas reparáveis_, foi orientada pelos Professores Enrico A. Colosimo e Gustavo L. Gilardoni.
 
-- Os meus interesses de pesquisa são __Inferência causal em epidemiologia__, __Análise de mediação__, __Modelos de predição de risco__ e __Análise de sobrevivência__.
-- Em estatística aplicada eu tenho interesse na __epidemiologia do Diabetes Mellitus__.
+- Na graduação eu tenho me concentrado nas disciplinas de __Estatística Descritiva__, __Amostragem__ e __Modelos para dados correlacionados__.
 
 # A disciplina
 
@@ -74,22 +65,14 @@ knitr::include_graphics(here::here('images', 'hi_my_name_is.png'))
 
 ## Aulas e material didático
 
-- __Aulas:__ terças e quintas, das 8hs 30min às 10hs 10min, na Sala F105 do Instituto de Química - Campus do Vale
-    + _8hs 30min:_ chegada
-    + _8hs 40min:_ início
-    + _10hs:_ fim/dúvidas
-    + _10hs 10min:_ saída
-
-## Aulas e material didático
-
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
-knitr::include_graphics(here::here('images','covid-recomendacoes.jpg'))
-```
+- __Aulas:__ segundas e quartas, das 8hs 30min às 10hs 10min, na Sala F105 do Instituto de Química - Campus do Vale
 
 ## Aulas e material didático
 
 ```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='10%', paged.print=FALSE}
+
 knitr::include_graphics(here::here('images','Rlogo.png'))
+
 ```
 
 - Exemplos e exercícios com o apoio do computador:
@@ -105,17 +88,22 @@ hist(x, col = 'black', border = 'white')
 
 ## Conteúdo programático {.allowframebreaks}
 
-- __Área 1__
-    + Introdução à teoria da amostragem
-    + Conceitos básicos
-
-- __Área 2__
-    + Amostragem aleatória simples
-    + Estimação
-        + Média, total e razão (índice)
-        + Proporções
+\structure{Área 1}
++ Introdução à teoria da amostragem
+    - Delinemanto de pesquisa e levantamentos por amostragem
+    - Principais fases dos levantamentos por amostragem
++ Conceitos básicos
+    - Amostragem probabilística
+    - Viés e erro quadrático médio
     
-- __Área 3__
+\structure{Área 2}
++ Amostragem aleatória simples
++ Estimação da média, total e razão (índice), proporções
+    + Estimadores pontuais
+    + Propriedades dos estimadores: viés e variabilidade
+    + Construção intervalos de confiança
+
+\structure{Área 3}
     + Dimensionamento de amostra __(introdução)__
 
 ## Avaliação
@@ -123,10 +111,10 @@ hist(x, col = 'black', border = 'white')
 - Serão realizadas quatro atividades de avaliação (pelo menos uma em de cada área):
     + duas provas ($P_1$ e $P_2$) presenciais e individuais;
     + dois trabalhos em grupo ($T_1$ e $T_2$).
-- Cada atividade de avaliação vale 10 pontos
-- Será realizado uma prova presencial e individual como atividade de recuperação ($PR$)
-    + Para os alunos que não atingirem o conceito mínimo
-    + __Esta prova abrange todo o conteúdo da disciplina__
+- Cada atividade de avaliação vale 10 pontos.
+- Será realizada uma prova presencial e individual como atividade de recuperação ($PR$):
+    + Para os(as) alunos(as) que não atingirem o conceito mínimo;
+    + __Esta prova abrange todo o conteúdo da disciplina__.
 
 ## Avaliação
 
@@ -138,11 +126,11 @@ $$
 + __B:__ $7,5 \leq MF < 9$
 + __C:__ $6 \leq MF < 7,5$
 + __D:__ $MF < 6$
-+ __FF:__ se o aluno tiver frequência inferior a 75% da carga horária prevista no plano da disciplina
++ __FF:__ se o(a) aluno(a) tiver frequência inferior a 75% da carga horária prevista no plano da disciplina
 
 ## Avaliação
 
-+ Se $MF < 6$ e frequência mínima de 75% o aluno poderá realizar a prova de recuperação e neste caso
++ Se $MF < 6$ e frequência mínima de 75%, o(a) aluno(a) poderá realizar a prova de recuperação, e neste caso
 
 $$
 MF' = MF \times 0,4 + PR \times 0,6
@@ -229,20 +217,3 @@ knitr::include_graphics(here::here('images', 'ibge-pesquisas.jpg'))
 \begin{center}
 a {\bf Teoria da Amostragem}.
 \end{center}
-
-## Próxima aula
-
-- Revisão de conceitos básicos de __probabilidade e estatística__.
-
-## Por hoje é só!
-
-\begin{center}
-{\bf Sejam tod@s bem-vind@s!}
-\end{center}
-
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE}
-
-knitr::include_graphics(here::here('images', 'Statistically-Insignificant-8.jpg'))
-
-```
-
