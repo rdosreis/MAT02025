@@ -17,7 +17,19 @@ date: |
 
 ## Introdução {.allowframebreaks}
 
-- Como introdução à discussão do papel que a teoria representa em um levantamento por amostragem, é útil descrever, resumidamente, as fases abrangidas pelo planejamento e pela execução de um levantamento\footnote{Veja uma discussão alternativa em https://amostragemcomr.github.io/livro/conceitos.html\#planejamento-e-execu\%C3\%A7\%C3\%A3o-de-pesquisas-por-amostragem}.
+- Como introdução à discussão do papel que a teoria representa em um levantamento por amostragem, é útil descrever, resumidamente, as fases abrangidas pelo \structure{planejamento} e pela \structure{execução de um levantamento}\footnote{Veja uma discussão alternativa em https://amostragemcomr.github.io/livro/conceitos.html\#planejamento-e-execu\%C3\%A7\%C3\%A3o-de-pesquisas-por-amostragem}.
+
+- Uma \structure{boa pesquisa} é basicamente uma questão de \structure{bom planejamento}. 
+
+- A figura apresenta uma imagem do processo de pesquisa por levantamento experimentado por investigadores que falham em pensar sobre as etapas envolvidas na realização de um estudo antes de iniciá-lo.
+
+## Introdução {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='90%', out.height="85%", purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'island_bw.jpg'))
+
+```
 
 ## Introdução {.allowframebreaks}
 
@@ -57,6 +69,15 @@ knitr::include_graphics(here::here('images', 'fases_levantamento.jpg'))
 - A \structure{população de estudo} é definida como __a parte identificável e acessível do conjunto__ \structure{(população-alvo)} para o qual idealmente se deseja a informação.
     + A distância entre ambas é decorrente quer das dificuldades da realidade, quer das limitações impostas pelo delineamento.
     
+\framebreak
+
+- \structure{População alvo:} população sobre a qual se quer uma resposta (objetivo).
+- \structure{População de estudo:} população da qual a amostra é obtida.
+
+- População alvo $=$ População de estudo __(ideal)__.
+- População alvo $\approx$ População de estudo __(comum; aceitável)__.
+- População alvo $\neq$ População de estudo __(ruim)__.
+
 \framebreak
 
 ### Exemplo (pop.-alvo vs. pop. estudo)
