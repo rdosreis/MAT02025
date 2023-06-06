@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # Teoria da amostragem
@@ -24,7 +24,11 @@ date: |
 
 - No que diz respeito à precisão, não podemos predizer exatamente o quão grande um erro estará presente em uma estimativa em qualquer situação específica, __pois isso exigiria um conhecimento do verdadeiro valor para a população__.
 - Em vez disso, a precisão de um procedimento de amostragem é avaliada examinando a \structure{distribuição de frequência gerada para a estimativa}\footnote{Também chamada de {\bf distribuição amostral}, ou ainda, {\bf distribuição de aleatorização}.} se o \structure{procedimento for aplicado repetidamente}\footnote{Paradigma clássico: princípio da repetitibilidade.} à mesma população.
-- Esta é a técnica padrão pela qual a precisão é avaliada na teoria estatística.
+
+###
+
+Esta é a técnica padrão pela qual a precisão é avaliada na teoria estatística.
+
 
 ## O papel da teoria da amostragem {.allowframebreaks}
 
@@ -39,7 +43,15 @@ $$
 \framebreak
 
 - Com uma estimativa normalmente distribuída, toda a forma da distribuição de frequência é conhecida se conhecermos a média e o desvio padrão (ou a variância).
-- Uma parte considerável da teoria do levantamento por amostragem está preocupada em encontrar fórmulas para essas médias e variâncias.
+
+::: {.block}
+
+###
+
+Uma parte considerável da teoria do levantamento por amostragem está preocupada em encontrar fórmulas para essas médias e variâncias.
+
+:::
+
 
 \framebreak
 
@@ -47,12 +59,18 @@ $$
 - Na __teoria clássica__, as medições que são feitas nas unidades de amostragem na população são geralmente assumidas seguir uma distribuição de frequência, por exemplo, a distribuição normal, de forma matemática conhecida, à parte de certos parâmetros populacionais, como a média e a variância cujos valores têm a ser estimado a partir dos dados da amostra\footnote{Inferência baseada no modelo.}.
 
 ### Exemplo
-A altura da população segue uma distribuição normal com média $\mu$ e variância $\sigma^2$ desconhecidas.
+
+"A altura da população de estudantes da UFRGS \alert{segue} uma distribuição normal com média $\mu$ e variância $\sigma^2$ desconhecidas".
 
 ## O papel da teoria da amostragem {.allowframebreaks}
 
-- Na teoria de levantamentos por amostragem, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
-- Em particular, sua forma matemática não é considerada conhecida, de modo que a abordagem pode ser descrita como livre de modelo ou livre de distribuição\footnote{Inferência baseada no delineamento.}.
+- Na __teoria de levantamentos por amostragem__, por outro lado, a atitude tem sido assumir apenas informações muito limitadas sobre essa distribuição de frequência.
+- Em particular, sua \alert{forma matemática não é considerada conhecida}}, de modo que a abordagem pode ser descrita como __livre de modelo__ ou __livre de distribuição__\footnote{Inferência baseada no delineamento.}.
+
+\framebreak
+
+- Essa atitude é natural para \structure{grandes levantamentos} nos quais \structure{muitas medições diferentes} com diferentes distribuições de frequência são feitas nas unidades.
+- Em \alert{levantamentos} em que são feitas \alert{apenas algumas medições por unidade}, estudos de suas distribuições de frequência podem justificar a suposição de formas matemáticas conhecidas, permitindo a aplicação dos resultados da teoria clássica (inferência baseada no modelo).
 
 ## O papel da teoria da amostragem {.allowframebreaks}
 
@@ -65,10 +83,19 @@ A altura da população segue uma distribuição normal com média $\mu$ e vari�
 
 ## Amostragem probabilística {.allowframebreaks}
 
-- Dentre os vários processos existentes para a obtenção de amostras, a amostragem probabilística caracteriza-se por garantir, _a priori_, que todo elemento pertencente à população de estudo possua probabilidade, __conhecida e diferente de zero__, de pertencer à amostra sorteada.
+- Dentre os vários processos existentes para a obtenção de amostras, a 
+
+\begin{mybox}{amostragem probabilística}
+caracteriza-se por garantir, \emph{a priori}, que todo elemento pertencente à população de estudo possua probabilidade, {\bf conhecida e diferente de zero}, de pertencer à amostra sorteada.
+\end{mybox}
+
 - A identificação, direta ou indireta, dos elementos e o sorteio deles fundamentam as propriedades matemáticas desse tipo de processo.
 
 ## Amostragem probabilística: propriedades {.allowframebreaks}
+
+\begin{mybox}{amostragem probabilística}
+Os procedimentos de amostragem considerados neste curso têm em comum as seguintes propriedades.
+\end{mybox}
 
 1. Podemos definir o conjunto de amostras distintas, $S_1, S_2, \ldots, S_v$, que o procedimento é capaz de selecionar se aplicado a uma população específica.
     - Isso significa que podemos dizer exatamente quais unidades de amostragem pertencem a $S_1$, a $S_2$, e assim por diante.
@@ -220,14 +247,7 @@ knitr::kable(x = df2,
 
 # Amostragem não-probabilística
 
-## Alternativas à amostragem probabilística {.allowframebreaks}
-
-Alguns tipos comuns de amostragem não-probabilística:
-
-1. \structure{Amostragem convencional:} a amostra é restrita a uma parte da população que é facilmente acessível. Ex: uma amostra de carvão de um vagão aberto pode ser retirada da parte superior de 6 a 9 polegadas.
-2. \structure{Amostragem acidental ou a esmo:} a amostra é selecionada __ao acaso__. Ex: ao escolher 10 coelhos de uma grande gaiola em um laboratório, o investigador pode pegar aqueles em que suas mãos repousam, sem um planejamento consciente.
-3. \structure{Amostragem por cotas:} no caso de uma população pequena, mas heterogênea, o amostrador inspeciona o conjunto da população e escolhe uma pequena amostra de unidades "típicas" - isto é, unidades que estão próximas de sua impressão da média da população.
-4. \structure{Amostragem de voluntários:} a amostra é constituída essencialmente por voluntários, em estudos em que o processo de medição é desagradável ou incômodo para a pessoa que está sendo medida.
+Ver os slides do __Prof. Wagner Hugo Bonat__ do __Departamento de Estatística__ da __Universidade Federal do Paraná__ \structure{(Moodle)}.
 
 ## Para casa
 

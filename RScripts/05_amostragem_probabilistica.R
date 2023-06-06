@@ -1,4 +1,4 @@
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE-------------------------------------
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE-------------------------------------------
 
 df <- data.frame(elementos = LETTERS[1:6], ind = 1:6, idade = c(2,4,6,8,10,12))
 
@@ -9,7 +9,7 @@ knitr::kable(x = df,
 
 
 
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE-------------------------------------
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE-------------------------------------------
 
 df2 <- data.frame(numero = c(1:5, "$\\vdots$"),
                   amostra = c(rep("",6)),
