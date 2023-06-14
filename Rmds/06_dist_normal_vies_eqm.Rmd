@@ -10,14 +10,14 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # O uso da distribuição normal
 
 ## O uso da distribuição normal
 
-- Um estimador $\hat{\theta}$ de $\theta$ dado por um plano de amostragem é denominado \structure{imparcial}\footnote{Ou {\bf não-tendencioso}, ou {\bf não-enviesado}. {\bf Exercício:} no exercício da aula passada, mostre que a média amostral é um estimador não enviesado para a média populacional.} se o valor médio de $\hat{\theta}$, tomado em todas as amostras possíveis fornecidas pelo plano, for igual a $\theta$.
+- Um estimador $\hat{\theta}$ de $\theta$ dado por um plano de amostragem é denominado \structure{imparcial}\footnote{Ou {\bf não-tendencioso}, ou {\bf não-enviesado}. O {\bf viés} de um estimador $\hat{\theta}$ é definido como $\E(\hat{\theta} - \theta)$.} se o valor médio de $\hat{\theta}$, tomado em todas as amostras possíveis fornecidas pelo plano, for igual a $\theta$.
 - Na notação da aula anterior, esta condição pode ser escrita como:
 
 $$
@@ -275,8 +275,8 @@ legend("topleft",
 
 ## Próxima aula
 
-- Erro quadrático médio;
-- Exercícios.
+- Erro quadrático médio.
+<!-- - Exercícios. -->
 
 ## Por hoje é só!
 
