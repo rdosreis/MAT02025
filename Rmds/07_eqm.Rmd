@@ -10,44 +10,62 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # O erro quadrático médio
 
 ## O erro quadrático médio {.allowframebreaks}
 
-- Para comparar um estimador enviesado com um estimador imparcial, ou dois estimadores com diferentes valores de enviesamento, um critério útil é o \structure{erro quadrático médio} __(EQM)__ da estimativa, medido a partir do valor da população que está sendo estimado.
-- Formalmente
-
-\begin{eqnarray*}
-\textcolor{black}{EQM(\hat{\theta})} &=& \textcolor{black}{\E(\hat{\theta} - \theta)^2} \\
-&=& \E\{[\hat{\theta} - \textcolor{red}{\E(\hat{\theta})}] + [\textcolor{red}{\E(\hat{\theta})} - \theta]\}^2 \\
-&=& \E\{[\hat{\theta} - \E(\hat{\theta})]^2 + 2[\hat{\theta} - \E(\hat{\theta})][\E(\hat{\theta}) - \theta] + [\E(\hat{\theta}) - \theta]^2\} \\
-&=& \E\{[\hat{\theta} - \E(\hat{\theta})]^2\} + 2[\E(\hat{\theta}) - \theta]\E[\hat{\theta} - \E(\hat{\theta})] + \E[\E(\hat{\theta}) - \theta]^2 \\
-&=& \Var(\hat{\theta}) + 2[\E(\hat{\theta}) - \theta]\textcolor{red}{[\E(\hat{\theta}) - \E(\hat{\theta})]} + [B(\hat{\theta})]^2 \\
-&=& \textcolor{black}{\Var(\hat{\theta}) + [B(\hat{\theta})]^2}.
-\end{eqnarray*}
+- O que fazer quando desejamos comparar um estimador viesado com um estimador imparcial?
+- Ou ainda, dois estimadores com viéses diferentes?
+- Um critério útil é o \structure{erro quadrático médio (EQM)} do estimatidor, medido a partir do valor da população que está sendo estimado.
 
 \framebreak
 
-- Note que se um estimador $\hat{\theta}$ é não enviesado para $\theta$, então
+- Formalmente,
 
 $$
-EQM(\hat{\theta}) = \Var(\hat{\theta}) + [\textcolor{red}{0}]^2 = \Var(\hat{\theta}) = \sigma^2_{\hat{\theta}}.
+EQM(\hat{\theta}) = \E(\hat{\theta} - \theta)^2 = \Var(\hat{\theta}) + [B(\hat{\theta})]^2.
 $$
 
-- No exemplo da aula passada, considerando o parâmetro populacional de interesse como a média, $\mu$, temos $EQM(\hat{\mu}) = \sigma^2_{\hat{\mu}} + B^2$, em que $B = m - \mu$.
+\begin{mybox}{Exercício}
 
-\framebreak
+Demonstre que $EQM(\hat{\theta}) = \Var(\hat{\theta}) + [B(\hat{\theta})]^2$.
 
-- O uso do EQM como critério de precisão de um estimador equivale a considerar equivalentes duas estimativas que têm o mesmo erro quadrático médio.
-- Isso não é inteiramente verdadeiro, porque a distribuição de frequência de erros $(\hat{\mu} - \mu)$ não será a mesma para dois estimadores, caso eles apresentem viéses de valores diferentes.
-- Entretanto, \structure{Hansen, Hurwitz e Madow (1953)}\footnote{Hansen, M. H., Hurwitz, W. N. e Madow, W. G. (1953) {\bf Sample Survey methods and theory}, John Wiley \& Sons, Nova York, Vol. I, pg. 58.} mostraram que se $B/\sigma$ for menor que cerca de $0,5$, as duas distribuições de frequência são quase idênticas em relação aos erros __absolutos__ $|\hat{\mu} - \mu|$ de tamanhos diferentes.
+\end{mybox}
+
+<!-- \begin{align*} -->
+<!-- EQM(\hat{\theta}) &= \E(\hat{\theta} - \theta)^2 -->
+<!-- \\ -->
+<!-- &=& \E\{[\hat{\theta} - \textcolor{purple}{\E(\hat{\theta})}] + [\textcolor{purple}{\E(\hat{\theta})} - \theta]\}^2  -->
+<!-- \\ -->
+<!-- &=& \E\{[\hat{\theta} - \E(\hat{\theta})]^{\textcolor{purple}{2}} + \textcolor{purple}{2}[\hat{\theta} - \E(\hat{\theta})][\E(\hat{\theta}) - \theta] + [\E(\hat{\theta}) - \theta]^\textcolor{purple}{2}\}  -->
+<!-- \\ -->
+<!-- &=& \textcolor{purple}{\E\{}[\hat{\theta} - \E(\hat{\theta})]^2\textcolor{purple}{\}} + 2[\textcolor{purple}{\E(}\hat{\theta}\textcolor{purple}{)} - \theta]\E[\hat{\theta} - \E(\hat{\theta})] + \textcolor{purple}{\E[}\E(\hat{\theta}) - \theta\textcolor{purple}{]}^2 \\ -->
+<!-- &=& \textcolor{orange}{\Var(\hat{\theta})} + 2[\E(\hat{\theta}) - \theta]\textcolor{purple}{[\E(\hat{\theta}) - \E(\hat{\theta})]} + [\textcolor{orange}{B(\hat{\theta})}]^2 \\ -->
+<!-- &=& \textcolor{black}{\Var(\hat{\theta}) + [B(\hat{\theta})]^2}. -->
+<!-- \end{align*} -->
 
 ## O erro quadrático médio {.allowframebreaks}
 
-- Mais uma vez suponha que $\hat{\mu}$ tem uma distribuição aproximadamente normal com média $m = \E(\hat{\mu})$ e desvio padrão $\sigma = \sigma_{\hat{\mu}}$. Ainda, denote $EQM = EQM(\hat{\mu}) = \sigma^2 + B^2$.
+- Note que __se__ um estimador $\hat{\theta}$ é __não viesado__ para $\theta$, __então__
+
+$$
+EQM(\hat{\theta}) = \Var(\hat{\theta}) + [\textcolor{purple}{0}]^2 = \Var(\hat{\theta}) = \sigma^2_{\hat{\theta}}.
+$$
+
+- No __exemplo da aula passada__, considerando o parâmetro populacional de interesse como a média, $\mu$, temos $EQM(\hat{\mu}) = \sigma^2_{\hat{\mu}} + B^2$, em que $B = m - \mu$.
+
+\framebreak
+
+- O uso do EQM como critério de precisão de um estimador equivale a considerar equivalentes dois estimadores que têm o mesmo erro quadrático médio.
+- Isso não é inteiramente verdadeiro, porque a distribuição de frequência de erros $(\hat{\mu} - \mu)$ não será a mesma para dois estimadores, caso eles apresentem viéses de valores diferentes.
+    - Entretanto, \structure{Hansen, Hurwitz e Madow (1953)}\footnote{Hansen, M. H., Hurwitz, W. N. e Madow, W. G. (1953) {\bf Sample Survey methods and theory}, John Wiley \& Sons, Nova York, Vol. I, pg. 58.} mostraram que se $B/\sigma$ for menor que cerca de $0,5$, as duas distribuições de frequência são quase idênticas em relação aos __erros absolutos__ $|\hat{\mu} - \mu|$ de tamanhos diferentes.
+
+## O erro quadrático médio {.allowframebreaks}
+
+- Mais uma vez __suponha que__ $\hat{\mu}$ __tem uma distribuição aproximadamente normal__ com média $m = \E(\hat{\mu})$ e desvio padrão $\sigma = \sigma_{\hat{\mu}}$. Ainda, denote $EQM = EQM(\hat{\mu}) = \sigma^2 + B^2$.
 - Então
 
 \begin{eqnarray*}
@@ -141,7 +159,7 @@ legend("topright",
 
 ## Comentários {.allowframebreaks}
 
-- Esses resultados, para muitos propósitos práticos, concordam com as interpretações baseadas nos múltiplos correspondentes do desvio padrão quando uma estimativa não enviesada é usada.
+- Esses resultados, para muitos propósitos práticos, concordam com as interpretações baseadas nos múltiplos correspondentes do desvio padrão quando um estimador não viesado é usada.
     + Ou seja, quando $\sqrt{EQM} = \sqrt{\sigma^2 + B^2} = \sqrt{\sigma^2 + 0} = \sigma$.
 - Da aula passada, temos
 
@@ -190,15 +208,15 @@ knitr::include_graphics(here::here('images', 'lembrando_levantamento_amostra.png
 - A \structure{unidade elementar}, ou simplesmente \structure{elemento} de uma população é o objeto ou entidade portadora das informações que pretende-se coletar.
     + Pode ser uma pessoa, família, domicílio, loja, empresa, estabelecimento, classe de alunos, escola, etc.
 - Qualquer \structure{plano amostral}^[A cada amostra possível, $S_j$, é atribuído uma probabilidade conhecida de seleção, $\pi_j$. A função $\pi_j$ é também conhecida de __plano amostral__.] (ou \structure{plano de amostragem}) fará recomendações para selecionar elementos da população por meio das \structure{unidades amostrais}.
-    + Pode ser formada por uma única unidade elementar ou por várias.
- 
+    + Uma unidade amostral pode ser formada por uma única unidade elementar ou por várias.
+
 ## Unidade elementar, amostral e resposta {.allowframebreaks}
 
 ::: {.block}
 
 ### Unidade amostral
 
-Uma pesquisa eleitoral usa eleitores como sendo a unidade elementar. 
+Uma pesquisa eleitoral usa eleitores como sendo a unidade elementar.
 
 1. Um levantamento pode escolher um ponto da cidade e entrevistar os cem primeiros __eleitores__ que passam por lá. Usou-se a __unidade elementar__ como __unidade amostral__.
 2. Um plano alternativo decidiu selecionar __domicílios__ e entrevistar todos os eleitores residentes nos domicílios escolhidos. A __unidade elementar__ continua sendo _eleitor_ mas agora a __unidade amostral__ passou a ser _domicílio_, um __conjunto de unidades elementares__.
@@ -208,9 +226,9 @@ Uma pesquisa eleitoral usa eleitores como sendo a unidade elementar.
 \framebreak
 
 - Às vezes é conveniente ressaltar quem é a \structure{unidade respondente} ou a \structure{unidade de resposta}.
-    + O censo demográfico tem uma primeira parte com questõees simples sobre cada morador do domicílio, tais como sexo, idade, grau de instrução, etc. Um ´unico morador pode responder por todos os outros; este morador é considerado a __unidade de resposta__.
+    + O censo demográfico tem uma primeira parte com questões simples sobre cada morador do domicílio, tais como sexo, idade, grau de instrução, etc. Um único morador pode responder por todos os outros; este morador é considerado a __unidade de resposta__.
 
-# Exercícios {.allowframebreaks}
+# Próxima aula: exercícios {.allowframebreaks}
 
 - Exercício ConVid (Aula 03)
 - Lista de Exercícios 01 (Aula 04)
@@ -219,15 +237,15 @@ Uma pesquisa eleitoral usa eleitores como sendo a unidade elementar.
 
 - Ao estimar por amostragem a idade média dos alunos do Bacharelado em Estatística da UFRGS, um questionário foi empregado e a idade (em anos) de cada aluno na amostra foi registrada. Para a amostra, a idade média foi 24,89, sendo esta estimativa aproximadamente normalmente distribuída com um erro padrão de 3,51. Calcule limites de confiança de 95% para a idade média populacional. Interprete este resultado.
 
-## Próxima aula
+<!-- ## Próxima aula -->
 
-- __Atividade de avaliação I__.
-    + Dia: 14/07
-    + Horário: 8hs 30min
-    + Local: Sala de aula
-    + Modalidade: presencial e individual
-    + __Conteúdo:__ Área I (aulas 01-07)
-    + __Não esqueça de trazer:__ Lápis, Borracha, Caneta e Calculadora
+<!-- - __Atividade de avaliação I__. -->
+<!--     + Dia: 14/07 -->
+<!--     + Horário: 8hs 30min -->
+<!--     + Local: Sala de aula -->
+<!--     + Modalidade: presencial e individual -->
+<!--     + __Conteúdo:__ Área I (aulas 01-07) -->
+<!--     + __Não esqueça de trazer:__ Lápis, Borracha, Caneta e Calculadora -->
 
 ## Por hoje é só!
 

@@ -1,4 +1,4 @@
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE---------------------------
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE------------------------------------------------------
 
 f <- function(t){ 1 / sqrt(2*pi) * exp( - t^ 2/ 2) }
 
@@ -41,7 +41,7 @@ knitr::kable(x = df,
 
 
 
-## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----
+## ---- echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'----------------
 
 B.sigma <- c(seq(0, 0.6, by = 0.1), seq(1, 3, by = 0.5))
 
@@ -78,25 +78,25 @@ legend("topright",
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%', paged.print=FALSE----
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%', paged.print=FALSE----------
 
 knitr::include_graphics(here::here('images', 'slide-aula-04.png'))
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%', paged.print=FALSE----
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%', paged.print=FALSE----------
 
 knitr::include_graphics(here::here('images', 'acuracia_precisao.png'))
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE----
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE---------
 
 knitr::include_graphics(here::here('images', 'acuracia_precisao-2.png'))
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'----
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'----------------------------
 
 knitr::include_graphics(here::here('images', 'lembrando_levantamento_amostra.png'))
 
