@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  20 JUL 2022 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.5.8)  3 JUL 2023 00:55
 entering extended mode
 **C:/Users/rodri/OneDrive/Documentos/UFRGS/Disciplinas/Amostragem/MAT02025/outp
 ut_pdf/08_aas_intro.tex
@@ -912,22 +912,13 @@ Package microtype Info: Loading configuration file microtype.cfg.
 File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
 )) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
-Package: xurl 2020/12/30 v 0.09a modify URL breaks
-) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
-Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
-
-(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
-File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count333
-)) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.st
-y
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
 Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count334
+\FV@CodeLineNo=\count333
 \FV@InFile=\read3
 \FV@TabBox=\box73
-\c@FancyVerbLine=\count335
-\FV@StepNumber=\count336
+\c@FancyVerbLine=\count334
+\FV@StepNumber=\count335
 \FV@OutFile=\write5
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -944,21 +935,21 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip70
 \LTpre=\skip71
 \LTpost=\skip72
-\LTchunksize=\count337
+\LTchunksize=\count336
 \LTcapwidth=\dimen293
 \LT@head=\box74
 \LT@firsthead=\box75
 \LT@foot=\box76
 \LT@lastfoot=\box77
-\LT@cols=\count338
-\LT@rows=\count339
-\c@LT@tables=\count340
-\c@LT@chunks=\count341
+\LT@cols=\count337
+\LT@rows=\count338
+\c@LT@tables=\count339
+\c@LT@chunks=\count340
 \LT@p@ftn=\toks47
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip73
-\multirow@cntb=\count342
+\multirow@cntb=\count341
 \multirow@dima=\skip74
 \bigstrutjot=\dimen294
 )
@@ -971,7 +962,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count343
+\g_MT_multlinerow_int=\count342
 \l_MT_multwidth_dim=\dimen295
 \origjot=\skip75
 \l_MT_shortvdotswithinadjustabove_dim=\dimen296
@@ -1034,7 +1025,7 @@ Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgf@plot@mark@count=\count344
+\pgf@plot@mark@count=\count343
 \pgfplotmarksize=\dimen307
 )
 \tikz@lastx=\dimen308
@@ -1049,56 +1040,254 @@ File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \tikz@figbox@bg=\box81
 \tikz@tempbox=\box82
 \tikz@tempbox@bg=\box83
-\tikztreelevel=\count345
-\tikznumberofchildren=\count346
-\tikznumberofcurrentchild=\count347
-\tikz@fig@count=\count348
+\tikztreelevel=\count344
+\tikznumberofchildren=\count345
+\tikznumberofcurrentchild=\count346
+\tikz@fig@count=\count347
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-\pgfmatrixcurrentrow=\count349
-\pgfmatrixcurrentcolumn=\count350
-\pgf@matrix@numberofcolumns=\count351
+\pgfmatrixcurrentrow=\count348
+\pgfmatrixcurrentcolumn=\count349
+\pgf@matrix@numberofcolumns=\count350
 )
-\tikz@expandcount=\count352
+\tikz@expandcount=\count351
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
-)))
-\tmpnum=\count353
+))) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/04/07 3.57 The Babel package
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/04/07 3.57 Babel common definitions
+\babel@savecnt=\count352
+\U@D=\dimen316
+\l@babelnohyphens=\language79
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read4
+)
+LaTeX Info: Redefining \textlatin on input line 717.
+\bbl@dirlevel=\count353
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazil.l
+df
+Language: portuges 2021/02/04 v1.2s Portuguese support from the babel system
+Package babel Info: \l@brazil = using hyphenrules for portuguese
+(babel)             (\language56) on input line 111.
+Package babel Info: Making " an active character on input line 143.
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2020/10/09 version 4.42 text color boxes
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 186.
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\verbatim.st
+y
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks50
+\verbatim@line=\toks51
+\verbatim@in@stream=\read5
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
 
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.s
+ty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box84
+\tcb@upperbox=\box85
+\tcb@lowerbox=\box86
+\tcb@phantombox=\box87
+\c@tcbbreakpart=\count354
+\c@tcblayer=\count355
+\c@tcolorbox@number=\count356
+\tcb@temp=\box88
+\tcb@temp=\box89
+\tcb@temp=\box90
+\tcb@temp=\box91
+\tcb@out=\write6
+\tcb@record@out=\write7
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbraster.cod
+e.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '4.42'
+\c@tcbrastercolumn=\count357
+\c@tcbrasterrow=\count358
+\c@tcbraster=\count359
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code
+.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.42'
+\tcb@waterbox=\box92
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsa
+w.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.42'
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable.
+code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.42'
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/oberdiek\pdfcol.sty
+Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box93
+\tcb@totalupperbox=\box94
+\tcb@totallowerbox=\box95
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbhooks.code
+.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '4.42'
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorems.c
+ode.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.42'
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbfitting.co
+de.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '4.42'
+\tcbfitdim=\dimen317
+\tcb@lowerfitdim=\dimen318
+\tcb@upperfitdim=\dimen319
+\tcb@cur@hbadness=\count360
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbxparse.cod
+e.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.42'
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.st
+y
+Package: expl3 2021-02-18 L3 programming layer (loader) 
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count354
-\l__pdf_internal_box=\box84
-) (08_aas_intro.aux)
+\l__color_backend_stack_int=\count361
+\l__pdf_internal_box=\box96
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e-2020-10-01.sty
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e-generic.tex))))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistingsut
+f8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.42'
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistings.c
+ode.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '4.42'
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count362
+\lst@gtempboxa=\box97
+\lst@token=\toks52
+\lst@length=\count363
+\lst@currlwidth=\dimen320
+\lst@column=\count364
+\lst@pos=\count365
+\lst@lostspace=\dimen321
+\lst@width=\dimen322
+\lst@newlines=\count366
+\lst@lineno=\count367
+\lst@maxwidth=\dimen323
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count368
+\lst@skipnumbers=\count369
+\lst@framebox=\box98
+) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcblistingsco
+re.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '4.42'
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbprocessing
+.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '4.42'
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\shellesc.st
+y
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+))
+\c@tcblisting=\count370
+))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/listingsutf8\listingsut
+f8.sty
+Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbexternal.c
+ode.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '4.42'
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbmagazine.c
+ode.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '4.42'
+)
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbvignette.c
+ode.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '4.42'
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryfadings.code.tex
+File: pgflibraryfadings.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbposter.cod
+e.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '4.42'
+))
+\tmpnum=\count371
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count372
+)) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2020/12/30 v 0.09a modify URL breaks
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 210.
+
+(08_aas_intro.aux)
 \openout1 = `08_aas_intro.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 216.
+LaTeX Font Info:    ... okay on input line 216.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1137,17 +1326,17 @@ LaTeX Font Info:    ... okay on input line 192.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
-\scratchdimen=\dimen316
-\scratchbox=\box85
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count358
-\MPscratchDim=\dimen317
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count373
+\scratchdimen=\dimen324
+\scratchbox=\box99
+\nofMPsegments=\count374
+\nofMParguments=\count375
+\everyMPshowfont=\toks53
+\MPscratchCnt=\count376
+\MPscratchDim=\dimen325
+\MPnumerator=\count377
+\makeMPintoPDFobject=\count378
+\everyMPtoPDFconversion=\toks54
 )
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1159,7 +1348,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 192.
+Package hyperref Info: Link coloring OFF on input line 216.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
@@ -1169,57 +1358,57 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count361
+\c@section@level=\count379
 )
-LaTeX Info: Redefining \ref on input line 192.
-LaTeX Info: Redefining \pageref on input line 192.
-LaTeX Info: Redefining \nameref on input line 192.
+LaTeX Info: Redefining \ref on input line 216.
+LaTeX Info: Redefining \pageref on input line 216.
+LaTeX Info: Redefining \nameref on input line 216.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 192.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 216.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 192.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 216.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 192.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 216.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 192.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 216.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 192.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 192.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 216.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 192.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 192.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 192.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 216.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 192.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 192.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 192.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 216.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 192.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 192.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 192.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 216.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 216.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 192.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 216.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 192.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 192.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 192.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 192.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 192.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 216.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 192.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 216.
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1245,14 +1434,14 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 192.
+LaTeX Info: Redefining \microtypecontext on input line 216.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 192.
+LaTeX Info: Redefining \showhyphens on input line 216.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1260,29 +1449,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+\c@lstlisting=\count380
 (08_aas_intro.nav)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-93.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+17.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 19
-3.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 21
+7.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <7> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 193.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 217.
 
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-<logos/ime.png, id=13, 341.275pt x 148.555pt>
+<logos/ime.png, id=49, 341.275pt x 148.555pt>
 File: logos/ime.png Graphic file (type png)
 <use logos/ime.png>
-Package pdftex.def Info: logos/ime.png  used on input line 193.
+Package pdftex.def Info: logos/ime.png  used on input line 217.
 (pdftex.def)             Requested size: 65.36366pt x 28.45274pt.
 [1{C:/Users/rodri/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
@@ -1290,7 +1480,7 @@ Package pdftex.def Info: logos/ime.png  used on input line 193.
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-260.
+284.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1299,34 +1489,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-60.
+84.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-260.
+284.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-260.
+284.
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 260.
+(Font)              <10> on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 260.
+(Font)              <7> on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 260.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 260
+(Font)              <5> on input line 284.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 284
 .
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 260
+LaTeX Font Info:    Trying to load font information for U+msb on input line 284
 .
 (C:\Users\rodri\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1334,28 +1524,28 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 260.
+(amsmath)                 on input line 284.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 260.
+(Font)              <9> on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 260.
+(Font)              <6> on input line 284.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 260.
+(Font)              <8> on input line 284.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 260.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 284.
 [3
 
 ] [4
@@ -1380,11 +1570,11 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 ] [11
 
 ]
-<../images/numeros_aleatorios.png, id=127, 606.46574pt x 454.0965pt>
+<../images/numeros_aleatorios.png, id=163, 606.46574pt x 454.0965pt>
 File: ../images/numeros_aleatorios.png Graphic file (type png)
 <use ../images/numeros_aleatorios.png>
 Package pdftex.def Info: ../images/numeros_aleatorios.png  used on input line 4
-12.
+36.
 (pdftex.def)             Requested size: 261.19826pt x 195.57642pt.
 [12
 
@@ -1395,7 +1585,7 @@ Package pdftex.def Info: ../images/numeros_aleatorios.png  used on input line 4
 \openout4 = `08_aas_intro.vrb'.
 
 (08_aas_intro.vrb
-<../images/sorteio.png, id=147, 354.32375pt x 230.8625pt>
+<../images/sorteio.png, id=183, 354.32375pt x 230.8625pt>
 File: ../images/sorteio.png Graphic file (type png)
 <use ../images/sorteio.png>
 Package pdftex.def Info: ../images/sorteio.png  used on input line 30.
@@ -1410,18 +1600,12 @@ Package pdftex.def Info: ../images/sorteio.png  used on input line 30.
 
 ] [17
 
-]
-Overfull \hbox (12.90831pt too wide) in paragraph at lines 606--606
- [] 
- []
-
-[18
+] [18
 
 ] [19
 
 
 ] [20
-
 
 ] [21
 
@@ -1432,67 +1616,72 @@ Overfull \hbox (12.90831pt too wide) in paragraph at lines 606--606
 ] [23
 
 
-]
-\openout4 = `08_aas_intro.vrb'.
+] [24
 
-(08_aas_intro.vrb) [24
 
 ] [25
 
+
 ]
-<../images/Statistically-Insignificant-barras.jpg, id=255, 105.996pt x 105.996p
+\openout4 = `08_aas_intro.vrb'.
+
+(08_aas_intro.vrb) [26
+
+] [27
+
+]
+<../images/Statistically-Insignificant-barras.jpg, id=307, 105.996pt x 105.996p
 t>
 File: ../images/Statistically-Insignificant-barras.jpg Graphic file (type jpg)
 <use ../images/Statistically-Insignificant-barras.jpg>
 Package pdftex.def Info: ../images/Statistically-Insignificant-barras.jpg  used
- on input line 637.
+ on input line 688.
 (pdftex.def)             Requested size: 153.66113pt x 122.11601pt.
-[26
+[28
 
  <../images/Statistically-Insignificant-barras.jpg>]
-\tf@nav=\write6
-\openout6 = `08_aas_intro.nav'.
+\tf@nav=\write8
+\openout8 = `08_aas_intro.nav'.
 
-\tf@toc=\write7
-\openout7 = `08_aas_intro.toc'.
+\tf@toc=\write9
+\openout9 = `08_aas_intro.toc'.
 
-\tf@snm=\write8
-\openout8 = `08_aas_intro.snm'.
+\tf@snm=\write10
+\openout10 = `08_aas_intro.snm'.
 
 (08_aas_intro.aux) ) 
 Here is how much of TeX's memory you used:
- 27571 strings out of 479321
- 529477 string characters out of 2856584
- 845392 words of memory out of 3000000
- 44178 multiletter control sequences out of 15000+600000
- 490716 words of font info for 154 fonts, out of 8000000 for 9000
+ 34575 strings out of 479321
+ 697125 string characters out of 2856584
+ 1076205 words of memory out of 3000000
+ 51049 multiletter control sequences out of 15000+600000
+ 490918 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 131i,14n,132p,670b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 131i,14n,132p,670b,1357s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
-ps/lm/lm-mathit.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
 ps/lm/lm-rm.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/l
+m/lm-mathit.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/l
 m/lm-ec.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm
 -mathsy.enc}{C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm
 -mathex.enc}<C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmcsc10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
 m/lmex10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
 m/lmmi10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmmi5.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmmi7.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmmi9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mss10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mss8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-ss9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
-sbx10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-msso10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmsso8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmsso9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmsy10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmtt10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msam10.pfb>
-Output written on 08_aas_intro.pdf (26 pages, 749617 bytes).
+m/lmmi8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmmi9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmss10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmss8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mss9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+ssbx10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmsso10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsso8.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsso9.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmsy10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmtt10.pfb><C:/Users/rodri/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msam10.pfb>
+Output written on 08_aas_intro.pdf (28 pages, 763386 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 53335 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 72 named destinations out of 1000 (max. 500000)
+ 53479 words of extra memory for PDF output out of 61914 (max. 10000000)
 

@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # Amostragem aleatória simples
@@ -140,50 +140,81 @@ sample(x = 1:128, size = 10, replace = FALSE)
 
 \framebreak
 
-- Os valores obtidos para qualquer característica específica nas $N$ unidades que compõem a população são denotados por \structure{$Y_1, Y_2, \ldots, Y_N$}.
+- Os valores obtidos para qualquer característica específica^[Note que em um levantamento típico estaremos interessadas em diversas características das unidades (sexo, idade, altura, peso, renda, escolaridade, IMC, etc.). Para cada uma destas características empregaremos um letra ($Y, X, Z, W, V, R, S$, etc.), ou podemos utilizar a mesma letra se estamos a representar diversas variáveis, uma de cada vez.] nas $N$ unidades que compõem a população são denotados por \structure{$Y_1, Y_2, \ldots, Y_N$}.
 - Os valores correspondentes para as unidades na amostra são denotados por \structure{$Y_1, Y_2, \ldots, Y_n$} ou, se desejarmos nos referir a um membro típico da amostra, por \structure{$Y_i\ (i = 1, 2, \ldots, n)$}.
     + Observe que a amostra __não consistirá__ nas primeiras $n$ unidades da população, exceto no caso, geralmente raro, em que essas unidades foram sorteadas.
 
-\framebreak
+## Definições e notação {.allowframebreaks}
 
 - As letras __maiúsculas__ referem-se às características da população e as __minúsculas__ às da amostra.
     + Para totais e médias, temos as seguintes definições.
 
-\scriptsize
+\begin{mybox}{Na população}
+\structure{Total}
 
-\begin{table}[]
-\begin{tabular}{lcc}
-\hline
-Característica & População & Amostra \\
-\hline
-Total              & $Y_T = \sum_{i = 1}^N{Y_i} = Y_1 + Y_2 + \ldots + Y_N$ & $y_T = \sum_{i = 1}^n{Y_i} = Y_1 + Y_2 + \ldots + Y_n$ \\
- &  &  \\
-Média        &  $\overline{Y} = \frac{\sum_{i = 1}^N{Y_i}}{N} = \frac{Y_1 + Y_2 + \ldots + Y_N}{N}$ & $\overline{y} = \frac{\sum_{i = 1}^n{Y_i}}{n} = \frac{Y_1 + Y_2 + \ldots + Y_n}{n}$\\
-\hline
-\end{tabular}
-\end{table}
+$$
+Y_T = \sum_{i = 1}^N{Y_i} = Y_1 + Y_2 + \ldots + Y_N.
+$$
+
+\structure{Média}
+
+$$
+\overline{Y} = \frac{\sum_{i = 1}^N{Y_i}}{N} = \frac{Y_1 + Y_2 + \ldots + Y_N}{N}.
+$$
+\end{mybox}
+
+\begin{mybox}{Na amostra}
+\structure{Total}
+
+$$
+y_T = \sum_{i = 1}^n{Y_i} = Y_1 + Y_2 + \ldots + Y_n.
+$$
+
+\structure{Média}
+
+$$
+\overline{y} = \frac{\sum_{i = 1}^n{Y_i}}{n} = \frac{Y_1 + Y_2 + \ldots + Y_n}{n}.
+$$
+\end{mybox}
+
+<!-- \scriptsize -->
+
+<!-- \begin{table}[] -->
+<!-- \begin{tabular}{lcc} -->
+<!-- \hline -->
+<!-- Característica & População & Amostra \\ -->
+<!-- \hline -->
+<!-- Total              & $Y_T = \sum_{i = 1}^N{Y_i} = Y_1 + Y_2 + \ldots + Y_N$ & $y_T = \sum_{i = 1}^n{Y_i} = Y_1 + Y_2 + \ldots + Y_n$ \\ -->
+<!--  &  &  \\ -->
+<!-- Média        &  $\overline{Y} = \frac{\sum_{i = 1}^N{Y_i}}{N} = \frac{Y_1 + Y_2 + \ldots + Y_N}{N}$ & $\overline{y} = \frac{\sum_{i = 1}^n{Y_i}}{n} = \frac{Y_1 + Y_2 + \ldots + Y_n}{n}$\\ -->
+<!-- \hline -->
+<!-- \end{tabular} -->
+<!-- \end{table} -->
 
 \framebreak
 
 \normalsize
 
-Embora se possa realizar uma amostragem com muitas finalidades, na maioria dos casos o interesse se concentra em quatro características da população:
+Embora se possa realizar uma amostragem com muitas finalidades, na maioria dos casos o interesse se concentra em __quatro características da população__:
 
-1. Média \structure{$= \overline{Y}$} (por exemplo, o número médio de crianças por escola).
-2. Total \structure{$= Y_T$} (por exemplo, o número total de acres de trigo em uma região).
-3. A realação (razão, ou índice) entre dois totais ou médias \structure{$R = Y_T/X_T = \overline{Y}/\overline{X}$} (por exemplo, relação entre custo semanal em alimentos e tamanho da família).
-4. Proporção de unidades que pertencem a uma determina classe/categoria (por exemplo, proporção de pessoas com diabetes).
+1. A __média__: $\overline{Y}$ (por exemplo, o número médio de crianças por escola).
+2. O __total__ $Y_T$ (por exemplo, o número total de acres de trigo em uma região).
+3. A realação __(razão, ou índice)__ entre dois totais ou médias $R = Y_T/X_T = \overline{Y}/\overline{X}$ (por exemplo, relação entre custo semanal em alimentos e tamanho da família).
+4. A __proporção__ de unidades que pertencem a uma determina classe/categoria $P$ (por exemplo, proporção de pessoas com diabetes).
 
 \framebreak
 
 - A estimativa das três primeiras quantidades será discutida na primeira parte desta área.
 - O símbolo \structure{``$\ \hat{}\ $''} denota uma estimativa de uma característica da população feita a partir de uma amostra.
+
+\framebreak
+
 - De acordo com a relação acima, temos:
 
 \begin{table}[]
 \begin{tabular}{lll}
 \hline
- &  & Representação da estimativa \\
+ &  & Estimador \\
 \hline
 Média da população $\overline{Y}$ & & $\displaystyle{\hat{\overline{Y}} = \overline{y} = \sum_{i=1}^n{Y_i}/n}$ \\
 Total da população $Y_T$ & & $\displaystyle{\hat{Y}_T = N\overline{y} = N\sum_{i=1}^n{Y_i}/n}$ \\
@@ -194,7 +225,7 @@ Total da população $Y_T$ & & $\displaystyle{\hat{Y}_T = N\overline{y} = N\sum_
 
 \framebreak
 
-- Em $\hat{Y}_T$, o \structure{fator $N/n$}, pelo qual o valor total da amostra é multiplicado, é às vezes chamado de \structure{fator de expansão} ou \structure{crescimento} ou \structure{de inflação}.
+- Em $\hat{Y}_T$, o \structure{fator $N/n$}, pelo qual o valor total da amostra é multiplicado, é às vezes chamado de \structure{fator de expansão}, ou \structure{fator de crescimento}, ou ainda de \structure{fator de inflação}.
 - Seu inverso \structure{$n/N$}, a relação entre o tamanho da amostra e o da população, é chamado de \structure{fração de amostragem} e é denotado pela letra \structure{$f$}.
 
 ## Para casa
