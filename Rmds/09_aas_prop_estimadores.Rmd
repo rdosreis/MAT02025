@@ -10,41 +10,77 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
-# Relembrando
+# Relembrando {.allowframebreaks}
 
-## {.allowframebreaks}
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+::: {.block}
 
-knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-01.png'))
+### Amostragem aleatória simples
 
-```
+A \structure{amostragem aleatória simples}\footnote{Também conhecida como {\bf amostragem casual simples} ou {\bf amostragem acidental irrestrita}} (AAS) é um processo para selecionar \structure{$n$} unidades de \structure{$N$} de modo que cada uma das \structure{$_NC_n$} amostras distintas tenha uma \structure{chance igual de ser extraída}.
 
-\framebreak
-
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
-
-knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-02.png'))
-
-```
+:::
 
 \framebreak
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+- As letras __maiúsculas__ referem-se às características da população e as __minúsculas__ às da amostra.
+    + Para totais e médias, temos as seguintes definições.
 
-knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-03.png'))
+\begin{mybox}{Na população}
+\structure{Total}
 
-```
+$$
+Y_T = \sum_{i = 1}^N{Y_i} = Y_1 + Y_2 + \ldots + Y_N.
+$$
 
-# Propriedades dos estimadores
+\structure{Média}
 
-## Propriedades dos estimadores {.allowframebreaks}
+$$
+\overline{Y} = \frac{\sum_{i = 1}^N{Y_i}}{N} = \frac{Y_1 + Y_2 + \ldots + Y_N}{N}.
+$$
+\end{mybox}
+
+\begin{mybox}{Na amostra}
+\structure{Total}
+
+$$
+y_T = \sum_{i = 1}^n{Y_i} = Y_1 + Y_2 + \ldots + Y_n.
+$$
+
+\structure{Média}
+
+$$
+\overline{y} = \frac{\sum_{i = 1}^n{Y_i}}{n} = \frac{Y_1 + Y_2 + \ldots + Y_n}{n}.
+$$
+\end{mybox}
+
+\framebreak
+
+- O símbolo \structure{``$\ \hat{}\ $''} denota uma estimativa de uma característica da população feita a partir de uma amostra.
+- De acordo com a relação acima, temos:
+
+\begin{table}[]
+\begin{tabular}{lll}
+\hline
+ &  & Estimador \\
+\hline
+Média da população $\overline{Y}$ & & $\displaystyle{\hat{\overline{Y}} = \overline{y} = \sum_{i=1}^n{Y_i}/n}$ \\
+Total da população $Y_T$ & & $\displaystyle{\hat{Y}_T = N\overline{y} = N\sum_{i=1}^n{Y_i}/n}$ \\
+Índice da população $R$ & & $\displaystyle{\hat{R} = \sum_{i=1}^n{Y_i}/\sum_{i=1}^n{X_i}}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+# Propriedades dos estimadores {.allowframebreaks}
 
 - Como vimos, um método de estimativa é \structure{imparcial (não viciado, não enviesado, não tendencioso)}  se o valor médio da estimativa, __tomado em todas as amostras possíveis de dado tamanho__ \structure{$n$}, for exatamente igual ao valor verdadeiro da população. 
-- Se o método tiver que ser imparcial, irrestritamente, este resultado deve ser válido para qualquer população de valores finitos, $Y_i$, e para qualquer que seja $n$.
+- Se o método for irrestritamente imparcial, este resultado deve ser válido para qualquer população finita de valores, $Y_i$, e para qualquer que seja $n$.
+
+\framebreak
+
 - Para investigar se \structure{$\overline{y}$} é imparcial com a amostragem aleatória simples, calculamos o valor de \structure{$\overline{y}$} para todas as amostras \structure{$_NC_n$} e encontramos a média das estimativas.
 - O símbolo $\textcolor{blue}{\E}$ denota essa média sobre todas as amostras possíveis.
 
@@ -76,7 +112,7 @@ __Demonstração.__ Por definição,
 
 \normalsize
 
-- Para avaliar essa soma, encontramos em quantas amostras qualquer valor específico $Y_j$ aparece.
+- Para avaliar \textcolor{red}{essa soma}, encontramos em quantas amostras qualquer valor específico $Y_j$ aparece.
 - Uma vez que existem \structure{$(N -1)$} outras unidades disponíveis para o resto da amostra e \structure{$(n -1)$} outros locais para preencher a amostra, o número de amostras contendo $Y_j$ é
 
 $$
@@ -120,14 +156,22 @@ $\hat{Y}_T = N\overline{y}$ é um estimador imparcial do valor total populaciona
 
 :::
 
-- __Para casa:__ utilize o __Teorema 9.1__ apresentado na aula para demonstrar o __Corolário__.
+- __Exercício (5 minutos):__ utilize o __Teorema 9.1__ apresentado na aula para demonstrar o __Corolário__.
 
 # Um outro método de demonstração
 
 ## Outro método de demonstração {.allowframebreaks}
 
 - __Cornfield (1944)__\footnote{Cornfield, J. (1944). \emph{On Samples from Finite Populations}. Journal of the American Statistical Association, 39(226), 236.} sugeriu um método para verificar os principais resultados das amostras aleatórias simples, sem reposição, que nos permite utilizar os resultados padronizados da teoria das populações infinitas.
-- Seja \structure{$a_i$} uma variável aleatória, e que assume o valor $1$ se a $i$-ésima unidade for selecionada para a amostra, e assume valor $0$ em caso contrário\footnote{Alguns autores utilizam a notação $Y_i = a_iY_i^{obs} + (1 - a_i)Y_i^{aus}$, em que $obs$ e $aus$ represetam {\bf observado} e {\bf ausente}, respectivamente.}.
+- Seja \structure{$a_i$} uma variável aleatória, e que assume o valor $1$ se a $i$-ésima unidade for selecionada para a amostra, e assume valor $0$ em caso contrário\footnote{Alguns autores utilizam a notação $Y_i = a_iY_i^{obs} + (1 - a_i)Y_i^{aus}$, em que $obs$ e $aus$ represetam {\bf observado} e {\bf ausente}, respectivamente.}. Ou seja,
+
+$$
+a_i = \left\{\begin{array}{ll}
+1, & \mbox{se}\quad Y_i\quad \mbox{selecionado para a amostra};\\
+0, & \mbox{caso contrário}.
+\end{array}
+\right.
+$$
 
 ## Outro método de demonstração {.allowframebreaks}
 
@@ -149,13 +193,16 @@ $\vdots$ & $\vdots$      & $\vdots$  & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$
 
 ## Outro método de demonstração {.allowframebreaks}
 
-- A \structure{média amostral} pode ser expressa por
+- Note que a \structure{média amostral} pode ser reexpressa como
 
-$$
+\begin{equation}
+\label{aas:media_a}
 \overline{y} = \frac{1}{n}\sum_{i=1}^{N}{a_iY_i},
-$$
+\end{equation}
 
 em que o somatório abrange todas as $N$ unidades da população.
+
+- Ou seja, a soma em \eqref{aas:media_a} possui $n$ termos não nulos na soma (excluindo-se o fato que algum $Y_i$ pode ser igual a zero).
 
 \framebreak
 
@@ -164,7 +211,7 @@ em que o somatório abrange todas as $N$ unidades da população.
 - Note que
 
 \begin{align*}
-\Pr(a_i = 1) &= \frac{\# \mbox{amostras que incluem o i-ésimo elemento}}{\# \mbox{amostras que podem ser sorteadas}}\\
+\Pr(a_i = 1) &= \frac{\#\ \mbox{amostras que incluem o}\ i\mbox{-ésimo elemento}}{\#\ \mbox{amostras que podem ser sorteadas}}\\
 &= \frac{\Comb{N-1}{n-1}}{\Comb{N}{n}} \\
 &= \frac{(N-1)!}{(n-1)!(N-n)!}\times\frac{n!(N-n)!}{N!} = \frac{n}{N}.
 \end{align*}
@@ -186,7 +233,7 @@ $$
 \footnotesize
 
 $$
-\E(\overline{y}) = \E\left[\frac{1}{n}\sum_{i=1}^{N}{a_iY_i}\right] = \frac{1}{n}\sum_{i=1}^{N}{\E\left[a_i\right]Y_i} = \frac{1}{n}\sum_{i=1}^{N}{PY_i}  = \overline{Y}.
+\E(\overline{y}) = \E\left[\frac{1}{n}\sum_{i=1}^{N}{a_iY_i}\right] = \frac{1}{n}\sum_{i=1}^{N}{\E\left[a_i\right]Y_i} = \frac{1}{n}\sum_{i=1}^{N}{PY_i} = \frac{1}{n}\sum_{i=1}^{N}{\left(\frac{n}{N}\right)Y_i} = \overline{Y}.
 $$
 
 ## Para casa
