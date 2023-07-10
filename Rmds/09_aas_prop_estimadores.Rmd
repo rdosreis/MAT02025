@@ -90,7 +90,7 @@ Total da população $Y_T$ & & $\displaystyle{\hat{Y}_T = N\overline{y} = N\sum_
 
 ### Teorema 9.1
 
-A média amostral $\overline{y}$ é uma estimativa sem tendência para $\overline{Y}$.
+A média amostral $\overline{y}$ é um estimador sem tendência para $\overline{Y}$.
 
 :::
 

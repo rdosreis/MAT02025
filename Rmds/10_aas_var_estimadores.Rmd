@@ -10,18 +10,18 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
-# Relembrando
+# Relembrando {.allowframebreaks}
 
-## {.allowframebreaks}
+::: {.block}
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE}
+### Teorema 9.1
 
-knitr::include_graphics(here::here('images', 'aula-revisao', 'aas-04.png'))
+A média amostral $\overline{y}$ é um estimador sem tendência para $\overline{Y}$.
 
-```
+:::
 
 # Variâncias dos estimadores
 
@@ -88,9 +88,10 @@ $$
 
 - Note que $a_ia_j$ é igual a $1$ se as unidades $i$ e $j$ estiverem na amostra, ou é $0$, caso contrário. Logo, 
 
-$$
-\E(a_ia_j) = 1 \times \Pr(a_ia_j = 1) + 0 \times \Pr(a_ia_j = 0) = \Pr(a_ia_j = 1) = \Pr(a_i = 1, a_j = 1).
-$$
+\begin{eqnarray*}
+\E(a_ia_j) &=& 1 \times \Pr(a_ia_j = 1) + 0 \times \Pr(a_ia_j = 0)\\
+           &=& \Pr(a_ia_j = 1) = \Pr(a_i = 1, a_j = 1).
+\end{eqnarray*}
 
 \framebreak
 
@@ -183,12 +184,15 @@ $$
 
 \framebreak
 
-- Desde que a fração $n/N$, permaneça baixa, esses fatores ($[N-n]/N$) se aproximam do valor da unidade, e o tamanho da população, como tal, não tem influência direta no erro padrão do valor médio amostral.
+- Desde que a fração $n/N$, permaneça baixa, esses fatores ($[N-n]/N$) se aproximam do valor unitário, e o tamanho da população, como tal, não tem influência direta no erro padrão do valor médio amostral.
     + Ou seja, $\frac{(N-n)}{N} = 1 - \frac{n}{N} \approx 1$, quando $\frac{n}{N} \approx 0$.
-    + Por exemplo, se $S$ é o __mesmo em duas populações__, uma amostra de 500 unidades de uma população de 200.000, dá uma estimativa quase tão precisa do valor médio da população quanto uma amostra de 500 unidades de uma população de 10.000.
++ Por exemplo, se $S$ é o __mesmo em duas populações__, uma amostra de 500 unidades de uma população de 200.000, dá uma estimativa quase tão precisa do valor médio da população quanto uma amostra de 500 unidades de uma população de 10.000.
+
+\framebreak
+
 - Na prática, as \structure{cpf} podem ser ignoradas, quando quer a fração de amostragem não exceda a 5% e, em muitos casos, até mesmo quando seu valor chegue a 10%.
     + \structure{A consequência de se ignorar as correções é a superestimação do erro padrão da estimativa $\overline{y}$}.
-    + __Pergunta:__ no que isto implica?
++ __Pergunta:__ no que isto implica?
 
 ## Para casa
 
