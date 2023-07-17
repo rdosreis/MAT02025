@@ -1,4 +1,4 @@
-## ----echo=TRUE, message=FALSE, warning=FALSE-------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE-----------------------------------
 
 N <- 676
 n <- 50
@@ -13,7 +13,7 @@ head(df.assinatura)
 
 
 
-## ----echo=TRUE, message=FALSE, warning=FALSE-------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE-----------------------------------
 
 # Estimativa da média
 (Y.barra <- mean(df.assinatura$y))
@@ -62,7 +62,7 @@ round(YT.chapeu + c(-1, 1) * qt(p = 0.9, df = n - 1) *  s.YT.chapeu)
 
 
 
-## ----echo=TRUE, message=FALSE, warning=FALSE-------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE-----------------------------------
 
 # install.packages("survey")
 library(survey)
@@ -96,7 +96,7 @@ confint(svytotal(x = ~y, design = ass.des),
 
 
 
-## ----echo=TRUE, message=FALSE, warning=FALSE-------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE-----------------------------------
 
 data(api)
 
@@ -118,7 +118,7 @@ svymean(x = ~enroll, design = api.des)
 
 
 
-## ----echo=TRUE, message=FALSE, warning=FALSE-------------------------------------------------------------
+## ----echo=TRUE, message=FALSE, warning=FALSE-----------------------------------
 
 # O objeto design
 api.des2 <- svydesign(id = ~1,
