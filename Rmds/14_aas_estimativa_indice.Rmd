@@ -10,14 +10,16 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # Estimativa de um índice
 
 ## Relembrando
 
-No sentido mais simples do termo, podemos dizer que um __número índice__ é um quociente que expressa uma dada quantidade em comparação a uma __quantidade base__. Em outras palavras, são __valores relativos__.
+\begin{mybox}{Número índice}
+No sentido mais simples do termo, podemos dizer que um \structure{número índice} é um quociente que expressa uma dada quantidade em comparação a uma \structure{quantidade base}. Em outras palavras, são \structure{valores relativos}.
+\end{mybox}
 
 ## Estimativa de um índice {.allowframebreaks}
 
@@ -63,7 +65,7 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'dm-01.png'))
 \framebreak
 
 - A \structure{distribuição amostral} de $\widehat{R}$ é mais complicada que a de $\overline{y}$, porque tanto o numerador $\overline{y}$, quanto o denominador, $\overline{x}$, variam de amostra para amostra.
-- Em __pequenas amostras__, a distribuição de $\widehat{R}$ é __assimétrica__, e $\widehat{R}$ é, geralmente, uma estimativa ligeiramente __enviesada__ de $R$.
+- Em __pequenas amostras__, a distribuição de $\widehat{R}$ é __assimétrica__, e $\widehat{R}$ é, geralmente, uma estimativa ligeiramente __viesada__ de $R$.
 - Em __grandes amostras__, a distribuição de $\widehat{R}$ tende à __normalidade__ e o __viés__ torna-se __insignificante__.
 
 \framebreak
@@ -106,7 +108,7 @@ $$
 $$
 uma vez que $R = \overline{Y}/\overline{X}$.
 
-- Isso mostra que, para a ordem de aproximação usada aqui, $\widehat{R}$ é uma estimativa não enviesada de $R$.
+- Isso mostra que, para a ordem de aproximação usada aqui, $\widehat{R}$ é uma estimativa não viesada de $R$.
 
 \framebreak
 
@@ -143,7 +145,7 @@ $$
 \frac{\sum_{i=1}^n{(Y_i - \widehat{R}X_i)^2}}{n - 1}.
 $$
 
-- Pode-se demonstrar que essa estimativa tem um \structure{viés de ordem} $1/n$.\footnote{Ou seja, conforme $n\rightarrow\infty$ o viés decresce a zero mais rapidamente que a sequência $1/n$. Ou, utilizando a notação $o(\cdot)$, temos que $\mbox{Viés}_n = o(n^{-1})$.}
+- Pode-se demonstrar que essa estimativa tem um \structure{viés de ordem}\footnote{Ou seja, conforme $n\rightarrow\infty$ o viés decresce a zero mais rapidamente que a sequência $1/n$. Ou, utilizando a notação $o(\cdot)$, temos que $\mbox{Viés}_n = o(n^{-1})$.} $1/n$.
 
 ## Estimativa de um índice {.allowframebreaks}
 
