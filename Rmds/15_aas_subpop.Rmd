@@ -10,12 +10,12 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # Estimativa do valor médio das subpopulações {.allowframebreaks}
 
-- Em muitoss levantamentos, as estimativas são feitas para cada uma das várias \structure{classes} __(setores ou domínios)__ nas quais a população está subdividida.
+- Em muitos levantamentos, as estimativas são feitas para cada uma das várias \structure{classes} __(setores ou domínios)__ nas quais a população está subdividida.
 - Em um levantamento domiciliar, estimativas separadas podem ser necessárias para \structure{famílias de $0, 1, 2, \ldots$ filhos}, para \structure{proprietários} e \structure{locatários}, ou para famílias em diferentes \structure{grupos de ocupação}.
 
 \framebreak
@@ -40,7 +40,7 @@ $$
 
 \framebreak
 
-- À primeira vista, $\overline{y}_j$ parece ser uma estimativa de razão (como na última aula).
+- À primeira vista, $\overline{y}_j$ parece ser uma __estimativa de razão (índice)__.
 - Embora $n$ seja fixo, $n_j$ variará de uma amostra de tamanho $n$ para outra.
 - A complicação de uma estimativa de razão pode ser evitada considerando a distribuição de $\overline{y}_j$ sobre as amostras nas quais $n$ e $n_j$ __são fixos__.
     + Assumimos $n_j > 0$.
@@ -94,20 +94,25 @@ $$
 
 # Estimativa dos valores totais das subpopulações {.allowframebreaks}
 
-- Suponha que na relação de contas a receber de uma empresa, na qual algumas contas foram pagas e outras não, podemos desejar estimar, por meio de uma amostra, o __valor total__ (em reais) __das contas não pagas__.
-- Se $N_j$ (o __número de contas não pagas__ na população) é conhecido, não há problema.
+- Suponha que em uma população (de adultos), na qual algumas pessoas são obesas (IMC > 30) e outras não, podemos desejar estimar, por meio de uma amostra, o __*total* de pessoas com diabetes *entre os obesos*__.
+- Se $N_j$ (o __número de pessoas obesas__ na população) é conhecido, não há problema.
     + A estimativa a partir da amostra é $N_j\overline{y}_j$ e seu erro padrão condicional é $N_j$ vezes $\frac{S_j}{\sqrt{n_j}}\sqrt{1 - (n_j/N_j)}$.
 
 \framebreak
 
-- Alternativamente, se o valor total a receber, de acordo com a relação das contas, for conhecido, uma estimativa de razão pode ser usada.
-    - A amostra fornece uma estimativa da razão (montante total de faturas não pagas) / (montante total de todas as faturas).
-    - Isso é multiplicado pelo valor total a receber conhecido na relação das contas.
+- Alternativamente, se o *total de indivíduos com diabetes* for conhecido na **população**, uma estimativa de razão pode ser usada.
+    - A **amostra** fornece uma estimativa da razão 
+
+$$
+\frac{\mbox{total de pessoas com diabetes entre os obesos}}{\mbox{total de indivíduos com diabetes}}.
+$$
+
+- Isso é multiplicado pelo *total de indivíduos com diabetes* conhecido na **população**.
 
 \framebreak
 
-- Se nem $N_j$, e nem o total a receber é conhecido, essas estimativas não podem ser feitas.
-- Em vez disso, multiplicamos o valor amostral total das unidades $Y$ contidas no $j$-ésimo setor pelo \structure{fator de expansão} $N/n$.
+- Se nem $N_j$, e nem o *total de indivíduos com diabetes* é conhecido, essas estimativas não podem ser feitas.
+- Em vez disso, multiplicamos o *valor amostral total* das unidades $Y$ contidas no $j$-ésimo setor pelo \structure{fator de expansão} $N/n$.
 - Isso dá a estimativa
 
 $$
@@ -148,7 +153,7 @@ $$
 
 \framebreak
 
-- Em repetidas amostras de tamanho $n$, podemos aplicar os teoremas das aulas 9, 10 e 11 às variáveis $Y_i'$.
+- Em repetidas amostras de tamanho $n$, podemos aplicar os __teoremas das aulas 9, 10 e 11__ às variáveis $Y_i'$.
 - Estes, por sua vez, mostram que $\hat{Y}_{T_j}$ é uma \structure{estimativa imparcial} de $Y_{T_j}$ com erro padrão
 
 $$
@@ -166,7 +171,7 @@ $$
 
 \framebreak
 
-- Pelo teorema da aula 11, uma estimativa amostral do erro padrão de $\hat{Y}_{T_j}$ será
+- Pelo teorema da __aula 11__, uma estimativa amostral do erro padrão de $\hat{Y}_{T_j}$ será
 
 $$
 s(\hat{Y}_{T_j}) = \frac{Ns'}{\sqrt{n}}\sqrt{1 - (n/N)}.
@@ -233,7 +238,7 @@ em que $P_j = N_j/N$ e $Q_j = 1 - P_j$.
 - A razão entre as variâncias \eqref{var_total_conhecido_nova} e \eqref{var_total_desconhecido} é
 
 $$
-\frac{\Var(N_j\ \mbox{conhecido})}{\Var(N_j\ \mbox{desconhecido})} = \frac{S_j^2}{S_j^2 + Q_j\overline{Y}_j^2} = \frac{C_j^2}{C_j^2 + Q_j} \leq 1,
+\frac{\Var_{N_j\ \mbox{conhecido}}(N_j\overline{y}_j)}{\Var_{N_j\ \mbox{desconhecido}}(\hat{Y}_{T_j})} = \frac{S_j^2}{S_j^2 + Q_j\overline{Y}_j^2} = \frac{C_j^2}{C_j^2 + Q_j} \leq 1,
 $$
 em que $C_j = S_j/\overline{Y}_j$ é o \structure{coeficiente de variação} entre as unidades de valores diferentes de zero.
 
