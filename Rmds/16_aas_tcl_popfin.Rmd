@@ -10,7 +10,7 @@ institute: |
   | \textsc{Instituto de Matemática e Estatística}
   | \textsc{Departamento de Estatística}
 date: |
-  | Porto Alegre, 2022
+  | Porto Alegre, 2023
 ---
 
 # Teorema Central do Limite para população finita
@@ -105,7 +105,9 @@ conforme $n_N \rightarrow \infty$ e $(N - n_N) \rightarrow \infty$ quando $N \ri
 - A população\footnote{Para fins ilustrativos, vamos supor que este conjunto de dados forma uma população de diamantes.} de 53940 diamantes (objeto `diamonds` no pacote `ggplot2` do `R`) pode ser usada para ilustrar o \structure{TCL para população finita}.
 - Distribuição do peso em quilates ($Y$) dos diamantes na própria população.
 
-```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%'}
+## Exemplo 1 {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'}
 
 library(ggplot2)
 
@@ -323,10 +325,9 @@ knitr::include_graphics(here::here('images', 'aula-revisao', 'tcl-03.png'))
 - Revisar os tópicos discutidos nesta aula.
 -  Ler o capítulo 10 do Livro "Elementos de amostragem"\footnote{Bolfarine, H. e Bussab, W. O. \bf{Elementos de amostragem}, Blucher, 2005.} (disponível no Sabi+).
 
-## Próximas aulas
+## Próximas aula
 
-- Atividade de Avaliação II.
-- Estimativa de proporções e percentagens.
+- Resolução de exercícios.
 
 ## Por hoje é só!
 

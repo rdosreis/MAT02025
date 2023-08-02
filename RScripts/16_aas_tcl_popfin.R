@@ -1,4 +1,4 @@
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='70%'------------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 library(ggplot2)
 
@@ -19,7 +19,7 @@ hist(y, probability = T,
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 b <- 10000
 
@@ -48,7 +48,7 @@ ybares <- ybar
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 n <- 5
 
@@ -67,7 +67,7 @@ ybares <- c(ybares, ybar)
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 n <- 20
 
@@ -86,7 +86,7 @@ ybares <- c(ybares, ybar)
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 n <- 50
 
@@ -105,7 +105,7 @@ ybares <- c(ybares, ybar)
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 n <- 100
 
@@ -124,7 +124,7 @@ ybares <- c(ybares, ybar)
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 n <- 1000
 
@@ -143,7 +143,7 @@ ybares <- c(ybares, ybar)
 
 
 
-## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'-----------
+## ----echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%'------------------
 
 df.joy <- data.frame(enes, ybares)
 df.joy$y.bar.center <- (df.joy$ybares - mean(y))/sqrt(var(y)*(1 - df.joy$enes/N)*(1/df.joy$enes))
