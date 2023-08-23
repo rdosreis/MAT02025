@@ -1,0 +1,817 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: distribuição das estimativas de $P$ e intervalos de confiança para uma proporção"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2023
+---
+
+# Influência de $P$ no erro padrão {.allowframebreaks}
+
+- A equação (2), da aula passada, mostra como a variância da porcentagem estimada muda com $P$ (a \structure{porcentagem da população na categoria} $C$), para $n$ e $N$ fixos. Se a cpf for ignorada, temos
+
+$$
+\Var(p) = \frac{PQ}{n}.
+$$
+
+- A função $PQ$ e sua raiz quadrada são mostradas a seguir.
+    + Essas funções podem ser consideradas como variância e desvio padrão, respectivamente, para uma amostra de tamanho 1.
+    
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+P <- seq(from = 0, to = 100, by = 10)
+Q <- 100 - P
+PQ <- P*Q
+sqrtPQ <- sqrt(PQ)
+
+par(mfrow = c(1,2))
+plot(P, PQ, type = "b", lwd = 2, col = "lightsalmon")
+abline(h = seq(0, 2500, by = 500), v = P, col = "lightgrey", lty = 2)
+plot(P, sqrtPQ, type = "b", lwd = 2, col = "lightsalmon", ylab = expression(sqrt(PQ)))
+abline(h = seq(0, 50, by = 10), v = P, col = "lightgrey", lty = 2)
+par(mfrow = c(1,1))
+
+```
+
+\framebreak
+
+::: {.block}
+### Observações
+
+- As funções têm seus maiores valores quando a população é dividida igualmente entre as duas classes e são simétricas em relação a este ponto.
+- O erro padrão de $p$ muda relativamente pouco quando $P$ está entre 30 e 70%.
+- No valor máximo de $\sqrt{PQ}$, 50, um tamanho de amostra de 100 é necessário para reduzir o erro padrão da estimativa para 5%.
+- Para atingir um erro padrão de 1%, é necessário um tamanho de amostra de 2500.
+:::
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+n <- 1:200
+P <- 50
+Q <- 100 - P
+ep <- sqrt((P*Q)/n)
+
+plot(n, ep,
+     type = "l",
+     lwd = 2,
+     col = "steelblue",
+     ylab = expression(sqrt(hat(Var)(p))),
+     main = "Erro padrão de p em função de n, quando P = 50%")
+abline(h = seq(0, 50, by = 5), v = seq(0, 200, by = 50), col = "lightgrey", lty = 2)
+
+```
+
+\framebreak
+
+- Esta abordagem não é apropriada quando o interesse reside no \structure{número total} de unidades da população que estão na classe $C$.
+- Nesse caso, é mais natural perguntar: a estimativa provavelmente está correta dentro de, digamos, 7% do verdadeiro total?
+- Assim, tendemos a pensar no erro padrão expresso como uma fração ou porcentagem do valor verdadeiro, $NP$. A fração é
+
+$$
+\frac{\sigma_{N_p}}{NP} = \frac{N\sqrt{PQ}}{\sqrt{n}NP}\sqrt{\frac{N-n}{N-1}} = \frac{1}{\sqrt{n}}\sqrt{\frac{Q}{P}}\sqrt{\frac{N-n}{N-1}}.
+$$
+
+\framebreak
+
+- Essa quantidade é chamada de \structure{coeficiente de variação} da estimativa.
+- Se a cpf for ignorada, o coeficiente é $\sqrt{Q/nP}$.
+- A razão $\sqrt{Q/P}$, que pode ser considerada o coeficiente de variação para uma amostra de tamanho 1, é mostrada a seguir.
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+P <- c(0, 0.1, 0.5, 1, 5, seq(from = 10, to = 90, by = 10))
+Q <- 100 - P
+cv <- sqrt(Q/P)
+
+plot(P, cv,
+     type = "b",
+     lwd = 2,
+     col = "steelblue",
+     ylab = expression(sqrt(Q/P)))
+abline(h = seq(0, 30, by = 5),
+       v = seq(from = 0, to = 90, by = 10),
+       col = "lightgrey", lty = 2)
+
+```
+
+\framebreak
+
+- Para um tamanho de amostra fixo, o coeficiente de variação do total estimado na classe $C$ diminui continuamente à medida que a porcentagem verdadeira em $C$ aumenta.
+- O coeficiente é alto quando $P$ é menor que 5%.
+- Amostras muito grandes são necessárias para estimativas precisas do número total que possui qualquer atributo raro na população.
+- Para $P$ = 1%, devemos ter $\sqrt{n} = 99$ para reduzir o coeficiente de variação da estimativa para 0,1 ou 10%.
+    + Isso dá um tamanho de amostra de 9801.
+    + A amostragem aleatória simples, ou qualquer método de amostragem que seja adaptado para propósitos gerais, é um método caro de estimar o número total de unidades de um tipo escasso.
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+raiz.n <- c(1:10, seq(20, 100, by = 20))
+P <- 1
+Q <- 100 - P
+cv <- sqrt(Q/P) * (1/raiz.n)
+
+plot(raiz.n, cv,
+     type = "b",
+     lwd = 2,
+     col = "steelblue",
+     xlab = expression(sqrt(n)),
+     ylab = expression(sqrt(Q/nP)))
+abline(h = seq(0, 10, by = 1),
+       v = seq(from = 0, to = 100, by = 10),
+       col = "lightgrey", lty = 2)
+
+```
+
+# Distribuição binomial {.allowframebreaks}
+
+```{r message=FALSE, echo=FALSE, out.width="15%", purl=FALSE, fig.align='right'}
+
+knitr::include_graphics(here::here("images", "bin.jpg"))
+
+```
+
+- Como a população é de um tipo particularmente simples, em que os $Y_i$ são 1 ou 0, podemos encontrar a \structure{distribuição de frequência real} da estimativa $p$ e não apenas sua __média__ e __variância__.
+
+\framebreak
+
+- A população contém $A$ unidades que estão na classe $C$ e $(N - A)$ unidades em $C'$, em que $P = A/N$.
+- Se a primeira unidade sorteada estiver em $C$, permanecerão na população $(A - 1)$ unidades em $C$ e $N - A$ em $C'$.
+- Assim, a proporção de unidades em $C$, após o primeiro sorteio, muda ligeiramente para $(A - 1)/(N - 1)$. 
+- Alternativamente, se a primeira unidade selecionada estiver em $C'$, a proporção em $C$ muda para $A/(N - 1)$.
+
+\framebreak
+
+- Na amostragem sem reposição, a proporção continua mudando dessa forma ao longo do sorteio das unidades.
+- Na presente seção, essas variações são ignoradas, ou seja, $P$ é considerado \structure{constante}.
+- Isso equivale a supor que $A$ e $(N - A)$ \structure{são ambos grandes} em relação ao tamanho da amostra $n$ (ou que a amostragem é feita com reposição).
+
+\framebreak
+
+- Com essa suposição, o processo de sorteio da amostra consiste em uma série de $n$ tentativas, em cada uma das quais a probabilidade de que a unidade selecionada esteja em $C$ é $P$.
+- Esta situação dá origem à \structure{distribuição de frequência binomial} para o número de unidades em $C$ na amostra.
+- A probabilidade de que a amostra contenha $a$ unidades em $C$ é
+
+$$
+\Pr(a) = \frac{n!}{a!(n - a)!}P^aQ^{n-a},\quad a = 0, 1, \ldots, n.
+$$
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(dbinom(x = 0:50, size = 50, prob = 0.2),
+     type = "h",
+     lwd = 2,
+     col = "red",
+     xlab = "a",
+     ylab = "Pr(a)")
+legend("topright", legend = c("n = 50", "P = 0.2"), bty = "n")
+
+```
+
+\framebreak
+
+- A partir dessa expressão, podemos tabular a distribuição de frequência de $a$, de $p = a/n$ ou do total estimado $Np$.
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='80%'}
+
+par(mfrow = c(1,2))
+
+plot(x = (0:50)/50,
+  y = dbinom(x = 0:50, size = 50, prob = 0.2),
+     type = "h",
+  lwd = 2,
+     col = "blue",
+     xlab = "p",
+     ylab = "Pr(p)")
+legend("topright", legend = c("n = 50", "P = 0.2"), bty = "n")
+
+plot(x = (1000*(0:50))/50,
+     y = dbinom(x = 0:50, size = 50, prob = 0.2),
+     lwd = 2,
+     type = "h",
+     col = "black",
+     xlab = "Np",
+     ylab = "Pr(Np)")
+legend("topright", legend = c("n = 50", "P = 0.2", "N = 1000"), bty = "n")
+
+par(mfrow = c(1,1))
+
+```
+
+# Distribuição hipergeométrica {.allowframebreaks}
+
+```{r message=FALSE, echo=FALSE, out.width="15%", purl=FALSE, fig.align='right'}
+
+knitr::include_graphics(here::here("images", "hyp.jpg"))
+
+```
+
+- A distribuição de $p$ pode ser encontrada sem a suposição de que a população seja grande em relação à amostra.
+- O número de unidades nas duas classes $C$ e $C'$ na população são $A$ e $A'$, respectivamente.
+- Vamos calcular a probabilidade de que os números correspondentes na amostra sejam $a$ e $a'$, em que
+
+$$
+a+a'=n,\quad A+A'=N.
+$$
+
+\framebreak
+
+- Na amostragem aleatória simples, cada uma das ${N\choose n}$ diferentes seleções de $n$ unidades de $N$ tem uma chance igual de ser sorteada.
+- Para encontrar a probabilidade desejada, contamos quantas dessas amostras contêm exatamente $a$ unidades de $C$ e $a'$ de $C'$.
+- O número de seleções diferentes de $a$ unidades entre $A$ que está em $C$ é ${A\choose a}$, enquanto o número de seleções diferentes de $a'$ entre $A'$ é ${A'\choose a'}$.
+- Cada seleção do primeiro tipo pode ser combinada com qualquer uma do segundo para dar uma amostra diferente do tipo necessário.
+- O número total de amostras do tipo necessário é, portanto,
+
+$$
+{A\choose a}\times{A'\choose a'}.
+$$
+
+\framebreak
+
+- Portanto, se uma amostra aleatória simples de tamanho $n$ for sorteada, a probabilidade de que seja do tipo necessário é
+
+$$
+\Pr(a, a'|A, A') = \frac{{A\choose a}{A'\choose a'}}{{N\choose n}}
+$$
+
+- Esta é a distribuição de frequência de $a$ ou $np$, da qual a distribuição de $p$ é imediatamente derivada.
+- A distribuição é chamada de \structure{distribuição hipergeométrica}.
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(dhyper(k = 50, m = 200, n = 800, x = 0:50),
+     type = "h",
+     lwd = 2,
+     col = "red",
+     xlab = "a",
+     ylab = "Pr(a, a'| A, A')")
+legend("topright",
+       legend = c("n = 50", "P = 0.2", "N = 1000", "A = 200", "A' = 800"),
+       bty = "n")
+
+```
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+par(mfrow = c(1,2))
+
+plot(x = (0:50)/50,
+     y = dhyper(k = 50, m = 200, n = 800, x = 0:50),
+     type = "h",
+     lwd = 2,
+     col = "blue",
+     xlab = "p",
+     ylab = "Pr(p)")
+legend("topright",
+       legend = c("n = 50", "P = 0.2", "N = 1000", "A = 200", "A' = 800"),
+       bty = "n")
+
+plot(x = (1000*(0:50))/50,
+     y = dhyper(k = 50, m = 200, n = 800, x = 0:50),
+     lwd = 2,
+     type = "h",
+     col = "black",
+     xlab = "Np",
+     ylab = "Pr(Np)")
+legend("topright",
+       legend = c("n = 50", "P = 0.2", "N = 1000", "A = 200", "A' = 800"),
+       bty = "n")
+
+par(mfrow = c(1,1))
+```
+
+# A binomial é uma boa aproximação para a hipergeométrica?
+
+## Qualidade da aproximação {.allowframebreaks}
+
+- \structure{Relembrando:}
+    - $P$ é considerado \structure{constante}.
+    - Isso equivale a supor que $A$ e $N - A$ \structure{são ambos grandes} em relação ao tamanho da amostra $n$ \structure{(fração de amostragem é pequena)}.
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(x = (0:50)/50,
+     y = dhyper(k = 50, m = 200, n = 800, x = 0:50),
+     type = "h",
+     xlim = c(0, 0.5),
+     lwd = 2,
+     col = "blue",
+     xlab = "p",
+     ylab = "Pr(p)",
+     main = "n = 50, P = 0.2, N = 1000, A = 200, A' = 800, f = 0.05")
+lines(x = (0:50)/50,
+      y = dbinom(x = 0:50, size = 50, prob = 0.2),
+      type = "h",
+      lwd = 1,
+      lty = 2,
+      col = "red")
+legend("topright",
+       lty = c(1, 2),
+       lwd = c(2, 1),
+       col = c("blue", "red"),
+       legend = c("Hipergeométrica", "Binomial"),
+       bty = "n")
+
+```
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+plot(x = (0:400)/400,
+     y = dhyper(k = 400, m = 200, n = 800, x = 0:400),
+     type = "h",
+     lwd = 2,
+     xlim = c(0.1, 0.3),
+     col = "blue",
+     xlab = "p",
+     ylab = "Pr(p)",
+     main = "n = 400, P = 0.2, N = 1000, A = 200, A' = 800, f = 0.4")
+lines(x = (0:400)/400,
+      y = dbinom(x = 0:400, size = 400, prob = 0.2),
+      type = "h",
+      lwd = 1,
+      lty = 2,
+      col = "red")
+legend("topright",
+       lty = c(1, 2),
+       lwd = c(2, 1),
+       col = c("blue", "red"),
+       legend = c("Hipergeométrica", "Binomial"),
+       bty = "n")
+
+```
+
+# IC aproximado para $P$ {.allowframebreaks}
+
+- Da expressão para a variância estimada de $P$, uma forma da aproximação normal para os limites de confiança de $P$ é
+
+$$
+p \pm \left[z\sqrt{1-f}\sqrt{pq/(n-1)} + \frac{1}{2n}\right],
+$$
+em que $f = n/N$, $z$ é o desvio normal correspondente à probabilidade de confiança.
+
+\framebreak
+
+- O uso do termo mais familiar $\sqrt{pq/n}$ não apresenta uma diferença notável.
+- O último termo à direita $(1/2n)$ é uma \structure{correção de continuidade}.
+    - Isso produz apenas uma ligeira __melhora na aproximação__.
+    - No entanto, __sem a correção__, a aproximação normal geralmente fornece um __intervalo__ de confiança __muito estreito__.
+
+- __Para pensar:__ intervalos com menor amplitude representam menor incerteza com respeito a estimativa do parâmetro de interesse. Por outro lado, espera-se que $100\times(1 - \alpha)\%$ dos intervalos de confiança de $100\times(1 - \alpha)\%$ contenham o verdadeiro parâmetro. Intervalos "encolhidos" podem não garantir que a __taxa de cobertura__ dos ICs seja próxima à respectiva __taxa nominal__.
+
+\framebreak
+
+- O erro na aproximação normal depende de todas as quantidades $n$, $p$, $N$ e $\alpha$ ($1 - \alpha$ é coeficiente de confiança do intervalo).
+- A quantidade à qual o erro é mais sensível é $np$, ou mais especificamente, o número observado na menor classe.
+- A tabela a seguir fornece __regras de trabalho__ para decidir quando a aproximação normal pode ser usada.
+
+\footnotesize
+
+\begin{table}[]
+\begin{tabular}{ccc}
+\hline
+$p$         & $np$ = número observado na menor classe & $n$ = tamanho da amostra \\ \hline
+0,5         & 15                                      & 30                       \\
+0,4         & 20                                      & 50                       \\
+0,3         & 24                                      & 80                       \\
+0,2         & 40                                      & 200                      \\
+0,1         & 60                                      & 600                      \\
+0,05        & 70                                      & 1400                     \\
+$\approx 0$ & 80                                      & $\infty$                 \\ \hline
+\end{tabular}
+\end{table}
+
+\normalsize
+
+\framebreak
+
+- As regras apresentadas na tabela acima são construídas de modo que, com limites de confiança de 95%, a frequência real com a qual os limites falham em incluir $P$ não seja maior que 5,5%.
+    + Ou seja, a taxa de cobertura dos ICs de 95% com base na aproximação normal (dadas as condições da tabela) não deve ser inferior a 94,5%.
+- Além disso, a probabilidade de que o limite superior esteja abaixo de $P$ está entre 2,5 e 3,5%, e a probabilidade de que o limite inferior exceda $P$ está entre 2,5 e 1,5%.
+
+## IC para $A$
+
+- Para obter os limites de confiança para o parâmetro $A$, número de unidades que pertencem a classe $C$ na população, multiplicamos por $N$ os limites inferior e superior do intervalo de confiança para $P$.
+    + $\widehat{A}_I = N\widehat{P}_I$ e $\widehat{A}_S = N\widehat{P}_S$.
+
+# IC exato para $A$ {.allowframebreaks}
+
+- Os limites de confiança também podem ser obtidos com base na \structure{distribuição hipergeométrica}.
+    + __Lembrando:__ esta é a __distirbuição exata__ do número de unidades na amostra que pertencem a classe $C$, $a$.
+- O __método exato__ de obtenção do intervalo de confiança para $A$ é __conceitualmente simples__, mas __computacionalmente complexo__.
+
+\framebreak
+
+- Seja $a = \sum_{i=1}^n{Y_i}$ o número de unidades pertencentes a classe $C$ na amostra.
+- Para um intervalo de confiança de $100\times(1 - \alpha)\%$ desejado para o número $A$, um limite superior $\widehat{A}_S$ é determinado como o número de unidades na população que pertencem a classe $C$ que fornece probabilidade $\alpha_1$ de obter $a$ ou menos unidades que pertencem a classe $C$ na amostra, em que $\alpha_1$ é aproximadamente igual a metade do $\alpha$ desejado.
+
+\framebreak
+
+- Ou seja, $\widehat{A}_S$ satisfaz
+
+\begin{eqnarray*}
+\Pr(X\leq a) &=& \sum_{j=0}^{a}{\Pr(j, n-j|\widehat{A}_S, N - \widehat{A}_S)}\\
+&=& \sum_{j=0}^{a}{{\widehat{A}_S\choose j}{N-\widehat{A}_S\choose n-j}\Big{/}{N\choose n}} = \alpha_1.
+\end{eqnarray*}
+
+\framebreak
+
+- O limite inferior $\widehat{A}_I$ é o número de unidades na população  que pertencem a classe $C$ que fornece probabilidade $\alpha_2$ de se obter $a$ ou mais unidades que pertencem a classe $C$ na amostra, em que $\alpha_2$ é aproximadamente igual a metade do $\alpha$ desejado.
+- Ou seja, $\widehat{A}_I$ satisfaz
+
+\begin{eqnarray*}
+\Pr(X\geq a) &=& \sum_{j=a}^{n}{\Pr(j, n-j|\widehat{A}_I, N - \widehat{A}_I)}\\ 
+&=& \sum_{j=a}^{n}{{\widehat{A}_I\choose j}{N-\widehat{A}_I\choose n-j}\Big{/}{N\choose n}} = \alpha_2.
+\end{eqnarray*}
+
+- Os limites de confiança para $P$ são então determinados, dividindo-se os limites achados para $A$ por $N$, ou seja: $\widehat{P}_I = \widehat{A}_I/N$ e $\widehat{P}_S = \widehat{A}_S/N$.
+
+<!-- \framebreak -->
+
+<!-- ```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'} -->
+
+<!-- a <- 20 -->
+<!-- n <- 50 -->
+<!-- N <- 100 -->
+<!-- A <- N - (n - a) -->
+<!-- Alinha <- N - A -->
+
+<!-- plot(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--      type = "s", -->
+<!--      lwd = 2, -->
+<!--      col = "blue", -->
+<!--      lty = 2, -->
+<!--      xlab = "a", -->
+<!--      ylab = expression(Pr(X <= a)), -->
+<!--      main = "N = 100, n = 50, a = 20") -->
+
+<!-- A <- a -->
+<!-- Alinha <- N - A -->
+<!-- lines(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--       type = "s", -->
+<!--       lwd = 2, -->
+<!--       lty = 2, -->
+<!--       col = "red") -->
+
+<!-- A <- N*(a/n) -->
+<!-- Alinha <- N - A -->
+<!-- lines(phyper(q = 0:50, k = 50, m = A, n = Alinha), -->
+<!--       type = "s", -->
+<!--       lwd = 2, -->
+<!--       lty = 1, -->
+<!--       col = "black") -->
+
+<!-- abline(h = c(0.025, 0.975), lty = 2) -->
+<!-- abline(v = a) -->
+
+<!-- legend("bottomright", -->
+<!--        lty = c(2, 1, 2), -->
+<!--        lwd = c(2, 2, 2), -->
+<!--        col = c("blue", "black","red"), -->
+<!--        legend = c(expression(hat(A)[I] == 70), expression(hat(A) == 40), expression(hat(A)[S] == 20)), -->
+<!--        bty = "n") -->
+
+<!-- ``` -->
+
+## Algoritmo para obter o IC extato para $A$ {.allowframebreaks}
+
+Procuramos os limites de confiança ótimos $(\widehat{A}_I, \widehat{A}_S)$ que atendem aos requisitos definidos nas equações acima.
+
+* Dada a população total conhecida $N$, o tamanho da amostra $n$ e o número de unidades que pertencem a classe $C$ na amostra $a$, podemos definir alguns limites de viabilidade para $A$:
+     + Naturalmente, o menor valor que $A$ pode assumir é o número observado (na amostra) de unidades que pertencem a classe $C$, $A_{min} = a$.
+     + O maior valor possível de $A$ é igual ao número total $N$ menos as observações na amostra que pertencem a classe $C'$, ou seja, $A_{max} = N - (n - a)$.
+
+\framebreak
+
+\structure{Limite superior $\widehat{A}_S$:}
++ Comece com o maior valor possível para $A$, ou seja, $A_{max} = N - (n - a)$;
++ Então, diminua incrementalmente enquanto o $\Pr(X \leq a) < \alpha/2$, de modo que encontremos o maior valor possível que ainda satisfaz a equação.
+
+\framebreak
+
+- Suponha $\alpha = 0,05$. $\Pr(X\leq a| \widehat{A}_S = 70) < 0,025$.
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_max <- N - (n - a)
+
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 1,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20, ", " , hat(A)[S] == 70)))
+
+abline(h = c(0.025), lty = 2)
+abline(v = a, lty = 2)
+
+```
+
+
+\framebreak
+
+- Supondo $\alpha = 0,05$. $\Pr(X\leq a | \widehat{A}_S = 69) < 0,025$.
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_max <- N - (n - a) - 1
+
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 2,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20, ", " , hat(A)[S] == 69)))
+
+abline(h = c(0.025), lty = 2)
+abline(v = a, lty = 2)
+
+```
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_max <- N - (n - a)
+
+plot(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 1,
+     ylim = c(0,0.2),
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20)))
+
+A_max <- 65
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 2,
+      col = "blue")
+  
+A_max <- 60
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 3,
+      col = "blue")
+
+A_max <- 55
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 4,
+      col = "blue")
+
+A_max <- 51
+lines(phyper(q = 0:n, k = n, m = A_max, n = N - A_max),
+      type = "s",
+      lwd = 2,
+      lty = 5,
+      col = "blue")
+
+
+y <- phyper(q = 0:a, k = n, m = A_max, n = N - A_max)
+x <- seq_along(y)
+y2 <- rep(y, each = 2)
+y2 <- y2[-length(y2)]
+x2 <- rep(x, each = 2)[-1]
+x3 <- c(min(x2), x2, max(x2))
+y3 <- c(0, y2, 0)
+
+polygon(x3, y3, border = NA, col = "lightsalmon")
+
+abline(h = 0.025, lty = 2)
+abline(v = a + 1, lty = 2)
+
+
+legend("topright",
+       lty = 1:5,
+       lwd = 2,
+       col = "blue",
+       legend = c(expression(hat(A)[S] == 70),
+                  expression(hat(A)[S] == 65),
+                  expression(hat(A)[S] == 60),
+                  expression(hat(A)[S] == 55),
+                  expression(hat(A)[S] == 51)),
+       bty = "n")
+
+legend("bottomright",
+       fill = "lightsalmon",
+       border = "white",
+       legend = expression(phantom() %~~% 0.0225),
+       bty = "n")
+
+```
+
+\framebreak
+
+\structure{Limite inferior $\widehat{A}_I$:}
++ Comece com o menor valor possível para $A$, ou seja, $A_{min} = a$;
++ Reescrever $\Pr(X \geq a) = 1 - \Pr (X \leq a) = \alpha/2 \Leftrightarrow \Pr (X \leq a) = 1 - \alpha/2$;
++ Então, aumente incrementalmente enquanto $\Pr (X \leq a) \geq 1 - \alpha/2$, de modo que encontremos o menor valor possível que ainda preenche a equação.
+
+\framebreak
+
+```{r echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, fig.align='center', out.width='100%'}
+
+a <- 20
+n <- 50
+N <- 100
+A_min <- a
+
+plot(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+     type = "s",
+     lwd = 2,
+     col = "blue",
+     lty = 1,
+     xlab = "a",
+     ylab = expression(Pr(X <= a)),
+     main = expression(paste("N = 100, n = 50, ", a[obs] == 20)))
+
+A_min <- 25
+lines(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+      type = "s",
+      lwd = 2,
+      lty = 2,
+      col = "blue")
+  
+A_min <- 30
+lines(phyper(q = 0:n, k = n, m = A_min, n = N - A_min),
+      type = "s",
+      lwd = 2,
+      lty = 3,
+      col = "blue")
+
+y <- phyper(q = 0:a, k = n, m = A_min, n = N - A_min)
+x <- seq_along(y)
+y2 <- rep(y, each = 2)
+y2 <- y2[-length(y2)]
+x2 <- rep(x, each = 2)[-1]
+x3 <- c(min(x2), x2, max(x2))
+y3 <- c(0, y2, 0)
+
+polygon(x3, y3, border = NA, col = "lightsalmon")
+
+abline(h = 1 - 0.025, lty = 2)
+abline(v = a + 1, lty = 2)
+
+legend("bottomright",
+       lty = c(1:3, 0),
+       lwd = c(2,2,2, 0),
+       col = c(rep("blue", 3), NULL),
+       fill = c(rep("white", 3), "lightsalmon"),
+       border = rep("white", 4),
+       legend = c(expression(hat(A)[I] == 20),
+                  expression(hat(A)[I] == 25),
+                  expression(hat(A)[I] == 30),
+                  expression(phantom() %~~% 0.9922)),
+       bty = "n")
+
+```
+
+# Exemplo {.allowframebreaks}
+
+- Em um \structure{levantamento por amostragem}, utilizando __amostragem aleatória simples sem reposição__, de tamanho $n = 100$, de uma população de tamanho $N = 500$, foi observado que $a = 37$ indivíduos são favoráveis a adoção de uma certa política pública (por exemplo, a adoção da __semana de 4 dias de trabalho__).
+    + Os demais são contrários ou não sabem opinar.
+- Os limites de confiança de 95% para a __proporção__ e para o __número total de unidades__ que pertencem a classe $C$ (__favoráveis a adoção da política pública__) na população podem ser obtidos utilizando a aproximação normal e a distribuição hipergeométrica.
+
+\framebreak
+
+\structure{IC para $P$ utilizando aproximação normal}
+
+- O erro padrão estimado de $p$ é
+
+$$
+\sqrt{1-f}\sqrt{pq/(n-1)} = \sqrt{0,8}\sqrt{(0,37)(0,63)/99} = 0, 0434.
+$$
+
+- A correção de continuidade, $1/2n$, é igual a $0,005$. Portanto, os limites de 95% para $P$ podem ser estimados como
+
+\begin{eqnarray*}
+IC(P; 95\%) &=& 0,37 \pm (1,96 \times 0,0434 + 0,005)\\
+&=& 0,37 \pm 0,090 = (0,280; 0,460).
+\end{eqnarray*}
+
+\framebreak
+
+\structure{IC para $A$ utilizando aproximação normal}
+
+- Para achar os limites para o número total $A$ de unidades da população que pertencem à categoria $C$, multiplicamos os valores acima por $N$:
+
+\begin{eqnarray*}
+IC(A; 95\%) &=& (500\times 0,280; 500\times 0,460)\\
+&=& (140; 230)\\
+\end{eqnarray*}
+
+\framebreak
+
+\structure{IC para $A$ e $P$ extato}
+
+- Como visto anteriormente, o intervalo de confiança exato é baseado na __distribuição hipergeométrica__ (distribuição exata de $a$) e requer a avaliação da distribuição acumalada.
+- O pacote `samplingbook` do `R` possui uma função (`Sprop`) que facilita o trabalho do profissonal de estatística.
+
+\framebreak
+\footnotesize
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages("samplingbook")
+library(samplingbook)
+
+# ?Sprop
+Sprop(m = 37, # m = a 
+      n = 100, N = 500, level = 0.95)
+
+```
+
+\normalsize
+
+\framebreak
+
+# Considerações finais {.allowframebreaks}
+
+::: {.block}
+
+### Sobre a aproximação normal
+
+- Na maioria dos cenários, a construção do intervalo de confiança utilizando a aproximação normal resulta em propriedades satisfatórias.
+- No entanto, se $p$ estiver próximo de 0 ou 1, é recomendado usar o intervalo de confiança exato com base na distribuição hipergeométrica^[Kauermann, Goeran, and Helmut Kuechenhoff. 2010. _Stichproben: Methoden Und Praktische Umsetzung Mit R_. Springer-Verlag.].
+- O intervalo aproximado tem uma __probabilidade de cobertura__ tão baixa quanto $n/N$ para qualquer $\alpha$. Portanto, não há garantia de que o intervalo capture o verdadeiro $A$ com o nível de confiança desejado se a amostra for muito menor do que a população^[Wang, Weizhen. 2015. Exact Optimal Confidence Intervals for Hypergeometric Parameters. _Journal of the American Statistical Association_ 110 (512): 1491–9.].
+- Ainda, com $p$ e $n$ pequenos, o IC aproximado pode produzir __limites inferiores__ menores que 0.
+:::
+
+## Considerações finais {.allowframebreaks}
+
+\footnotesize
+
+```{r echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+Sprop(m = 2, n = 30, # n e p pequenos
+      N = 500, level = 0.95)
+
+```
+
+\normalsize
+
+## Para casa
+
+- Revisar os tópicos discutidos nesta aula.
+- Como podemos obter as probabilidades referentes a distribuições binomial e hipergeométrica?
+- Rodar a simução de Monte Carlo para avaliar as taxas de cobertura dos ICs para $P$ considerando diferentes tamanhos de população, amostra, valores de $P$ e de $\alpha$.
+- Implementar o IC para $P$ utilizando a distribuição binomial como aproximação da distribuição hipergeométrica.
+
+## Próxima aula
+
+- Porporações para classificações em mais de duas categorias.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-final02.jpg'))
+
+```
+

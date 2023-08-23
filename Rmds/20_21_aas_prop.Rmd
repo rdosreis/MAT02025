@@ -1,0 +1,597 @@
+---
+title: "MAT02025 - Amostragem 1"
+subtitle: "AAS: estimação de proporções para classificações em mais de duas categorias e proporções em subpopulações"
+fontsize: 10pt
+author: |
+  | Rodrigo Citton P. dos Reis
+  | `citton.padilha@ufrgs.br`
+institute: |
+  | \textsc{Universidade Federal do Rio Grande do Sul}
+  | \textsc{Instituto de Matemática e Estatística}
+  | \textsc{Departamento de Estatística}
+date: |
+  | Porto Alegre, 2023
+---
+
+# Proporções: duas ou mais categorias {.allowframebreaks}
+
+- Até o momento foi tratado o caso em que temos uma \structure{variável dicotômica} **(ou dicotomizada)**, resultando na \structure{classificação} da população em \structure{duas categorias}.
+- Muitas vezes temos a necessidade de definir uma \structure{classificação} com \structure{mais de duas categorias}.
+
+\framebreak
+
+Por exemplo,
+
+* Estudar a distribuição por **faixas etárias** de um grupo de pessoas.
+    + \structure{18-24; 25-44; 45-64; 65+}.
+* Estudar a **classificação econômica das empresas** de determinado país.
+    + Do Setor \structure{primário; secundário; ou terciário}.
+    + Empresa do tipo \structure{extrativista; agropecuária; industrial; comercial; serviços}.
+* Estimar a **intenção de voto** das chapas do DCE em uma **eleição com mais de 2 chapas**, além das possibilidades de voto em branco ou nulo ou, ainda, eleitores indecisos.
+    + Intenção de voto na \structure{Chapa 1; Chapa 2; ... ; Chapa 6}.
+
+Nesses casos, há interesse de estimar a \structure{proporção de unidades em cada uma das possíveis categorias} e a **respectiva precisão**.
+
+\framebreak
+
+\structure{Exemplo:} seja uma escola com 1.000 alunos distribuídos entre as 9 etapas do ensino fundamental.
+
+\footnotesize
+
+</center>
+----------
+Etapa de ensino   Alunos       Proporção
+---------------- -----------  -------------
+ 1° ano           110           0,110
+
+ 2° ano           108           0,108
+
+ 3° ano           110           0,110
+
+ 4° ano           115           0,115
+
+ 5° ano           104           0,104
+
+ 6° ano           119           0,119
+
+ 7° ano           116           0,116
+
+ 8° ano           107           0,107
+
+ 9° ano           111           0,111
+
+ **Total**       **1.000**     **1,000**
+
+----------
+</center>
+
+\normalsize
+
+\framebreak
+
+Para este exemplo, podemos pensar na seguinte notação:
+
+- $X$ é uma característica (um atributo, ou classificação) que assume os seguintes valores
+
+$$
+X = \left\{
+\begin{array}{ll}
+C_1, & \mbox{se aluno do 1º ano}\\
+C_2, & \mbox{se aluno do 2º ano}\\
+\vdots& \vdots\\
+C_9, & \mbox{se aluno do 9º ano}\\
+\end{array}
+\right.
+$$
+
+- Gostaríamos de estimar $P_1, P_2, \ldots, P_9$, em que $P_{j}$ é a proporção populacional de unidades na classe $C_j$.
+
+\framebreak
+
+- Observe que, para calcular as proporções em cada uma das categorias, na verdade o que se faz é atribuir o valor $1$ às unidades da categoria em questão e o valor $0$ para as unidades pertencentes às demais categorias.
+- Em outras palavras, se a variável tem $m$ categorias é como se fossem $m$ problemas com duas categorias.
+
+- A proporção de unidades da população pertencentes à categoria $C \in \{1, 2,\ldots, m\}$, é dada por:
+
+$$
+P_C = \frac{A_C}{N},
+$$
+em que $A_C$ é o **número de unidades na categoria** $C$ **na população** e $N$ é o tamanho total da população.
+
+\framebreak
+
+- Seja uma amostra aleatória simples de tamanho $n$ e seja a variável indicadora $Y_i$ definida como:
+
+$$
+Y_i = \left\{
+\begin{array}{ll}
+1, & \mbox{se a unidade}\ i\ \mbox{pertence à categoria}\ C; \\
+0, & \mbox{se a unidade}\ i\ \mbox{pertence a outra categoria}.
+\end{array}
+\right.
+$$
+
+- Com tal definição pode-se ver que o **número de unidades da categoria** $C$ **na amostra** será dado por:
+
+$$
+a_C = \sum_{i=1}^{n}{Y_i},\ C\in\{1, 2, \ldots,m\}.
+$$
+
+\framebreak
+
+- Um estimador para a proporção de unidades populacionais pertencentes à categoria $C$ é dado por:
+
+$$
+p_C = \frac{1}{n} \sum_{i=1}^{n}{Y_i} = \frac{a_C}{n},\ C\in\{1, 2, \ldots,m\}.
+$$
+
+\framebreak
+
+### Obeservações
+
+- O problema foi reduzido ao caso de estimar proporções em variáveis com duas categorias.
+- Pode-se obter, também, estimativas de precisão utilizando os mesmos resultados já apresentados nas aulas 17, 18 e 19.
+
+# Agrupando categorias {.allowframebreaks}
+
+- Muitas vezes pode-se estar interessado em estimar \structure{proporções para agrupamentos das categorias originais}.
+- Voltando ao **exemplo da escola do ensino fundamental**, pode ser de interesse estudar a **proporção** de seus **alunos** que estão **matriculados no primeiro segmento do ensino fundamental** (1º até o 5º ano).
+    + Nesse caso, seriam contabilizados como pertencentes à categoria $C$ de interesse todos os alunos do 1º até o 5º ano, para os quais $Y = 1$, sendo $Y = 0$ para os demais alunos da escola.
+
+## Não-resposta {.allowframebreaks}
+
+- Outro caso de interesse ocorre quando, na aplicação de um questionário, por exemplo, aparecem **respondentes que se recusaram a responder** ou, mesmo, disseram que **não sabiam a resposta**.
+- Num caso como esse, pode-se estar interessado em estimar a \structure{proporção das pessoas que responderam determinada alternativa}, **entre as pessoas que efetivamente responderam a pesquisa escolhendo uma das alternativas válidas** (respostas válidas, votos válidos, etc.).
+
+\framebreak
+
+- Um exemplo prático seria uma pesquisa sobre a intenção de voto numa eleição com apenas duas chapas.
+    + Nesse caso, o entrevistado poderia responder que votará na chapa \textcolor{darkgreen}{A}, na chapa \textcolor{orange}{B}, que votará __nulo__ ou _em branco_, ou __não sabe__ em que chapa irá votar, onde apenas as duas primeiras alternativas seriam consideradas como \structure{votos válidos}.
+
+\framebreak
+
+- Pode-se estimar a proporção para cada uma das cinco categorias iniciais (\textcolor{darkgreen}{A}, \textcolor{orange}{B}, __nulo__, _em branco_, ou __não sabe__) ou apenas a \structure{proporção de votos válidos} para cada uma das duas chapas:
+
+$$
+p_{\color{darkgreen}{A}} = \frac{a_{\color{darkgreen}{A}}}{a_{\color{darkgreen}{A}} + a_{\color{orange}{B}}} \quad\mbox{e} \quad p_{\color{orange}{B}} = \frac{a_{\color{orange}{B}}}{a_{\color{darkgreen}{A}} + a_{\color{orange}{B}}}.
+$$
+
+- Vale notar que na expressão acima, tanto o numerador como o denominador do estimador da proporção são variáveis aleatórias, pois a população (eleitores que efetivamente vão votar em uma das duas chapas) é desconhecida.
+
+# Um exemplo
+
+## Índice de Desempenho Acadêmico {.allowframebreaks}
+
+- O \structure{Índice de Desempenho Acadêmico da Califórnia} (_Academic Performance Index_, API) é calculado a partir de testes padronizados administrados a alunos em escolas da Califórnia.
+- Além dos dados de desempenho acadêmico das escolas, há uma ampla gama de variáveis socioeconômicas disponíveis.
+
+- Os dados a seguir se referem a uma amostra aleatória simples de tamanho $n = 200$ de uma população de $N = 6194$ escolas.
+
+\framebreak
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+library(survey)
+data(api)
+
+# ?apisrs
+head(apisrs[,1:4])
+
+```
+
+\framebreak
+
+\normalsize
+
+- As escolas podem ser classificadas como **"Elementary"** (`E`), **"Middle"** (`M`), **"High School"** (`H`).
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+(a <- table(apisrs$stype)) # a_E, a_H, a_M
+
+(p <- prop.table(a)) # p_E, p_H, p_M
+
+```
+
+\framebreak
+
+\normalsize
+
+- Podes obter estimativas do erro padrão das proporções.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+n <- 200
+N <- 6194
+f <- n/N
+(q <- 1 - p) # q_E, q_H, q_M
+
+round(ep <- sqrt( (1 - f) * ((p*q)/(n - 1)) ), 4)
+
+```
+
+\framebreak
+
+\normalsize
+
+- E também podemos obter limites de confiança **(IC 95% usando a aproximação normal)**.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+round(li <- p - qnorm(p = 0.975) * ep , 3)
+round(ls <- p + qnorm(p = 0.975) * ep + 1/(2*n), 3)
+
+```
+
+\framebreak
+
+\normalsize
+
+- Uma outra forma (mais direta e confiável) de se estimar estas proporções populacionais com os respectivos intervalos de confiança é utilizando o pacote `survey`.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# O objeto design
+api.des <- svydesign(id = ~1,
+                     fpc = ~fpc,
+                     data = apisrs)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativa da proporção de escolas
+# do tipo "Elementary/Middle/High School"
+# e intervalo de confiança de 95%
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "mean")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "mean")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "mean")
+
+```
+
+\framebreak
+
+\normalsize
+
+- A função `svyciprop` também possui outros métodos de construção dos ICs de $P$.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Método xlogit
+
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "xlogit")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "xlogit")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "xlogit")
+
+# Método likelihood
+
+svyciprop(formula = ~I(stype == "E"),
+          design = api.des, method = "likelihood")
+svyciprop(formula = ~I(stype == "H"),
+          design = api.des, method = "likelihood")
+svyciprop(formula = ~I(stype == "M"),
+          design = api.des, method = "likelihood")
+
+```
+
+\framebreak
+
+\normalsize
+
+- O coeficiente de confiança dos ICs também podem ser especificados pela função `svyciprop`.
+
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# IC 90%
+
+svyciprop(formula = ~I(stype == "E"), design = api.des,
+          method = "mean", level = 0.9)
+svyciprop(formula = ~I(stype == "H"), design = api.des,
+          method = "xlogit", level = 0.9)
+svyciprop(formula = ~I(stype == "M"), design = api.des,
+          method = "xlogit", level = 0.9)
+
+# IC 99%
+
+svyciprop(formula = ~I(stype == "E"), design = api.des,
+          method = "mean", level = 0.99)
+svyciprop(formula = ~I(stype == "H"), design = api.des,
+          method = "xlogit", level = 0.99)
+svyciprop(formula = ~I(stype == "M"), design = api.des,
+          method = "xlogit", level = 0.99)
+
+```
+
+\normalsize
+
+# Estimação de proporções dentro de setores {.allowframebreaks}
+
+- Em algumas situações práticas, o parâmetro de interesse é a proporção de unidades no \structure{setor}^[domínio, subgrupo ou subpopulação.] $j$ que possuem um atributo ou característica $C$.
+    - Por exemplo, quando se deseja estimar a **proporção** de \structure{mulheres de 15 anos ou mais} que já tiveram **pelo menos um filho**;
+    - Ou quando se procura estimar a **proporção** de \structure{homens de 18 anos ou mais} que **prestaram o serviço militar**.
+- Em casos como os acima citados, o problema é estimar proporções nos setores da população: 
+    + \structure{mulheres de 15 anos ou mais};
+    + e \structure{homens de 18 anos ou mais}.
+- **Pergunta:** qual o atributo associado ao parâmetro de proporção que queremos estimar?
+
+## Estimação de proporções dentro de setores {.allowframebreaks}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'subpop-exemplo-01.png'))
+
+```
+
+\framebreak
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='100%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'subpop-exemplo-02.png'))
+
+```
+
+\framebreak
+
+- Nesses casos, a variável de pesquisa $Y$ seria dada por:
+
+$$
+Y_i = I(i \in C) = \left\{
+\begin{array}{ll}
+1, & \mbox{se}\ i\ \mbox{ possui o atributo } C,\\
+0, & \mbox{caso contrário.}
+\end{array}
+\right.
+$$
+
+- Na população como um todo, a proporção de unidades com atributo $C$ é definida como $P = A/N$ e a estimação desta proporção foi discutida nas **aulas 17, 18** e **19**.
+
+\framebreak
+
+- Considere a notação a seguir. O número de unidades no setor $j$ que também possuem o atributo $C$ é definido como: 
+
+$$
+A_{j} = \sum_{k=1}^{n_j}{Y_{ik}}.
+$$
+
+- E a proporção de unidades no setor $j$ que também possuem o atributo $C$ é definida como:
+
+$$
+P_{j} = \frac{A_j}{N_j},
+$$
+em que $N_j$ é o tamanho do setor $j$.
+
+\framebreak
+
+- Sob **amostragem aleatória simples**, o estimador para $P_{j}$ pode ser obtido a partir do estimador: 
+
+$$
+\widehat{P}_{j} = p_j = \frac{1}{n_j}\sum_{k=1}^{n_j}{Y_{ik}} = \frac{a_j}{n_j}
+$$
+em que $a_{j}$ denota o \structure{número de unidades na amostra no setor} $j$ que também \structure{possuem o atributo} $C$. 
+
+\framebreak
+
+- Considerando fixado o tamanho da amostra no setor $j$, a \structure{variância condicional} do estimador $p_{j}$ é dada por:
+
+$$
+\Var(\widehat p_{j}) = \left( 1 - \frac{n_j}{N_j} \right) \frac{P_{j} (1- P_{j})}{(n_j - 1)}.
+$$
+
+Um estimador da variância de $\widehat p_{j}$ sob AAS resulta em:
+
+$$
+\widehat{\Var}(\widehat p_{j}) = \left( 1 - \frac{n_j}{N_j} \right) \frac{p_{j} (1- p_{j})}{(n_j - 1)}.
+$$
+
+\framebreak
+
+- Nas expressões acima, $n_j$, $N_j$ e $P_{j}$ são, respectivamente, o número de unidades da amostra que pertencem ao setor $j$, o número total de unidades da população no setor $j$ e a proporção de unidades no domínio que possuem o atributo $C$.
+
+\framebreak
+
+- Caso $N_j$ não seja conhecido, a **fração de amostragem** no setor, $n_j/N_j$, pode ser aproximada por $n/N$ na expressão anterior, levando ao estimador:
+
+$$
+\widehat{\Var}(p_j) = \left( 1 - \frac{n}{N} \right) \frac {p_jq_j} {n_j - 1},
+$$
+em que $q_j = 1 - p_j$.
+
+\framebreak
+
+- Para completar a inferência sobre uma proporção de unidades portadoras do atributo $C$ no setor $j$, admite-se a validade da **aproximação normal** para a distribuição de $p_j$ e soma-se uma **correção de continuidade**.
+- Assim a expressão do \structure{intervalo de confiança} para a proporção populacional $p_j$ é dada por:
+
+$$
+IC(P_j;\ 100 \times (1 - \alpha)\%) = \left[p_j \pm \left( z_{\alpha/2} \sqrt{ \widehat{\Var}(p_j)} + \frac{1}{2n_j} \right) \right],
+$$
+em que $1/2n_j$ é a **correção de continuidade**.
+
+- Essa correção é praticamente nula quando $n_j$ cresce.
+
+\framebreak
+
+- Para se estimar o \structure{número total}, $A_j$, de unidades da categoria $C$ que estão no Setor $j$, há duas possibilidades.
+- Se $N_j$, o número total de unidades da população que pertencem ao Setor $j$, for conhecido, pode-se usar a estimativa condicional:
+
+$$
+\widehat{A}_j = N_j\times \frac{a_j}{n_j} = N_jp_j.
+$$
+
+- Se $N_j$ não é conhecido, a estimativa é
+
+$$
+\widehat{A}_j = N\times \frac{a_j}{n}.
+$$
+
+# Exemplo {.allowframebreaks}
+
+- Vamos estimar, a partir de uma **amostra aleatória simples sem reposição** com $n = 300$, a \structure{proporção de municípios com população}^[__Atenção:__ aqui temos como **população alvo** um conjunto de municípios; uma caractarística de interesse nos elementos (município) desta população é o **tamanho da _população de habitantes_**.] \structure{menor que 10.000 habitantes} para **cada macro-região do Brasil**.
+
+## Exemplo {.allowframebreaks}
+
+- \structure{População alvo:} municípios do Brasil.
+- \structure{Característica de interesse:} tamanho da população de habitantes $< 10.000$;
+- \structure{Setores:} macro-regiões do Brasil.
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='60%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'regioes-estados-brasil.jpg'))
+
+```
+
+\framebreak
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Dados dos municípios (população)
+mun_aas <- readRDS(file = here::here("dados",
+                                 "MunicBR_amostra.rds"))
+
+mun_aas
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativa populacional
+round(mean(mun_aas$Pop_menor_10), 2)
+
+# Estimativa subpopulacionais
+library(dplyr)
+
+mun_aas %>% 
+  group_by(Regiao) %>% 
+  summarize(round(mean(Pop_menor_10), 2))
+
+```
+
+\framebreak
+\normalsize
+
+- O pacote `dplyr` nos ajudou na estimativa das proporções por setores (agrupadas). 
+- Vamos aproveitar este exemplo para apresentar o pacote `srvyr`, que utiliza uma sintaxe semelhante a utilizada pelo pacote `dplyr` na estimação de quantidades populacionais a partir de levantamentos por amostragem.
+    + Veja a [vinheta do pacote `srvyr`](https://cran.r-project.org/web/packages/srvyr/vignettes/srvyr-vs-survey.html).
+    
+\framebreak
+\footnotesize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# install.packages(srvyr)
+library(srvyr)
+
+mun_des <- mun_aas %>% 
+  as_survey_design(ids = 1,
+                   fpc = cpf)
+
+summary(mun_des)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativa populacional
+mun_des %>% 
+  summarize(
+    Proporção = survey_mean(Pop_menor_10, vartype = "ci")) %>% 
+  round(2)
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean()) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)})
+
+```
+
+\framebreak
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean(),
+            a = unweighted(n())) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)})
+
+```
+
+\framebreak
+
+\scriptsize
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+
+# Estimativas subpopulacionais
+mun_des %>% 
+  group_by(Regiao, Pop_menor_10) %>% 
+  summarize(Proporção = survey_mean(vartype = "ci"),
+            Total = survey_total(vartype = "ci")) %>% 
+  mutate_at(vars(matches("Proporção")), function(x){round(x, 2)}) %>% 
+  mutate_at(vars(matches("Total")), function(x){round(x)}) %>% 
+  filter(Pop_menor_10 == 1) %>% select(-Pop_menor_10) %>% knitr::kable()
+
+```
+
+\normalsize
+
+## Para casa
+
+- Revisar os tópicos discutidos nesta aula.
+- Faça uma busca por um levantamento por amostragem que tenha apresentado (parte dos) seus resultados em termos de proporções. Investigue os procedimentos de amostragem e métodos de estimação. Compartilhe os seus achados no Fórum Geral do Moodle.
+- Estime a proporção (percentual) de municípios com população menor que 20.000 habitantes, com os seus respectivos erros padrões e intervalos de confiança de 95% **(dados no Moodle)**.
+    - A partir das estimativas pontuais, construa um **mapa das regiões do Brasil** para apresentar os resultados.
+    - Estime para o __total__ de municípios com **menos que 20.000 habitantes**.
+- Compartilhe os seus achados no Fórum Geral do Moodle.
+
+## Próxima aula
+
+- **Área 3**: dimensionamento de amostra.
+
+## Por hoje é só!
+
+\begin{center}
+{\bf Bons estudos!}
+\end{center}
+
+```{r echo=FALSE, fig.align='center', message=FALSE, warning=FALSE, out.width='50%', out.height='50%', paged.print=FALSE, purl=FALSE}
+
+knitr::include_graphics(here::here('images', 'Statistically-Insignificant-final04.jpg'))
+
+```
+
+
